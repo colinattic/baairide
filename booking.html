@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baai Ride - Booking</title>
+
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Google Font for better typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px; /* Change to make it suitable for desktop */
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 28px;
+            margin-bottom: 30px; /* Increased margin for better spacing */
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .form-group {
+            flex: 1 1 45%; /* Adjusted width for better spacing */
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        input, select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        input:focus, select:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px; /* Ensure there's space between buttons */
+        }
+
+        #whatsappButton {
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+        }
+
+        #whatsappButton:hover {
+            background-color: #1DAE56; /* Darker WhatsApp Green */
+        }
+
+        #telegramButton {
+            background-color: #0088CC; /* Telegram Blue */
+            color: white;
+        }
+
+        #telegramButton:hover {
+            background-color: #0079A2; /* Darker Telegram Blue */
+        }
+
+        /* Map container */
+        #map {
+            height: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 2px solid #4CAF50;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 768px) {
+            .form-group {
+                flex: 1 1 100%; /* Full width on mobile */
+            }
+
+            button {
+                margin-top: 20px; /* Space between buttons */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="logo.png" width="120px" alt="">
+    <form id="rideForm">
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+                <option value="Belarus">Belarus 🇧🇾</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter city" required>
+        </div>
+
+        <div class="form-group">
+            <label for="pickupAddress">Pick-up Address:</label>
+            <input type="text" id="pickupAddress" name="pickupAddress" placeholder="Enter pick-up address" required>
+        </div>
+
+        <div class="form-group">
+            <label for="rideType">Ride Type:</label>
+            <select id="rideType" name="rideType" required>
+                <option value="One-way">One-way</option>
+                <option value="Round-trip">Round-trip</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="destination">Destination Address:</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination address" required>
+        </div>
+
+        <button type="submit" id="whatsappButton">Submit via WhatsApp</button>
+        <button type="button" id="telegramButton">Submit via Telegram</button>
+    </form>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+</div>
+
+<!-- Leaflet.js JavaScript -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+    // Initialize Leaflet map
+    const map = L.map('map').setView([53.9006, 27.5590], 8); // Default to Minsk, Belarus
+
+    // Load and display tile layer from OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    let marker;
+
+    // Function to update the marker position on the map
+    function updateMap(lat, lon) {
+        if (marker) {
+            marker.setLatLng([lat, lon]);
+        } else {
+            marker = L.marker([lat, lon]).addTo(map);
+        }
+        map.setView([lat, lon], 12); // Zoom in on the new location
+    }
+
+    // Handle form submission for WhatsApp
+    document.getElementById('whatsappButton').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const country = document.getElementById('country').value;
+        const city = document.getElementById('city').value;
+        const pickupAddress = document.getElementById('pickupAddress').value;
+        const rideType = document.getElementById('rideType').value;
+        const destination = document.getElementById('destination').value;
+
+        // Update map based on country selection (only Belarus)
+        updateMap(53.9006, 27.5590); // Coordinates for Minsk, Belarus
+
+        // Prepare WhatsApp message
+        const message = `Baai Ride - Request:\n\nCountry: ${country}\nCity: ${city}\nPick-up Address: ${pickupAddress}\nRide Type: ${rideType}\nDestination: ${destination}`;
+        
+        const whatsappNumber = '94785822315'; // Your WhatsApp number
+        const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Open WhatsApp in a new window
+        window.open(whatsappLink, '_blank');
+    });
+
+    // Handle form submission for Telegram
+    document.getElementById('telegramButton').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const country = document.getElementById('country').value;
+        const city = document.getElementById('city').value;
+        const pickupAddress = document.getElementById('pickupAddress').value;
+        const rideType = document.getElementById('rideType').value;
+        const destination = document.getElementById('destination').value;
+
+        // Prepare Telegram message
+        const telegramMessage = `Baai Ride - Request:\n\nCountry: ${country}\nCity: ${city}\nPick-up Address: ${pickupAddress}\nRide Type: ${rideType}\nDestination: ${destination}`;
+        
+        const telegramLink = `https://t.me/colinattic?text=${encodeURIComponent(telegramMessage)}`;
+
+        // Open Telegram in a new window
+        window.open(telegramLink, '_blank');
+    });
+</script>
+
+</body>
+</html>
