@@ -1,376 +1,877 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Web Design Mastery | RENTAL</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="nav__header">
-          <div class="nav__logo">
-            <a href="booking.html">Baai Ride</a>
-          </div>
-          <div class="nav__menu__btn" id="menu-btn">
-            <i class="ri-menu-line"></i>
-          </div>
-        </div>
-        <ul class="nav__links" id="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="booking.html">Book a Ride</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav__btn">
-            <a href="booking.html">
-                <button class="btn">Get Started</button>
-            </a>    
-        </div>
-      </nav>
-      <div class="header__container" id="home">
-            <h1>поездка на машине</h1>
-            <div class="booking-container">
-            <a href="booking.html">
-                <Button class="booking-page-btn" style="align-items: center; justify-items: center;">Book a Ride</Button>
-            </a>
-     </div>
-        <img src="assets/header.png" alt="header" />
-      </div>
-      <a href="#about" class="scroll__down">
-        <i class="ri-arrow-down-line"></i>
-      </a>
-    </header>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baai Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --bg-secondary: #1e293b;
+            --text: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --card-bg: rgba(30, 41, 59, 0.5);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.04);
+            --nav-bg: rgba(15, 23, 42, 0.65);
+            --nav-blur: blur(25px);
+            --btn-bg: rgba(30, 41, 59, 0.55);
+            --hover-bg: rgba(45, 55, 75, 0.7);
+            --accent: #a855f7;
+            --accent-glow: #c084fc;
+            --tag-bg: rgba(168, 85, 247, 0.2);
+            --tag-text: #c084fc;
+            --hero-overlay: rgba(0, 0, 0, 0.45);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            --shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.55);
+        }
 
-    <section class="section__container range__container" id="about">
-      <h2 class="section__header">WIDE RANGE OF VEHICLES</h2>
-      <div class="range__grid">
-        <div class="range__card">
-          <img src="assets/range-1.jpg" alt="range" />
-          <div class="range__details">
-            <h4>CARS</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
-          </div>
-        </div>
-        <div class="range__card">
-          <img src="assets/range-2.jpg" alt="range" />
-          <div class="range__details">
-            <h4>SUVS</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
-          </div>
-        </div>
-        <div class="range__card">
-          <img src="assets/range-3.jpg" alt="range" />
-          <div class="range__details">
-            <h4>VANS</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
-          </div>
-        </div>
-        <div class="range__card">
-          <img src="assets/range-4.jpg" alt="range" />
-          <div class="range__details">
-            <h4>ELECTRIC</h4>
-            <a href="#"><i class="ri-arrow-right-line"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --bg-secondary: #e2e8f0;
+            --text: #0f172a;
+            --text-secondary: #334155;
+            --card-bg: rgba(255, 255, 255, 0.55);
+            --card-border: rgba(255, 255, 255, 0.8);
+            --glass-highlight: rgba(255, 255, 255, 0.7);
+            --nav-bg: rgba(255, 255, 255, 0.55);
+            --btn-bg: rgba(255, 255, 255, 0.6);
+            --hover-bg: rgba(255, 255, 255, 0.8);
+            --accent: #7c3aed;
+            --accent-glow: #8b5cf6;
+            --tag-bg: rgba(124, 58, 237, 0.15);
+            --tag-text: #7c3aed;
+            --hero-overlay: rgba(0, 0, 0, 0.25);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
 
-    <section class="section__container location__container" id="rent">
-      <div class="location__image">
-        <img src="assets/location.png" alt="location" />
-      </div>
-      <div class="location__content">
-        <h2 class="section__header">Baai Ride - Fast and Secure Car Ride Services</h2>
-        <p>
-            At Baai Ride, we pride ourselves on delivering the fastest and most secure car ride services throughout Belarus. Whether you need a ride to the airport, a business meeting, or a special event, our dedicated team ensures that you reach your destination quickly and safely.
-        </p>
-        <div class="location__btn">
-            <a href="booking.html">
-                <button class="btn">Book a Ride</button>
-            </a>
-          
-        </div>
-      </div>
-    </section>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <section class="select__container" id="ride">
-      <h2 class="section__header">services All around belarus</h2>
-      <!-- Slider main container -->
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <div class="select__card">
-              <img src="assets/select-1.png" alt="select" />
-              <div class="select__info">
-                <div class="select__info__card">
-                  <span><i class="ri-speed-up-line"></i></span>
-                  <h4>200 <span>km/h</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-settings-5-line"></i></span>
-                  <h4>6 <span>speed</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-roadster-line"></i></span>
-                  <h4>5 <span>seats</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-signpost-line"></i></span>
-                  <h4>15 <span>milage</span></h4>
-                </div>
-              </div>
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            transition: background 0.4s ease, color 0.4s ease;
+            background-image:
+                radial-gradient(ellipse at 10% 20%, rgba(168, 85, 247, 0.07) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 60%, rgba(14, 165, 233, 0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 85%, rgba(236, 72, 153, 0.05) 0%, transparent 55%);
+            background-attachment: fixed;
+        }
+
+        /* ── FLOATING NAVBAR ── */
+        .navbar {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            margin: 20px auto;
+            max-width: 1150px;
+            background: var(--nav-bg);
+            backdrop-filter: var(--nav-blur);
+            -webkit-backdrop-filter: var(--nav-blur);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            padding: 12px 28px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            gap: 12px;
+        }
+
+        .navbar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            cursor: pointer;
+            letter-spacing: -0.5px;
+            transition: transform 0.3s;
+            min-width: 48px;
+        }
+
+        .nav-logo:hover { transform: scale(1.05); }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hamburger {
+            display: none;
+            width: 44px;
+            height: 44px;
+            background: var(--btn-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .hamburger i { transition: transform 0.3s ease; }
+        .hamburger.menu-open i { transform: rotate(90deg); }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background: var(--btn-bg);
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            color: var(--text);
+        }
+        .theme-toggle:hover {
+            transform: rotate(20deg) scale(1.1);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            align-items: center;
+            opacity: 1;
+            max-height: none;
+            overflow: visible;
+        }
+
+        .nav-links button {
+            background: var(--btn-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            min-height: 42px;
+        }
+        .nav-links button i { margin-right: 5px; }
+
+        .nav-links button:hover,
+        .nav-links button.active {
+            background: var(--hover-bg);
+            border-color: var(--accent);
+            color: var(--accent-glow);
+            box-shadow: 0 4px 16px rgba(168, 85, 247, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .nav-links button.pending {
+            opacity: 0.55;
+            cursor: not-allowed;
+            border-style: dashed;
+            position: relative;
+        }
+        .nav-links button.pending::after {
+            content: 'soon';
+            font-size: 0.6rem;
+            background: #ef4444;
+            color: #fff;
+            padding: 2px 7px;
+            border-radius: 10px;
+            position: absolute;
+            top: -8px;
+            right: -6px;
+            font-weight: 700;
+        }
+
+        /* ── MAIN CONTENT ── */
+        .main-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 10px 24px 50px;
+        }
+
+        .page {
+            display: none;
+            animation: fadeSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .page.active { display: block; }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── GLASS CARDS (Modern) ── */
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease-out, box-shadow 0.4s ease, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--glass-highlight) 0%, transparent 50%);
+            pointer-events: none;
+            border-radius: 28px;
+        }
+        .glass-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 28px;
+            padding: 1px;
+            background: linear-gradient(120deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.08));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .glass-card:hover {
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .glass-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 18px;
+            display: block;
+            transform: translateZ(15px);
+            transition: transform 0.3s;
+        }
+        .glass-card:hover img { transform: translateZ(25px) scale(1.02); }
+
+        .glass-card h3,
+        .glass-card .meta,
+        .glass-card p,
+        .glass-card .tag,
+        .glass-card .read-more,
+        .glass-card button {
+            transform: translateZ(20px);
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 3px 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            min-height: 44px;
+            transform: translateZ(20px);
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+        }
+        .read-more:hover {
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
+            transform: translateY(-2px) translateZ(20px);
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        }
+
+        /* ── HERO ── */
+        .hero {
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            height: clamp(240px, 34vw, 380px);
+            margin-bottom: 36px;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow);
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--hero-overlay);
+            backdrop-filter: blur(1px);
+            border-radius: 32px;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            max-width: 600px;
+        }
+        .hero-content h1 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 800;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-top: 8px;
+        }
+
+        /* ── GRID ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+
+        /* ── BLOG POST DETAIL ── */
+        .blog-post-full {
+            max-width: 850px;
+            margin: 0 auto;
+            border-radius: 32px;
+        }
+        .blog-post-full img.cover {
+            width: 100%;
+            border-radius: 24px;
+            max-height: 450px;
+            object-fit: cover;
+            margin-bottom: 24px;
+        }
+        .blog-post-full h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .blog-post-full .content-text {
+            line-height: 1.9;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .back-btn {
+            background: var(--btn-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--text);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .back-btn:hover {
+            background: var(--hover-bg);
+            border-color: var(--accent);
+            color: var(--accent-glow);
+        }
+
+        /* ── SECTION HEADER ── */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .section-header i {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+        .section-header h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            margin-top: 50px;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            box-shadow: var(--shadow);
+        }
+        .footer i { color: var(--accent); margin: 0 4px; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                border-radius: 28px;
+                padding: 14px 20px;
+                margin: 10px;
+                top: 10px;
+            }
+            .navbar-header { width: 100%; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                pointer-events: none;
+                transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.3s;
+            }
+            .nav-links.show {
+                max-height: 600px;
+                opacity: 1;
+                pointer-events: auto;
+                overflow: visible;
+                padding-top: 10px;
+            }
+            .nav-links button { width: 100%; text-align: center; justify-content: center; }
+            .hero { height: 220px; padding: 24px; border-radius: 24px; }
+            .hero-content h1 { font-size: 1.6rem; }
+            .blog-grid { grid-template-columns: 1fr; gap: 20px; }
+            .glass-card { padding: 22px; }
+            .glass-card img { height: 200px; }
+            .main-container { padding: 8px 16px 40px; }
+        }
+
+        @media (max-width: 480px) {
+            .navbar { padding: 10px 16px; border-radius: 20px; margin: 6px; }
+            .nav-logo { font-size: 1.3rem; }
+            .nav-links button { padding: 10px 16px; font-size: 0.8rem; }
+            .hero { height: 180px; padding: 16px; border-radius: 20px; }
+            .hero-content h1 { font-size: 1.4rem; }
+            .glass-card { padding: 18px; border-radius: 22px; }
+            .glass-card img { height: 170px; border-radius: 14px; }
+            .read-more, .back-btn { padding: 10px 18px; font-size: 0.85rem; }
+            .blog-post-full img.cover { max-height: 280px; }
+            .section-header h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="navbar-header">
+            <span class="nav-logo" onclick="navigateTo('home')" title="Baai Mart Home">Baai Mart</span>
+            <div class="nav-controls">
+                <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <i class="fas fa-bars" id="hamburgerIcon"></i>
+                </button>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Theme toggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="select__card">
-              <img src="assets/select-2.png" alt="select" />
-              <div class="select__info">
-                <div class="select__info__card">
-                  <span><i class="ri-speed-up-line"></i></span>
-                  <h4>215 <span>km/h</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-settings-5-line"></i></span>
-                  <h4>6 <span>speed</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-roadster-line"></i></span>
-                  <h4>5 <span>seats</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-signpost-line"></i></span>
-                  <h4>16 <span>milage</span></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="select__card">
-              <img src="assets/select-3.png" alt="select" />
-              <div class="select__info">
-                <div class="select__info__card">
-                  <span><i class="ri-speed-up-line"></i></span>
-                  <h4>306 <span>km/h</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-settings-5-line"></i></span>
-                  <h4>6 <span>speed</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-roadster-line"></i></span>
-                  <h4>5 <span>seats</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-signpost-line"></i></span>
-                  <h4>12 <span>milage</span></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="select__card">
-              <img src="assets/select-4.png" alt="select" />
-              <div class="select__info">
-                <div class="select__info__card">
-                  <span><i class="ri-speed-up-line"></i></span>
-                  <h4>350 <span>km/h</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-settings-5-line"></i></span>
-                  <h4>6 <span>speed</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-roadster-line"></i></span>
-                  <h4>2 <span>seats</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-signpost-line"></i></span>
-                  <h4>08 <span>milage</span></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="select__card">
-              <img src="assets/select-5.png" alt="select" />
-              <div class="select__info">
-                <div class="select__info__card">
-                  <span><i class="ri-speed-up-line"></i></span>
-                  <h4>254 <span>km/h</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-settings-5-line"></i></span>
-                  <h4>6 <span>speed</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-roadster-line"></i></span>
-                  <h4>5 <span>seats</span></h4>
-                </div>
-                <div class="select__info__card">
-                  <span><i class="ri-signpost-line"></i></span>
-                  <h4>10 <span>milage</span></h4>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <form action="booking.html" class="select__form">
-        <div class="select__price">
-          <span><i class="ri-price-tag-3-line"></i></span>
-          <div><span id="select-price">225</span> /day</div>
+        <div class="nav-links" id="navLinks">
+            <button onclick="navigateTo('home')" class="active" id="nav-home"><i class="fas fa-home"></i> Home</button>
+            <button onclick="navigateTo('malaysia')" id="nav-malaysia"><span>🇲🇾</span> Malaysia</button>
+            <button onclick="navigateTo('singapore')" id="nav-singapore"><span>🇸🇬</span> Singapore</button>
+            <button onclick="navigateTo('thailand')" id="nav-thailand" class="pending"><span>🇹🇭</span> Thailand</button>
+            <button onclick="navigateTo('about')" id="nav-about"><i class="fas fa-info-circle"></i> About</button>
         </div>
-        <div class="select__btns">
-          <a href="booking.html">
-            <button class="btn">Book a Ride</button>
-         </a>
-        </div>
-      </form>
-    </section>
+    </nav>
 
-    <section class="section__container story__container">
-      <h2 class="section__header">STORIES BEHIND THE WHEEL</h2>
-      <div class="story__grid">
-        <div class="story__card">
-          <div class="story__date">
-            <span>22</span>
-            <div>
-              <p>Sep</p>
-              <p>2024</p>
+    <!-- MAIN CONTAINER -->
+    <div class="main-container" id="mainContainer">
+
+        <!-- HOME PAGE -->
+        <div class="page active" id="page-home">
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200&q=80');">
+                <div class="hero-content">
+                    <h1>Discover Southeast Asia</h1>
+                    <p>Authentic travel stories from Malaysia, Singapore & beyond</p>
+                </div>
             </div>
-          </div>
-          <h4>Book Your Ride with Baai Ride Today!</h4>
-          <p>
-            Join us as we dive into the exhilarating stories of travelers who
-            embarked on unforgettable journeys with PREMIUM CAR RENTAL.
-          </p>
-          <img src="assets/story-1.jpg" alt="story" />
-        </div>
-        <div class="story__card">
-          <div class="story__date">
-            <span>04</span>
-            <div>
-              <p>March</p>
-              <p>2024</p>
+            <div class="section-header"><i class="fas fa-gem"></i><h2>Featured Destinations</h2></div>
+            <div class="blog-grid">
+                <div class="glass-card" onclick="navigateTo('malaysia')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="Petronas Towers Kuala Lumpur" loading="lazy">
+                    <span class="tag">🇲🇾 Malaysia</span>
+                    <h3>Kuala Lumpur & Beyond</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> Updated June 2026 · <i class="far fa-clock"></i> 8 min read</p>
+                    <p>Explore the vibrant capital, from the iconic Petronas Twin Towers to the street food heaven of Jalan Alor and the mystical Batu Caves.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Explore Malaysia</button>
+                </div>
+                <div class="glass-card" onclick="navigateTo('singapore')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Marina Bay Sands Singapore" loading="lazy">
+                    <span class="tag">🇸🇬 Singapore</span>
+                    <h3>Marina Bay & Garden City</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> Updated June 2026 · <i class="far fa-clock"></i> 7 min read</p>
+                    <p>Discover the futuristic Gardens by the Bay, the stunning Marina Bay Sands skyline, and the rich cultural enclaves of the Lion City.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Explore Singapore</button>
+                </div>
+                <div class="glass-card" style="opacity:0.7; cursor:not-allowed;">
+                    <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" alt="Thailand Grand Palace" loading="lazy" style="filter: grayscale(20%);">
+                    <span class="tag">🇹🇭 Thailand</span>
+                    <h3>Bangkok & Islands <i class="fas fa-hard-hat" style="margin-left:4px;"></i></h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> Coming Soon · <i class="far fa-clock"></i> Under Development</p>
+                    <p>Our Thailand guide is being crafted with love. Expect Grand Palace wonders, floating markets, and pristine island escapes. Stay tuned!</p>
+                    <button class="read-more" style="background:#334155; cursor:not-allowed; box-shadow:none;"><i class="fas fa-clock"></i> Coming Soon</button>
+                </div>
             </div>
-          </div>
-          <h4>Luxury and Comfort: Experiences</h4>
-          <p>
-            In this series, we highlight the luxurious touches, unparalleled
-            comfort, and exceptional service that make every ride.
-          </p>
-          <img src="assets/story-2.jpg" alt="story" />
         </div>
-        
-    </section>
 
-    <section class="banner__container">
-      <div class="banner__wrapper">
-        <img src="assets/banner-1.png" alt="banner" />
-        <img src="assets/banner-2.png" alt="banner" />
-        <img src="assets/banner-3.png" alt="banner" />
-        <img src="assets/banner-4.png" alt="banner" />
-        <img src="assets/banner-5.png" alt="banner" />
-        <img src="assets/banner-6.png" alt="banner" />
-        <img src="assets/banner-7.png" alt="banner" />
-        <img src="assets/banner-8.png" alt="banner" />
-        <img src="assets/banner-9.png" alt="banner" />
-        <img src="assets/banner-10.png" alt="banner" />
-      </div>
-    </section>
+        <!-- MALAYSIA PAGE -->
+        <div class="page" id="page-malaysia">
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200&q=80');">
+                <div class="hero-content"><h1>🇲🇾 Malaysia</h1><p>Truly Asia — A melting pot of cultures, cuisine & natural wonders</p></div>
+            </div>
+            <div class="blog-grid">
+                <div class="glass-card" onclick="openBlogPost('malaysia-kl')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="KL Petronas Towers" loading="lazy">
+                    <span class="tag">Kuala Lumpur</span><span class="tag">City</span>
+                    <h3>Petronas Twin Towers & KL City Guide</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> June 2026 · <i class="far fa-clock"></i> 8 min read</p>
+                    <p>Everything you need to know about visiting the world's tallest twin towers, plus the best rooftop bars and nearby attractions.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                </div>
+                <div class="glass-card" onclick="openBlogPost('malaysia-batu')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=600&q=80" alt="Batu Caves" loading="lazy">
+                    <span class="tag">Selangor</span><span class="tag">Culture</span>
+                    <h3>Batu Caves — The 272 Steps</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> May 2026 · <i class="far fa-clock"></i> 6 min read</p>
+                    <p>Climb the rainbow-coloured steps to this iconic Hindu temple set within limestone caves. A spiritual and visual spectacle.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                </div>
+                <div class="glass-card" onclick="openBlogPost('malaysia-penang')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1581159931975-1c3e2cf8ab6f?w=600&q=80" alt="Penang Street Art" loading="lazy">
+                    <span class="tag">Penang</span><span class="tag">Food</span>
+                    <h3>Penang Street Food & Heritage</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> April 2026 · <i class="far fa-clock"></i> 9 min read</p>
+                    <p>George Town's UNESCO heritage streets, famous char kway teow, and the best murals — a complete Penang itinerary.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                </div>
+            </div>
+            <button class="back-btn" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
+        </div>
 
-    <section class="download">
-      <div class="section__container download__container">
-        <div class="download__content">
-          <h2 class="section__header">PREMIUM CAR RENTAL</h2>
-          <div class="download__links">
-            <a href="#">
-              <img src="assets/apple.png" alt="apple" />
-            </a>
-            <a href="#">
-              <img src="assets/google.png" alt="google" />
-            </a>
-          </div>
+        <!-- SINGAPORE PAGE -->
+        <div class="page" id="page-singapore">
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1200&q=80');">
+                <div class="hero-content"><h1>🇸🇬 Singapore</h1><p>The Lion City — Where innovation meets tradition</p></div>
+            </div>
+            <div class="blog-grid">
+                <div class="glass-card" onclick="openBlogPost('singapore-mbs')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Marina Bay Sands" loading="lazy">
+                    <span class="tag">Marina Bay</span><span class="tag">Iconic</span>
+                    <h3>Marina Bay Sands — SkyPark Views</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> June 2026 · <i class="far fa-clock"></i> 7 min read</p>
+                    <p>Experience the world-famous infinity pool (hotel guests only), SkyPark observation deck, and the nightly light show over the bay.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                </div>
+                <div class="glass-card" onclick="openBlogPost('singapore-gardens')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Gardens by the Bay" loading="lazy">
+                    <span class="tag">Nature</span><span class="tag">Futuristic</span>
+                    <h3>Gardens by the Bay — Supertree Grove</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> May 2026 · <i class="far fa-clock"></i> 6 min read</p>
+                    <p>Walk among giant vertical gardens at the Supertree Grove, explore the Cloud Forest dome, and catch the magical Garden Rhapsody.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                </div>
+                <div class="glass-card" onclick="openBlogPost('singapore-chinatown')" style="cursor:pointer;" role="button" tabindex="0">
+                    <img src="https://images.unsplash.com/photo-1605964222113-5c4b3b1b5b1a?w=600&q=80" alt="Chinatown Singapore" loading="lazy">
+                    <span class="tag">Chinatown</span><span class="tag">Heritage</span>
+                    <h3>Chinatown, Little India & Kampong Glam</h3>
+                    <p class="meta"><i class="far fa-calendar-alt"></i> April 2026 · <i class="far fa-clock"></i> 8 min read</p>
+                    <p>Dive into Singapore's multicultural heart — from Buddha Tooth Relic Temple to colourful shophouses and Michelin-starred hawker stalls.</p>
+                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                </div>
+            </div>
+            <button class="back-btn" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
         </div>
-        <div class="download__image">
-          <img src="assets/download.png" alt="download" />
-        </div>
-      </div>
-    </section>
 
-    <section class="news" id="contact">
-      <div class="section__container news__container">
-        <h2 class="section__header">Stay up to date on all the latest news.</h2>
-        <form action="/">
-          <input type="text" placeholder="Your email" />
-          <button class="btn">
-            <i class="ri-send-plane-fill"></i>
-          </button>
-        </form>
-      </div>
-    </section>
+        <!-- THAILAND PAGE -->
+        <div class="page" id="page-thailand">
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80');">
+                <div class="hero-content"><h1>🇹🇭 Thailand</h1><p>Coming Soon — The Land of Smiles awaits</p></div>
+            </div>
+            <div class="glass-card" style="text-align:center; padding:50px 30px;">
+                <i class="fas fa-hard-hat" style="font-size:4rem; color: var(--text-secondary);"></i>
+                <h2 style="margin-top:16px;">Thailand Guide — Under Construction</h2>
+                <p style="color:var(--text-secondary); margin:12px 0 20px;">
+                    We're currently exploring Bangkok, Chiang Mai, Phuket, and the stunning islands of Krabi.<br>
+                    Our detailed guides with photos, tips, and itineraries will be published here soon!
+                </p>
+                <span class="tag">🇹🇭 Bangkok</span>
+                <span class="tag"><i class="fas fa-umbrella-beach"></i> Phuket</span>
+                <span class="tag"><i class="fas fa-landmark"></i> Chiang Mai</span>
+                <span class="tag"><i class="fas fa-water"></i> Krabi</span>
+                <br><br>
+                <button class="back-btn" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            </div>
+        </div>
 
-    <footer>
-      <div class="section__container footer__container">
-        <div class="footer__col">
-          <h4>Resources</h4>
-          <ul class="footer__links">
-            <li><a href="#">Installation Manual</a></li>
-            <li><a href="#">Release Note</a></li>
-            <li><a href="#">Community Help</a></li>
-          </ul>
+        <!-- ABOUT PAGE -->
+        <div class="page" id="page-about">
+            <div class="glass-card blog-post-full" style="text-align:center;">
+                <i class="fas fa-globe-asia" style="font-size:4rem; color: var(--accent);"></i>
+                <h2>About Baai Mart</h2>
+                <p class="content-text" style="text-align:left; margin-top:16px;">
+                    Welcome to <strong>Baai Mart</strong> — a passion project dedicated to uncovering the beauty, culture,
+                    and culinary wonders of Southeast Asia. We focus on <strong>Malaysia</strong> and <strong>Singapore</strong>,
+                    with <strong>Thailand</strong> content currently in development.
+                    <br><br>
+                    Our team of travel enthusiasts has spent years exploring these vibrant destinations, from the bustling
+                    streets of Kuala Lumpur to the serene gardens of Singapore. We believe in authentic storytelling,
+                    practical travel tips, and showcasing both iconic landmarks and hidden gems.
+                    <br><br>
+                    Every article is crafted with firsthand experience, original photography, and a genuine love for the region.
+                    <br><br>
+                    <strong>📍 Based in:</strong> Sri Lanka
+                </p>
+                <button class="back-btn" style="margin-top:20px;" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
+            </div>
         </div>
-        <div class="footer__col">
-          <h4>Company</h4>
-          <ul class="footer__links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Support</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Product</h4>
-          <ul class="footer__links">
-            <li><a href="#">Demo</a></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Features</a></li>
-          </ul>
-        </div>
-        <div class="footer__col">
-          <h4>Follow Us</h4>
-          <ul class="footer__socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-twitter-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-linkedin-fill"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bar">
-        Copyright © 2024 baai ride. All rights reserved.
-      </div>
-    </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
-  </body>
+        <!-- BLOG POST DETAIL -->
+        <div class="page" id="page-blogpost">
+            <button class="back-btn" onclick="closeBlogPost()"><i class="fas fa-arrow-left"></i> Back</button>
+            <div class="glass-card blog-post-full" id="blogPostContent"></div>
+        </div>
+
+        <div class="footer">
+            Baai Mart © 2026 · Built with <i class="fas fa-heart"></i>
+        </div>
+    </div>
+
+    <script>
+        // ── STATE ──
+        let currentPage = 'home';
+        let previousPage = 'home';
+        const themeBtn = document.querySelector('.theme-toggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const navLinks = document.getElementById('navLinks');
+
+        // ── BLOG POST DATA ──
+        const blogPosts = {
+            'malaysia-kl': {
+                title: 'Petronas Twin Towers & KL City Guide',
+                cover: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80',
+                tags: ['Kuala Lumpur', 'City', 'Iconic'],
+                date: 'June 2026',
+                readTime: '8 min read',
+                content: `<p>The <strong>Petronas Twin Towers</strong> are the crown jewel of Kuala Lumpur's skyline. Standing at 451.9 metres (1,483 ft), these 88-storey twin skyscrapers held the title of the world's tallest buildings from 1998 to 2004 and remain the tallest twin towers on the planet.</p><br><h3><i class="far fa-clock"></i> Best Time to Visit</h3><p>Arrive early — tickets for the Skybridge (Level 41) and Observation Deck (Level 86) sell out fast. The first slot is at 9:00 AM. We recommend booking online at least 2-3 days in advance via the official Petronas Towers website.</p><br><h3><i class="fas fa-map-marker-alt"></i> Getting There</h3><p>The towers are directly connected to <strong>KLCC LRT Station</strong> (Kelana Jaya Line). The Suria KLCC shopping mall sits at the base — perfect for cooling off in air-conditioned comfort after your visit.</p><br><h3><i class="fas fa-utensils"></i> Nearby Eats</h3><p>Don't miss <strong>Jalan Alor</strong> (10-minute Grab ride away) for the best street food in KL — char kway teow, satay, grilled stingray, and fresh coconut water. For a splurge, try the rooftop bar at <strong>Heli Lounge Bar</strong> for stunning sunset views of the towers.</p><br><h3><i class="fas fa-lightbulb"></i> Pro Tip</h3><p>The towers are beautifully lit at night. For the best photo spot, head to the <strong>KLCC Park</strong> behind the towers — the reflection pool offers a perfect mirror image of the illuminated towers after dark.</p>`
+            },
+            'malaysia-batu': {
+                title: 'Batu Caves — The 272 Rainbow Steps',
+                cover: 'https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=900&q=80',
+                tags: ['Selangor', 'Culture', 'Temple'],
+                date: 'May 2026',
+                readTime: '6 min read',
+                content: `<p>Just 13 km north of Kuala Lumpur, the <strong>Batu Caves</strong> are one of Malaysia's most iconic and Instagrammable landmarks. This limestone cave complex houses a series of Hindu temples and shrines, with the main Temple Cave accessible via a steep flight of <strong>272 vibrantly painted steps</strong>.</p><br><h3><i class="fas fa-place-of-worship"></i> The Experience</h3><p>The rainbow-coloured staircase was repainted in 2018 and has since become a global sensation. At the base stands the magnificent <strong>42.7-metre golden statue of Lord Murugan</strong> — the tallest in the world. As you climb, cheeky macaque monkeys will accompany you (hold onto your belongings!).</p><br><h3><i class="far fa-calendar-alt"></i> Thaipusam Festival</h3><p>If you're visiting in late January or early February, you might witness <strong>Thaipusam</strong> — a spectacular Hindu festival where devotees carry elaborate kavadis (burdens) up the steps in a dramatic display of faith and endurance.</p><br><h3><i class="fas fa-train"></i> Getting There</h3><p>Take the KTM Komuter train from KL Sentral to <strong>Batu Caves Station</strong> — the journey takes about 30 minutes and the station is right at the entrance. Entry to the main cave is free!</p>`
+            },
+            'malaysia-penang': {
+                title: 'Penang Street Food & Heritage Guide',
+                cover: 'https://images.unsplash.com/photo-1581159931975-1c3e2cf8ab6f?w=900&q=80',
+                tags: ['Penang', 'Food', 'Heritage'],
+                date: 'April 2026',
+                readTime: '9 min read',
+                content: `<p><strong>George Town, Penang</strong> is a UNESCO World Heritage Site and arguably the food capital of Malaysia. Its streets are a living museum of colonial architecture, vibrant street art, and some of the best hawker food you'll ever taste.</p><br><h3><i class="fas fa-utensils"></i> Must-Try Dishes</h3><p><strong>Char Kway Teow</strong> at Siam Road (Michelin-recognised), <strong>Penang Laksa</strong> (spicy-sour fish noodle soup) at Air Itam Market, <strong>Hokkien Mee</strong> (prawn noodle soup), and <strong>Cendol</strong> (shaved ice dessert) at Penang Road Famous Teochew Cendol.</p><br><h3><i class="fas fa-palette"></i> Street Art Trail</h3><p>Lithuanian artist Ernest Zacharevic's murals have become synonymous with George Town. Rent a bicycle and follow the official street art map — don't miss "Kids on a Bicycle" and "Boy on a Chair" on Armenian Street.</p><br><h3><i class="fas fa-hotel"></i> Where to Stay</h3><p>Stay in a restored heritage boutique hotel in the heart of George Town. The <strong>Blue Mansion</strong> (Cheong Fatt Tze Mansion) offers luxurious rooms in a stunning indigo-coloured courtyard building.</p>`
+            },
+            'singapore-mbs': {
+                title: 'Marina Bay Sands — SkyPark Views & Light Shows',
+                cover: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80',
+                tags: ['Marina Bay', 'Iconic', 'Skyline'],
+                date: 'June 2026',
+                readTime: '7 min read',
+                content: `<p><strong>Marina Bay Sands</strong> is Singapore's most recognisable landmark. The three 55-storey towers are crowned by the 340-metre-long <strong>SkyPark</strong> — a gravity-defying platform that hosts the world's most famous infinity pool, an observation deck, and celebrity chef restaurants.</p><br><h3><i class="fas fa-swimming-pool"></i> Infinity Pool</h3><p>The infinity pool is <strong>exclusive to hotel guests</strong>. If you're not staying at the hotel, you can still visit the <strong>Sands SkyPark Observation Deck</strong> (tickets from SGD 26) for panoramic views of the city skyline and the Strait of Singapore.</p><br><h3><i class="fas fa-star"></i> Spectra Light Show</h3><p>Every evening at 8:00 PM and 9:00 PM (with an additional 10:00 PM show on weekends), the <strong>Spectra</strong> outdoor light and water show illuminates the bay. Best viewed from the Event Plaza or from across the bay at the Merlion Park.</p><br><h3><i class="fas fa-shopping-bag"></i> The Shoppes</h3><p>The connected mall features a canal with sampan boat rides, a massive casino, and luxury brands. Even window-shopping here is an experience in itself.</p>`
+            },
+            'singapore-gardens': {
+                title: 'Gardens by the Bay — Supertree Grove & Cloud Forest',
+                cover: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80',
+                tags: ['Nature', 'Futuristic', 'Gardens'],
+                date: 'May 2026',
+                readTime: '6 min read',
+                content: `<p><strong>Gardens by the Bay</strong> is a SGD 1 billion nature park spanning 101 hectares in central Singapore. Its <strong>Supertree Grove</strong> features 18 vertical gardens reaching up to 50 metres tall, connected by the OCBC Skyway — a 128-metre aerial walkway.</p><br><h3><i class="fas fa-leaf"></i> Cloud Forest</h3><p>The cooled conservatory houses a 35-metre indoor waterfall (the world's tallest indoor waterfall) and a lush mountain covered in orchids, ferns, and bromeliads. The temperature is kept at a refreshing 23-25°C — a welcome escape from Singapore's heat.</p><br><h3><i class="fas fa-star"></i> Garden Rhapsody</h3><p>Nightly at 7:45 PM and 8:45 PM, the Supertrees come alive with a free <strong>Garden Rhapsody</strong> light and music show. Lie down on the grass and watch the trees dance in sync with the soundtrack. Pure magic.</p><br><h3><i class="fas fa-ticket-alt"></i> Tickets</h3><p>The outdoor Supertree Grove is free. The OCBC Skyway costs SGD 14, and the Cloud Forest + Flower Dome combo ticket is SGD 32 for adults.</p>`
+            },
+            'singapore-chinatown': {
+                title: 'Chinatown, Little India & Kampong Glam — Singapore\'s Cultural Heart',
+                cover: 'https://images.unsplash.com/photo-1605964222113-5c4b3b1b5b1a?w=900&q=80',
+                tags: ['Heritage', 'Culture', 'Hawker Food'],
+                date: 'April 2026',
+                readTime: '8 min read',
+                content: `<p>Singapore's multicultural identity shines brightest in its three heritage districts: <strong>Chinatown</strong>, <strong>Little India</strong>, and <strong>Kampong Glam</strong>. Each neighbourhood offers a distinct sensory experience — from the aroma of incense in Chinese temples to the vibrant colours of Indian silk shops and the aromatic spices of Malay cuisine.</p><br><h3><i class="fas fa-store"></i> Chinatown</h3><p>Visit the <strong>Buddha Tooth Relic Temple</strong> (free entry), stroll through the bustling Chinatown Complex hawker centre for Michelin-starred <strong>Liao Fan Hawker Chan</strong> soya sauce chicken, and explore the charming shophouses along Smith Street.</p><br><h3>🇮🇳 Little India</h3><p>The <strong>Tekka Centre</strong> is a must for authentic Indian food — try the biryani and teh tarik. The colourful <strong>House of Tan Teng Niah</strong> is the most photographed building in the district. Visit during Deepavali for stunning light displays.</p><br><h3><i class="fas fa-mosque"></i> Kampong Glam</h3><p>Dominated by the golden-domed <strong>Sultan Mosque</strong>, this Malay-Arab quarter is filled with hip cafes, vintage boutiques along Haji Lane, and some of the best Middle Eastern food in Singapore.</p>`
+            }
+        };
+
+        // ── 3D CURSOR FOLLOW EFFECT ──
+        function init3DCards() {
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;   // fixed from /1
+            const centerY = rect.height / 2;  // fixed from /1
+            const rotateX = (y - centerY) / (rect.height / 2) * -3; // reduced intensity
+            const rotateY = (x - centerX) / (rect.width / 2) * 3;   // reduced intensity
+            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
+        });
+    });
+}
+
+        // ── MENU TOGGLE ──
+        function toggleMenu() {
+            navLinks.classList.toggle('show');
+            if (navLinks.classList.contains('show')) {
+                hamburgerIcon.className = 'fas fa-times';
+                hamburgerBtn.classList.add('menu-open');
+            } else {
+                hamburgerIcon.className = 'fas fa-bars';
+                hamburgerBtn.classList.remove('menu-open');
+            }
+        }
+
+        function closeMobileMenu() {
+            if (navLinks.classList.contains('show')) {
+                navLinks.classList.remove('show');
+                hamburgerIcon.className = 'fas fa-bars';
+                hamburgerBtn.classList.remove('menu-open');
+            }
+        }
+
+        // ── NAVIGATION ──
+        function navigateTo(pageName) {
+            closeMobileMenu();
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + pageName);
+            if (target) {
+                target.classList.add('active');
+                previousPage = currentPage;
+                currentPage = pageName;
+                document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+                const navBtn = document.getElementById('nav-' + pageName);
+                if (navBtn) navBtn.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (pageName !== 'blogpost') {
+                    document.getElementById('page-blogpost').classList.remove('active');
+                }
+                setTimeout(init3DCards, 100);
+            }
+        }
+
+        function openBlogPost(postId) {
+            closeMobileMenu();
+            const post = blogPosts[postId];
+            if (!post) return;
+            previousPage = currentPage;
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const blogPage = document.getElementById('page-blogpost');
+            blogPage.classList.add('active');
+            document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+
+            const contentDiv = document.getElementById('blogPostContent');
+            contentDiv.innerHTML = `
+                <img class="cover" src="${post.cover}" alt="${post.title}" loading="lazy">
+                <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;">
+                    ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                </div>
+                <h2>${post.title}</h2>
+                <p class="meta"><i class="far fa-calendar-alt"></i> ${post.date} · <i class="far fa-clock"></i> ${post.readTime}</p>
+                <div class="content-text" style="margin-top:16px;">${post.content}</div>
+                <button class="back-btn" style="margin-top:24px;" onclick="closeBlogPost()"><i class="fas fa-arrow-left"></i> Back</button>
+            `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(init3DCards, 100);
+        }
+
+        function closeBlogPost() {
+            document.getElementById('page-blogpost').classList.remove('active');
+            navigateTo(previousPage);
+        }
+
+        // ── THEME TOGGLE ──
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            if (next === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+            localStorage.setItem('wanderlust-theme', next);
+        }
+
+        // ── INIT ──
+        function init() {
+            const savedTheme = localStorage.getItem('wanderlust-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'dark') {
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                themeIcon.className = 'fas fa-moon';
+            }
+            navigateTo('home');
+            init3DCards();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && document.getElementById('page-blogpost').classList.contains('active')) {
+                closeBlogPost();
+            }
+        });
+
+        init();
+    </script>
+</body>
 </html>
