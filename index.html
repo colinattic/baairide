@@ -1,86 +1,167 @@
+
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baai Mart</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baai Mart — Southeast Asia Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <style>
         :root {
-            --bg: #0f172a;
-            --bg-secondary: #1e293b;
-            --text: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --card-bg: rgba(30, 41, 59, 0.5);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --glass-highlight: rgba(255, 255, 255, 0.04);
-            --nav-bg: rgba(15, 23, 42, 0.65);
-            --nav-blur: blur(25px);
-            --btn-bg: rgba(30, 41, 59, 0.55);
-            --hover-bg: rgba(45, 55, 75, 0.7);
+            --bg: #0b1120;
+            --bg-secondary: #141e33;
+            --bg-card: rgba(20, 30, 51, 0.55);
+            --bg-card-hover: rgba(30, 45, 70, 0.7);
+            --text: #f0f4ff;
+            --text-secondary: #b4c9e6;
+            --text-muted: #7a8aa8;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(168, 85, 247, 0.45);
+            --shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+            --shadow-hover: 0 24px 64px rgba(0, 0, 0, 0.6);
+            --glass: rgba(255, 255, 255, 0.03);
             --accent: #a855f7;
             --accent-glow: #c084fc;
-            --tag-bg: rgba(168, 85, 247, 0.2);
+            --accent-gradient: linear-gradient(135deg, #a855f7, #6366f1);
+            --accent-gradient-soft: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(99, 102, 241, 0.10));
+            --tag-bg: rgba(168, 85, 247, 0.18);
             --tag-text: #c084fc;
-            --hero-overlay: rgba(0, 0, 0, 0.45);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-            --shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.55);
+            --nav-bg: rgba(11, 17, 32, 0.72);
+            --nav-blur: blur(28px);
+            --radius: 28px;
+            --radius-sm: 16px;
+            --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            --font: 'Inter', system-ui, -apple-system, sans-serif;
+            --toggle-track: #3a3f55;
+            --toggle-knob: #e8e8f0;
+            --toggle-glow: rgba(168, 85, 247, 0.3);
+            --shimmer: rgba(255, 255, 255, 0.03);
         }
 
         [data-theme="light"] {
-            --bg: #f8fafc;
-            --bg-secondary: #e2e8f0;
-            --text: #0f172a;
-            --text-secondary: #334155;
-            --card-bg: rgba(255, 255, 255, 0.55);
-            --card-border: rgba(255, 255, 255, 0.8);
-            --glass-highlight: rgba(255, 255, 255, 0.7);
-            --nav-bg: rgba(255, 255, 255, 0.55);
-            --btn-bg: rgba(255, 255, 255, 0.6);
-            --hover-bg: rgba(255, 255, 255, 0.8);
+            --bg: #f4f7fc;
+            --bg-secondary: #e4ecf5;
+            --bg-card: rgba(255, 255, 255, 0.6);
+            --bg-card-hover: rgba(255, 255, 255, 0.85);
+            --text: #0b1a2e;
+            --text-secondary: #2c3f5c;
+            --text-muted: #5a6f8a;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(124, 58, 237, 0.35);
+            --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 24px 56px rgba(0, 0, 0, 0.10);
+            --glass: rgba(255, 255, 255, 0.5);
+            --nav-bg: rgba(244, 247, 252, 0.72);
+            --tag-bg: rgba(124, 58, 237, 0.12);
+            --tag-text: #7c3aed;
             --accent: #7c3aed;
             --accent-glow: #8b5cf6;
-            --tag-bg: rgba(124, 58, 237, 0.15);
-            --tag-text: #7c3aed;
-            --hero-overlay: rgba(0, 0, 0, 0.25);
-            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+            --accent-gradient: linear-gradient(135deg, #7c3aed, #4f46e5);
+            --accent-gradient-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.10), rgba(79, 70, 229, 0.06));
+            --toggle-track: #d0d5e0;
+            --toggle-knob: #ffffff;
+            --toggle-glow: rgba(124, 58, 237, 0.35);
+            --shimmer: rgba(0, 0, 0, 0.02);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
 
         body {
-            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: var(--font);
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
-            transition: background 0.4s ease, color 0.4s ease;
+            transition: background 0.5s ease, color 0.4s ease;
             background-image:
-                radial-gradient(ellipse at 10% 20%, rgba(168, 85, 247, 0.07) 0%, transparent 55%),
-                radial-gradient(ellipse at 85% 60%, rgba(14, 165, 233, 0.06) 0%, transparent 55%),
-                radial-gradient(ellipse at 50% 85%, rgba(236, 72, 153, 0.05) 0%, transparent 55%);
+                radial-gradient(ellipse at 12% 18%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 88% 65%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at 45% 90%, rgba(236, 72, 153, 0.04) 0%, transparent 45%);
             background-attachment: fixed;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            cursor: default;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* ── FLOATING NAVBAR ── */
+        ::selection {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* ─── MOUSE GLOW ─── */
+        #mouse-glow {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.09) 0%, rgba(168, 85, 247, 0.03) 40%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            will-change: transform, left, top;
+            filter: blur(3px);
+        }
+        body:hover #mouse-glow {
+            opacity: 1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 10px;
+        }
+
+        /* ─── NAVBAR ─── */
         .navbar {
             position: sticky;
-            top: 20px;
+            top: 16px;
             z-index: 1000;
-            margin: 20px auto;
-            max-width: 1150px;
+            max-width: 1180px;
+            margin: 0 auto 16px;
+            padding: 10px 24px;
             background: var(--nav-bg);
             backdrop-filter: var(--nav-blur);
             -webkit-backdrop-filter: var(--nav-blur);
-            border: 1px solid var(--card-border);
-            border-radius: 50px;
-            padding: 12px 28px;
+            border: 1px solid var(--border);
+            border-radius: 60px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
             box-shadow: var(--shadow);
-            transition: all 0.4s ease;
-            gap: 12px;
+            transition: all var(--transition);
+            gap: 10px;
+            animation: navSlideDown 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes navSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .navbar-header {
@@ -88,22 +169,58 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
+            flex: 1 1 auto;
         }
 
         .nav-logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            background: var(--accent-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             cursor: pointer;
-            letter-spacing: -0.5px;
-            transition: transform 0.3s;
-            min-width: 48px;
+            letter-spacing: -0.3px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            position: relative;
         }
-
-        .nav-logo:hover { transform: scale(1.05); }
+        .nav-logo i {
+            -webkit-text-fill-color: initial;
+            color: var(--accent);
+            font-size: 1.2rem;
+            animation: logoSpin 4s ease-in-out infinite;
+        }
+        @keyframes logoSpin {
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(8deg);
+            }
+            75% {
+                transform: rotate(-5deg);
+            }
+        }
+        .nav-logo:hover {
+            transform: scale(1.04);
+        }
+        .nav-logo::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: width 0.4s ease;
+        }
+        .nav-logo:hover::after {
+            width: 100%;
+        }
 
         .nav-controls {
             display: flex;
@@ -113,239 +230,551 @@
 
         .hamburger {
             display: none;
-            width: 44px;
-            height: 44px;
-            background: var(--btn-bg);
-            border: 1px solid var(--card-border);
+            width: 42px;
+            height: 42px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 12px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text);
             backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
-            transition: all 0.3s;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        .hamburger i { transition: transform 0.3s ease; }
-        .hamburger.menu-open i { transform: rotate(90deg); }
+        .hamburger:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent);
+            transform: scale(1.04);
+        }
+        .hamburger:active {
+            transform: scale(0.94);
+        }
+        .hamburger i {
+            transition: transform 0.35s ease;
+        }
+        .hamburger.menu-open i {
+            transform: rotate(90deg);
+        }
 
-        .theme-toggle {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px solid var(--card-border);
-            background: var(--btn-bg);
+        /* ─── THEME TOGGLE SWITCH ─── */
+        .theme-toggle-wrap {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .theme-toggle-switch {
+            position: relative;
+            width: 56px;
+            height: 30px;
+            background: var(--toggle-track);
+            border-radius: 30px;
+            border: 1px solid var(--border);
             cursor: pointer;
-            font-size: 1.1rem;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: visible;
+            flex-shrink: 0;
+        }
+        .theme-toggle-switch:hover {
+            box-shadow: 0 0 20px var(--toggle-glow), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .theme-toggle-knob {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            width: 24px;
+            height: 24px;
+            background: var(--toggle-knob);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
             display: flex;
             align-items: center;
             justify-content: center;
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
-            color: var(--text);
+            font-size: 0.7rem;
+            z-index: 2;
         }
-        .theme-toggle:hover {
-            transform: rotate(20deg) scale(1.1);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        .theme-toggle-switch .toggle-icon-sun,
+        .theme-toggle-switch .toggle-icon-moon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.65rem;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .theme-toggle-switch .toggle-icon-sun {
+            left: 7px;
+            opacity: 0;
+            color: #f59e0b;
+        }
+        .theme-toggle-switch .toggle-icon-moon {
+            right: 7px;
+            opacity: 1;
+            color: #c4b5fd;
+        }
+        [data-theme="light"] .theme-toggle-knob {
+            left: 27px;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(124, 58, 237, 0.25);
+        }
+        [data-theme="light"] .theme-toggle-switch .toggle-icon-sun {
+            opacity: 1;
+        }
+        [data-theme="light"] .theme-toggle-switch .toggle-icon-moon {
+            opacity: 0;
+        }
+        [data-theme="light"] .theme-toggle-switch {
+            background: #cbd5e1;
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+        .theme-toggle-switch:active .theme-toggle-knob {
+            transform: scale(0.9);
         }
 
         .nav-links {
             display: flex;
-            gap: 6px;
+            gap: 4px;
             flex-wrap: wrap;
             align-items: center;
-            opacity: 1;
-            max-height: none;
-            overflow: visible;
         }
-
         .nav-links button {
-            background: var(--btn-bg);
-            border: 1px solid var(--card-border);
-            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid transparent;
+            padding: 8px 18px;
             border-radius: 40px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text);
-            backdrop-filter: blur(8px);
-            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all var(--transition);
             white-space: nowrap;
-            min-height: 42px;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-family: var(--font);
+            position: relative;
+            overflow: hidden;
         }
-        .nav-links button i { margin-right: 5px; }
-
-        .nav-links button:hover,
-        .nav-links button.active {
-            background: var(--hover-bg);
-            border-color: var(--accent);
-            color: var(--accent-glow);
-            box-shadow: 0 4px 16px rgba(168, 85, 247, 0.25);
+        .nav-links button i {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+        .nav-links button:hover {
+            background: var(--bg-card);
+            border-color: var(--border);
+            color: var(--text);
             transform: translateY(-1px);
         }
-
+        .nav-links button:hover i {
+            transform: scale(1.15);
+        }
+        .nav-links button.active {
+            background: var(--accent-gradient-soft);
+            border-color: var(--accent);
+            color: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.12);
+            animation: activePulse 3s ease-in-out infinite;
+        }
+        @keyframes activePulse {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(168, 85, 247, 0.12);
+            }
+            50% {
+                box-shadow: 0 0 32px rgba(168, 85, 247, 0.22);
+            }
+        }
+        .nav-links button:active {
+            transform: scale(0.94);
+        }
         .nav-links button.pending {
-            opacity: 0.55;
+            opacity: 0.5;
             cursor: not-allowed;
-            border-style: dashed;
             position: relative;
         }
         .nav-links button.pending::after {
             content: 'soon';
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             background: #ef4444;
             color: #fff;
-            padding: 2px 7px;
+            padding: 1px 8px;
             border-radius: 10px;
             position: absolute;
-            top: -8px;
-            right: -6px;
+            top: -6px;
+            right: -4px;
             font-weight: 700;
+            letter-spacing: 0.3px;
+            animation: badgeBounce 2s ease-in-out infinite;
+        }
+        @keyframes badgeBounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
         }
 
-        /* ── MAIN CONTENT ── */
+        .nav-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: 4px;
+        }
+        .nav-search input {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 40px;
+            padding: 6px 14px 6px 36px;
+            font-size: 0.8rem;
+            color: var(--text);
+            font-family: var(--font);
+            outline: none;
+            transition: all var(--transition);
+            width: 140px;
+            min-height: 36px;
+        }
+        .nav-search input::placeholder {
+            color: var(--text-muted);
+        }
+        .nav-search input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.12);
+            width: 200px;
+        }
+        .nav-search i {
+            position: absolute;
+            left: 12px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+        .nav-search input:focus+i,
+        .nav-search input:focus~i {
+            color: var(--accent-glow);
+        }
+
+        /* ─── MAIN ─── */
         .main-container {
-            max-width: 1150px;
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 10px 24px 50px;
+            padding: 0 24px 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .page {
             display: none;
-            animation: fadeSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         }
-        .page.active { display: block; }
-
+        .page.active {
+            display: block;
+        }
         @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(28px) scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
-        /* ── GLASS CARDS (Modern) ── */
+        /* ─── GLASS CARD ─── */
         .glass-card {
-            background: var(--card-bg);
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--card-border);
-            border-radius: 28px;
-            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px 26px 30px;
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease-out, box-shadow 0.4s ease, border-color 0.3s;
+            transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
             position: relative;
             overflow: hidden;
             transform-style: preserve-3d;
             perspective: 800px;
+            cursor: default;
+            --x: 50%;
+            --y: 50%;
+            animation: cardEntry 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
         }
-
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.94);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
         .glass-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--glass-highlight) 0%, transparent 50%);
+            inset: 0;
+            border-radius: var(--radius);
+            background: radial-gradient(circle at var(--x) var(--y), rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.45s ease;
             pointer-events: none;
-            border-radius: 28px;
+            z-index: 1;
+        }
+        .glass-card:hover::before {
+            opacity: 1;
         }
         .glass-card::after {
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: 28px;
+            border-radius: var(--radius);
             padding: 1px;
-            background: linear-gradient(120deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03) 50%, rgba(255,255,255,0.08));
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.01) 50%, rgba(255, 255, 255, 0.04));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
+            z-index: 2;
+        }
+        /* animated border glow on hover */
+        .glass-card .card-border-glow {
+            position: absolute;
+            inset: -2px;
+            border-radius: var(--radius);
+            padding: 2px;
+            background: conic-gradient(from var(--border-angle, 0deg), transparent, var(--accent), transparent, var(--accent-glow),
+                    transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 0;
+            animation: borderRotate 4s linear infinite;
+            animation-play-state: paused;
+        }
+        .glass-card:hover .card-border-glow {
+            opacity: 1;
+            animation-play-state: running;
+        }
+        @keyframes borderRotate {
+            from {
+                --border-angle: 0deg;
+            }
+            to {
+                --border-angle: 360deg;
+            }
+        }
+        @property --border-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
         }
 
         .glass-card:hover {
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: var(--shadow-hover), 0 0 40px rgba(168, 85, 247, 0.08);
+            border-color: var(--border-hover);
+            transform: translateY(-6px) scale(1.01);
+            background: var(--bg-card-hover);
         }
-
+        .glass-card:active {
+            transform: scale(0.97);
+            transition-duration: 0.08s;
+        }
         .glass-card img {
             width: 100%;
-            height: 240px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 18px;
-            margin-bottom: 18px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
             display: block;
-            transform: translateZ(15px);
-            transition: transform 0.3s;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+            transform: translateZ(12px);
+            position: relative;
+            z-index: 3;
         }
-        .glass-card:hover img { transform: translateZ(25px) scale(1.02); }
-
+        .glass-card:hover img {
+            transform: translateZ(24px) scale(1.04);
+            box-shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
+        }
         .glass-card h3,
         .glass-card .meta,
         .glass-card p,
         .glass-card .tag,
-        .glass-card .read-more,
-        .glass-card button {
-            transform: translateZ(20px);
+        .glass-card .read-more {
+            transform: translateZ(16px);
+            position: relative;
+            z-index: 3;
+        }
+        .glass-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 6px 0 4px;
+            line-height: 1.3;
+            transition: color 0.3s;
+        }
+        .glass-card:hover h3 {
+            color: var(--accent-glow);
+        }
+        .glass-card .meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin: 4px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .glass-card p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .tag {
             display: inline-block;
             background: var(--tag-bg);
             color: var(--tag-text);
-            padding: 5px 14px;
+            padding: 3px 14px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            margin: 3px 4px;
+            margin: 2px 4px 2px 0;
             backdrop-filter: blur(4px);
+            letter-spacing: 0.3px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        .glass-card:hover .tag {
+            border-color: var(--accent);
+            box-shadow: 0 0 16px rgba(168, 85, 247, 0.12);
         }
 
         .read-more {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             margin-top: 14px;
-            padding: 10px 24px;
-            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            padding: 10px 26px;
+            background: var(--accent-gradient);
             color: #fff;
             border: none;
-            border-radius: 30px;
+            border-radius: 40px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s;
+            font-size: 0.85rem;
+            transition: all var(--transition);
             text-decoration: none;
-            min-height: 44px;
-            transform: translateZ(20px);
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+            min-height: 42px;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+            font-family: var(--font);
+            transform: translateZ(16px);
+            position: relative;
+            z-index: 3;
+            overflow: hidden;
+            animation: btnGlow 3s ease-in-out infinite;
+        }
+        @keyframes btnGlow {
+            0%,
+            100% {
+                box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+            }
+            50% {
+                box-shadow: 0 8px 36px rgba(124, 58, 237, 0.45);
+            }
         }
         .read-more:hover {
-            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
-            transform: translateY(-2px) translateZ(20px);
-            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            box-shadow: 0 8px 40px rgba(124, 58, 237, 0.5);
+            transform: translateY(-3px) translateZ(16px) scale(1.03);
+        }
+        .read-more:active {
+            transform: scale(0.94) translateZ(16px);
+            transition-duration: 0.08s;
+        }
+        .read-more i {
+            transition: transform 0.35s ease;
+        }
+        .read-more:hover i {
+            transform: translateX(4px);
+        }
+        .read-more.disabled {
+            background: var(--bg-secondary);
+            cursor: not-allowed;
+            box-shadow: none;
+            opacity: 0.6;
+            animation: none;
+        }
+        .read-more.disabled:hover {
+            transform: none;
+            box-shadow: none;
         }
 
-        /* ── HERO ── */
+        /* ─── RIPPLE ─── */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(0);
+            animation: rippleAnim 0.6s ease-out forwards;
+            pointer-events: none;
+            z-index: 10;
+        }
+        @keyframes rippleAnim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* ─── HERO ─── */
         .hero {
-            border-radius: 32px;
+            border-radius: var(--radius);
             overflow: hidden;
             position: relative;
-            height: clamp(240px, 34vw, 380px);
+            height: clamp(220px, 32vw, 360px);
             margin-bottom: 36px;
             display: flex;
             align-items: flex-end;
-            padding: 40px;
+            padding: 40px 44px;
             background-size: cover;
             background-position: center;
             box-shadow: var(--shadow);
+            transition: box-shadow 0.5s;
+            animation: heroReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .hero:hover {
+            box-shadow: var(--shadow-hover), 0 0 60px rgba(168, 85, 247, 0.06);
         }
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: var(--hero-overlay);
-            backdrop-filter: blur(1px);
-            border-radius: 32px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.15) 60%, transparent 100%);
+            border-radius: var(--radius);
         }
         .hero-content {
             position: relative;
@@ -356,419 +785,1125 @@
         .hero-content h1 {
             font-size: clamp(1.8rem, 5vw, 2.8rem);
             font-weight: 800;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+            text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+            animation: heroTextSlide 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
         }
         .hero-content p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            margin-top: 8px;
+            font-size: 1.05rem;
+            opacity: 0.92;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+            margin-top: 6px;
+            animation: heroTextSlide 0.7s 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        @keyframes heroTextSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+            animation: badgeFloat 3s ease-in-out infinite;
+        }
+        @keyframes badgeFloat {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
         }
 
-        /* ── GRID ── */
+        /* ─── GRID ─── */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 28px;
-            margin-top: 20px;
+            margin-top: 16px;
         }
 
-        /* ── BLOG POST DETAIL ── */
+        /* ─── SECTION HEADER ─── */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 44px 0 16px;
+            position: relative;
+        }
+        .section-header i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            transition: transform 0.4s;
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+        @keyframes iconPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.12);
+            }
+        }
+        .section-header:hover i {
+            transform: rotate(10deg) scale(1.08);
+            animation: none;
+        }
+        .section-header h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            position: relative;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+        .section-header:hover h2::after {
+            width: 100%;
+        }
+        .section-header .count {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-left: 6px;
+        }
+
+        /* ─── BLOG POST FULL ─── */
         .blog-post-full {
-            max-width: 850px;
+            max-width: 820px;
             margin: 0 auto;
-            border-radius: 32px;
+            border-radius: var(--radius);
+            padding: 32px 36px;
         }
         .blog-post-full img.cover {
             width: 100%;
-            border-radius: 24px;
-            max-height: 450px;
+            border-radius: var(--radius-sm);
+            max-height: 420px;
             object-fit: cover;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            transition: transform 0.6s;
+        }
+        .blog-post-full img.cover:hover {
+            transform: scale(1.01);
         }
         .blog-post-full h2 {
             font-size: 2rem;
-            margin-bottom: 12px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
         }
         .blog-post-full .content-text {
             line-height: 1.9;
             color: var(--text-secondary);
             font-size: 1.05rem;
         }
+        .blog-post-full .content-text h3 {
+            color: var(--text);
+            margin-top: 28px;
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .blog-post-full .content-text h3 i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+        .blog-post-full .content-text ul {
+            margin: 10px 0 10px 24px;
+        }
+        .blog-post-full .content-text ul li {
+            margin-bottom: 6px;
+        }
+        .blog-post-full .content-text p {
+            margin-bottom: 12px;
+        }
 
         .back-btn {
-            background: var(--btn-bg);
-            border: 1px solid var(--card-border);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             padding: 10px 24px;
-            border-radius: 30px;
+            border-radius: 40px;
             cursor: pointer;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             color: var(--text);
             backdrop-filter: blur(8px);
-            transition: all 0.3s;
+            transition: all var(--transition);
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
         }
         .back-btn:hover {
-            background: var(--hover-bg);
+            background: var(--bg-card-hover);
             border-color: var(--accent);
             color: var(--accent-glow);
+            transform: translateX(-4px);
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.12);
+        }
+        .back-btn:active {
+            transform: scale(0.94) translateX(-4px);
+        }
+        .back-btn i {
+            transition: transform 0.3s ease;
+        }
+        .back-btn:hover i {
+            transform: translateX(-3px);
         }
 
-        /* ── SECTION HEADER ── */
-        .section-header {
+        .share-section {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 20px;
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
         }
-        .section-header i {
-            font-size: 2rem;
-            color: var(--accent);
+        .share-section span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
         }
-        .section-header h2 {
-            font-size: 1.9rem;
-            font-weight: 700;
+        .share-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .share-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent-glow);
+            transform: translateY(-3px) scale(1.06);
+            box-shadow: 0 8px 24px rgba(168, 85, 247, 0.15);
+        }
+        .share-btn:active {
+            transform: scale(0.9);
         }
 
-        /* ── FOOTER ── */
+        /* ─── BACK TO TOP ─── */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 28px rgba(124, 58, 237, 0.35);
+            transition: all var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 999;
+            overflow: hidden;
+            animation: btnGlow 3s ease-in-out infinite;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 12px 48px rgba(124, 58, 237, 0.5);
+        }
+        .back-to-top:active {
+            transform: scale(0.92);
+        }
+
+        /* ─── NEWSLETTER ─── */
+        .newsletter-wrap {
+            margin-top: 48px;
+            padding: 36px 40px;
+            border-radius: var(--radius);
+            background: var(--accent-gradient-soft);
+            border: 1px solid var(--border-hover);
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter-wrap::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(168, 85, 247, 0.05), transparent, rgba(99, 102, 241, 0.05),
+                    transparent);
+            animation: newsletterSpin 20s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        @keyframes newsletterSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .newsletter-wrap>* {
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter-wrap:hover {
+            box-shadow: 0 8px 40px rgba(168, 85, 247, 0.06);
+            border-color: var(--accent);
+        }
+        .newsletter-wrap h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .newsletter-wrap p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 12px;
+            max-width: 440px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newsletter-form input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 20px;
+            border-radius: 40px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 0.9rem;
+            outline: none;
+            transition: all var(--transition);
+        }
+        .newsletter-form input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.10);
+        }
+        .newsletter-form input::placeholder {
+            color: var(--text-muted);
+        }
+        .newsletter-form button {
+            padding: 12px 32px;
+            border-radius: 40px;
+            border: none;
+            background: var(--accent-gradient);
+            color: #fff;
+            font-weight: 600;
+            font-family: var(--font);
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.2);
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.35);
+        }
+        .newsletter-form button:active {
+            transform: scale(0.94);
+        }
+        .newsletter-message {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            min-height: 24px;
+            transition: all 0.3s;
+        }
+        .newsletter-message.success {
+            color: #4ade80;
+        }
+        .newsletter-message.error {
+            color: #f87171;
+        }
+
+        /* ─── FOOTER ─── */
         .footer {
             text-align: center;
-            padding: 24px;
-            margin-top: 50px;
-            background: var(--card-bg);
+            padding: 28px 20px;
+            margin-top: 56px;
+            background: var(--bg-card);
             backdrop-filter: blur(20px);
-            border-radius: 24px;
-            border: 1px solid var(--card-border);
-            color: var(--text-secondary);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
             font-size: 0.85rem;
             box-shadow: var(--shadow);
+            transition: all 0.4s;
         }
-        .footer i { color: var(--accent); margin: 0 4px; }
+        .footer:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+        }
+        .footer i {
+            color: var(--accent);
+            margin: 0 4px;
+            animation: heartBeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.15);
+            }
+        }
+        .footer a {
+            color: var(--accent-glow);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+            color: var(--accent);
+        }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 820px) {
             .navbar {
                 flex-direction: column;
                 border-radius: 28px;
-                padding: 14px 20px;
-                margin: 10px;
+                padding: 12px 18px;
+                margin: 10px 12px 0;
                 top: 10px;
             }
-            .navbar-header { width: 100%; }
-            .hamburger { display: flex; }
+            .navbar-header {
+                width: 100%;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .theme-toggle-switch {
+                width: 48px;
+                height: 26px;
+            }
+            .theme-toggle-knob {
+                width: 20px;
+                height: 20px;
+                top: 2px;
+                left: 2px;
+            }
+            [data-theme="light"] .theme-toggle-knob {
+                left: 24px;
+            }
             .nav-links {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-                gap: 10px;
+                gap: 6px;
                 max-height: 0;
                 opacity: 0;
                 overflow: hidden;
                 pointer-events: none;
-                transition: max-height 0.5s ease, opacity 0.4s ease, padding 0.3s;
+                transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.3s;
+                padding-top: 0;
             }
             .nav-links.show {
                 max-height: 600px;
                 opacity: 1;
                 pointer-events: auto;
                 overflow: visible;
-                padding-top: 10px;
+                padding-top: 12px;
             }
-            .nav-links button { width: 100%; text-align: center; justify-content: center; }
-            .hero { height: 220px; padding: 24px; border-radius: 24px; }
-            .hero-content h1 { font-size: 1.6rem; }
-            .blog-grid { grid-template-columns: 1fr; gap: 20px; }
-            .glass-card { padding: 22px; }
-            .glass-card img { height: 200px; }
-            .main-container { padding: 8px 16px 40px; }
+            .nav-links button {
+                width: 100%;
+                justify-content: center;
+                padding: 10px;
+            }
+            .nav-search {
+                width: 100%;
+                margin: 4px 0 0;
+            }
+            .nav-search input {
+                width: 100%;
+                padding: 10px 14px 10px 38px;
+                font-size: 0.9rem;
+            }
+            .nav-search input:focus {
+                width: 100%;
+            }
+            .hero {
+                height: 200px;
+                padding: 24px 28px;
+                border-radius: 24px;
+            }
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .glass-card {
+                padding: 20px;
+                border-radius: 22px;
+            }
+            .glass-card img {
+                height: 180px;
+            }
+            .main-container {
+                padding: 0 14px 40px;
+            }
+            .blog-post-full {
+                padding: 22px 18px;
+            }
+            .blog-post-full h2 {
+                font-size: 1.5rem;
+            }
+            .newsletter-wrap {
+                padding: 28px 20px;
+            }
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+            #mouse-glow {
+                width: 350px;
+                height: 350px;
+            }
         }
 
         @media (max-width: 480px) {
-            .navbar { padding: 10px 16px; border-radius: 20px; margin: 6px; }
-            .nav-logo { font-size: 1.3rem; }
-            .nav-links button { padding: 10px 16px; font-size: 0.8rem; }
-            .hero { height: 180px; padding: 16px; border-radius: 20px; }
-            .hero-content h1 { font-size: 1.4rem; }
-            .glass-card { padding: 18px; border-radius: 22px; }
-            .glass-card img { height: 170px; border-radius: 14px; }
-            .read-more, .back-btn { padding: 10px 18px; font-size: 0.85rem; }
-            .blog-post-full img.cover { max-height: 280px; }
-            .section-header h2 { font-size: 1.5rem; }
+            .navbar {
+                padding: 10px 14px;
+                border-radius: 20px;
+                margin: 6px 8px 0;
+            }
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+            .hero {
+                height: 160px;
+                padding: 16px 18px;
+                border-radius: 18px;
+            }
+            .hero-content h1 {
+                font-size: 1.2rem;
+            }
+            .hero-content p {
+                font-size: 0.85rem;
+            }
+            .glass-card {
+                padding: 16px;
+                border-radius: 18px;
+            }
+            .glass-card img {
+                height: 150px;
+                border-radius: 12px;
+            }
+            .glass-card h3 {
+                font-size: 1rem;
+            }
+            .read-more {
+                padding: 8px 20px;
+                font-size: 0.8rem;
+                min-height: 36px;
+            }
+            .section-header h2 {
+                font-size: 1.3rem;
+            }
+            .section-header i {
+                font-size: 1.4rem;
+            }
+            .newsletter-form button {
+                width: 100%;
+            }
+            .footer {
+                font-size: 0.75rem;
+                padding: 20px 14px;
+            }
+            #mouse-glow {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+        .mt-8 {
+            margin-top: 8px;
+        }
+        .mt-16 {
+            margin-top: 16px;
+        }
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .search-no-results {
+            text-align: center;
+            padding: 48px 20px;
+            color: var(--text-muted);
+            animation: fadeSlideIn 0.5s ease;
+        }
+        .search-no-results i {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            opacity: 0.5;
+        }
+        .search-no-results h3 {
+            color: var(--text);
+            margin-bottom: 4px;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav class="navbar">
+    <!-- ─── GLOBAL MOUSE GLOW ─── -->
+    <div id="mouse-glow"></div>
+
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="navbar-header">
-            <span class="nav-logo" onclick="navigateTo('home')" title="Baai Mart Home">Baai Mart</span>
+            <span class="nav-logo" onclick="navigateTo('home')" title="Baai Mart Home">
+                <i class="fas fa-compass"></i> Baai Mart
+            </span>
             <div class="nav-controls">
+                <!-- THEME TOGGLE SWITCH -->
+                <div class="theme-toggle-wrap">
+                    <div class="theme-toggle-switch" onclick="toggleTheme()" title="Toggle theme" role="switch" aria-label="Toggle theme" tabindex="0">
+                        <span class="toggle-icon-sun"><i class="fas fa-sun"></i></span>
+                        <span class="toggle-icon-moon"><i class="fas fa-moon"></i></span>
+                        <span class="theme-toggle-knob"></span>
+                    </div>
+                </div>
                 <button class="hamburger" id="hamburgerBtn" onclick="toggleMenu()" aria-label="Toggle menu">
                     <i class="fas fa-bars" id="hamburgerIcon"></i>
                 </button>
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode" aria-label="Theme toggle">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                </button>
             </div>
         </div>
+
         <div class="nav-links" id="navLinks">
             <button onclick="navigateTo('home')" class="active" id="nav-home"><i class="fas fa-home"></i> Home</button>
             <button onclick="navigateTo('malaysia')" id="nav-malaysia"><span>🇲🇾</span> Malaysia</button>
             <button onclick="navigateTo('singapore')" id="nav-singapore"><span>🇸🇬</span> Singapore</button>
             <button onclick="navigateTo('thailand')" id="nav-thailand" class="pending"><span>🇹🇭</span> Thailand</button>
             <button onclick="navigateTo('about')" id="nav-about"><i class="fas fa-info-circle"></i> About</button>
+
+            <div class="nav-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Search articles…" aria-label="Search articles" />
+            </div>
         </div>
     </nav>
 
-    <!-- MAIN CONTAINER -->
-    <div class="main-container" id="mainContainer">
+    <!-- ═══════════════ MAIN ═══════════════ -->
+    <main class="main-container" id="mainContainer">
 
-        <!-- HOME PAGE -->
+        <!-- ─── HOME PAGE ─── -->
         <div class="page active" id="page-home">
-            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200&q=80');">
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1400&q=80');">
                 <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-map-pin"></i> Featured</span>
                     <h1>Discover Southeast Asia</h1>
                     <p>Authentic travel stories from Malaysia, Singapore & beyond</p>
                 </div>
             </div>
+
             <div class="section-header"><i class="fas fa-gem"></i><h2>Featured Destinations</h2></div>
-            <div class="blog-grid">
-                <div class="glass-card" onclick="navigateTo('malaysia')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="Petronas Towers Kuala Lumpur" loading="lazy">
-                    <span class="tag">🇲🇾 Malaysia</span>
-                    <h3>Kuala Lumpur & Beyond</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> Updated June 2026 · <i class="far fa-clock"></i> 8 min read</p>
-                    <p>Explore the vibrant capital, from the iconic Petronas Twin Towers to the street food heaven of Jalan Alor and the mystical Batu Caves.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Explore Malaysia</button>
-                </div>
-                <div class="glass-card" onclick="navigateTo('singapore')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Marina Bay Sands Singapore" loading="lazy">
-                    <span class="tag">🇸🇬 Singapore</span>
-                    <h3>Marina Bay & Garden City</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> Updated June 2026 · <i class="far fa-clock"></i> 7 min read</p>
-                    <p>Discover the futuristic Gardens by the Bay, the stunning Marina Bay Sands skyline, and the rich cultural enclaves of the Lion City.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Explore Singapore</button>
-                </div>
-                <div class="glass-card" style="opacity:0.7; cursor:not-allowed;">
-                    <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80" alt="Thailand Grand Palace" loading="lazy" style="filter: grayscale(20%);">
-                    <span class="tag">🇹🇭 Thailand</span>
-                    <h3>Bangkok & Islands <i class="fas fa-hard-hat" style="margin-left:4px;"></i></h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> Coming Soon · <i class="far fa-clock"></i> Under Development</p>
-                    <p>Our Thailand guide is being crafted with love. Expect Grand Palace wonders, floating markets, and pristine island escapes. Stay tuned!</p>
-                    <button class="read-more" style="background:#334155; cursor:not-allowed; box-shadow:none;"><i class="fas fa-clock"></i> Coming Soon</button>
-                </div>
+            <div class="blog-grid" id="featuredGrid"></div>
+
+            <div class="section-header" style="margin-top:48px;"><i class="fas fa-compass"></i><h2>Deep Dives</h2></div>
+            <div class="blog-grid" id="deepDivesGrid"></div>
+
+            <!-- Newsletter -->
+            <div class="newsletter-wrap">
+                <h3><i class="fas fa-envelope" style="color:var(--accent);"></i> Never miss a story</h3>
+                <p>Subscribe for monthly travel guides, insider tips, and new destination updates.</p>
+                <form class="newsletter-form" id="newsletterForm" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" id="newsletterEmail" placeholder="Your email address" required aria-label="Email address" />
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                </form>
+                <div class="newsletter-message" id="newsletterMessage"></div>
             </div>
         </div>
 
-        <!-- MALAYSIA PAGE -->
+        <!-- ─── MALAYSIA PAGE ─── -->
         <div class="page" id="page-malaysia">
-            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1200&q=80');">
-                <div class="hero-content"><h1>🇲🇾 Malaysia</h1><p>Truly Asia — A melting pot of cultures, cuisine & natural wonders</p></div>
-            </div>
-            <div class="blog-grid">
-                <div class="glass-card" onclick="openBlogPost('malaysia-kl')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="KL Petronas Towers" loading="lazy">
-                    <span class="tag">Kuala Lumpur</span><span class="tag">City</span>
-                    <h3>Petronas Twin Towers & KL City Guide</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> June 2026 · <i class="far fa-clock"></i> 8 min read</p>
-                    <p>Everything you need to know about visiting the world's tallest twin towers, plus the best rooftop bars and nearby attractions.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
-                </div>
-                <div class="glass-card" onclick="openBlogPost('malaysia-batu')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=600&q=80" alt="Batu Caves" loading="lazy">
-                    <span class="tag">Selangor</span><span class="tag">Culture</span>
-                    <h3>Batu Caves — The 272 Steps</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> May 2026 · <i class="far fa-clock"></i> 6 min read</p>
-                    <p>Climb the rainbow-coloured steps to this iconic Hindu temple set within limestone caves. A spiritual and visual spectacle.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
-                </div>
-                <div class="glass-card" onclick="openBlogPost('malaysia-penang')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1581159931975-1c3e2cf8ab6f?w=600&q=80" alt="Penang Street Art" loading="lazy">
-                    <span class="tag">Penang</span><span class="tag">Food</span>
-                    <h3>Penang Street Food & Heritage</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> April 2026 · <i class="far fa-clock"></i> 9 min read</p>
-                    <p>George Town's UNESCO heritage streets, famous char kway teow, and the best murals — a complete Penang itinerary.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=1400&q=80');">
+                <div class="hero-content">
+                    <span class="hero-badge">🇲🇾</span>
+                    <h1>Malaysia</h1>
+                    <p>Truly Asia — A melting pot of cultures, cuisine &amp; natural wonders</p>
                 </div>
             </div>
+            <div class="blog-grid" id="malaysiaGrid"></div>
             <button class="back-btn" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
         </div>
 
-        <!-- SINGAPORE PAGE -->
+        <!-- ─── SINGAPORE PAGE ─── -->
         <div class="page" id="page-singapore">
-            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1200&q=80');">
-                <div class="hero-content"><h1>🇸🇬 Singapore</h1><p>The Lion City — Where innovation meets tradition</p></div>
-            </div>
-            <div class="blog-grid">
-                <div class="glass-card" onclick="openBlogPost('singapore-mbs')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80" alt="Marina Bay Sands" loading="lazy">
-                    <span class="tag">Marina Bay</span><span class="tag">Iconic</span>
-                    <h3>Marina Bay Sands — SkyPark Views</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> June 2026 · <i class="far fa-clock"></i> 7 min read</p>
-                    <p>Experience the world-famous infinity pool (hotel guests only), SkyPark observation deck, and the nightly light show over the bay.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
-                </div>
-                <div class="glass-card" onclick="openBlogPost('singapore-gardens')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Gardens by the Bay" loading="lazy">
-                    <span class="tag">Nature</span><span class="tag">Futuristic</span>
-                    <h3>Gardens by the Bay — Supertree Grove</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> May 2026 · <i class="far fa-clock"></i> 6 min read</p>
-                    <p>Walk among giant vertical gardens at the Supertree Grove, explore the Cloud Forest dome, and catch the magical Garden Rhapsody.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
-                </div>
-                <div class="glass-card" onclick="openBlogPost('singapore-chinatown')" style="cursor:pointer;" role="button" tabindex="0">
-                    <img src="https://images.unsplash.com/photo-1605964222113-5c4b3b1b5b1a?w=600&q=80" alt="Chinatown Singapore" loading="lazy">
-                    <span class="tag">Chinatown</span><span class="tag">Heritage</span>
-                    <h3>Chinatown, Little India & Kampong Glam</h3>
-                    <p class="meta"><i class="far fa-calendar-alt"></i> April 2026 · <i class="far fa-clock"></i> 8 min read</p>
-                    <p>Dive into Singapore's multicultural heart — from Buddha Tooth Relic Temple to colourful shophouses and Michelin-starred hawker stalls.</p>
-                    <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1400&q=80');">
+                <div class="hero-content">
+                    <span class="hero-badge">🇸🇬</span>
+                    <h1>Singapore</h1>
+                    <p>The Lion City — Where innovation meets tradition</p>
                 </div>
             </div>
+            <div class="blog-grid" id="singaporeGrid"></div>
             <button class="back-btn" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
         </div>
 
-        <!-- THAILAND PAGE -->
+        <!-- ─── THAILAND PAGE ─── -->
         <div class="page" id="page-thailand">
-            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1200&q=80');">
-                <div class="hero-content"><h1>🇹🇭 Thailand</h1><p>Coming Soon — The Land of Smiles awaits</p></div>
+            <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1400&q=80');">
+                <div class="hero-content">
+                    <span class="hero-badge">🇹🇭</span>
+                    <h1>Thailand</h1>
+                    <p>Coming Soon — The Land of Smiles awaits</p>
+                </div>
             </div>
             <div class="glass-card" style="text-align:center; padding:50px 30px;">
-                <i class="fas fa-hard-hat" style="font-size:4rem; color: var(--text-secondary);"></i>
+                <div class="card-border-glow"></div>
+                <i class="fas fa-hard-hat" style="font-size:3.6rem; color:var(--text-muted); animation: badgeFloat 3s ease-in-out infinite;"></i>
                 <h2 style="margin-top:16px;">Thailand Guide — Under Construction</h2>
-                <p style="color:var(--text-secondary); margin:12px 0 20px;">
-                    We're currently exploring Bangkok, Chiang Mai, Phuket, and the stunning islands of Krabi.<br>
-                    Our detailed guides with photos, tips, and itineraries will be published here soon!
+                <p style="color:var(--text-secondary); margin:12px 0 20px; max-width:500px; margin-left:auto; margin-right:auto;">
+                    We're currently exploring Bangkok, Chiang Mai, Phuket, and the stunning islands of Krabi.<br />
+                    Detailed guides with photos, tips, and itineraries will be published here soon!
                 </p>
                 <span class="tag">🇹🇭 Bangkok</span>
                 <span class="tag"><i class="fas fa-umbrella-beach"></i> Phuket</span>
                 <span class="tag"><i class="fas fa-landmark"></i> Chiang Mai</span>
                 <span class="tag"><i class="fas fa-water"></i> Krabi</span>
-                <br><br>
+                <br /><br />
                 <button class="back-btn" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
             </div>
         </div>
 
-        <!-- ABOUT PAGE -->
+        <!-- ─── ABOUT PAGE ─── -->
         <div class="page" id="page-about">
             <div class="glass-card blog-post-full" style="text-align:center;">
-                <i class="fas fa-globe-asia" style="font-size:4rem; color: var(--accent);"></i>
+                <div class="card-border-glow"></div>
+                <i class="fas fa-globe-asia" style="font-size:3.6rem; color:var(--accent); animation: badgeFloat 3s ease-in-out infinite;"></i>
                 <h2>About Baai Mart</h2>
                 <p class="content-text" style="text-align:left; margin-top:16px;">
                     Welcome to <strong>Baai Mart</strong> — a passion project dedicated to uncovering the beauty, culture,
                     and culinary wonders of Southeast Asia. We focus on <strong>Malaysia</strong> and <strong>Singapore</strong>,
                     with <strong>Thailand</strong> content currently in development.
-                    <br><br>
+                    <br /><br />
                     Our team of travel enthusiasts has spent years exploring these vibrant destinations, from the bustling
                     streets of Kuala Lumpur to the serene gardens of Singapore. We believe in authentic storytelling,
                     practical travel tips, and showcasing both iconic landmarks and hidden gems.
-                    <br><br>
+                    <br /><br />
                     Every article is crafted with firsthand experience, original photography, and a genuine love for the region.
-                    <br><br>
+                    <br /><br />
                     <strong>📍 Based in:</strong> Sri Lanka
                 </p>
                 <button class="back-btn" style="margin-top:20px;" onclick="navigateTo('home')"><i class="fas fa-arrow-left"></i> Back to Home</button>
             </div>
         </div>
 
-        <!-- BLOG POST DETAIL -->
+        <!-- ─── BLOG POST DETAIL ─── -->
         <div class="page" id="page-blogpost">
             <button class="back-btn" onclick="closeBlogPost()"><i class="fas fa-arrow-left"></i> Back</button>
-            <div class="glass-card blog-post-full" id="blogPostContent"></div>
+            <div class="glass-card blog-post-full" id="blogPostContent">
+                <div class="card-border-glow"></div>
+            </div>
         </div>
 
-        <div class="footer">
-            Baai Mart © 2026 · Built with <i class="fas fa-heart"></i>
-        </div>
-    </div>
+        <!-- ─── FOOTER ─── -->
+        <footer class="footer">
+            Baai Mart © 2026 · Built with <i class="fas fa-heart"></i> · <a href="#" onclick="navigateTo('about'); return false;">About</a>
+        </footer>
+    </main>
+
+    <!-- ─── BACK TO TOP ─── -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
-        // ── STATE ──
+        // ═══════════════════════════════════════════════════
+        //  DATA — Updated with fresh, relevant image sources
+        // ═══════════════════════════════════════════════════
+
+        const blogPosts = {
+            // ----- MALAYSIA -----
+            'malaysia-kl': {
+                id: 'malaysia-kl',
+                title: 'Petronas Twin Towers & KL City Guide',
+                cover: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&q=80',
+                tags: ['Kuala Lumpur', 'City', 'Iconic'],
+                country: 'malaysia',
+                date: 'June 2026',
+                readTime: '8 min read',
+                excerpt: 'Everything you need to know about visiting the world\'s tallest twin towers, plus the best rooftop bars and nearby attractions.',
+                content: `<p>The <strong>Petronas Twin Towers</strong> are the crown jewel of Kuala Lumpur's skyline. Standing at 451.9 metres (1,483 ft), these 88-storey twin skyscrapers held the title of the world's tallest buildings from 1998 to 2004 and remain the tallest twin towers on the planet.</p><br><h3><i class="far fa-clock"></i> Best Time to Visit</h3><p>Arrive early — tickets for the Skybridge (Level 41) and Observation Deck (Level 86) sell out fast. The first slot is at 9:00 AM. We recommend booking online at least 2-3 days in advance via the official Petronas Towers website.</p><br><h3><i class="fas fa-map-marker-alt"></i> Getting There</h3><p>The towers are directly connected to <strong>KLCC LRT Station</strong> (Kelana Jaya Line). The Suria KLCC shopping mall sits at the base — perfect for cooling off in air-conditioned comfort after your visit.</p><br><h3><i class="fas fa-utensils"></i> Nearby Eats</h3><p>Don't miss <strong>Jalan Alor</strong> (10-minute Grab ride away) for the best street food in KL — char kway teow, satay, grilled stingray, and fresh coconut water. For a splurge, try the rooftop bar at <strong>Heli Lounge Bar</strong> for stunning sunset views of the towers.</p><br><h3><i class="fas fa-lightbulb"></i> Pro Tip</h3><p>The towers are beautifully lit at night. For the best photo spot, head to the <strong>KLCC Park</strong> behind the towers — the reflection pool offers a perfect mirror image of the illuminated towers after dark.</p>`
+            },
+            'malaysia-batu': {
+                id: 'malaysia-batu',
+                title: 'Batu Caves — The 272 Rainbow Steps',
+                cover: 'https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=800&q=80',
+                tags: ['Selangor', 'Culture', 'Temple'],
+                country: 'malaysia',
+                date: 'May 2026',
+                readTime: '6 min read',
+                excerpt: 'Climb the rainbow-coloured steps to this iconic Hindu temple set within limestone caves. A spiritual and visual spectacle.',
+                content: `<p>Just 13 km north of Kuala Lumpur, the <strong>Batu Caves</strong> are one of Malaysia's most iconic and Instagrammable landmarks. This limestone cave complex houses a series of Hindu temples and shrines, with the main Temple Cave accessible via a steep flight of <strong>272 vibrantly painted steps</strong>.</p><br><h3><i class="fas fa-place-of-worship"></i> The Experience</h3><p>The rainbow-coloured staircase was repainted in 2018 and has since become a global sensation. At the base stands the magnificent <strong>42.7-metre golden statue of Lord Murugan</strong> — the tallest in the world. As you climb, cheeky macaque monkeys will accompany you (hold onto your belongings!).</p><br><h3><i class="far fa-calendar-alt"></i> Thaipusam Festival</h3><p>If you're visiting in late January or early February, you might witness <strong>Thaipusam</strong> — a spectacular Hindu festival where devotees carry elaborate kavadis (burdens) up the steps in a dramatic display of faith and endurance.</p><br><h3><i class="fas fa-train"></i> Getting There</h3><p>Take the KTM Komuter train from KL Sentral to <strong>Batu Caves Station</strong> — the journey takes about 30 minutes and the station is right at the entrance. Entry to the main cave is free!</p>`
+            },
+            'malaysia-penang': {
+                id: 'malaysia-penang',
+                title: 'Penang Street Food & Heritage Guide',
+                cover: 'https://images.unsplash.com/photo-1581159931975-1c3e2cf8ab6f?w=800&q=80',
+                tags: ['Penang', 'Food', 'Heritage'],
+                country: 'malaysia',
+                date: 'April 2026',
+                readTime: '9 min read',
+                excerpt: 'George Town\'s UNESCO heritage streets, famous char kway teow, and the best murals — a complete Penang itinerary.',
+                content: `<p><strong>George Town, Penang</strong> is a UNESCO World Heritage Site and arguably the food capital of Malaysia. Its streets are a living museum of colonial architecture, vibrant street art, and some of the best hawker food you'll ever taste.</p><br><h3><i class="fas fa-utensils"></i> Must-Try Dishes</h3><p><strong>Char Kway Teow</strong> at Siam Road (Michelin-recognised), <strong>Penang Laksa</strong> (spicy-sour fish noodle soup) at Air Itam Market, <strong>Hokkien Mee</strong> (prawn noodle soup), and <strong>Cendol</strong> (shaved ice dessert) at Penang Road Famous Teochew Cendol.</p><br><h3><i class="fas fa-palette"></i> Street Art Trail</h3><p>Lithuanian artist Ernest Zacharevic's murals have become synonymous with George Town. Rent a bicycle and follow the official street art map — don't miss "Kids on a Bicycle" and "Boy on a Chair" on Armenian Street.</p><br><h3><i class="fas fa-hotel"></i> Where to Stay</h3><p>Stay in a restored heritage boutique hotel in the heart of George Town. The <strong>Blue Mansion</strong> (Cheong Fatt Tze Mansion) offers luxurious rooms in a stunning indigo-coloured courtyard building.</p>`
+            },
+            'malaysia-langkawi': {
+                id: 'malaysia-langkawi',
+                title: 'Langkawi — Jewel of Kedah',
+                cover: 'https://images.unsplash.com/photo-1582479908367-62aa27d04d6f?w=800&q=80',
+                tags: ['Langkawi', 'Islands', 'Beach'],
+                country: 'malaysia',
+                date: 'June 2026',
+                readTime: '10 min read',
+                excerpt: 'Turquoise waters, eagle feeding, cable car rides and duty‑free shopping — Langkawi is Malaysia\'s ultimate island escape.',
+                content: `<p><strong>Langkawi</strong> — an archipelago of 99 islands in the Andaman Sea — is Malaysia's most famous island getaway. Its turquoise waters, white-sand beaches, and dramatic limestone karsts have earned it the nickname "Jewel of Kedah".</p><br><h3><i class="fas fa-ship"></i> Island Hopping & Eagle Feeding</h3><p>Start your day with a boat tour around the islands. The highlight is <strong>eagle feeding</strong> at Pulau Singa Besar — watch majestic sea eagles swoop down to snatch morsels from the water. Other stops include the pristine <strong>Pulau Dayang Bunting</strong> (Lake of the Pregnant Maiden) and the crocodile-shaped <strong>Pulau Beras Basah</strong>.</p><br><h3><i class="fas fa-cable-car"></i> Langkawi Cable Car & Sky Bridge</h3><p>The <strong>Langkawi Sky Bridge</strong> is a curved 125-metre pedestrian bridge suspended 100 metres above the rainforest. To get there, take the cable car from Oriental Village — a steep 2.2 km ride that offers jaw-dropping views of the islands below. On a clear day, you can see all the way to Thailand's Tarutao Island.</p><br><h3><i class="fas fa-shopping-bag"></i> Duty-Free Shopping</h3><p>Langkawi is a duty-free island. Stock up on chocolates, perfumes, and alcohol at prices far lower than mainland Malaysia. The <strong>Eagle Square</strong> (Dataran Lang) is the landmark meeting point — a massive bronze eagle poised for flight.</p><br><h3><i class="fas fa-lightbulb"></i> Best Time to Visit</h3><p>November to March offers the best weather — calm seas and sunny skies. Avoid the monsoon months (August–October) when boat tours are often cancelled.</p>`
+            },
+            'malaysia-cameron': {
+                id: 'malaysia-cameron',
+                title: 'Cameron Highlands — Tea & Cool Breezes',
+                cover: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
+                tags: ['Cameron', 'Highlands', 'Nature'],
+                country: 'malaysia',
+                date: 'May 2026',
+                readTime: '8 min read',
+                excerpt: 'Escape the tropics to rolling tea estates, strawberry farms, and misty mossy forests — Malaysia\'s own little England.',
+                content: `<p>Perched at 1,500 metres above sea level, the <strong>Cameron Highlands</strong> are Malaysia's most famous hill station. Rolling tea plantations, strawberry farms, and a misty, cool climate make it a refreshing escape from the tropical lowlands.</p><br><h3><i class="fas fa-leaf"></i> Tea Plantations</h3><p>The <strong>Boh Tea Plantation</strong> is the crown jewel — a sweeping valley of perfectly manicured tea bushes. Take a factory tour to see how tea is processed, then sip a cup at the glass-walled cafe overlooking the estate. Arrive early (before 10 AM) to catch the morning mist rolling over the hills — pure magic.</p><br><h3><i class="fas fa-seedling"></i> Strawberry Farms & Mossy Forest</h3><p>Pick your own strawberries at farms like <strong>Big Red Strawberry Farm</strong> or <strong>Kok Lim Strawberry Farm</strong>. For a more adventurous experience, hike into the <strong>Mossy Forest</strong> on Mount Brinchang — a primordial landscape of gnarled trees draped in moss and orchids. The boardwalk trail is short (45 minutes) but feels like stepping into a fantasy novel.</p><br><h3><i class="fas fa-utensils"></i> Local Favourites</h3><p>Don't leave without trying the highland-grown vegetables — the steamboat (hot pot) dinner at <strong>OK Tuck</strong> is legendary. Fresh corn, sweet strawberries, and scones with clotted cream are also must-tries.</p>`
+            },
+            'malaysia-melaka': {
+                id: 'malaysia-melaka',
+                title: 'Melaka — Where History Comes Alive',
+                cover: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&q=80',
+                tags: ['Melaka', 'Heritage', 'UNESCO'],
+                country: 'malaysia',
+                date: 'April 2026',
+                readTime: '9 min read',
+                excerpt: 'Walk the streets of this UNESCO World Heritage city — Dutch colonial buildings, Peranakan culture, and the famous Jonker Street night market.',
+                content: `<p><strong>Melaka</strong> (Malacca) is a living museum — a UNESCO World Heritage city where Portuguese, Dutch, British, and Peranakan influences converge. Its colourful shophouses, antique trishaws, and riverside cafes tell the story of a bustling port that shaped Southeast Asian history.</p><br><h3><i class="fas fa-building-columns"></i> Dutch Square & Christ Church</h3><p>Start at <strong>Dutch Square</strong> — the heart of the old town. The iconic salmon-pink <strong>Christ Church</strong> (built in 1753) and the <strong>Stadthuys</strong> (the old Dutch town hall) are the most photographed buildings in Melaka. Take a ride on a flower-bedecked trishaw (they play loud music and are delightfully kitsch) for a fun tour of the square.</p><br><h3><i class="fas fa-museum"></i> Peranakan Culture</h3><p>The <strong>Baba Nyonya Heritage Museum</strong> is a beautifully preserved Peranakan (Straits Chinese) mansion. It offers a fascinating glimpse into the opulent lifestyle of the Baba-Nyonya community — a fusion of Chinese and Malay traditions that produced its own cuisine, language, and architecture.</p><br><h3><i class="fas fa-utensils"></i> Jonker Street Night Market</h3><p>Every Friday, Saturday, and Sunday evening, <strong>Jonker Street</strong> transforms into a bustling night market. Street food stalls serve up <strong>chicken rice balls</strong>, <strong>cendol</strong>, and <strong>satay celup</strong> (skewers dunked in a spicy peanut broth). Bargain for antiques, batik fabrics, and local souvenirs.</p><br><h3><i class="fas fa-lightbulb"></i> Pro Tip</h3><p>Climb <strong>St. Paul's Hill</strong> for a panoramic view of the city — the ruins of St. Paul's Church at the top offer a romantic sunset spot.</p>`
+            },
+
+            // ----- SINGAPORE -----
+            'singapore-mbs': {
+                id: 'singapore-mbs',
+                title: 'Marina Bay Sands — SkyPark Views & Light Shows',
+                cover: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80',
+                tags: ['Marina Bay', 'Iconic', 'Skyline'],
+                country: 'singapore',
+                date: 'June 2026',
+                readTime: '7 min read',
+                excerpt: 'Experience the world-famous infinity pool, SkyPark observation deck, and the nightly light show over the bay.',
+                content: `<p><strong>Marina Bay Sands</strong> is Singapore's most recognisable landmark. The three 55-storey towers are crowned by the 340-metre-long <strong>SkyPark</strong> — a gravity-defying platform that hosts the world's most famous infinity pool, an observation deck, and celebrity chef restaurants.</p><br><h3><i class="fas fa-swimming-pool"></i> Infinity Pool</h3><p>The infinity pool is <strong>exclusive to hotel guests</strong>. If you're not staying at the hotel, you can still visit the <strong>Sands SkyPark Observation Deck</strong> (tickets from SGD 26) for panoramic views of the city skyline and the Strait of Singapore.</p><br><h3><i class="fas fa-star"></i> Spectra Light Show</h3><p>Every evening at 8:00 PM and 9:00 PM (with an additional 10:00 PM show on weekends), the <strong>Spectra</strong> outdoor light and water show illuminates the bay. Best viewed from the Event Plaza or from across the bay at the Merlion Park.</p><br><h3><i class="fas fa-shopping-bag"></i> The Shoppes</h3><p>The connected mall features a canal with sampan boat rides, a massive casino, and luxury brands. Even window-shopping here is an experience in itself.</p>`
+            },
+            'singapore-gardens': {
+                id: 'singapore-gardens',
+                title: 'Gardens by the Bay — Supertree Grove & Cloud Forest',
+                cover: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+                tags: ['Nature', 'Futuristic', 'Gardens'],
+                country: 'singapore',
+                date: 'May 2026',
+                readTime: '6 min read',
+                excerpt: 'Walk among giant vertical gardens at the Supertree Grove, explore the Cloud Forest dome, and catch the magical Garden Rhapsody.',
+                content: `<p><strong>Gardens by the Bay</strong> is a SGD 1 billion nature park spanning 101 hectares in central Singapore. Its <strong>Supertree Grove</strong> features 18 vertical gardens reaching up to 50 metres tall, connected by the OCBC Skyway — a 128-metre aerial walkway.</p><br><h3><i class="fas fa-leaf"></i> Cloud Forest</h3><p>The cooled conservatory houses a 35-metre indoor waterfall (the world's tallest indoor waterfall) and a lush mountain covered in orchids, ferns, and bromeliads. The temperature is kept at a refreshing 23-25°C — a welcome escape from Singapore's heat.</p><br><h3><i class="fas fa-star"></i> Garden Rhapsody</h3><p>Nightly at 7:45 PM and 8:45 PM, the Supertrees come alive with a free <strong>Garden Rhapsody</strong> light and music show. Lie down on the grass and watch the trees dance in sync with the soundtrack. Pure magic.</p><br><h3><i class="fas fa-ticket-alt"></i> Tickets</h3><p>The outdoor Supertree Grove is free. The OCBC Skyway costs SGD 14, and the Cloud Forest + Flower Dome combo ticket is SGD 32 for adults.</p>`
+            },
+            'singapore-chinatown': {
+                id: 'singapore-chinatown',
+                title: 'Chinatown, Little India & Kampong Glam',
+                cover: 'https://images.unsplash.com/photo-1605964222113-5c4b3b1b5b1a?w=800&q=80',
+                tags: ['Heritage', 'Culture', 'Hawker Food'],
+                country: 'singapore',
+                date: 'April 2026',
+                readTime: '8 min read',
+                excerpt: 'Dive into Singapore\'s multicultural heart — from Buddha Tooth Relic Temple to colourful shophouses and Michelin-starred hawker stalls.',
+                content: `<p>Singapore's multicultural identity shines brightest in its three heritage districts: <strong>Chinatown</strong>, <strong>Little India</strong>, and <strong>Kampong Glam</strong>. Each neighbourhood offers a distinct sensory experience.</p><br><h3><i class="fas fa-store"></i> Chinatown</h3><p>Visit the <strong>Buddha Tooth Relic Temple</strong> (free entry), stroll through the bustling Chinatown Complex hawker centre for Michelin-starred <strong>Liao Fan Hawker Chan</strong> soya sauce chicken, and explore the charming shophouses along Smith Street.</p><br><h3>🇮🇳 Little India</h3><p>The <strong>Tekka Centre</strong> is a must for authentic Indian food. The colourful <strong>House of Tan Teng Niah</strong> is the most photographed building in the district. Visit during Deepavali for stunning light displays.</p><br><h3><i class="fas fa-mosque"></i> Kampong Glam</h3><p>Dominated by the golden-domed <strong>Sultan Mosque</strong>, this Malay-Arab quarter is filled with hip cafes, vintage boutiques along Haji Lane, and some of the best Middle Eastern food in Singapore.</p>`
+            },
+            'singapore-sentosa': {
+                id: 'singapore-sentosa',
+                title: 'Sentosa — Singapore\'s Playground',
+                cover: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
+                tags: ['Sentosa', 'Resorts', 'Family'],
+                country: 'singapore',
+                date: 'June 2026',
+                readTime: '9 min read',
+                excerpt: 'Universal Studios, S.E.A. Aquarium, beaches, and cable cars — Sentosa packs endless family fun into one tiny island.',
+                content: `<p><strong>Sentosa Island</strong> is Singapore's premier resort destination — a 500-hectare island packed with theme parks, beaches, golf courses, and luxury hotels. Just 15 minutes from the city centre.</p><br><h3><i class="fas fa-roller-coaster"></i> Universal Studios Singapore</h3><p>The crown jewel of Sentosa. Universal Studios features <strong>seven themed zones</strong> including Hollywood, New York, and Ancient Egypt. The highlight is <strong>Battlestar Galactica</strong> — the world's tallest duelling roller coaster.</p><br><h3><i class="fas fa-fish"></i> S.E.A. Aquarium</h3><p>One of the world's largest aquariums, the <strong>S.E.A. Aquarium</strong> houses over 100,000 marine animals across 50 habitats. The <strong>Open Ocean</strong> tank is breathtaking.</p><br><h3><i class="fas fa-umbrella-beach"></i> Beaches & Cable Car</h3><p>Sentosa's three beaches — <strong>Siloso</strong>, <strong>Palawan</strong>, and <strong>Tanjong</strong> — offer gentle waves and soft sand. Palawan Beach has a suspension bridge leading to the "Southernmost Point of Continental Asia".</p>`
+            },
+            'singapore-zoo': {
+                id: 'singapore-zoo',
+                title: 'Singapore Zoo & Night Safari — Wild Encounters',
+                cover: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
+                tags: ['Zoo', 'Wildlife', 'Family'],
+                country: 'singapore',
+                date: 'May 2026',
+                readTime: '8 min read',
+                excerpt: 'World‑class open‑concept zoos where you can breakfast with orangutans, then see nocturnal creatures come alive after dark.',
+                content: `<p>The <strong>Singapore Zoo</strong> is consistently ranked among the world's best — and for good reason. Its open‑concept enclosures let you observe animals in habitats that mimic their natural environments.</p><br><h3><i class="fas fa-monkey"></i> Orangutan Breakfast</h3><p>Start your day with the <strong>Orangutan Breakfast</strong> — a unique experience where you dine beside semi‑wild orangutans as they swing overhead. Tickets sell out weeks in advance.</p><br><h3><i class="fas fa-tree"></i> The Night Safari</h3><p>As dusk falls, the <strong>Night Safari</strong> — the world's first nocturnal wildlife park — comes alive. Take a 40‑minute tram ride through six geographical zones, spotting tigers, elephants, and tapirs under moonlight.</p><br><h3><i class="fas fa-water"></i> River Wonders</h3><p>Don't skip the <strong>River Wonders</strong> — it's home to giant pandas (Jia Jia and Kai Kai), the endangered Mekong giant catfish, and a freshwater dolphin exhibit.</p>`
+            },
+            'singapore-hawker': {
+                id: 'singapore-hawker',
+                title: 'Hawker Culture — Michelin Stars on a Budget',
+                cover: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+                tags: ['Food', 'Hawker', 'Michelin'],
+                country: 'singapore',
+                date: 'April 2026',
+                readTime: '9 min read',
+                excerpt: 'From Michelin‑starred chicken rice to smoky char kway teow — Singapore\'s hawker centres are a UNESCO‑recognised culinary treasure.',
+                content: `<p><strong>Hawker centres</strong> are the heart and soul of Singapore's food scene. In 2020, UNESCO added Singapore's hawker culture to its Representative List of the Intangible Cultural Heritage of Humanity.</p><br><h3><i class="fas fa-star"></i> Michelin‑Starred Hawker Stalls</h3><p>Singapore is home to the world's cheapest Michelin‑starred meals. <strong>Liao Fan Hawker Chan</strong> serves soya sauce chicken rice for SGD 5. <strong>Hill Street Tai Hwa Pork Noodle</strong> is another star‑holder.</p><br><h3><i class="fas fa-utensils"></i> The Big Three Dishes</h3><p><strong>Hainanese Chicken Rice</strong>, <strong>Chilli Crab</strong> at Jumbo Seafood, and <strong>Nasi Lemak</strong> at Punggol Nasi Lemak. Each is a Singaporean classic not to be missed.</p>`
+            }
+        };
+
+        const featuredIds = ['malaysia-kl', 'singapore-mbs', 'malaysia-penang'];
+        const deepDiveIds = ['malaysia-langkawi', 'singapore-sentosa', 'malaysia-cameron', 'singapore-zoo'];
+
         let currentPage = 'home';
         let previousPage = 'home';
-        const themeBtn = document.querySelector('.theme-toggle');
-        const themeIcon = document.getElementById('themeIcon');
+        let currentPostId = null;
+
+        const searchInput = document.getElementById('searchInput');
+        const backToTop = document.getElementById('backToTop');
         const hamburgerBtn = document.getElementById('hamburgerBtn');
         const hamburgerIcon = document.getElementById('hamburgerIcon');
         const navLinks = document.getElementById('navLinks');
 
-        // ── BLOG POST DATA ──
-        const blogPosts = {
-            'malaysia-kl': {
-                title: 'Petronas Twin Towers & KL City Guide',
-                cover: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=900&q=80',
-                tags: ['Kuala Lumpur', 'City', 'Iconic'],
-                date: 'June 2026',
-                readTime: '8 min read',
-                content: `<p>The <strong>Petronas Twin Towers</strong> are the crown jewel of Kuala Lumpur's skyline. Standing at 451.9 metres (1,483 ft), these 88-storey twin skyscrapers held the title of the world's tallest buildings from 1998 to 2004 and remain the tallest twin towers on the planet.</p><br><h3><i class="far fa-clock"></i> Best Time to Visit</h3><p>Arrive early — tickets for the Skybridge (Level 41) and Observation Deck (Level 86) sell out fast. The first slot is at 9:00 AM. We recommend booking online at least 2-3 days in advance via the official Petronas Towers website.</p><br><h3><i class="fas fa-map-marker-alt"></i> Getting There</h3><p>The towers are directly connected to <strong>KLCC LRT Station</strong> (Kelana Jaya Line). The Suria KLCC shopping mall sits at the base — perfect for cooling off in air-conditioned comfort after your visit.</p><br><h3><i class="fas fa-utensils"></i> Nearby Eats</h3><p>Don't miss <strong>Jalan Alor</strong> (10-minute Grab ride away) for the best street food in KL — char kway teow, satay, grilled stingray, and fresh coconut water. For a splurge, try the rooftop bar at <strong>Heli Lounge Bar</strong> for stunning sunset views of the towers.</p><br><h3><i class="fas fa-lightbulb"></i> Pro Tip</h3><p>The towers are beautifully lit at night. For the best photo spot, head to the <strong>KLCC Park</strong> behind the towers — the reflection pool offers a perfect mirror image of the illuminated towers after dark.</p>`
-            },
-            'malaysia-batu': {
-                title: 'Batu Caves — The 272 Rainbow Steps',
-                cover: 'https://images.unsplash.com/photo-1570789210967-2cac24afeb00?w=900&q=80',
-                tags: ['Selangor', 'Culture', 'Temple'],
-                date: 'May 2026',
-                readTime: '6 min read',
-                content: `<p>Just 13 km north of Kuala Lumpur, the <strong>Batu Caves</strong> are one of Malaysia's most iconic and Instagrammable landmarks. This limestone cave complex houses a series of Hindu temples and shrines, with the main Temple Cave accessible via a steep flight of <strong>272 vibrantly painted steps</strong>.</p><br><h3><i class="fas fa-place-of-worship"></i> The Experience</h3><p>The rainbow-coloured staircase was repainted in 2018 and has since become a global sensation. At the base stands the magnificent <strong>42.7-metre golden statue of Lord Murugan</strong> — the tallest in the world. As you climb, cheeky macaque monkeys will accompany you (hold onto your belongings!).</p><br><h3><i class="far fa-calendar-alt"></i> Thaipusam Festival</h3><p>If you're visiting in late January or early February, you might witness <strong>Thaipusam</strong> — a spectacular Hindu festival where devotees carry elaborate kavadis (burdens) up the steps in a dramatic display of faith and endurance.</p><br><h3><i class="fas fa-train"></i> Getting There</h3><p>Take the KTM Komuter train from KL Sentral to <strong>Batu Caves Station</strong> — the journey takes about 30 minutes and the station is right at the entrance. Entry to the main cave is free!</p>`
-            },
-            'malaysia-penang': {
-                title: 'Penang Street Food & Heritage Guide',
-                cover: 'https://images.unsplash.com/photo-1581159931975-1c3e2cf8ab6f?w=900&q=80',
-                tags: ['Penang', 'Food', 'Heritage'],
-                date: 'April 2026',
-                readTime: '9 min read',
-                content: `<p><strong>George Town, Penang</strong> is a UNESCO World Heritage Site and arguably the food capital of Malaysia. Its streets are a living museum of colonial architecture, vibrant street art, and some of the best hawker food you'll ever taste.</p><br><h3><i class="fas fa-utensils"></i> Must-Try Dishes</h3><p><strong>Char Kway Teow</strong> at Siam Road (Michelin-recognised), <strong>Penang Laksa</strong> (spicy-sour fish noodle soup) at Air Itam Market, <strong>Hokkien Mee</strong> (prawn noodle soup), and <strong>Cendol</strong> (shaved ice dessert) at Penang Road Famous Teochew Cendol.</p><br><h3><i class="fas fa-palette"></i> Street Art Trail</h3><p>Lithuanian artist Ernest Zacharevic's murals have become synonymous with George Town. Rent a bicycle and follow the official street art map — don't miss "Kids on a Bicycle" and "Boy on a Chair" on Armenian Street.</p><br><h3><i class="fas fa-hotel"></i> Where to Stay</h3><p>Stay in a restored heritage boutique hotel in the heart of George Town. The <strong>Blue Mansion</strong> (Cheong Fatt Tze Mansion) offers luxurious rooms in a stunning indigo-coloured courtyard building.</p>`
-            },
-            'singapore-mbs': {
-                title: 'Marina Bay Sands — SkyPark Views & Light Shows',
-                cover: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=900&q=80',
-                tags: ['Marina Bay', 'Iconic', 'Skyline'],
-                date: 'June 2026',
-                readTime: '7 min read',
-                content: `<p><strong>Marina Bay Sands</strong> is Singapore's most recognisable landmark. The three 55-storey towers are crowned by the 340-metre-long <strong>SkyPark</strong> — a gravity-defying platform that hosts the world's most famous infinity pool, an observation deck, and celebrity chef restaurants.</p><br><h3><i class="fas fa-swimming-pool"></i> Infinity Pool</h3><p>The infinity pool is <strong>exclusive to hotel guests</strong>. If you're not staying at the hotel, you can still visit the <strong>Sands SkyPark Observation Deck</strong> (tickets from SGD 26) for panoramic views of the city skyline and the Strait of Singapore.</p><br><h3><i class="fas fa-star"></i> Spectra Light Show</h3><p>Every evening at 8:00 PM and 9:00 PM (with an additional 10:00 PM show on weekends), the <strong>Spectra</strong> outdoor light and water show illuminates the bay. Best viewed from the Event Plaza or from across the bay at the Merlion Park.</p><br><h3><i class="fas fa-shopping-bag"></i> The Shoppes</h3><p>The connected mall features a canal with sampan boat rides, a massive casino, and luxury brands. Even window-shopping here is an experience in itself.</p>`
-            },
-            'singapore-gardens': {
-                title: 'Gardens by the Bay — Supertree Grove & Cloud Forest',
-                cover: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80',
-                tags: ['Nature', 'Futuristic', 'Gardens'],
-                date: 'May 2026',
-                readTime: '6 min read',
-                content: `<p><strong>Gardens by the Bay</strong> is a SGD 1 billion nature park spanning 101 hectares in central Singapore. Its <strong>Supertree Grove</strong> features 18 vertical gardens reaching up to 50 metres tall, connected by the OCBC Skyway — a 128-metre aerial walkway.</p><br><h3><i class="fas fa-leaf"></i> Cloud Forest</h3><p>The cooled conservatory houses a 35-metre indoor waterfall (the world's tallest indoor waterfall) and a lush mountain covered in orchids, ferns, and bromeliads. The temperature is kept at a refreshing 23-25°C — a welcome escape from Singapore's heat.</p><br><h3><i class="fas fa-star"></i> Garden Rhapsody</h3><p>Nightly at 7:45 PM and 8:45 PM, the Supertrees come alive with a free <strong>Garden Rhapsody</strong> light and music show. Lie down on the grass and watch the trees dance in sync with the soundtrack. Pure magic.</p><br><h3><i class="fas fa-ticket-alt"></i> Tickets</h3><p>The outdoor Supertree Grove is free. The OCBC Skyway costs SGD 14, and the Cloud Forest + Flower Dome combo ticket is SGD 32 for adults.</p>`
-            },
-            'singapore-chinatown': {
-                title: 'Chinatown, Little India & Kampong Glam — Singapore\'s Cultural Heart',
-                cover: 'https://images.unsplash.com/photo-1605964222113-5c4b3b1b5b1a?w=900&q=80',
-                tags: ['Heritage', 'Culture', 'Hawker Food'],
-                date: 'April 2026',
-                readTime: '8 min read',
-                content: `<p>Singapore's multicultural identity shines brightest in its three heritage districts: <strong>Chinatown</strong>, <strong>Little India</strong>, and <strong>Kampong Glam</strong>. Each neighbourhood offers a distinct sensory experience — from the aroma of incense in Chinese temples to the vibrant colours of Indian silk shops and the aromatic spices of Malay cuisine.</p><br><h3><i class="fas fa-store"></i> Chinatown</h3><p>Visit the <strong>Buddha Tooth Relic Temple</strong> (free entry), stroll through the bustling Chinatown Complex hawker centre for Michelin-starred <strong>Liao Fan Hawker Chan</strong> soya sauce chicken, and explore the charming shophouses along Smith Street.</p><br><h3>🇮🇳 Little India</h3><p>The <strong>Tekka Centre</strong> is a must for authentic Indian food — try the biryani and teh tarik. The colourful <strong>House of Tan Teng Niah</strong> is the most photographed building in the district. Visit during Deepavali for stunning light displays.</p><br><h3><i class="fas fa-mosque"></i> Kampong Glam</h3><p>Dominated by the golden-domed <strong>Sultan Mosque</strong>, this Malay-Arab quarter is filled with hip cafes, vintage boutiques along Haji Lane, and some of the best Middle Eastern food in Singapore.</p>`
+        function getPostIdsByCountry(country) {
+            return Object.keys(blogPosts).filter(id => blogPosts[id].country === country);
+        }
+
+        function renderCard(postId, clickable = true, delay = 0) {
+            const p = blogPosts[postId];
+            if (!p) return '';
+            const clickAttr = clickable ? `onclick="openBlogPost('${postId}')" style="cursor:pointer;" role="button" tabindex="0"` :
+                '';
+            const animDelay = delay > 0 ? `style="animation-delay:${delay}ms;"` : '';
+            return `
+                    <div class="glass-card" ${clickAttr} ${animDelay}>
+                        <div class="card-border-glow"></div>
+                        <img src="${p.cover}" alt="${p.title}" loading="lazy" />
+                        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:4px;">
+                            ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                        </div>
+                        <h3>${p.title}</h3>
+                        <div class="meta"><i class="far fa-calendar-alt"></i> ${p.date} · <i class="far fa-clock"></i> ${p.readTime}</div>
+                        <p>${p.excerpt}</p>
+                        <button class="read-more"><i class="fas fa-arrow-right"></i> Read Full Article</button>
+                    </div>
+                `;
+        }
+
+        function renderGrid(containerId, postIds) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            if (!postIds || postIds.length === 0) {
+                container.innerHTML =
+                    `<div class="search-no-results"><i class="fas fa-search"></i><h3>No articles found</h3><p>Try a different keyword</p></div>`;
+                return;
             }
-        };
+            container.innerHTML = postIds.map((id, i) => renderCard(id, true, i * 80)).join('');
+            init3DCards();
+        }
 
-        // ── 3D CURSOR FOLLOW EFFECT ──
-        function init3DCards() {
-    const cards = document.querySelectorAll('.glass-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;   // fixed from /1
-            const centerY = rect.height / 2;  // fixed from /1
-            const rotateX = (y - centerY) / (rect.height / 2) * -3; // reduced intensity
-            const rotateY = (x - centerX) / (rect.width / 2) * 3;   // reduced intensity
-            card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
-        });
-    });
-}
+        function navigateTo(pageName) {
+            closeMobileMenu();
+            document.getElementById('page-blogpost').classList.remove('active');
 
-        // ── MENU TOGGLE ──
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + pageName);
+            if (target) {
+                target.classList.add('active');
+                previousPage = currentPage;
+                currentPage = pageName;
+
+                document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+                const navBtn = document.getElementById('nav-' + pageName);
+                if (navBtn) navBtn.classList.add('active');
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                if (pageName === 'malaysia') {
+                    renderGrid('malaysiaGrid', getPostIdsByCountry('malaysia'));
+                } else if (pageName === 'singapore') {
+                    renderGrid('singaporeGrid', getPostIdsByCountry('singapore'));
+                } else if (pageName === 'home') {
+                    renderGrid('featuredGrid', featuredIds);
+                    renderGrid('deepDivesGrid', deepDiveIds);
+                }
+                // Re-init 3D + border glow
+                setTimeout(init3DCards, 150);
+            }
+        }
+
+        function openBlogPost(postId) {
+            closeMobileMenu();
+            const post = blogPosts[postId];
+            if (!post) return;
+            currentPostId = postId;
+            previousPage = currentPage;
+
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            const blogPage = document.getElementById('page-blogpost');
+            blogPage.classList.add('active');
+            document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
+
+            const contentDiv = document.getElementById('blogPostContent');
+            contentDiv.innerHTML = `
+                    <div class="card-border-glow"></div>
+                    <img class="cover" src="${post.cover}" alt="${post.title}" loading="lazy" />
+                    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;">
+                        ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                    </div>
+                    <h2>${post.title}</h2>
+                    <div class="meta"><i class="far fa-calendar-alt"></i> ${post.date} · <i class="far fa-clock"></i> ${post.readTime}</div>
+                    <div class="content-text" style="margin-top:16px;">${post.content}</div>
+                    <div class="share-section">
+                        <span><i class="fas fa-share-alt"></i> Share:</span>
+                        <button class="share-btn" onclick="sharePost('facebook')" title="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
+                        <button class="share-btn" onclick="sharePost('twitter')" title="Share on Twitter"><i class="fab fa-twitter"></i></button>
+                        <button class="share-btn" onclick="sharePost('linkedin')" title="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></button>
+                        <button class="share-btn" onclick="sharePost('copy')" title="Copy link"><i class="fas fa-link"></i></button>
+                    </div>
+                    <button class="back-btn" style="margin-top:24px;" onclick="closeBlogPost()"><i class="fas fa-arrow-left"></i> Back</button>
+                `;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(init3DCards, 150);
+        }
+
+        function closeBlogPost() {
+            document.getElementById('page-blogpost').classList.remove('active');
+            navigateTo(previousPage);
+        }
+
+        function sharePost(platform) {
+            const url = window.location.href;
+            const title = currentPostId ? blogPosts[currentPostId]?.title || 'Baai Mart' : 'Baai Mart';
+            const shareUrl = encodeURIComponent(url);
+            const shareTitle = encodeURIComponent(title);
+            let link = '';
+            switch (platform) {
+                case 'facebook':
+                    link = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+                    break;
+                case 'twitter':
+                    link = `https://twitter.com/intent/tweet?text=${shareTitle}&url=${shareUrl}`;
+                    break;
+                case 'linkedin':
+                    link = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+                    break;
+                case 'copy':
+                    navigator.clipboard.writeText(url).then(() => {
+                        const msg = document.querySelector('.share-section span');
+                        if (msg) { const orig = msg.innerHTML;
+                            msg.innerHTML = '<i class="fas fa-check"></i> Copied!'; setTimeout(() => msg.innerHTML =
+                                orig, 2000); }
+                    }).catch(() => alert('Copy the URL manually: ' + url));
+                    return;
+            }
+            if (link) window.open(link, '_blank', 'width=600,height=400');
+        }
+
+        function performSearch(query) {
+            const q = query.trim().toLowerCase();
+            if (!q) {
+                if (currentPage === 'home') {
+                    renderGrid('featuredGrid', featuredIds);
+                    renderGrid('deepDivesGrid', deepDiveIds);
+                    const header = document.querySelector('#featuredGrid').previousElementSibling;
+                    if (header && header.classList.contains('section-header')) {
+                        header.innerHTML = `<i class="fas fa-gem"></i><h2>Featured Destinations</h2>`;
+                    }
+                } else if (currentPage === 'malaysia') {
+                    renderGrid('malaysiaGrid', getPostIdsByCountry('malaysia'));
+                } else if (currentPage === 'singapore') {
+                    renderGrid('singaporeGrid', getPostIdsByCountry('singapore'));
+                }
+                return;
+            }
+            const results = Object.keys(blogPosts).filter(id => {
+                const p = blogPosts[id];
+                const searchable = (p.title + ' ' + p.excerpt + ' ' + p.tags.join(' ') + ' ' + p.content)
+                    .toLowerCase();
+                return searchable.includes(q);
+            });
+            if (currentPage === 'home') {
+                const header = document.querySelector('#featuredGrid').previousElementSibling;
+                if (header && header.classList.contains('section-header')) {
+                    header.innerHTML =
+                        `<i class="fas fa-search"></i><h2>Search Results <span class="count">(${results.length})</span></h2>`;
+                }
+                renderGrid('featuredGrid', results);
+                document.getElementById('deepDivesGrid').innerHTML = '';
+            } else if (currentPage === 'malaysia') {
+                renderGrid('malaysiaGrid', results);
+            } else if (currentPage === 'singapore') {
+                renderGrid('singaporeGrid', results);
+            }
+        }
+
         function toggleMenu() {
             navLinks.classList.toggle('show');
             if (navLinks.classList.contains('show')) {
@@ -788,88 +1923,146 @@
             }
         }
 
-        // ── NAVIGATION ──
-        function navigateTo(pageName) {
-            closeMobileMenu();
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            const target = document.getElementById('page-' + pageName);
-            if (target) {
-                target.classList.add('active');
-                previousPage = currentPage;
-                currentPage = pageName;
-                document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-                const navBtn = document.getElementById('nav-' + pageName);
-                if (navBtn) navBtn.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                if (pageName !== 'blogpost') {
-                    document.getElementById('page-blogpost').classList.remove('active');
-                }
-                setTimeout(init3DCards, 100);
-            }
-        }
-
-        function openBlogPost(postId) {
-            closeMobileMenu();
-            const post = blogPosts[postId];
-            if (!post) return;
-            previousPage = currentPage;
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            const blogPage = document.getElementById('page-blogpost');
-            blogPage.classList.add('active');
-            document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-
-            const contentDiv = document.getElementById('blogPostContent');
-            contentDiv.innerHTML = `
-                <img class="cover" src="${post.cover}" alt="${post.title}" loading="lazy">
-                <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px;">
-                    ${post.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-                </div>
-                <h2>${post.title}</h2>
-                <p class="meta"><i class="far fa-calendar-alt"></i> ${post.date} · <i class="far fa-clock"></i> ${post.readTime}</p>
-                <div class="content-text" style="margin-top:16px;">${post.content}</div>
-                <button class="back-btn" style="margin-top:24px;" onclick="closeBlogPost()"><i class="fas fa-arrow-left"></i> Back</button>
-            `;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            setTimeout(init3DCards, 100);
-        }
-
-        function closeBlogPost() {
-            document.getElementById('page-blogpost').classList.remove('active');
-            navigateTo(previousPage);
-        }
-
-        // ── THEME TOGGLE ──
         function toggleTheme() {
             const html = document.documentElement;
             const current = html.getAttribute('data-theme');
             const next = current === 'dark' ? 'light' : 'dark';
             html.setAttribute('data-theme', next);
-            if (next === 'dark') {
-                themeIcon.className = 'fas fa-sun';
-            } else {
-                themeIcon.className = 'fas fa-moon';
+            localStorage.setItem('baai-theme', next);
+            // Add a brief animation class
+            const knob = document.querySelector('.theme-toggle-knob');
+            if (knob) {
+                knob.style.transform = 'scale(1.3)';
+                setTimeout(() => { knob.style.transform = ''; }, 200);
             }
-            localStorage.setItem('wanderlust-theme', next);
         }
 
-        // ── INIT ──
-        function init() {
-            const savedTheme = localStorage.getItem('wanderlust-theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            if (savedTheme === 'dark') {
-                themeIcon.className = 'fas fa-sun';
-            } else {
-                themeIcon.className = 'fas fa-moon';
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            const input = document.getElementById('newsletterEmail');
+            const msg = document.getElementById('newsletterMessage');
+            const email = input.value.trim();
+            if (!email || !email.includes('@')) {
+                msg.className = 'newsletter-message error';
+                msg.textContent = 'Please enter a valid email address.';
+                return;
             }
-            navigateTo('home');
-            init3DCards();
+            msg.className = 'newsletter-message success';
+            msg.textContent = '🎉 Thank you for subscribing! Check your inbox shortly.';
+            input.value = '';
+            setTimeout(() => {
+                msg.className = 'newsletter-message';
+                msg.textContent = '';
+            }, 5000);
         }
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.getElementById('page-blogpost').classList.contains('active')) {
-                closeBlogPost();
+        function init3DCards() {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const cx = rect.width / 2;
+                    const cy = rect.height / 2;
+                    const rx = (y - cy) / (rect.height / 2) * -3;
+                    const ry = (x - cx) / (rect.width / 2) * 3;
+                    const px = ((x) / rect.width) * 100;
+                    const py = ((y) / rect.height) * 100;
+                    card.style.setProperty('--x', px + '%');
+                    card.style.setProperty('--y', py + '%');
+                    card.style.transform =
+                        `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(10px)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform =
+                        'perspective(800px) rotateX(0) rotateY(0) translateZ(0)';
+                    card.style.setProperty('--x', '50%');
+                    card.style.setProperty('--y', '50%');
+                });
+            });
+        }
+
+        // ─── GLOBAL MOUSE GLOW ───
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('mouse-glow');
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // ─── RIPPLE EFFECT ───
+        function createRipple(e, element) {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple';
+            const size = Math.max(rect.width, rect.height) * 0.6;
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x - size / 2 + 'px';
+            ripple.style.top = y - size / 2 + 'px';
+            element.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 600);
+        }
+
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest(
+                '.read-more, .back-btn, .nav-links button, .theme-toggle-switch, .hamburger, .newsletter-form button, .share-btn, .back-to-top'
+                );
+            if (target && !target.classList.contains('theme-toggle-switch')) {
+                createRipple(e, target);
             }
         });
+
+        // ─── BACK TO TOP ───
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // ─── SEARCH ───
+        searchInput.addEventListener('input', (e) => {
+            performSearch(e.target.value);
+        });
+
+        // ─── KEYBOARD ESC ───
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (document.getElementById('page-blogpost').classList.contains('active')) {
+                    closeBlogPost();
+                }
+                if (searchInput.value) {
+                    searchInput.value = '';
+                    performSearch('');
+                }
+            }
+        });
+
+        // ─── INIT ───
+        function init() {
+            const savedTheme = localStorage.getItem('baai-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+
+            window.navigateTo('home');
+            renderGrid('featuredGrid', featuredIds);
+            renderGrid('deepDivesGrid', deepDiveIds);
+            renderGrid('malaysiaGrid', getPostIdsByCountry('malaysia'));
+            renderGrid('singaporeGrid', getPostIdsByCountry('singapore'));
+
+            setTimeout(init3DCards, 200);
+        }
+
+        // Expose globals
+        window.navigateTo = navigateTo;
+        window.openBlogPost = openBlogPost;
+        window.closeBlogPost = closeBlogPost;
+        window.toggleTheme = toggleTheme;
+        window.toggleMenu = toggleMenu;
+        window.sharePost = sharePost;
+        window.subscribeNewsletter = subscribeNewsletter;
 
         init();
     </script>
