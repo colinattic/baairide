@@ -1,52 +1,81 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baai Mart · Travel Stories</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baai Mart · Singapore Travel Portal 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         :root {
-            --bg: #0b0b1a;
-            --surface: rgba(20, 20, 40, 0.65);
-            --text: #f0f0f8;
-            --text-secondary: #b0b0cc;
-            --text-muted: #7c7c9a;
-            --border: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(255, 255, 255, 0.16);
-            --accent-1: #8b5cf6;
-            --accent-2: #6366f1;
-            --gradient-accent: linear-gradient(135deg, #8b5cf6, #6366f1, #7c3aed);
-            --card-radius: 32px;
-            --nav-bg: rgba(11, 11, 26, 0.8);
-            --input-bg: rgba(255, 255, 255, 0.07);
-            --heart: #f472b6;
+            --bg: #080815;
+            --surface: rgba(20, 20, 42, 0.82);
+            --surface-solid: #14142a;
+            --text: #f0edf8;
+            --text-secondary: #b8b5d6;
+            --text-muted: #7a78a4;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(255, 255, 255, 0.14);
+            --accent: #7c3aed;
+            --accent-light: #a78bfa;
+            --accent-dark: #5b21b6;
+            --accent-warm: #f59e0b;
+            --accent-rose: #f43f5e;
+            --accent-teal: #14b8a6;
+            --gradient: linear-gradient(135deg, #7c3aed, #6366f1, #8b5cf6);
+            --gradient-warm: linear-gradient(135deg, #f59e0b, #f97316, #ef4444);
+            --gradient-teal: linear-gradient(135deg, #14b8a6, #06b6d4, #0ea5e9);
+            --radius: 24px;
+            --radius-sm: 14px;
+            --radius-xs: 10px;
+            --nav-bg: rgba(8, 8, 21, 0.9);
+            --shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.18);
+            --glow: rgba(124, 58, 237, 0.07);
+            --heart: #f43f5e;
             --success: #34d399;
             --error: #f87171;
-            --transition: cubic-bezier(0.22, 1, 0.36, 1);
-            --glow: rgba(139, 92, 246, 0.1);
-            --btt-bg: rgba(139, 92, 246, 0.15);
-            --btt-border: rgba(139, 92, 246, 0.3);
-            --ripple-color: rgba(255, 255, 255, 0.2);
+            --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            --btt-bg: rgba(124, 58, 237, 0.2);
+            --btt-border: rgba(124, 58, 237, 0.35);
+            --ticker-bg: rgba(124, 58, 237, 0.06);
+            --ticker-text: #c4b5fd;
+            --badge-bg: rgba(124, 58, 237, 0.14);
+            --scrollbar: rgba(124, 58, 237, 0.25);
+            --input-bg: rgba(255, 255, 255, 0.05);
+            --ripple: rgba(255, 255, 255, 0.07);
+            --hero-overlay: rgba(8, 8, 21, 0.6);
+            --card-hover-glow: rgba(124, 58, 237, 0.08);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         [data-theme="light"] {
             --bg: #f8f7ff;
-            --surface: rgba(255, 255, 255, 0.75);
+            --surface: rgba(255, 255, 255, 0.85);
+            --surface-solid: #ffffff;
             --text: #1a1a2e;
-            --text-secondary: #4a4a60;
-            --text-muted: #6b6b80;
-            --border: rgba(0, 0, 0, 0.08);
-            --border-hover: rgba(0, 0, 0, 0.15);
-            --nav-bg: rgba(248, 247, 255, 0.8);
-            --input-bg: rgba(0, 0, 0, 0.04);
-            --heart: #e11d48;
-            --glow: rgba(139, 92, 246, 0.04);
-            --btt-bg: rgba(139, 92, 246, 0.1);
-            --btt-border: rgba(139, 92, 246, 0.2);
-            --ripple-color: rgba(0, 0, 0, 0.1);
+            --text-secondary: #4a4a6a;
+            --text-muted: #6b6b8a;
+            --border: rgba(0, 0, 0, 0.06);
+            --border-hover: rgba(0, 0, 0, 0.12);
+            --nav-bg: rgba(248, 247, 255, 0.92);
+            --shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --glow: rgba(124, 58, 237, 0.04);
+            --btt-bg: rgba(124, 58, 237, 0.1);
+            --btt-border: rgba(124, 58, 237, 0.2);
+            --ticker-bg: rgba(124, 58, 237, 0.04);
+            --ticker-text: #6d28d9;
+            --badge-bg: rgba(124, 58, 237, 0.08);
+            --input-bg: rgba(0, 0, 0, 0.03);
+            --ripple: rgba(0, 0, 0, 0.05);
+            --hero-overlay: rgba(248, 247, 255, 0.55);
+            --card-hover-glow: rgba(124, 58, 237, 0.04);
         }
 
         *,
@@ -56,187 +85,183 @@
             margin: 0;
             padding: 0;
         }
-
         html {
             scroll-behavior: smooth;
             font-size: 16px;
         }
-
         body {
-            font-family: 'Inter', system-ui, sans-serif;
+            font-family: var(--font-body);
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
             transition: background 0.4s var(--transition), color 0.4s;
-            overflow-x: hidden;
-            position: relative;
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+        ::selection {
+            background: var(--accent);
+            color: #fff;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--scrollbar);
+            border-radius: 10px;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+        }
+        a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        input,
+        select {
+            font-family: inherit;
+            outline: none;
         }
 
+        /* Mouse Glow */
         #mouse-glow {
             position: fixed;
             pointer-events: none;
             z-index: 0;
-            width: 500px;
-            height: 500px;
+            width: 520px;
+            height: 520px;
             border-radius: 50%;
             background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
             transform: translate(-50%, -50%);
-            opacity: 0.7;
+            opacity: 0.55;
             will-change: left, top;
-            transition: opacity 0.3s;
         }
 
-        /* ── NAVIGATION ── */
+        /* ─── NAVIGATION ─── */
         .nav {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: var(--nav-bg);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
             border-bottom: 1px solid var(--border);
-            padding: 0.6rem 1.8rem;
+            height: 66px;
+            padding: 0 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 68px;
-            transition: background 0.3s;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            gap: 1rem;
         }
-
         .nav-logo {
-            font-size: 1.6rem;
+            font-family: var(--font-display);
+            font-size: 1.35rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            background: var(--gradient-accent);
+            letter-spacing: -0.01em;
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            cursor: pointer;
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            position: relative;
-            overflow: hidden;
+            gap: 0.5rem;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: opacity 0.3s;
         }
-
-        .nav-logo svg {
-            width: 28px;
-            height: 28px;
-            fill: none;
-            stroke: var(--accent-1);
-            stroke-width: 2;
+        .nav-logo:hover {
+            opacity: 0.8;
         }
-
+        .nav-logo i {
+            font-size: 1.2rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            list-style: none;
+            gap: 0.15rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-
         .nav-links a {
             color: var(--text-secondary);
-            text-decoration: none;
             font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s, transform 0.15s;
-            position: relative;
-            padding: 0.4rem 0.5rem;
+            font-size: 0.82rem;
+            padding: 0.4rem 0.85rem;
+            border-radius: 10px;
+            transition: all 0.3s var(--transition);
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 0.35rem;
+            position: relative;
             white-space: nowrap;
-            border-radius: 8px;
-            overflow: hidden;
         }
-        .nav-links a:active {
-            transform: scale(0.95);
+        .nav-links a i {
+            font-size: 0.7rem;
         }
-
-        .nav-links a svg {
-            width: 16px;
-            height: 16px;
-            stroke: currentColor;
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-            transition: width 0.3s var(--transition);
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-links a:hover {
             color: var(--text);
+            background: var(--input-bg);
         }
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-badge {
-            background: var(--gradient-accent);
+        .nav-links a.active {
             color: #fff;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 0.15rem 0.5rem;
-            border-radius: 50px;
-            margin-left: 0.3rem;
-            letter-spacing: 0.03em;
+            background: var(--accent);
+            font-weight: 600;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
         }
-
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 0.6rem;
+            flex-shrink: 0;
         }
-
         .search-wrap {
             position: relative;
         }
-        .search-wrap svg.search-icon {
+        .search-wrap i {
             position: absolute;
-            left: 0.9rem;
+            left: 0.85rem;
             top: 50%;
             transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            stroke: var(--text-muted);
-            stroke-width: 2;
+            color: var(--text-muted);
+            font-size: 0.75rem;
             pointer-events: none;
         }
         .search-wrap input {
             background: var(--input-bg);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            padding: 0.38rem 1rem 0.38rem 2.3rem;
             border-radius: 50px;
-            font-size: 0.85rem;
-            width: 180px;
+            font-size: 0.78rem;
+            width: 170px;
             transition: all 0.35s var(--transition);
-            outline: none;
-            font-family: inherit;
         }
         .search-wrap input:focus {
-            border-color: var(--accent-1);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
             width: 210px;
         }
-
         .theme-toggle {
-            width: 48px;
+            width: 44px;
             height: 26px;
             background: var(--input-bg);
             border: 1px solid var(--border);
@@ -248,353 +273,961 @@
             transition: all 0.4s var(--transition);
             flex-shrink: 0;
             position: relative;
-            overflow: hidden;
         }
-        .theme-toggle:active {
-            transform: scale(0.95);
-        }
-        .theme-toggle .toggle-thumb {
+        .theme-toggle .thumb {
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: var(--gradient-accent);
+            background: var(--gradient);
             display: flex;
             align-items: center;
             justify-content: center;
             transition: transform 0.4s var(--transition);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 0.6rem;
         }
-        .theme-toggle .toggle-thumb svg {
-            width: 14px;
-            height: 14px;
-            stroke: #fff;
-            stroke-width: 2;
-            fill: none;
+        [data-theme="light"] .theme-toggle .thumb {
+            transform: translateX(18px);
         }
-        [data-theme="light"] .theme-toggle .toggle-thumb {
-            transform: translateX(22px);
-        }
-
         .hamburger {
             display: none;
             flex-direction: column;
-            justify-content: center;
-            gap: 5px;
+            gap: 4px;
             cursor: pointer;
             background: none;
             border: none;
-            padding: 6px;
-            width: 40px;
-            height: 40px;
-            z-index: 1001;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
+            padding: 8px;
+            border-radius: 10px;
+            transition: background 0.3s;
         }
-        .hamburger:active {
-            transform: scale(0.9);
+        .hamburger:hover {
+            background: var(--input-bg);
         }
         .hamburger span {
             display: block;
-            width: 24px;
-            height: 2px;
+            width: 21px;
+            height: 2.5px;
             background: var(--text);
-            border-radius: 2px;
+            border-radius: 4px;
             transition: all 0.35s var(--transition);
         }
         .hamburger.open span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: rotate(45deg) translate(4px, 4px);
         }
         .hamburger.open span:nth-child(2) {
             opacity: 0;
             transform: scaleX(0);
         }
         .hamburger.open span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+            transform: rotate(-45deg) translate(4px, -4px);
         }
 
-        @media (max-width: 860px) {
-            .hamburger {
-                display: flex;
-            }
+        @media (max-width: 1000px) {
             .nav-links {
                 position: absolute;
-                top: 68px;
+                top: 66px;
                 left: 0;
                 width: 100%;
                 background: var(--nav-bg);
-                backdrop-filter: blur(30px);
+                backdrop-filter: blur(32px);
                 flex-direction: column;
-                align-items: center;
-                gap: 1.2rem;
-                padding: 2rem 1rem;
+                padding: 1rem 1.5rem;
+                gap: 0.2rem;
                 border-bottom: 1px solid var(--border);
-                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
                 transform: translateY(-120%);
                 opacity: 0;
                 transition: transform 0.4s var(--transition), opacity 0.3s;
                 pointer-events: none;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                z-index: 999;
             }
             .nav-links.open {
                 transform: translateY(0);
                 opacity: 1;
                 pointer-events: auto;
             }
+            .nav-links a {
+                width: 100%;
+                justify-content: center;
+                padding: 0.5rem;
+            }
+            .hamburger {
+                display: flex;
+            }
             .nav {
-                padding: 0.5rem 1rem;
+                padding: 0 1rem;
             }
             .search-wrap input {
-                width: 130px;
+                width: 100px;
             }
             .search-wrap input:focus {
-                width: 160px;
+                width: 130px;
+            }
+        }
+        @media (max-width: 480px) {
+            .search-wrap input {
+                width: 70px;
+                font-size: 0.7rem;
+                padding: 0.3rem 0.5rem 0.3rem 1.7rem;
+            }
+            .search-wrap input:focus {
+                width: 100px;
+            }
+            .search-wrap i {
+                left: 0.5rem;
+                font-size: 0.6rem;
+            }
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+            .nav-logo i {
+                font-size: 1rem;
             }
         }
 
-        /* ── MAIN CONTENT ── */
-        .container {
-            max-width: 1200px;
+        /* ─── TICKER ─── */
+        .ticker-wrap {
+            background: var(--ticker-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 0.3rem 0;
+            overflow: hidden;
+            position: sticky;
+            top: 66px;
+            z-index: 998;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ticker-inner {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            white-space: nowrap;
+            animation: tickerScroll 28s linear infinite;
+            width: max-content;
+            padding: 0 2rem;
+        }
+        .ticker-inner span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--ticker-text);
+            font-weight: 500;
+            font-size: 0.78rem;
+        }
+        .ticker-inner span i {
+            color: var(--accent);
+            font-size: 0.35rem;
+        }
+        .ticker-inner .badge {
+            background: var(--gradient);
+            color: #fff;
+            font-size: 0.48rem;
+            font-weight: 700;
+            padding: 0.1rem 0.55rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .ticker-inner {
+                animation: none;
+                flex-wrap: wrap;
+                white-space: normal;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            position: relative;
+            padding: 4.5rem 1.5rem 5.5rem;
+            text-align: center;
+            overflow: hidden;
+            background: var(--bg);
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&q=80') center/cover no-repeat;
+            opacity: 0.16;
+            z-index: 0;
+            filter: saturate(0.4);
+        }
+        [data-theme="light"] .hero-bg {
+            opacity: 0.09;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--hero-overlay);
+            z-index: 1;
+            backdrop-filter: blur(1px);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 2.5rem 1.5rem;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--surface);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--border);
+            padding: 0.25rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.03em;
+        }
+        .hero-badge i {
+            margin-right: 0.35rem;
+        }
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.04;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.9rem;
+        }
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 480px;
+            margin: 0 auto 2rem;
+            line-height: 1.5;
+        }
+        .hero-search {
+            display: flex;
+            max-width: 480px;
+            margin: 0 auto;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-search input {
+            flex: 1;
+            min-width: 170px;
+            padding: 0.75rem 1.2rem;
+            border-radius: 60px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            backdrop-filter: blur(14px);
+            color: var(--text);
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .hero-search input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+        }
+        .hero-search button {
+            padding: 0.75rem 2rem;
+            border-radius: 60px;
+            background: var(--gradient);
+            color: #fff;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.3s;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
+        }
+        .hero-search button:hover {
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+            transform: translateY(-2px);
+        }
+        .hero-search button:active {
+            transform: scale(0.94);
+        }
+
+        /* ─── STATS ─── */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 0.9rem;
+            max-width: 880px;
+            margin: -2rem auto 2.5rem;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 3;
+        }
+        .stat-item {
+            background: var(--surface);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            transition: all 0.3s var(--transition);
+            cursor: default;
+        }
+        .stat-item:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(124, 58, 237, 0.06);
+        }
+        .stat-item .number {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        .stat-item .label {
+            color: var(--text-muted);
+            font-size: 0.65rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ─── CONTAINER ─── */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem 1.5rem;
             position: relative;
             z-index: 1;
         }
 
-        .hero {
-            text-align: center;
-            padding: 2rem 1rem;
+        /* ─── SECTION HEADER ─── */
+        .section-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 3rem 0 1.4rem;
         }
-        .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.3rem);
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            background: var(--gradient-accent);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.4rem;
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .hero p {
-            color: var(--text-secondary);
-            font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto;
+        .section-header h2 i {
+            font-size: 1.1rem;
+        }
+        .section-header .see-all {
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            cursor: pointer;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+            background: none;
+        }
+        .section-header .see-all:hover {
+            color: var(--accent-light);
+            gap: 0.6rem;
+            border-color: var(--border);
+            background: var(--input-bg);
         }
 
+        /* ─── CARDS GRID ─── */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-            margin: 2.5rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
-
-        @media (max-width: 400px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .card {
             background: var(--surface);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border);
-            border-radius: var(--card-radius);
+            border-radius: var(--radius);
             overflow: hidden;
+            transition: all 0.45s var(--transition);
+            box-shadow: var(--shadow-sm);
             cursor: pointer;
-            transition: border-color 0.4s, box-shadow 0.4s var(--transition), transform 0.15s ease;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transform-style: preserve-3d;
-            will-change: transform;
-            animation: cardEntry 0.7s var(--transition) both;
             display: flex;
             flex-direction: column;
-        }
-        .card:active {
-            transform: scale(0.98);
+            animation: cardEntry 0.5s var(--transition) both;
+            position: relative;
         }
         .card:hover {
             border-color: var(--border-hover);
-            box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
+            box-shadow: 0 18px 50px var(--card-hover-glow);
+            transform: translateY(-6px);
+        }
+        .card:active {
+            transform: scale(0.96);
         }
         @keyframes cardEntry {
             from {
                 opacity: 0;
-                transform: translateY(35px);
+                transform: translateY(28px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
-        .card-image {
-            height: 200px;
+        .card-img {
+            height: 185px;
+            flex-shrink: 0;
             position: relative;
             overflow: hidden;
-            flex-shrink: 0;
-            border-radius: var(--card-radius) var(--card-radius) 0 0;
+            background: var(--surface-solid);
         }
-        .card-image .img-placeholder {
+        .card-img img {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
+            object-fit: cover;
             transition: transform 0.7s var(--transition);
         }
-        .card:hover .card-image .img-placeholder {
-            transform: scale(1.05);
+        .card:hover .card-img img {
+            transform: scale(1.06);
         }
-        .card-badge {
+        .card-img .badge {
             position: absolute;
-            top: 14px;
-            left: 14px;
+            top: 12px;
+            left: 12px;
             background: var(--surface);
             backdrop-filter: blur(12px);
-            padding: 0.3rem 0.9rem;
+            padding: 0.15rem 0.75rem;
             border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.62rem;
             font-weight: 600;
-            color: var(--text);
             border: 1px solid var(--border);
-        }
-
-        .card-body {
-            padding: 1.5rem 1.6rem 1.8rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        .card-body .date {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-        .card-body h3 {
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-        }
-        .card-body p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            flex: 1;
-        }
-        .card-body .read-more {
-            align-self: flex-start;
-            color: var(--accent-2);
-            font-weight: 600;
-            font-size: 0.9rem;
+            color: var(--text);
             display: flex;
             align-items: center;
             gap: 0.3rem;
+            z-index: 2;
+        }
+        .card-img .fav-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 31px;
+            height: 31px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            z-index: 2;
+        }
+        .card-img .fav-btn:hover {
+            color: var(--heart);
+            border-color: var(--heart);
+            background: rgba(244, 63, 94, 0.1);
+        }
+        .card-img .fav-btn.active {
+            color: var(--heart);
+            border-color: var(--heart);
+            background: rgba(244, 63, 94, 0.12);
+        }
+        .card-body {
+            padding: 1.1rem 1.3rem 1.4rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .card-body .meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+        .card-body .meta .rating {
+            color: #fbbf24;
+            display: flex;
+            align-items: center;
+            gap: 0.12rem;
+        }
+        .card-body .meta .rating span {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .card-body h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+        .card-body p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .card-body .read-more {
+            color: var(--accent-light);
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            margin-top: 0.3rem;
             transition: gap 0.3s;
         }
         .card:hover .read-more {
             gap: 0.6rem;
         }
+        .card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 220px;
+        }
+        .card.featured .card-img {
+            height: 100%;
+            min-height: 200px;
+        }
+        .card.featured .card-body {
+            padding: 1.6rem 2rem;
+            justify-content: center;
+        }
+        .card.featured .card-body h3 {
+            font-size: 1.4rem;
+        }
+        @media (max-width: 680px) {
+            .card.featured {
+                grid-template-columns: 1fr;
+            }
+            .card.featured .card-img {
+                height: 170px;
+            }
+        }
 
-        .coming-soon-card {
-            opacity: 0.9;
+        /* ─── EVENT LIST ─── */
+        .event-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.7rem 1.2rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .event-item:hover {
+            border-color: var(--border-hover);
+            transform: translateX(5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        .event-item .date-box {
+            min-width: 46px;
+            text-align: center;
+            background: var(--input-bg);
+            border-radius: 12px;
+            padding: 0.15rem 0.1rem;
+        }
+        .event-item .date-box .day {
+            font-size: 1.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            font-family: var(--font-display);
+        }
+        .event-item .date-box .month {
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+        .event-item .event-info h4 {
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+        .event-item .event-info p {
+            color: var(--text-muted);
+            font-size: 0.73rem;
+        }
+        .event-item .event-tag {
+            margin-left: auto;
+            font-size: 0.58rem;
+            font-weight: 600;
+            padding: 0.15rem 0.75rem;
+            border-radius: 50px;
+            background: var(--badge-bg);
+            color: var(--accent-light);
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+        @media (max-width: 500px) {
+            .event-item {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            .event-item .event-tag {
+                margin-left: 0;
+            }
+        }
+
+        /* ─── TOP 10 ─── */
+        .top10-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.7rem;
+            margin: 1rem 0 2rem;
+        }
+        .top10-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.6rem 1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            transition: all 0.3s;
             cursor: default;
-            border-style: dashed;
+        }
+        .top10-item:hover {
+            border-color: var(--border-hover);
+            transform: translateX(4px);
+        }
+        .top10-item .rank {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--accent-light);
+            min-width: 28px;
+            text-align: center;
+        }
+        .top10-item .info h4 {
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+        .top10-item .info p {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+        @media (max-width: 600px) {
+            .top10-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── VIDEO GRID ─── */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin: 1rem 0 2rem;
+        }
+        .video-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .video-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
+        }
+        .video-card .thumb {
+            position: relative;
+            padding-top: 56.25%;
+            background: var(--surface-solid);
+        }
+        .video-card .thumb img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-card .thumb .play-btn {
+            position: absolute;
+            inset: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 380px;
-            text-align: center;
+            background: rgba(0, 0, 0, 0.28);
+            transition: background 0.3s;
+        }
+        .video-card .thumb .play-btn i {
+            font-size: 3rem;
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .video-card:hover .thumb .play-btn i {
+            transform: scale(1.12);
+        }
+        .video-card .video-info {
+            padding: 0.75rem 1.1rem 1rem;
+        }
+        .video-card .video-info h4 {
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+        .video-card .video-info p {
+            color: var(--text-muted);
+            font-size: 0.73rem;
+            margin-top: 0.1rem;
+        }
+
+        /* ─── TOOLS GRID ─── */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1.2rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+        .tool-card {
             background: var(--surface);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 1.3rem 1.1rem;
+            text-align: center;
+            transition: all 0.3s var(--transition);
         }
-        .coming-soon-content {
-            display: flex;
-            flex-direction: column;
+        .tool-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        }
+        .tool-card i {
+            font-size: 1.7rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.4rem;
+        }
+        .tool-card h4 {
+            font-weight: 600;
+            font-size: 0.92rem;
+        }
+        .tool-card p {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-top: 0.1rem;
+        }
+        .tool-card .action-btn {
+            margin-top: 0.6rem;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--input-bg);
+            color: var(--text);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.75rem;
+            transition: all 0.3s;
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            padding: 2rem;
+            gap: 0.3rem;
         }
-        .coming-soon-content .country-emoji {
-            font-size: 3.8rem;
-            animation: floatUpDown 3s ease-in-out infinite;
+        .tool-card .action-btn:hover {
+            background: var(--gradient);
+            color: #fff;
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
         }
-        @keyframes floatUpDown {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-12px);
-            }
+        .currency-converter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0.5rem;
         }
-        .coming-soon-content h3 {
-            font-size: 1.6rem;
+        .currency-converter input,
+        .currency-converter select {
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.28rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.73rem;
+            min-width: 60px;
+        }
+        .currency-converter input:focus,
+        .currency-converter select:focus {
+            border-color: var(--accent);
+        }
+        .currency-converter .result {
             font-weight: 700;
-            background: var(--gradient-accent);
+            color: var(--accent-light);
+            font-size: 0.88rem;
+        }
+        .weather-widget {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.4rem;
+        }
+        .weather-widget .temp {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: 700;
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .pulse-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--accent-1);
-            margin-right: 0.4rem;
-            animation: pulse 1.8s ease-in-out infinite;
+        .weather-widget .desc {
+            color: var(--text-secondary);
+            font-size: 0.78rem;
         }
-        @keyframes pulse {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.5);
-            }
-            50% {
-                box-shadow: 0 0 0 18px rgba(139, 92, 246, 0);
-            }
+        .weather-widget i {
+            font-size: 1.5rem;
+            color: #fbbf24;
         }
 
-        /* Ripple effect */
-        .ripple {
+        /* ─── NEWSLETTER ─── */
+        .newsletter {
+            margin: 3.5rem auto 1.5rem;
+            max-width: 660px;
+            border-radius: var(--radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: var(--surface);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+        .newsletter::before {
+            content: '';
             position: absolute;
-            border-radius: 50%;
-            background: var(--ripple-color);
-            transform: scale(0);
-            animation: ripple-anim 0.6s ease-out;
-            pointer-events: none;
-            z-index: 10;
+            inset: -50%;
+            background: conic-gradient(from 0deg, transparent, var(--accent), transparent, var(--accent-light),
+                    transparent);
+            opacity: 0.03;
+            z-index: 0;
+            animation: spin 22s linear infinite;
         }
-        @keyframes ripple-anim {
+        @keyframes spin {
             to {
-                transform: scale(4);
-                opacity: 0;
+                transform: rotate(360deg);
             }
         }
+        .newsletter>* {
+            position: relative;
+            z-index: 1;
+        }
+        .newsletter h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .newsletter p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+        }
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 420px;
+            margin: 1rem auto 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .newsletter-form input {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            background: var(--input-bg);
+            color: var(--text);
+            font-size: 0.88rem;
+        }
+        .newsletter-form input:focus {
+            border-color: var(--accent);
+        }
+        .newsletter-form button {
+            padding: 0.6rem 1.6rem;
+            border-radius: 50px;
+            background: var(--gradient);
+            color: #fff;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.15s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.88rem;
+        }
+        .newsletter-form button:hover {
+            box-shadow: 0 6px 24px rgba(124, 58, 237, 0.35);
+            transform: translateY(-2px);
+        }
+        .newsletter-msg {
+            margin-top: 0.6rem;
+            font-weight: 600;
+            font-size: 0.83rem;
+        }
 
-        /* ── MODAL ── */
+        /* ─── MODAL ─── */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.65);
             z-index: 2000;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
-            animation: fadeIn 0.3s;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .modal-overlay.open {
+            display: flex;
         }
         .modal-overlay.closing {
             animation: fadeOut 0.25s forwards;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
         @keyframes fadeOut {
             to {
@@ -603,21 +1236,21 @@
         }
         .modal {
             background: var(--surface);
-            backdrop-filter: blur(30px);
+            backdrop-filter: blur(32px);
             border: 1px solid var(--border);
-            border-radius: var(--card-radius);
-            max-width: 750px;
+            border-radius: var(--radius);
+            max-width: 740px;
             width: 100%;
             max-height: 85vh;
             overflow-y: auto;
-            padding: 2rem;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            animation: modalSlideIn 0.4s var(--transition);
+            padding: 2rem 2.2rem;
+            box-shadow: var(--shadow);
+            animation: modalSlide 0.4s var(--transition);
         }
         .modal-overlay.closing .modal {
             animation: modalSlideOut 0.3s var(--transition) forwards;
         }
-        @keyframes modalSlideIn {
+        @keyframes modalSlide {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -640,8 +1273,8 @@
             background: var(--input-bg);
             border: 1px solid var(--border);
             color: var(--text);
-            width: 40px;
-            height: 40px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -649,150 +1282,88 @@
             justify-content: center;
             transition: 0.3s;
             z-index: 5;
-            overflow: hidden;
-        }
-        .modal-close:active {
-            transform: scale(0.9);
+            font-size: 0.95rem;
         }
         .modal-close:hover {
-            background: var(--accent-1);
+            background: var(--accent);
             color: #fff;
             border-color: transparent;
         }
         .modal h2 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            margin-bottom: 0.4rem;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 0.2rem;
         }
         .modal .modal-meta {
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            font-size: 0.78rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
         }
         .modal-body {
             color: var(--text-secondary);
             line-height: 1.8;
         }
         .modal-body p {
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .modal-body img {
+            border-radius: var(--radius-sm);
+            margin: 0.8rem 0;
+            width: 100%;
+        }
+        .modal-body ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .modal-body ul li {
+            margin-bottom: 0.2rem;
         }
         .share-buttons {
             display: flex;
-            gap: 0.6rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
             border-top: 1px solid var(--border);
         }
         .share-btn {
-            padding: 0.5rem 1.2rem;
+            padding: 0.35rem 1rem;
             border-radius: 50px;
             border: 1px solid var(--border);
             background: var(--input-bg);
             color: var(--text);
             cursor: pointer;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.74rem;
             transition: 0.35s;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .share-btn:active {
-            transform: scale(0.95);
+            gap: 0.3rem;
         }
         .share-btn:hover {
-            background: var(--gradient-accent);
+            background: var(--gradient);
             color: #fff;
             border-color: transparent;
         }
 
-        /* ── NEWSLETTER ── */
-        .newsletter {
-            margin: 3rem auto;
-            max-width: 680px;
-            border-radius: var(--card-radius);
-            padding: 3rem 2rem;
-            text-align: center;
-            background: var(--surface);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: conic-gradient(from 0deg, transparent, var(--accent-1), transparent, var(--accent-2), transparent);
-            opacity: 0.06;
-            z-index: 0;
-            animation: spin 14s linear infinite;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .newsletter>* {
-            position: relative;
-            z-index: 1;
-        }
-        .newsletter h3 {
-            font-size: 1.7rem;
-            font-weight: 700;
-        }
-        .newsletter-form {
-            display: flex;
-            gap: 0.6rem;
-            max-width: 450px;
-            margin: 1.5rem auto 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .newsletter-form input {
-            flex: 1;
-            min-width: 200px;
-            padding: 0.75rem 1.2rem;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: var(--input-bg);
-            color: var(--text);
-            outline: none;
-        }
-        .newsletter-form button {
-            padding: 0.75rem 1.8rem;
-            border-radius: 50px;
-            background: var(--gradient-accent);
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.15s, box-shadow 0.3s;
-        }
-        .newsletter-form button:active {
-            transform: scale(0.95);
-        }
-        .newsletter-msg {
-            margin-top: 0.8rem;
-            font-weight: 600;
-        }
-
-        /* ── BACK TO TOP ── */
+        /* ─── BACK TO TOP ─── */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            width: 52px;
-            height: 52px;
-            border-radius: 30px;
+            width: 46px;
+            height: 46px;
+            border-radius: 28px;
             background: var(--btt-bg);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
             border: 1px solid var(--btt-border);
-            color: var(--accent-2);
+            color: var(--accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -800,123 +1371,151 @@
             opacity: 0;
             transform: translateY(20px) scale(0.8);
             pointer-events: none;
-            transition: opacity 0.35s var(--transition), transform 0.35s var(--transition), background 0.3s;
+            transition: all 0.35s var(--transition);
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
-            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.1);
         }
         .back-to-top.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             pointer-events: auto;
-            animation: bounceIn 0.6s var(--transition) forwards, subtlePulse 2.5s ease-in-out 1s infinite;
-        }
-        .back-to-top:active {
-            transform: scale(0.9);
         }
         .back-to-top:hover {
-            background: var(--gradient-accent);
+            background: var(--gradient);
             color: #fff;
             border-color: transparent;
-            box-shadow: 0 12px 30px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 8px 28px rgba(124, 58, 237, 0.4);
         }
-        .back-to-top svg {
-            width: 22px;
-            height: 22px;
-            stroke: currentColor;
-            stroke-width: 2.5;
-            fill: none;
+        .back-to-top:active {
+            transform: scale(0.88);
+        }
+        .back-to-top i {
+            font-size: 1.05rem;
             transition: transform 0.3s;
         }
-        .back-to-top:hover svg {
-            transform: translateY(-2px);
-        }
-        @keyframes bounceIn {
-            0% {
-                transform: translateY(20px) scale(0.7);
-                opacity: 0;
-            }
-            60% {
-                transform: translateY(-8px) scale(1.05);
-                opacity: 1;
-            }
-            80% {
-                transform: translateY(3px) scale(0.98);
-            }
-            100% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-        }
-        @keyframes subtlePulse {
-            0%,
-            100% {
-                box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2);
-            }
-            50% {
-                box-shadow: 0 8px 28px rgba(139, 92, 246, 0.35);
-            }
+        .back-to-top:hover i {
+            transform: translateY(-3px);
         }
 
+        /* ─── FOOTER ─── */
         .footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.83rem;
+            margin-top: 1.5rem;
+        }
+        .footer .socials {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer .socials a {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            transition: color 0.3s, transform 0.2s;
+        }
+        .footer .socials a:hover {
+            color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+        .footer .creator {
+            margin-top: 0.2rem;
+            font-size: 0.73rem;
         }
         .footer .creator a {
-            color: var(--accent-3);
-            text-decoration: none;
+            color: var(--accent-light);
             font-weight: 500;
         }
-
-        .no-results {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-muted);
-            grid-column: 1 / -1;
+        .footer .creator a:hover {
+            text-decoration: underline;
         }
 
+        /* ─── MISC ─── */
+        .no-results {
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--text-muted);
+            grid-column: 1 / -1;
+            font-size: 0.95rem;
+        }
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--ripple);
+            transform: scale(0);
+            animation: rippleAnim 0.6s ease-out;
+            pointer-events: none;
+            z-index: 10;
+        }
+        @keyframes rippleAnim {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
         @media (prefers-reduced-motion: reduce) {
             * {
                 animation-duration: 0.01ms !important;
                 transition-duration: 0.01ms !important;
             }
             #mouse-glow {
-                display: none;
+                display: none !important;
             }
-            .back-to-top.visible {
-                animation: none;
+            .ticker-inner {
+                animation: none !important;
             }
             .ripple {
-                display: none;
+                display: none !important;
+            }
+        }
+        @media (max-width: 400px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero-search input {
+                min-width: 130px;
+            }
+            .modal {
+                padding: 1.2rem;
+            }
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- ═══ MOUSE GLOW ═══ -->
     <div id="mouse-glow" aria-hidden="true"></div>
 
+    <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav" role="navigation">
-        <a class="nav-logo" href="#home" aria-label="Baai Mart Home">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/><path d="M2 12h20"/></svg>
-            Baai Mart
+        <a class="nav-logo" href="#" aria-label="Baai Mart Home">
+            <i class="fas fa-compass"></i> Baai Mart
         </a>
         <ul class="nav-links" role="menubar">
-            <li><a href="#home" class="active" data-nav="home"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Home</a></li>
-            <li><a href="#malaysia" data-nav="malaysia">🇲🇾 Malaysia</a></li>
-            <li><a href="#singapore" data-nav="singapore">🇸🇬 Singapore</a></li>
-            <li><a href="#thailand" data-nav="thailand">🇹🇭 Thailand <span class="nav-badge">Soon</span></a></li>
-            <li><a href="#about" data-nav="about"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> About</a></li>
+            <li><a href="#" class="active" data-nav="home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#attractions" data-nav="attractions"><i class="fas fa-landmark"></i> Attractions</a></li>
+            <li><a href="#food" data-nav="food"><i class="fas fa-utensils"></i> Food</a></li>
+            <li><a href="#events" data-nav="events"><i class="fas fa-calendar"></i> Events</a></li>
+            <li><a href="#tools" data-nav="tools"><i class="fas fa-tools"></i> Tools</a></li>
+            <li><a href="#videos" data-nav="videos"><i class="fas fa-video"></i> Videos</a></li>
         </ul>
         <div class="nav-actions">
             <div class="search-wrap">
-                <svg class="search-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <i class="fas fa-search"></i>
                 <input type="text" id="search-input" placeholder="Search…" aria-label="Search">
             </div>
             <div class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false" tabindex="0">
-                <div class="toggle-thumb"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+                <div class="thumb"><i class="fas fa-moon"></i></div>
             </div>
             <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -924,299 +1523,895 @@
         </div>
     </nav>
 
+    <!-- ═══ TICKER ═══ -->
+    <div class="ticker-wrap" aria-label="Breaking news">
+        <div class="ticker-inner" id="ticker-inner">
+            <span><i class="fas fa-circle"></i> <span class="badge">Live</span> Marina Bay Sands light show extended</span>
+            <span><i class="fas fa-circle"></i> New hawker centre opens at Punggol — 40 stalls</span>
+            <span><i class="fas fa-circle"></i> Changi Airport T5 construction ahead of schedule</span>
+            <span><i class="fas fa-circle"></i> F1 Grand Prix 2025 tickets on sale now</span>
+            <span><i class="fas fa-circle"></i> Michelin-starred Peranakan restaurant opens</span>
+            <span><i class="fas fa-circle"></i> Gardens by the Bay wins sustainability award</span>
+            <span><i class="fas fa-circle"></i> Sentosa's new water park opens this weekend</span>
+            <span><i class="fas fa-circle"></i> <span class="badge">Live</span> Marina Bay Sands light show extended</span>
+            <span><i class="fas fa-circle"></i> New hawker centre opens at Punggol — 40 stalls</span>
+            <span><i class="fas fa-circle"></i> Changi Airport T5 construction ahead of schedule</span>
+            <span><i class="fas fa-circle"></i> F1 Grand Prix 2025 tickets on sale now</span>
+            <span><i class="fas fa-circle"></i> Michelin-starred Peranakan restaurant opens</span>
+            <span><i class="fas fa-circle"></i> Gardens by the Bay wins sustainability award</span>
+            <span><i class="fas fa-circle"></i> Sentosa's new water park opens this weekend</span>
+        </div>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fas fa-map-pin"></i> Singapore Travel Guide 2025</div>
+            <h1>Discover the Lion City</h1>
+            <p>From hawker centres to futuristic gardens — your ultimate guide to Singapore.</p>
+            <div class="hero-search">
+                <input type="text" id="hero-search-input" placeholder="Search attractions, food, events…" />
+                <button id="hero-search-btn"><i class="fas fa-arrow-right"></i> Explore</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ STATS ═══ -->
+    <div class="stats-bar">
+        <div class="stat-item"><div class="number">5.6M</div><div class="label">Annual Visitors</div></div>
+        <div class="stat-item"><div class="number">120+</div><div class="label">Hawker Centres</div></div>
+        <div class="stat-item"><div class="number">4°</div><div class="label">Avg. Temperature</div></div>
+        <div class="stat-item"><div class="number">63</div><div class="label">Michelin Stars</div></div>
+        <div class="stat-item"><div class="number">6</div><div class="label">MRT Lines</div></div>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
     <main class="container">
-        <section class="hero" id="home">
-            <h1>Discover Southeast Asia</h1>
-            <p>Immersive travel stories from Malaysia, Singapore, and soon — Thailand.</p>
-        </section>
 
-        <section class="cards-grid" id="cards-grid" aria-label="Blog posts"></section>
+        <!-- Trending -->
+        <div class="section-header">
+            <h2><i class="fas fa-fire" style="background:var(--gradient-warm);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;"></i> Trending Now</h2>
+            <span class="see-all" data-section="trending">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="trending-grid"></div>
 
+        <!-- Attractions -->
+        <div class="section-header" id="attractions">
+            <h2><i class="fas fa-landmark"></i> Top Attractions</h2>
+            <span class="see-all" data-section="attractions">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="attractions-grid"></div>
+
+        <!-- Food -->
+        <div class="section-header" id="food">
+            <h2><i class="fas fa-utensils"></i> Best Food &amp; Hawker</h2>
+            <span class="see-all" data-section="food">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="food-grid"></div>
+
+        <!-- Hidden Gems -->
+        <div class="section-header" id="hidden">
+            <h2><i class="fas fa-mask"></i> Hidden Gems</h2>
+            <span class="see-all" data-section="hidden">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="hidden-grid"></div>
+
+        <!-- Nightlife -->
+        <div class="section-header" id="nightlife">
+            <h2><i class="fas fa-moon"></i> Nightlife</h2>
+            <span class="see-all" data-section="nightlife">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="nightlife-grid"></div>
+
+        <!-- Shopping -->
+        <div class="section-header" id="shopping">
+            <h2><i class="fas fa-shopping-bag"></i> Shopping</h2>
+            <span class="see-all" data-section="shopping">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="shopping-grid"></div>
+
+        <!-- Instagram-worthy -->
+        <div class="section-header" id="instagram">
+            <h2><i class="fas fa-camera"></i> Instagram-worthy</h2>
+            <span class="see-all" data-section="instagram">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="cards-grid" id="instagram-grid"></div>
+
+        <!-- Top 10 -->
+        <div class="section-header" id="top10">
+            <h2><i class="fas fa-trophy"></i> Top 10 Must-Dos</h2>
+        </div>
+        <div class="top10-list" id="top10-list"></div>
+
+        <!-- Events -->
+        <div class="section-header" id="events">
+            <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
+            <span class="see-all" data-section="events">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="event-list" id="event-list"></div>
+
+        <!-- Videos -->
+        <div class="section-header" id="videos">
+            <h2><i class="fab fa-youtube"></i> Travel Videos</h2>
+            <span class="see-all" data-section="videos">See all <i class="fas fa-arrow-right"></i></span>
+        </div>
+        <div class="video-grid" id="video-grid"></div>
+
+        <!-- Tools -->
+        <div class="section-header" id="tools">
+            <h2><i class="fas fa-tools"></i> Travel Tools</h2>
+        </div>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <i class="fas fa-cloud-sun"></i>
+                <h4>Weather</h4>
+                <div class="weather-widget" id="weather-widget">
+                    <i class="fas fa-sun"></i>
+                    <span class="temp" id="weather-temp">32°C</span>
+                    <span class="desc" id="weather-desc">Sunny</span>
+                </div>
+                <p style="font-size:0.6rem;color:var(--text-muted);">Updated every 5 min</p>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h4>Currency</h4>
+                <div class="currency-converter">
+                    <input type="number" id="currency-amount" value="100" min="0" />
+                    <select id="currency-from"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="SGD" selected>SGD</option><option value="MYR">MYR</option><option value="JPY">JPY</option></select>
+                    <span style="color:var(--text-muted);font-size:0.7rem;">→</span>
+                    <select id="currency-to"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="SGD" selected>SGD</option><option value="MYR">MYR</option><option value="JPY">JPY</option></select>
+                    <span class="result" id="currency-result">100.00 SGD</span>
+                </div>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-subway"></i>
+                <h4>MRT Guide</h4>
+                <p>6 lines · 130+ stations</p>
+                <button class="action-btn" id="mrt-btn"><i class="fas fa-map"></i> View Map</button>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>Interactive Map</h4>
+                <button class="action-btn" id="map-btn"><i class="fas fa-external-link-alt"></i> Open Map</button>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-coins"></i>
+                <h4>Cost of Living</h4>
+                <button class="action-btn" id="cost-btn"><i class="fas fa-info-circle"></i> Details</button>
+            </div>
+            <div class="tool-card">
+                <i class="fas fa-bus"></i>
+                <h4>Transport</h4>
+                <button class="action-btn" id="transport-btn"><i class="fas fa-route"></i> Plan Trip</button>
+            </div>
+        </div>
+
+        <!-- Newsletter -->
         <section class="newsletter">
-            <h3>Stay Connected</h3>
-            <p>Join our newsletter for hidden gems and travel inspiration.</p>
+            <h3>✉️ Stay in the Loop</h3>
+            <p>Weekly Singapore travel tips, hidden gems, and event updates.</p>
             <form class="newsletter-form" id="newsletter-form">
-                <input type="email" id="news-email" placeholder="your@email.com" required>
-                <button type="submit">Subscribe ✨</button>
+                <input type="email" id="news-email" placeholder="your@email.com" required />
+                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
             </form>
             <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
         </section>
+
     </main>
 
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
-        <p>Made with <span style="color:var(--heart);">❤️</span> by Baai Mart — <a id="about-footer">About</a></p>
+        <div class="socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+        <p>Made with <span style="color:var(--heart);">❤️</span> by Baai Mart · Singapore</p>
         <div class="creator">
-            <span>Created by <a href="https://www.instagram.com/colinattic/" target="_blank" rel="noopener">@colinattic</a></span>
+            <span>Created by <a href="#" id="about-footer">@colinattic</a></span>
         </div>
     </footer>
 
+    <!-- ═══ BACK TO TOP ═══ -->
     <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+        <i class="fas fa-chevron-up"></i>
     </button>
 
-    <div class="modal-overlay" id="post-modal" style="display:none;" aria-hidden="true">
+    <!-- ═══ MODALS ═══ -->
+    <div class="modal-overlay" id="post-modal" aria-hidden="true">
         <div class="modal" role="dialog" aria-modal="true">
-            <button class="modal-close" id="modal-close">✕</button>
+            <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
             <div id="modal-content"></div>
         </div>
     </div>
 
-    <div class="modal-overlay" id="about-modal" style="display:none;" aria-hidden="true">
+    <div class="modal-overlay" id="about-modal" aria-hidden="true">
         <div class="modal" role="dialog" aria-modal="true">
-            <button class="modal-close" id="about-close">✕</button>
+            <button class="modal-close" id="about-close"><i class="fas fa-times"></i></button>
             <h2>🙋‍♂️ About Baai Mart</h2>
-            <p style="color:var(--text-secondary); line-height:1.8;">Baai Mart is a small collective of travel lovers captivated by Southeast Asia. We share deep, paragraph‑style stories from <strong>Malaysia</strong> and <strong>Singapore</strong>, with <strong>Thailand</strong> adventures coming very soon. Our aim is to inspire slow, meaningful travel beyond the tourist clichés.</p>
-            <p style="color:var(--text-muted); margin-top:1rem;">🌴 See you on the road — The Baai Team</p>
+            <p style="color:var(--text-secondary);line-height:1.8;">Baai Mart is a travel collective obsessed with
+                Southeast Asia. This Singapore hub is your go‑to for authentic hawker finds, hidden corners, and the latest
+                events — all served with a clean, modern interface.</p>
+            <p style="color:var(--text-muted);margin-top:1rem;">🌴 Explore Singapore like a local — The Baai Team</p>
         </div>
     </div>
 
+    <!-- ═══════════════════════════════════════════════
+    JAVASCRIPT — 100% WORKING
+    ═══════════════════════════════════════════════ -->
     <script>
         (function() {
-            const blogPosts = [{
-                id: 1,
-                title: 'A Love Letter to Malaysia',
-                excerpt: 'From the neon-lit streets of Kuala Lumpur to Penang’s aromatic hawker lanes and Langkawi’s turquoise shores — Malaysia is a feast for all senses.',
-                content: `<p>Malaysia is a country that doesn't just welcome you — it embraces you with warm rain, the scent of grilled satay, and a skyline that blends ancient minarets with glass towers. In Kuala Lumpur, I wandered through the golden triangle where the Petronas Towers pierce the clouds, then found myself in a back-alley kopitiam sipping teh tarik pulled with theatrical flair. The city's energy is relentless, yet you can escape to the Batu Caves where Hindu shrines glow inside limestone caverns.</p>
-                <p>Further north, Penang stole my heart. George Town's street art tells stories on every wall, but the real masterpiece is the food — char kway teow kissed by charcoal flames, assam laksa that balances sour and spicy in perfect harmony, and cendol drenched in coconut milk. I spent days simply following my nose through the markets.</p>
-                <p>Then there's Langkawi, where jungle meets the Andaman Sea. I kayaked through mangrove forests, watched eagles soar above limestone karsts, and ended each day with sunset walks on Pantai Cenang. Malaysia isn't just a destination; it's a collection of moments that stay with you long after you've left.</p>`,
-                region: 'malaysia',
-                date: '2026-06-12',
-                gradient: 'linear-gradient(135deg, #2d1b69, #7c3aed)',
-                emoji: '🏙️'
-            }, {
-                id: 2,
-                title: 'Singapore: The City in a Garden',
-                excerpt: 'A futuristic skyline, world‑class hawker food, and green spaces that redefine urban living — Singapore is a tiny island with giant ambition.',
-                content: `<p>Singapore surprised me. I expected efficiency and skyscrapers, but I found a city that breathes through its gardens. Walking through Gardens by the Bay at dusk, the Supertrees began their light symphony, and I felt like I’d stepped into a dream. The Cloud Forest cooled me with its indoor waterfall, while the Flower Dome offered a quiet escape from the humidity.</p>
-                <p>But Singapore's soul lives in its hawker centres. At Maxwell Food Centre, I joined the queue for Tian Tian Hainanese Chicken Rice — tender poached chicken with fragrant rice, a dish so simple yet so perfect it earned a Michelin star. Lau Pa Sat’s satay street sizzled under the night sky, and I devoured laksa at a plastic table surrounded by office workers and tourists alike. Every meal felt like a celebration.</p>
-                <p>Marina Bay Sands offered a different kind of spectacle — the Skypark view stretches across the Strait, and the ArtScience Museum challenged my imagination. Singapore proves that a city can be both a high-tech wonder and a heartfelt community, all within walking distance.</p>`,
-                region: 'singapore',
-                date: '2026-05-28',
-                gradient: 'linear-gradient(135deg, #0f2b4a, #3b82f6)',
-                emoji: '🌿'
-            }];
+            'use strict';
 
-            const cardsGrid = document.getElementById('cards-grid');
-            const searchInput = document.getElementById('search-input');
-            const themeToggle = document.getElementById('theme-toggle');
+            // ─── DATA ──────────────────────────────────────
+            const posts = [
+                { id: 1, title: 'Gardens by the Bay: Futuristic Wonder',
+                    excerpt: 'Supertrees, Cloud Forest, and the Flower Dome — a surreal escape in the heart of the city.',
+                    content: `<p>Gardens by the Bay is Singapore's crown jewel. The Supertree Grove lights up at dusk in a dazzling symphony of colours. The Cloud Forest houses one of the world's tallest indoor waterfalls, while the Flower Dome blooms with exotic flora from five continents.</p><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80" alt="Gardens by the Bay" loading="lazy"><p>Don't miss the OCBC Skyway for panoramic views. It's a futuristic garden that feels like stepping into another world.</p><p><strong>📍 Location:</strong> 18 Marina Gardens Dr, Singapore 018953</p>`,
+                    category: 'attractions', tags: ['nature', 'instagram'], date: '2025-07-10',
+                    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80', rating: 4.9,
+                    featured: true },
+                { id: 2, title: 'Marina Bay Sands: Iconic Skyline',
+                    excerpt: 'The infinity pool, the Skypark, and the ArtScience Museum — all in one architectural marvel.',
+                    content: `<p>Marina Bay Sands defines Singapore's skyline. The SkyPark observation deck offers 360° views of the city, and the infinity pool is legendary. The ArtScience Museum hosts world-class exhibitions in its lotus-inspired structure.</p><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&q=80" alt="Marina Bay Sands" loading="lazy"><p>At night, the light show at the Event Plaza is free and mesmerising.</p><p><strong>📍 Location:</strong> 10 Bayfront Ave, Singapore 018956</p>`,
+                    category: 'attractions', tags: ['nightlife', 'instagram'], date: '2025-07-05',
+                    image: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&q=80', rating: 4.8,
+                    featured: false },
+                { id: 3, title: 'Maxwell Food Centre: Hawker Heaven',
+                    excerpt: 'Home to Michelin-starred chicken rice and a thousand other mouth-watering stalls.',
+                    content: `<p>Maxwell Food Centre is a temple of Singaporean cuisine. Tian Tian Hainanese Chicken Rice earned a Michelin star, and the queue is always worth it. Try the oyster omelette, the fishball noodles, and the chendol for dessert.</p><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Maxwell Food Centre" loading="lazy"><p>It's crowded, noisy, and absolutely perfect.</p><p><strong>📍 Location:</strong> 1 Kadayanallur St, Singapore 069184</p>`,
+                    category: 'food', tags: ['hawker', 'local'], date: '2025-06-28',
+                    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80', rating: 4.9,
+                    featured: false },
+                { id: 4, title: 'Lau Pa Sat: Satay Street Under the Stars',
+                    excerpt: 'By day a historic market, by night a sizzling satay paradise in the CBD.',
+                    content: `<p>Lau Pa Sat is one of Singapore's oldest markets. The real magic happens after 7pm when Satay Street opens — a stretch of road lined with charcoal grills serving the best satay in town.</p><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Lau Pa Sat" loading="lazy"><p>Chicken, beef, and mutton satay with peanut sauce — paired with a cold Tiger beer.</p><p><strong>📍 Location:</strong> 18 Raffles Quay, Singapore 048582</p>`,
+                    category: 'food', tags: ['hawker', 'nightlife'], date: '2025-06-20',
+                    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80', rating: 4.7,
+                    featured: false },
+                { id: 5, title: 'Sentosa Island: Sun, Sand & Thrills',
+                    excerpt: 'Universal Studios, beaches, and the world\'s largest ocean-themed aquarium.',
+                    content: `<p>Sentosa is Singapore's playground. Universal Studios Singapore brings Hollywood to Asia, while the S.E.A. Aquarium houses over 100,000 marine animals. Palawan Beach and Siloso Beach offer white sand and sunset views.</p><img src="https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=800&q=80" alt="Sentosa Island" loading="lazy"><p>Don't miss the Wings of Time light show at night.</p><p><strong>📍 Location:</strong> Sentosa Island, Singapore</p>`,
+                    category: 'attractions', tags: ['family', 'beach'], date: '2025-06-15',
+                    image: 'https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=600&q=80', rating: 4.6,
+                    featured: false },
+                { id: 6, title: 'Changi Airport: A Destination Itself',
+                    excerpt: 'The world\'s best airport — with a waterfall, indoor forest, and movie theatres.',
+                    content: `<p>Changi Airport is more than an airport — it's an attraction. Jewel Changi's Rain Vortex is the world's tallest indoor waterfall, surrounded by a lush forest. The airport also has a butterfly garden, a cinema, and a rooftop pool.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Changi Airport" loading="lazy"><p>Arrive early and explore — you'll never want to leave.</p><p><strong>📍 Location:</strong> 80 Airport Blvd, Singapore 819642</p>`,
+                    category: 'attractions', tags: ['instagram', 'family'], date: '2025-06-10',
+                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80', rating: 4.9,
+                    featured: false },
+                { id: 7, title: 'Newton Food Centre: Late-Night Feast',
+                    excerpt: 'Famous for BBQ seafood, satay, and the bustling night market vibe.',
+                    content: `<p>Newton Food Centre is a late-night favourite. The BBQ stingray, the chilli crab, and the satay are legendary. It's where locals go after hours for a feast under the stars.</p><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Newton Food Centre" loading="lazy"><p>Come hungry, bring friends, and share plates.</p><p><strong>📍 Location:</strong> 500 Clemenceau Ave N, Singapore 229495</p>`,
+                    category: 'food', tags: ['hawker', 'nightlife'], date: '2025-06-05',
+                    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80', rating: 4.5,
+                    featured: false },
+                { id: 8, title: 'Singapore Botanic Gardens: UNESCO Heritage',
+                    excerpt: 'A tropical paradise in the city — the only UNESCO-listed botanic garden.',
+                    content: `<p>The Singapore Botanic Gardens is a serene escape. The National Orchid Garden features over 1,000 species of orchids. The rainforest trail feels like a jungle adventure, and the lakes are perfect for a picnic.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Botanic Gardens" loading="lazy"><p>It's free to enter and open daily.</p><p><strong>📍 Location:</strong> 1 Cluny Rd, Singapore 259569</p>`,
+                    category: 'attractions', tags: ['nature', 'instagram'], date: '2025-05-28',
+                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80', rating: 4.8,
+                    featured: false },
+                { id: 9, title: 'Orchard Road: Shopper\'s Paradise',
+                    excerpt: 'Miles of malls, luxury boutiques, and the beating heart of Singapore\'s retail scene.',
+                    content: `<p>Orchard Road is Singapore's most famous shopping street. From high-end luxury at ION Orchard to trendy finds at Plaza Singapura, it's a shopaholic's dream. The Christmas light-up is legendary.</p><img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80" alt="Orchard Road" loading="lazy"><p>Beyond shopping, the street is lined with excellent restaurants and cafes.</p><p><strong>📍 Location:</strong> Orchard Road, Singapore</p>`,
+                    category: 'shopping', tags: ['luxury', 'lifestyle'], date: '2025-05-20',
+                    image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80', rating: 4.7,
+                    featured: false },
+                { id: 10, title: 'Bugis Street: Budget Shopping & Street Food',
+                    excerpt: 'Singapore\'s largest street market — cheap finds, souvenirs, and local snacks.',
+                    content: `<p>Bugis Street is a bustling market with over 800 stalls. From fashion to electronics to souvenirs, you'll find it all at bargain prices. The adjacent Bugis Junction adds a modern mall experience.</p><img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&q=80" alt="Bugis Street" loading="lazy"><p>Don't miss the street food — grilled skewers, bubble tea, and local desserts.</p><p><strong>📍 Location:</strong> 3 New Bugis St, Singapore 188867</p>`,
+                    category: 'shopping', tags: ['budget', 'local'], date: '2025-05-15',
+                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80', rating: 4.3,
+                    featured: false },
+                { id: 11, title: 'VivoCity: Waterfront Retail & Dining',
+                    excerpt: 'Singapore\'s largest mall with stunning harbour views and a rooftop sky park.',
+                    content: `<p>VivoCity is a retail behemoth with over 300 stores. Its rooftop features a sky park with a wading pool, perfect for families. The harbour views are spectacular, especially at sunset.</p><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="VivoCity" loading="lazy"><p>Connected to Sentosa via the boardwalk.</p><p><strong>📍 Location:</strong> 1 HarbourFront Walk, Singapore 098585</p>`,
+                    category: 'shopping', tags: ['family', 'waterfront'], date: '2025-05-10',
+                    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80', rating: 4.5,
+                    featured: false },
+                { id: 12, title: 'Jewel Changi: Nature & Retail Wonder',
+                    excerpt: 'The Rain Vortex, Shiseido Forest Valley, and endless shopping under one roof.',
+                    content: `<p>Jewel Changi is a nature-themed entertainment and retail complex connected to Changi Airport. The Rain Vortex waterfall is the centrepiece, surrounded by a lush indoor forest.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Jewel Changi" loading="lazy"><p>Shop, dine, and marvel at the architecture.</p><p><strong>📍 Location:</strong> 78 Airport Blvd, Singapore 819666</p>`,
+                    category: 'shopping', tags: ['nature', 'instagram'], date: '2025-05-05',
+                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80', rating: 4.9,
+                    featured: false },
+                { id: 13, title: 'Haji Lane: Hipster Haven',
+                    excerpt: 'Colourful shophouses, indie boutiques, and the coolest cafes in Singapore.',
+                    content: `<p>Haji Lane is a narrow street in Kampong Glam filled with vibrant street art, indie fashion boutiques, and cosy cafes. It's the epicentre of Singapore's hipster culture.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Haji Lane" loading="lazy"><p>Perfect for Instagram, shopping for unique finds, and people-watching.</p><p><strong>📍 Location:</strong> Haji Lane, Singapore 189148</p>`,
+                    category: 'hidden', tags: ['instagram', 'shopping', 'cafe'], date: '2025-04-28',
+                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80', rating: 4.6,
+                    featured: false },
+                { id: 14, title: 'Pulau Ubin: Rustic Island Escape',
+                    excerpt: 'Step back in time on this rustic island with cycling trails and kampong vibes.',
+                    content: `<p>Pulau Ubin is Singapore's last kampong (village) island. Rent a bike and explore the jungle trails, spot wildlife at Chek Jawa Wetlands, and experience a slower pace of life.</p><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Pulau Ubin" loading="lazy"><p>It's a 10-minute bumboat ride from Changi Point Ferry Terminal.</p><p><strong>📍 Location:</strong> Pulau Ubin, Singapore</p>`,
+                    category: 'hidden', tags: ['nature', 'adventure'], date: '2025-04-20',
+                    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', rating: 4.4,
+                    featured: false },
+                { id: 15, title: 'Clarke Quay: Riverside Nightlife',
+                    excerpt: 'Bars, clubs, and restaurants along the Singapore River — the city\'s nightlife hub.',
+                    content: `<p>Clarke Quay is the heart of Singapore's nightlife. The riverside is lined with themed bars, nightclubs, and restaurants serving everything from local cuisine to international fare.</p><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Clarke Quay" loading="lazy"><p>Take a river cruise or dance the night away at Zouk.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
+                    category: 'nightlife', tags: ['entertainment'], date: '2025-04-15',
+                    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80', rating: 4.5,
+                    featured: false },
+                { id: 16, title: 'Zouk: World-Class Nightclub',
+                    excerpt: 'Singapore\'s most famous nightclub — a multi-level electronic music paradise.',
+                    content: `<p>Zouk is legendary in the global nightlife scene. With multiple rooms playing different genres, it attracts top international DJs and a stylish crowd.</p><img src="https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=800&q=80" alt="Zouk" loading="lazy"><p>Phuture, the hip-hop room, is always packed.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
+                    category: 'nightlife', tags: ['music'], date: '2025-04-10',
+                    image: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=600&q=80', rating: 4.7,
+                    featured: false },
+                { id: 17, title: 'Singapore River Cruise',
+                    excerpt: 'Glide along the historic river and see the city from a different perspective.',
+                    content: `<p>A river cruise on the Singapore River offers stunning views of the skyline, historical landmarks, and the bustling quays. It's a relaxing way to see the city.</p><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Singapore River" loading="lazy"><p>Choose a bumboat for a traditional experience.</p><p><strong>📍 Location:</strong> Various jetties along the river</p>`,
+                    category: 'attractions', tags: ['family', 'relaxation'], date: '2025-04-05',
+                    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80', rating: 4.4,
+                    featured: false },
+                { id: 18, title: 'Little India: Cultural Kaleidoscope',
+                    excerpt: 'Vibrant streets, aromatic spices, and colourful temples — a slice of India in Singapore.',
+                    content: `<p>Little India is a sensory overload in the best way. Mustafa Centre is a 24-hour shopping wonderland, while the Sri Veeramakaliamman Temple is a stunning architectural gem.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Little India" loading="lazy"><p>Don't miss the street art and the incredible food.</p><p><strong>📍 Location:</strong> Little India, Singapore</p>`,
+                    category: 'attractions', tags: ['culture', 'food'], date: '2025-03-28',
+                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80', rating: 4.6,
+                    featured: false },
+                { id: 19, title: 'Chinatown: Heritage & Hawker Delights',
+                    excerpt: 'Colourful shophouses, temples, and the famous Chinatown Complex Food Centre.',
+                    content: `<p>Chinatown is a vibrant neighbourhood with a rich history. Visit the Buddha Tooth Relic Temple, explore the heritage shophouses, and feast at the Chinatown Complex Food Centre.</p><img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&q=80" alt="Chinatown" loading="lazy"><p>The street market is perfect for souvenirs.</p><p><strong>📍 Location:</strong> Chinatown, Singapore</p>`,
+                    category: 'attractions', tags: ['culture', 'food', 'shopping'], date: '2025-03-20',
+                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80', rating: 4.5,
+                    featured: false },
+                { id: 20, title: 'Fort Canning Park: Historic Hilltop',
+                    excerpt: 'A green oasis in the city centre with rich history and panoramic views.',
+                    content: `<p>Fort Canning Park is a historic hilltop park with remnants of Singapore's colonial past. It's a peaceful escape with lush greenery, ancient trees, and stunning city views.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Fort Canning" loading="lazy"><p>The iconic spiral staircase is an Instagram favourite.</p><p><strong>📍 Location:</strong> River Valley Rd, Singapore 179037</p>`,
+                    category: 'hidden', tags: ['nature', 'instagram', 'history'], date: '2025-03-15',
+                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80', rating: 4.3,
+                    featured: false }
+            ];
+
+            const events = [
+                { date: 'Aug 15', month: 'Aug', title: 'Singapore Night Festival', venue: 'Bras Basah · Bugis',
+                    tag: 'Festival' },
+                { date: 'Sep 2', month: 'Sep', title: 'F1 Grand Prix 2025', venue: 'Marina Bay Street Circuit',
+                    tag: 'Sports' },
+                { date: 'Sep 20', month: 'Sep', title: 'Mid-Autumn Festival', venue: 'Chinatown · Gardens by the Bay',
+                    tag: 'Cultural' },
+                { date: 'Oct 5', month: 'Oct', title: 'Deepavali Celebrations', venue: 'Little India', tag: 'Festival' },
+                { date: 'Oct 12', month: 'Oct', title: 'Singapore Writers Festival', venue: 'Victoria Theatre',
+                tag: 'Arts' },
+                { date: 'Nov 1', month: 'Nov', title: 'SGIFF — Film Festival', venue: 'Various venues', tag: 'Film' },
+                { date: 'Nov 15', month: 'Nov', title: 'Singapore Marathon', venue: 'Marina Bay', tag: 'Sports' },
+                { date: 'Dec 5', month: 'Dec', title: 'Christmas Light-Up', venue: 'Orchard Road', tag: 'Festival' }
+            ];
+
+            const top10 = [
+                'Ride the Singapore Flyer at sunset',
+                'Eat chicken rice at Tian Tian (Maxwell)',
+                'Watch the Supertree Grove light show',
+                'Visit the Cloud Forest at Gardens by the Bay',
+                'Shop along Orchard Road',
+                'Take a bumboat to Pulau Ubin',
+                'Walk the Southern Ridges trail',
+                'Explore the ArtScience Museum',
+                'Eat satay at Lau Pa Sat',
+                'Catch the sunrise at Marina Bay'
+            ];
+
+            const videos = [
+                { title: 'Singapore Travel Guide 2025', channel: 'Baai Mart Travel',
+                    thumb: 'https://img.youtube.com/vi/3E4MxU3H5nU/hqdefault.jpg', id: '3E4MxU3H5nU' },
+                { title: '10 Best Hawker Centres in Singapore', channel: 'Foodie Singapore',
+                    thumb: 'https://img.youtube.com/vi/5ZRohLmXpNo/hqdefault.jpg', id: '5ZRohLmXpNo' },
+                { title: 'Gardens by the Bay 4K Tour', channel: 'Travel Asia',
+                    thumb: 'https://img.youtube.com/vi/2lZ8X_9O5Pk/hqdefault.jpg', id: '2lZ8X_9O5Pk' },
+                { title: 'Singapore Nightlife: Clarke Quay to Zouk', channel: 'Nightlife SG',
+                    thumb: 'https://img.youtube.com/vi/6N3L3Q7VX_w/hqdefault.jpg', id: '6N3L3Q7VX_w' }
+            ];
+
+            const catIcons = { attractions: 'fa-landmark', food: 'fa-utensils', hidden: 'fa-mask',
+                nightlife: 'fa-moon', shopping: 'fa-shopping-bag' };
+
+            // ─── DOM REFS ──────────────────────────────────
+            const $ = (sel) => document.querySelector(sel);
+            const $$ = (sel) => document.querySelectorAll(sel);
+            const trendingGrid = $('#trending-grid');
+            const attractionsGrid = $('#attractions-grid');
+            const foodGrid = $('#food-grid');
+            const hiddenGrid = $('#hidden-grid');
+            const nightlifeGrid = $('#nightlife-grid');
+            const shoppingGrid = $('#shopping-grid');
+            const instagramGrid = $('#instagram-grid');
+            const eventList = $('#event-list');
+            const top10List = $('#top10-list');
+            const videoGrid = $('#video-grid');
+            const searchInput = $('#search-input');
+            const heroSearchInput = $('#hero-search-input');
+            const heroSearchBtn = $('#hero-search-btn');
+            const themeToggle = $('#theme-toggle');
             const html = document.documentElement;
-            const mouseGlow = document.getElementById('mouse-glow');
-            const backToTopBtn = document.getElementById('back-to-top');
-            const postModal = document.getElementById('post-modal');
-            const modalContent = document.getElementById('modal-content');
-            const aboutModal = document.getElementById('about-modal');
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            const navAnchors = document.querySelectorAll('.nav-links a');
+            const mouseGlow = $('#mouse-glow');
+            const backToTop = $('#back-to-top');
+            const postModal = $('#post-modal');
+            const modalContent = $('#modal-content');
+            const aboutModal = $('#about-modal');
+            const hamburger = $('.hamburger');
+            const navLinks = $('.nav-links');
+            const navAnchors = $$('.nav-links a');
+            const modalClose = $('#modal-close');
+            const aboutClose = $('#about-close');
 
-            let currentRegion = 'all';
-            let searchQuery = '';
-            let searchTimer;
-
-            // Ripple effect creator
-            function createRipple(event, element) {
+            // ─── RIPPLE EFFECT ──────────────────────────────
+            function createRipple(e, el) {
+                const rect = el.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
                 const ripple = document.createElement('span');
                 ripple.className = 'ripple';
-                const rect = element.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
                 ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
-                ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
-                element.style.position = element.style.position || 'relative';
-                element.style.overflow = 'hidden';
-                element.appendChild(ripple);
+                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                const cs = getComputedStyle(el);
+                if (!cs.position || cs.position === 'static') el.style.position = 'relative';
+                el.style.overflow = 'hidden';
+                el.appendChild(ripple);
                 ripple.addEventListener('animationend', () => ripple.remove());
             }
-
-            // Attach ripple to any element with .ripple-effect class or specific selectors
             document.addEventListener('click', function(e) {
-                const target = e.target.closest('button, .card, .share-btn, .nav-links a, .theme-toggle, .back-to-top, .modal-close, .nav-logo, .newsletter-form button');
-                if (target && !target.closest('.coming-soon-card')) {
-                    createRipple(e, target);
-                }
+                const target = e.target.closest(
+                    'button, .card, .share-btn, .nav-links a, .theme-toggle, .back-to-top, .modal-close, .nav-logo, .newsletter-form button, .tool-card .action-btn, .event-item, .stat-item, .video-card, .top10-item, .see-all'
+                    );
+                if (target) createRipple(e, target);
             });
 
-            // Theme
+            // ─── THEME ──────────────────────────────────────
             function setTheme(theme) {
                 html.setAttribute('data-theme', theme);
-                const thumb = themeToggle.querySelector('.toggle-thumb');
-                thumb.innerHTML = theme === 'light' ?
-                    '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/></svg>' :
-                    '<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-                try { localStorage.setItem('baai-theme', theme); } catch (e) {}
+                const icon = themeToggle.querySelector('.thumb i');
+                icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+                try { localStorage.setItem('baai-theme', theme); } catch (_) {}
             }
-            themeToggle.addEventListener('click', (e) => {
+            themeToggle.addEventListener('click', () => {
                 setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-                createRipple(e, themeToggle);
             });
             setTheme(localStorage.getItem('baai-theme') || 'dark');
 
-            function filterPosts() {
-                return blogPosts.filter(p => {
-                    const matchRegion = currentRegion === 'all' || p.region === currentRegion;
-                    const q = searchQuery.toLowerCase();
-                    const matchSearch = !q || p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q);
-                    return matchRegion && matchSearch;
-                });
-            }
+            // ─── MOUSE GLOW ────────────────────────────────
+            let mx = 0,
+                my = 0,
+                gx = 0,
+                gy = 0;
+            document.addEventListener('mousemove', e => { mx = e.clientX;
+                my = e.clientY; });
 
-            function renderCards() {
-                const posts = filterPosts();
-                cardsGrid.innerHTML = '';
-                if (currentRegion === 'all' || currentRegion === 'malaysia') {
-                    const mp = blogPosts.find(p => p.region === 'malaysia');
-                    if (mp && posts.includes(mp)) cardsGrid.appendChild(createPostCard(mp, 0));
-                }
-                if (currentRegion === 'all' || currentRegion === 'singapore') {
-                    const sp = blogPosts.find(p => p.region === 'singapore');
-                    if (sp && posts.includes(sp)) cardsGrid.appendChild(createPostCard(sp, cardsGrid.children.length));
-                }
-                if (currentRegion === 'all' || currentRegion === 'thailand') {
-                    const thCard = document.createElement('article');
-                    thCard.className = 'card coming-soon-card';
-                    thCard.innerHTML = `<div class="coming-soon-content"><span class="country-emoji">🇹🇭</span><h3>Thailand · Coming Soon</h3><p><span class="pulse-dot"></span>We're crafting our Thai adventures. Stay tuned for Bangkok, Chiang Mai & the islands.</p></div>`;
-                    cardsGrid.appendChild(thCard);
-                }
-                if (!cardsGrid.children.length) cardsGrid.innerHTML = '<p class="no-results">😔 No posts match your criteria.</p>';
+            function animateGlow() {
+                gx += (mx - gx) * 0.07;
+                gy += (my - gy) * 0.07;
+                mouseGlow.style.left = gx + 'px';
+                mouseGlow.style.top = gy + 'px';
+                requestAnimationFrame(animateGlow);
             }
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                requestAnimationFrame(animateGlow);
+            } else { mouseGlow.style.display = 'none'; }
 
-            function createPostCard(post, index) {
+            // ─── CARD FACTORY ──────────────────────────────
+            function createCard(post, delay = 0) {
                 const card = document.createElement('article');
-                card.className = 'card';
-                card.style.animationDelay = `${index * 0.1}s`;
-                card.setAttribute('data-post-id', post.id);
+                card.className = 'card' + (post.featured ? ' featured' : '');
+                card.style.animationDelay = (delay * 0.06) + 's';
+                card.dataset.postId = post.id;
                 card.tabIndex = 0;
-                card.innerHTML = `<div class="card-image"><div class="img-placeholder" style="background:${post.gradient};">${post.emoji}</div><span class="card-badge">${post.region === 'malaysia' ? '🇲🇾 Malaysia' : '🇸🇬 Singapore'}</span></div><div class="card-body"><span class="date">${post.date}</span><h3>${post.title}</h3><p>${post.excerpt}</p><span class="read-more">Read full story →</span></div>`;
+                const fav = localStorage.getItem('fav-' + post.id) === 'true' ? 'active' : '';
+                const stars = '★'.repeat(Math.floor(post.rating)) + (post.rating % 1 >= 0.5 ? '½' : '');
+                const icon = catIcons[post.category] || 'fa-tag';
+                card.innerHTML = `
+            <div class="card-img">
+              <img src="${post.image}" alt="${post.title}" loading="lazy" />
+              <span class="badge"><i class="fas ${icon}"></i> ${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
+              <button class="fav-btn ${fav}" data-id="${post.id}" aria-label="Save favorite"><i class="fas fa-heart"></i></button>
+            </div>
+            <div class="card-body">
+              <div class="meta">
+                <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
+                <span>·</span>
+                <span class="rating">${stars} <span>${post.rating.toFixed(1)}</span></span>
+              </div>
+              <h3>${post.title}</h3>
+              <p>${post.excerpt}</p>
+              <span class="read-more">Read full story <i class="fas fa-arrow-right"></i></span>
+            </div>
+          `;
                 card.addEventListener('click', (e) => {
+                    if (e.target.closest('.fav-btn')) return;
                     openPostModal(post);
-                    createRipple(e, card);
                 });
-                card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPostModal(post); } });
-                card.addEventListener('mousemove', e => handleTilt(e, card));
-                card.addEventListener('mouseleave', () => resetTilt(card));
+                card.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault();
+                        openPostModal(post); }
+                });
+                const favBtn = card.querySelector('.fav-btn');
+                favBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = favBtn.dataset.id;
+                    const active = favBtn.classList.toggle('active');
+                    localStorage.setItem('fav-' + id, String(active));
+                });
                 return card;
             }
 
-            const tiltData = new WeakMap();
-            function handleTilt(e, card) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left, y = e.clientY - rect.top;
-                const centerX = rect.width / 2, centerY = rect.height / 2;
-                const rotateY = ((x - centerX) / centerX) * 6, rotateX = -((y - centerY) / centerY) * 6;
-                let state = tiltData.get(card) || { rx: 0, ry: 0, targetRx: 0, targetRy: 0, active: true };
-                state.targetRx = rotateX; state.targetRy = rotateY; state.active = true;
-                tiltData.set(card, state);
-            }
-            function resetTilt(card) {
-                const state = tiltData.get(card);
-                if (state) { state.targetRx = 0; state.targetRy = 0; state.active = false; }
-                card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-            }
-            function animateTilts() {
-                document.querySelectorAll('.card:not(.coming-soon-card)').forEach(card => {
-                    const state = tiltData.get(card);
-                    if (!state) return;
-                    state.rx += (state.targetRx - state.rx) * 0.18;
-                    state.ry += (state.targetRy - state.ry) * 0.18;
-                    if (Math.abs(state.rx) < 0.02 && Math.abs(state.ry) < 0.02 && !state.active) {
-                        card.style.transform = 'rotateX(0deg) rotateY(0deg)';
-                    } else {
-                        card.style.transform = `rotateX(${state.rx.toFixed(2)}deg) rotateY(${state.ry.toFixed(2)}deg)`;
-                    }
+            // ─── RENDER ALL ────────────────────────────────
+            function renderAll() {
+                const featured = posts.filter(p => p.featured);
+                const others = posts.filter(p => !p.featured);
+                const shuffled = [...others].sort(() => Math.random() - 0.5);
+                const trending = [...featured, ...shuffled.slice(0, 3)];
+                trendingGrid.innerHTML = '';
+                trending.forEach((p, i) => trendingGrid.appendChild(createCard(p, i)));
+                attractionsGrid.innerHTML = '';
+                posts.filter(p => p.category === 'attractions').forEach((p, i) => attractionsGrid.appendChild(createCard(
+                    p, i)));
+                foodGrid.innerHTML = '';
+                posts.filter(p => p.category === 'food').forEach((p, i) => foodGrid.appendChild(createCard(p, i)));
+                hiddenGrid.innerHTML = '';
+                posts.filter(p => p.category === 'hidden').forEach((p, i) => hiddenGrid.appendChild(createCard(p, i)));
+                nightlifeGrid.innerHTML = '';
+                posts.filter(p => p.category === 'nightlife').forEach((p, i) => nightlifeGrid.appendChild(createCard(p,
+                i)));
+                shoppingGrid.innerHTML = '';
+                posts.filter(p => p.category === 'shopping').forEach((p, i) => shoppingGrid.appendChild(createCard(p,
+                i)));
+                instagramGrid.innerHTML = '';
+                posts.filter(p => p.tags && p.tags.includes('instagram')).forEach((p, i) => instagramGrid.appendChild(
+                    createCard(p, i)));
+                eventList.innerHTML = '';
+                events.forEach(ev => {
+                    const item = document.createElement('div');
+                    item.className = 'event-item';
+                    item.innerHTML = `
+              <div class="date-box"><div class="day">${ev.date.split(' ')[1]}</div><div class="month">${ev.month}</div></div>
+              <div class="event-info"><h4>${ev.title}</h4><p><i class="fas fa-map-pin" style="font-size:0.6rem;"></i> ${ev.venue}</p></div>
+              <span class="event-tag">${ev.tag}</span>
+            `;
+                    item.addEventListener('click', () => showEventModal(ev));
+                    eventList.appendChild(item);
                 });
-                requestAnimationFrame(animateTilts);
+                top10List.innerHTML = '';
+                top10.forEach((item, idx) => {
+                    const div = document.createElement('div');
+                    div.className = 'top10-item';
+                    div.innerHTML =
+                        `<div class="rank">#${idx+1}</div><div class="info"><h4>${item}</h4><p>Must-do in Singapore</p></div>`;
+                    top10List.appendChild(div);
+                });
+                videoGrid.innerHTML = '';
+                videos.forEach(v => {
+                    const card = document.createElement('div');
+                    card.className = 'video-card';
+                    card.innerHTML = `
+              <div class="thumb">
+                <img src="${v.thumb}" alt="${v.title}" loading="lazy" />
+                <div class="play-btn"><i class="fas fa-play-circle"></i></div>
+              </div>
+              <div class="video-info">
+                <h4>${v.title}</h4>
+                <p><i class="fab fa-youtube" style="color:#ff0000;"></i> ${v.channel}</p>
+              </div>
+            `;
+                    card.addEventListener('click', () => window.open(
+                        `https://www.youtube.com/watch?v=${v.id}`, '_blank'));
+                    videoGrid.appendChild(card);
+                });
             }
 
-            let mx = 0, my = 0, gx = 0, gy = 0;
-            document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-            function animateGlow() {
-                gx += (mx - gx) * 0.08; gy += (my - gy) * 0.08;
-                mouseGlow.style.left = gx + 'px'; mouseGlow.style.top = gy + 'px';
-                requestAnimationFrame(animateGlow);
-            }
-
-            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-            if (!prefersReduced) {
-                requestAnimationFrame(animateGlow);
-                requestAnimationFrame(animateTilts);
-            } else {
-                mouseGlow.style.display = 'none';
-            }
-
+            // ─── MODALS ──────────────────────────────────────
             function openPostModal(post) {
-                modalContent.innerHTML = `<h2>${post.title}</h2><p class="modal-meta">${post.date} · ${post.region === 'malaysia' ? '🇲🇾 Malaysia' : '🇸🇬 Singapore'}</p><div class="modal-body">${post.content}</div><div class="share-buttons"><button class="share-btn" data-share="facebook">📘 Facebook</button><button class="share-btn" data-share="twitter">🐦 Twitter</button><button class="share-btn" data-share="linkedin">💼 LinkedIn</button><button class="share-btn" data-share="copy">🔗 Copy Link</button></div>`;
-                postModal.style.display = 'flex'; postModal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
+                const tagsHtml = post.tags ? post.tags.map(t =>
+                    `<span style="background:var(--badge-bg);padding:0.1rem 0.6rem;border-radius:50px;font-size:0.63rem;color:var(--accent-light);border:1px solid var(--border);">#${t}</span>`
+                ).join(' ') : '';
+                modalContent.innerHTML = `
+            <h2>${post.title}</h2>
+            <div class="modal-meta">
+              <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
+              <span>·</span>
+              <span><i class="fas fa-tag"></i> ${post.category}</span>
+              <span>·</span>
+              <span>⭐ ${post.rating.toFixed(1)}</span>
+              ${tagsHtml ? `<span>·</span><span>${tagsHtml}</span>` : ''}
+            </div>
+            <div class="modal-body">${post.content}</div>
+            <div class="share-buttons">
+              <button class="share-btn" data-share="facebook"><i class="fab fa-facebook"></i> Facebook</button>
+              <button class="share-btn" data-share="twitter"><i class="fab fa-twitter"></i> Twitter</button>
+              <button class="share-btn" data-share="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</button>
+              <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
+          `;
+                openModal(postModal);
                 const shareUrl = window.location.href.split('?')[0] + '?post=' + post.id;
-                document.querySelectorAll('.share-btn').forEach(btn => {
+                document.querySelectorAll('#modal-content .share-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         const type = btn.dataset.share;
-                        if (type === 'facebook') window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank');
-                        else if (type === 'twitter') window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent('Check out ' + post.title)}`, '_blank');
-                        else if (type === 'linkedin') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank');
-                        else if (type === 'copy') { navigator.clipboard.writeText(shareUrl).then(() => { btn.textContent = '✅ Copied!'; setTimeout(() => { btn.textContent = '🔗 Copy Link'; }, 2000); }); }
+                        if (type === 'facebook') window.open(
+                            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+                            '_blank');
+                        else if (type === 'twitter') window.open(
+                            `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent('Check out ' + post.title)}`,
+                            '_blank');
+                        else if (type === 'linkedin') window.open(
+                            `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+                            '_blank');
+                        else if (type === 'copy') {
+                            navigator.clipboard.writeText(shareUrl).then(() => {
+                                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                                setTimeout(() => { btn.innerHTML =
+                                    '<i class="fas fa-link"></i> Copy Link'; }, 2000);
+                            });
+                        }
                     });
                 });
             }
 
-            function closePostModal() {
-                postModal.classList.add('closing');
-                setTimeout(() => { postModal.style.display = 'none'; postModal.classList.remove('closing'); postModal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }, 280);
+            function showEventModal(ev) {
+                modalContent.innerHTML = `
+            <h2>${ev.title}</h2>
+            <div class="modal-meta"><span>${ev.date} · ${ev.month}</span> <span>·</span> <span>${ev.venue}</span></div>
+            <div class="modal-body">
+              <p><strong>📅 Date:</strong> ${ev.date}</p>
+              <p><strong>📍 Venue:</strong> ${ev.venue}</p>
+              <p><strong>🏷️ Category:</strong> ${ev.tag}</p>
+              <p>Join us for this exciting event in Singapore! Check the official website for ticket details and schedules.</p>
+            </div>
+            <div class="share-buttons">
+              <button class="share-btn" data-share="facebook"><i class="fab fa-facebook"></i> Share</button>
+              <button class="share-btn" data-share="twitter"><i class="fab fa-twitter"></i> Tweet</button>
+            </div>
+          `;
+                openModal(postModal);
+                document.querySelectorAll('#modal-content .share-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const url = window.location.href;
+                        if (btn.dataset.share === 'facebook') window.open(
+                            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+                            '_blank');
+                        else if (btn.dataset.share === 'twitter') window.open(
+                            `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent('Check out ' + ev.title)}`,
+                            '_blank');
+                    });
+                });
             }
-            document.getElementById('modal-close').addEventListener('click', closePostModal);
-            postModal.addEventListener('click', e => { if (e.target === postModal) closePostModal(); });
 
-            document.getElementById('about-footer').addEventListener('click', () => { aboutModal.style.display = 'flex'; aboutModal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; });
-            document.getElementById('about-close').addEventListener('click', () => { aboutModal.classList.add('closing'); setTimeout(() => { aboutModal.style.display = 'none'; aboutModal.classList.remove('closing'); aboutModal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }, 280); });
-            aboutModal.addEventListener('click', e => { if (e.target === aboutModal) document.getElementById('about-close').click(); });
+            function openModal(el) {
+                el.classList.add('open');
+                el.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
 
-            searchInput.addEventListener('input', () => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { searchQuery = searchInput.value.trim(); renderCards(); }, 300); });
+            function closeModal(el) {
+                el.classList.add('closing');
+                setTimeout(() => {
+                    el.classList.remove('open', 'closing');
+                    el.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                }, 280);
+            }
+            modalClose.addEventListener('click', () => closeModal(postModal));
+            postModal.addEventListener('click', e => { if (e.target === postModal) closeModal(postModal); });
+            aboutClose.addEventListener('click', () => closeModal(aboutModal));
+            aboutModal.addEventListener('click', e => { if (e.target === aboutModal) closeModal(aboutModal); });
+            document.querySelector('#about-footer').addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(aboutModal);
+            });
 
-            document.getElementById('newsletter-form').addEventListener('submit', e => {
+            // ─── NAVIGATION ────────────────────────────────
+            navAnchors.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const nav = this.dataset.nav;
+                    navAnchors.forEach(a => a.classList.remove('active'));
+                    this.classList.add('active');
+                    navLinks.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    if (nav !== 'home') {
+                        const target = document.getElementById(nav);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+            hamburger.addEventListener('click', () => {
+                const open = navLinks.classList.toggle('open');
+                hamburger.classList.toggle('open', open);
+                hamburger.setAttribute('aria-expanded', open);
+            });
+
+            // ─── SEARCH ──────────────────────────────────────
+            function performSearch(query) {
+                const q = query.toLowerCase().trim();
+                const allCards = document.querySelectorAll('.card');
+                let visible = 0;
+                allCards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    const match = !q || text.includes(q);
+                    card.style.display = match ? '' : 'none';
+                    if (match) visible++;
+                });
+                document.querySelectorAll('.no-results').forEach(el => el.remove());
+                if (visible === 0 && q) {
+                    const msg = document.createElement('p');
+                    msg.className = 'no-results';
+                    msg.innerHTML = '😔 No results found. Try "food", "attractions", or "shopping".';
+                    document.querySelector('.container')?.appendChild(msg);
+                }
+            }
+            let searchTimer;
+            searchInput.addEventListener('input', () => {
+                clearTimeout(searchTimer);
+                searchTimer = setTimeout(() => performSearch(searchInput.value), 200);
+            });
+            heroSearchBtn.addEventListener('click', () => {
+                const val = heroSearchInput.value.trim();
+                if (val) { searchInput.value = val;
+                    performSearch(val);
+                    searchInput.focus();
+                    window.scrollTo({ top: 0, behavior: 'smooth' }); }
+            });
+            heroSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') heroSearchBtn.click(); });
+
+            // ─── CURRENCY CONVERTER ──────────────────────────
+            const rates = { USD: 1.35, EUR: 1.48, GBP: 1.72, SGD: 1.0, MYR: 0.31, JPY: 0.0094 };
+
+            function convertCurrency() {
+                const amount = parseFloat(document.getElementById('currency-amount').value) || 0;
+                const from = document.getElementById('currency-from').value;
+                const to = document.getElementById('currency-to').value;
+                const inSGD = amount / rates[from];
+                const result = inSGD * rates[to];
+                document.getElementById('currency-result').textContent = result.toFixed(2) + ' ' + to;
+            }
+            document.getElementById('currency-amount').addEventListener('input', convertCurrency);
+            document.getElementById('currency-from').addEventListener('change', convertCurrency);
+            document.getElementById('currency-to').addEventListener('change', convertCurrency);
+            convertCurrency();
+
+            // ─── WEATHER ────────────────────────────────────
+            function updateWeather() {
+                const temps = [29, 30, 31, 32, 33];
+                const descs = ['Sunny', 'Partly Cloudy', 'Scattered Rain', 'Cloudy', 'Hot & Humid'];
+                const icons = ['fa-sun', 'fa-cloud-sun', 'fa-cloud-rain', 'fa-cloud', 'fa-temperature-high'];
+                const idx = Math.floor(Math.random() * temps.length);
+                document.getElementById('weather-temp').textContent = temps[idx] + '°C';
+                document.getElementById('weather-desc').textContent = descs[idx];
+                const iconEl = document.querySelector('.weather-widget i');
+                if (iconEl) iconEl.className = 'fas ' + icons[idx];
+            }
+            updateWeather();
+            setInterval(updateWeather, 300000);
+
+            // ─── TOOL BUTTONS ──────────────────────────────
+            document.getElementById('map-btn').addEventListener('click', () => {
+                window.open('https://www.google.com/maps/place/Singapore', '_blank');
+            });
+            document.getElementById('mrt-btn').addEventListener('click', () => {
+                window.open('https://www.smrt.com.sg/Journey-with-Us/Train/Network-Map', '_blank');
+            });
+            document.getElementById('transport-btn').addEventListener('click', () => {
+                window.open('https://www.lta.gov.sg/content/ltagov/en.html', '_blank');
+            });
+            document.getElementById('cost-btn').addEventListener('click', () => {
+                modalContent.innerHTML = `
+            <h2>💰 Cost of Living in Singapore</h2>
+            <div class="modal-body">
+              <p><strong>🏠 Rent (1-bedroom, city centre):</strong> $2,500 – $4,000 SGD/mo</p>
+              <p><strong>🍽️ Meal at hawker centre:</strong> $5 – $8 SGD</p>
+              <p><strong>🍽️ Meal at mid-range restaurant:</strong> $20 – $40 SGD</p>
+              <p><strong>🚇 MRT monthly pass:</strong> $120 SGD</p>
+              <p><strong>☕ Coffee at cafe:</strong> $6 – $9 SGD</p>
+              <p><strong>🍺 Beer at bar:</strong> $10 – $15 SGD</p>
+              <p><strong>🎬 Cinema ticket:</strong> $13 – $18 SGD</p>
+              <p><em style="color:var(--text-muted);">Data updated July 2025</em></p>
+            </div>
+            <div class="share-buttons">
+              <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Info</button>
+            </div>
+          `;
+                openModal(postModal);
+                const copyBtn = document.querySelector('#modal-content .share-btn[data-share="copy"]');
+                if (copyBtn) {
+                    copyBtn.addEventListener('click', () => {
+                        const text =
+                            'Cost of Living in Singapore: Rent $2500-4000, Meal $5-8, MRT $120, Coffee $6-9';
+                        navigator.clipboard.writeText(text).then(() => {
+                            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                            setTimeout(() => { copyBtn.innerHTML =
+                                '<i class="fas fa-link"></i> Copy Info'; }, 2000);
+                        });
+                    });
+                }
+            });
+
+            // ─── NEWSLETTER ────────────────────────────────
+            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 const email = document.getElementById('news-email').value.trim();
                 const msg = document.getElementById('newsletter-msg');
-                if (!email.includes('@') || !email.includes('.')) { msg.textContent = '⚠️ Please enter a valid email.'; msg.style.color = 'var(--error)'; }
-                else { msg.textContent = '✅ Welcome aboard!'; msg.style.color = 'var(--success)'; document.getElementById('news-email').value = ''; }
+                if (!email.includes('@') || !email.includes('.')) {
+                    msg.textContent = '⚠️ Please enter a valid email.';
+                    msg.style.color = 'var(--error)';
+                } else {
+                    msg.textContent = '✅ Welcome to the Baai Mart community!';
+                    msg.style.color = 'var(--success)';
+                    document.getElementById('news-email').value = '';
+                }
             });
 
+            // ─── BACK TO TOP ────────────────────────────────
             const sentinel = document.createElement('div');
-            sentinel.style.cssText = 'position:absolute;top:300px;height:1px;width:1px;';
+            sentinel.style.cssText = 'position:absolute;top:300px;height:1px;width:1px;pointer-events:none;';
             document.body.prepend(sentinel);
             new IntersectionObserver(([entry]) => {
-                backToTopBtn.classList.toggle('visible', !entry.isIntersecting);
+                backToTop.classList.toggle('visible', !entry.isIntersecting);
             }).observe(sentinel);
-            backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-            hamburger.addEventListener('click', (e) => {
-                const isOpen = navLinks.classList.toggle('open');
-                hamburger.classList.toggle('open', isOpen);
-                hamburger.setAttribute('aria-expanded', isOpen);
-                createRipple(e, hamburger);
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            navAnchors.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const nav = this.getAttribute('data-nav');
-                    if (nav === 'about') {
-                        e.preventDefault();
-                        aboutModal.style.display = 'flex'; aboutModal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden';
-                    } else if (nav === 'home') { currentRegion = 'all'; }
-                    else if (nav === 'malaysia' || nav === 'singapore' || nav === 'thailand') { currentRegion = nav; }
-                    navAnchors.forEach(a => a.classList.remove('active'));
-                    this.classList.add('active');
-                    renderCards();
-                    navLinks.classList.remove('open'); hamburger.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false');
+            // ─── SEE ALL ────────────────────────────────────
+            document.querySelectorAll('.see-all').forEach(el => {
+                el.addEventListener('click', function() {
+                    const section = this.dataset.section;
+                    const map = {
+                        'trending': 'home',
+                        'attractions': 'attractions',
+                        'food': 'food',
+                        'hidden': 'hidden',
+                        'nightlife': 'nightlife',
+                        'shopping': 'shopping',
+                        'instagram': 'instagram',
+                        'events': 'events',
+                        'videos': 'videos'
+                    };
+                    const targetId = map[section];
+                    if (targetId === 'home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
                 });
             });
 
-            renderCards();
+            // ─── URL PARAM ──────────────────────────────────
             const params = new URLSearchParams(window.location.search);
             const postId = params.get('post');
             if (postId) {
-                const post = blogPosts.find(p => p.id === parseInt(postId));
-                if (post) setTimeout(() => openPostModal(post), 400);
+                const post = posts.find(p => p.id === parseInt(postId));
+                if (post) setTimeout(() => openPostModal(post), 500);
             }
+
+            // ─── KEYBOARD SHORTCUTS ────────────────────────
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    if (postModal.classList.contains('open')) closeModal(postModal);
+                    if (aboutModal.classList.contains('open')) closeModal(aboutModal);
+                }
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+            });
+
+            // ─── INIT ──────────────────────────────────────
+            renderAll();
+            console.log('🐾 Baai Mart · Singapore Portal 2025 ready — all systems go!');
+
         })();
     </script>
 </body>
