@@ -1529,14 +1529,14 @@
             <span><i class="fas fa-circle"></i> <span class="badge">Live</span> Marina Bay Sands light show extended</span>
             <span><i class="fas fa-circle"></i> New hawker centre opens at Punggol — 40 stalls</span>
             <span><i class="fas fa-circle"></i> Changi Airport T5 construction ahead of schedule</span>
-            <span><i class="fas fa-circle"></i> F1 Grand Prix 2025 tickets on sale now</span>
+            <span><i class="fas fa-circle"></i> F1 Grand Prix 2026 tickets on sale now</span>
             <span><i class="fas fa-circle"></i> Michelin-starred Peranakan restaurant opens</span>
             <span><i class="fas fa-circle"></i> Gardens by the Bay wins sustainability award</span>
             <span><i class="fas fa-circle"></i> Sentosa's new water park opens this weekend</span>
             <span><i class="fas fa-circle"></i> <span class="badge">Live</span> Marina Bay Sands light show extended</span>
             <span><i class="fas fa-circle"></i> New hawker centre opens at Punggol — 40 stalls</span>
             <span><i class="fas fa-circle"></i> Changi Airport T5 construction ahead of schedule</span>
-            <span><i class="fas fa-circle"></i> F1 Grand Prix 2025 tickets on sale now</span>
+            <span><i class="fas fa-circle"></i> F1 Grand Prix 2026 tickets on sale now</span>
             <span><i class="fas fa-circle"></i> Michelin-starred Peranakan restaurant opens</span>
             <span><i class="fas fa-circle"></i> Gardens by the Bay wins sustainability award</span>
             <span><i class="fas fa-circle"></i> Sentosa's new water park opens this weekend</span>
@@ -1548,7 +1548,7 @@
         <div class="hero-bg" aria-hidden="true"></div>
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-badge"><i class="fas fa-map-pin"></i> Singapore Travel Guide 2025</div>
+            <div class="hero-badge"><i class="fas fa-map-pin"></i> Singapore Travel Guide 2026</div>
             <h1>Discover the Lion City</h1>
             <p>From hawker centres to futuristic gardens — your ultimate guide to Singapore.</p>
             <div class="hero-search">
@@ -1748,144 +1748,155 @@
         (function() {
             'use strict';
 
+            // ─── RANDOM DATE HELPERS (May 25 – Jul 13, 2026) ─────
+            const startDate = new Date(2026, 4, 25); // May 25, 2026
+            const endDate = new Date(2026, 6, 13);   // July 13, 2026
+            const dayRange = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)); // inclusive count
+            function randomDate() {
+                const offset = Math.floor(Math.random() * (dayRange + 1));
+                const d = new Date(startDate);
+                d.setDate(startDate.getDate() + offset);
+                return d;
+            }
+            function formatYYYYMMDD(d) {
+                const y = d.getFullYear();
+                const m = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+                return `${y}-${m}-${day}`;
+            }
+            const monthsAbbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            function formatMonthDay(d) {
+                return `${monthsAbbr[d.getMonth()]} ${d.getDate()}`;
+            }
+            function formatMonthAbbr(d) {
+                return monthsAbbr[d.getMonth()];
+            }
+
             // ─── DATA ──────────────────────────────────────
             const posts = [
                 { id: 1, title: 'Gardens by the Bay: Futuristic Wonder',
                     excerpt: 'Supertrees, Cloud Forest, and the Flower Dome — a surreal escape in the heart of the city.',
                     content: `<p>Gardens by the Bay is Singapore's crown jewel. The Supertree Grove lights up at dusk in a dazzling symphony of colours. The Cloud Forest houses one of the world's tallest indoor waterfalls, while the Flower Dome blooms with exotic flora from five continents.</p><img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80" alt="Gardens by the Bay" loading="lazy"><p>Don't miss the OCBC Skyway for panoramic views. It's a futuristic garden that feels like stepping into another world.</p><p><strong>📍 Location:</strong> 18 Marina Gardens Dr, Singapore 018953</p>`,
-                    category: 'attractions', tags: ['nature', 'instagram'], date: '2025-07-10',
-                    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80', rating: 4.9,
-                    featured: true },
+                    category: 'attractions', tags: ['nature', 'instagram'], date: '', rating: 4.9, featured: true,
+                    image: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80' },
                 { id: 2, title: 'Marina Bay Sands: Iconic Skyline',
                     excerpt: 'The infinity pool, the Skypark, and the ArtScience Museum — all in one architectural marvel.',
                     content: `<p>Marina Bay Sands defines Singapore's skyline. The SkyPark observation deck offers 360° views of the city, and the infinity pool is legendary. The ArtScience Museum hosts world-class exhibitions in its lotus-inspired structure.</p><img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&q=80" alt="Marina Bay Sands" loading="lazy"><p>At night, the light show at the Event Plaza is free and mesmerising.</p><p><strong>📍 Location:</strong> 10 Bayfront Ave, Singapore 018956</p>`,
-                    category: 'attractions', tags: ['nightlife', 'instagram'], date: '2025-07-05',
-                    image: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&q=80', rating: 4.8,
-                    featured: false },
+                    category: 'attractions', tags: ['nightlife', 'instagram'], date: '', rating: 4.8, featured: false,
+                    image: 'https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=600&q=80' },
                 { id: 3, title: 'Maxwell Food Centre: Hawker Heaven',
                     excerpt: 'Home to Michelin-starred chicken rice and a thousand other mouth-watering stalls.',
                     content: `<p>Maxwell Food Centre is a temple of Singaporean cuisine. Tian Tian Hainanese Chicken Rice earned a Michelin star, and the queue is always worth it. Try the oyster omelette, the fishball noodles, and the chendol for dessert.</p><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Maxwell Food Centre" loading="lazy"><p>It's crowded, noisy, and absolutely perfect.</p><p><strong>📍 Location:</strong> 1 Kadayanallur St, Singapore 069184</p>`,
-                    category: 'food', tags: ['hawker', 'local'], date: '2025-06-28',
-                    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80', rating: 4.9,
-                    featured: false },
+                    category: 'food', tags: ['hawker', 'local'], date: '', rating: 4.9, featured: false,
+                    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' },
                 { id: 4, title: 'Lau Pa Sat: Satay Street Under the Stars',
                     excerpt: 'By day a historic market, by night a sizzling satay paradise in the CBD.',
                     content: `<p>Lau Pa Sat is one of Singapore's oldest markets. The real magic happens after 7pm when Satay Street opens — a stretch of road lined with charcoal grills serving the best satay in town.</p><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Lau Pa Sat" loading="lazy"><p>Chicken, beef, and mutton satay with peanut sauce — paired with a cold Tiger beer.</p><p><strong>📍 Location:</strong> 18 Raffles Quay, Singapore 048582</p>`,
-                    category: 'food', tags: ['hawker', 'nightlife'], date: '2025-06-20',
-                    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80', rating: 4.7,
-                    featured: false },
+                    category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.7, featured: false,
+                    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80' },
                 { id: 5, title: 'Sentosa Island: Sun, Sand & Thrills',
                     excerpt: 'Universal Studios, beaches, and the world\'s largest ocean-themed aquarium.',
                     content: `<p>Sentosa is Singapore's playground. Universal Studios Singapore brings Hollywood to Asia, while the S.E.A. Aquarium houses over 100,000 marine animals. Palawan Beach and Siloso Beach offer white sand and sunset views.</p><img src="https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=800&q=80" alt="Sentosa Island" loading="lazy"><p>Don't miss the Wings of Time light show at night.</p><p><strong>📍 Location:</strong> Sentosa Island, Singapore</p>`,
-                    category: 'attractions', tags: ['family', 'beach'], date: '2025-06-15',
-                    image: 'https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=600&q=80', rating: 4.6,
-                    featured: false },
+                    category: 'attractions', tags: ['family', 'beach'], date: '', rating: 4.6, featured: false,
+                    image: 'https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=600&q=80' },
                 { id: 6, title: 'Changi Airport: A Destination Itself',
                     excerpt: 'The world\'s best airport — with a waterfall, indoor forest, and movie theatres.',
                     content: `<p>Changi Airport is more than an airport — it's an attraction. Jewel Changi's Rain Vortex is the world's tallest indoor waterfall, surrounded by a lush forest. The airport also has a butterfly garden, a cinema, and a rooftop pool.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Changi Airport" loading="lazy"><p>Arrive early and explore — you'll never want to leave.</p><p><strong>📍 Location:</strong> 80 Airport Blvd, Singapore 819642</p>`,
-                    category: 'attractions', tags: ['instagram', 'family'], date: '2025-06-10',
-                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80', rating: 4.9,
-                    featured: false },
+                    category: 'attractions', tags: ['instagram', 'family'], date: '', rating: 4.9, featured: false,
+                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80' },
                 { id: 7, title: 'Newton Food Centre: Late-Night Feast',
                     excerpt: 'Famous for BBQ seafood, satay, and the bustling night market vibe.',
                     content: `<p>Newton Food Centre is a late-night favourite. The BBQ stingray, the chilli crab, and the satay are legendary. It's where locals go after hours for a feast under the stars.</p><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Newton Food Centre" loading="lazy"><p>Come hungry, bring friends, and share plates.</p><p><strong>📍 Location:</strong> 500 Clemenceau Ave N, Singapore 229495</p>`,
-                    category: 'food', tags: ['hawker', 'nightlife'], date: '2025-06-05',
-                    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80', rating: 4.5,
-                    featured: false },
+                    category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.5, featured: false,
+                    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80' },
                 { id: 8, title: 'Singapore Botanic Gardens: UNESCO Heritage',
                     excerpt: 'A tropical paradise in the city — the only UNESCO-listed botanic garden.',
                     content: `<p>The Singapore Botanic Gardens is a serene escape. The National Orchid Garden features over 1,000 species of orchids. The rainforest trail feels like a jungle adventure, and the lakes are perfect for a picnic.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Botanic Gardens" loading="lazy"><p>It's free to enter and open daily.</p><p><strong>📍 Location:</strong> 1 Cluny Rd, Singapore 259569</p>`,
-                    category: 'attractions', tags: ['nature', 'instagram'], date: '2025-05-28',
-                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80', rating: 4.8,
-                    featured: false },
+                    category: 'attractions', tags: ['nature', 'instagram'], date: '', rating: 4.8, featured: false,
+                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' },
                 { id: 9, title: 'Orchard Road: Shopper\'s Paradise',
                     excerpt: 'Miles of malls, luxury boutiques, and the beating heart of Singapore\'s retail scene.',
                     content: `<p>Orchard Road is Singapore's most famous shopping street. From high-end luxury at ION Orchard to trendy finds at Plaza Singapura, it's a shopaholic's dream. The Christmas light-up is legendary.</p><img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80" alt="Orchard Road" loading="lazy"><p>Beyond shopping, the street is lined with excellent restaurants and cafes.</p><p><strong>📍 Location:</strong> Orchard Road, Singapore</p>`,
-                    category: 'shopping', tags: ['luxury', 'lifestyle'], date: '2025-05-20',
-                    image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80', rating: 4.7,
-                    featured: false },
+                    category: 'shopping', tags: ['luxury', 'lifestyle'], date: '', rating: 4.7, featured: false,
+                    image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80' },
                 { id: 10, title: 'Bugis Street: Budget Shopping & Street Food',
                     excerpt: 'Singapore\'s largest street market — cheap finds, souvenirs, and local snacks.',
                     content: `<p>Bugis Street is a bustling market with over 800 stalls. From fashion to electronics to souvenirs, you'll find it all at bargain prices. The adjacent Bugis Junction adds a modern mall experience.</p><img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&q=80" alt="Bugis Street" loading="lazy"><p>Don't miss the street food — grilled skewers, bubble tea, and local desserts.</p><p><strong>📍 Location:</strong> 3 New Bugis St, Singapore 188867</p>`,
-                    category: 'shopping', tags: ['budget', 'local'], date: '2025-05-15',
-                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80', rating: 4.3,
-                    featured: false },
+                    category: 'shopping', tags: ['budget', 'local'], date: '', rating: 4.3, featured: false,
+                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80' },
                 { id: 11, title: 'VivoCity: Waterfront Retail & Dining',
                     excerpt: 'Singapore\'s largest mall with stunning harbour views and a rooftop sky park.',
                     content: `<p>VivoCity is a retail behemoth with over 300 stores. Its rooftop features a sky park with a wading pool, perfect for families. The harbour views are spectacular, especially at sunset.</p><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="VivoCity" loading="lazy"><p>Connected to Sentosa via the boardwalk.</p><p><strong>📍 Location:</strong> 1 HarbourFront Walk, Singapore 098585</p>`,
-                    category: 'shopping', tags: ['family', 'waterfront'], date: '2025-05-10',
-                    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80', rating: 4.5,
-                    featured: false },
+                    category: 'shopping', tags: ['family', 'waterfront'], date: '', rating: 4.5, featured: false,
+                    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80' },
                 { id: 12, title: 'Jewel Changi: Nature & Retail Wonder',
                     excerpt: 'The Rain Vortex, Shiseido Forest Valley, and endless shopping under one roof.',
                     content: `<p>Jewel Changi is a nature-themed entertainment and retail complex connected to Changi Airport. The Rain Vortex waterfall is the centrepiece, surrounded by a lush indoor forest.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Jewel Changi" loading="lazy"><p>Shop, dine, and marvel at the architecture.</p><p><strong>📍 Location:</strong> 78 Airport Blvd, Singapore 819666</p>`,
-                    category: 'shopping', tags: ['nature', 'instagram'], date: '2025-05-05',
-                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80', rating: 4.9,
-                    featured: false },
+                    category: 'shopping', tags: ['nature', 'instagram'], date: '', rating: 4.9, featured: false,
+                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80' },
                 { id: 13, title: 'Haji Lane: Hipster Haven',
                     excerpt: 'Colourful shophouses, indie boutiques, and the coolest cafes in Singapore.',
                     content: `<p>Haji Lane is a narrow street in Kampong Glam filled with vibrant street art, indie fashion boutiques, and cosy cafes. It's the epicentre of Singapore's hipster culture.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Haji Lane" loading="lazy"><p>Perfect for Instagram, shopping for unique finds, and people-watching.</p><p><strong>📍 Location:</strong> Haji Lane, Singapore 189148</p>`,
-                    category: 'hidden', tags: ['instagram', 'shopping', 'cafe'], date: '2025-04-28',
-                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80', rating: 4.6,
-                    featured: false },
+                    category: 'hidden', tags: ['instagram', 'shopping', 'cafe'], date: '', rating: 4.6, featured: false,
+                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80' },
                 { id: 14, title: 'Pulau Ubin: Rustic Island Escape',
                     excerpt: 'Step back in time on this rustic island with cycling trails and kampong vibes.',
                     content: `<p>Pulau Ubin is Singapore's last kampong (village) island. Rent a bike and explore the jungle trails, spot wildlife at Chek Jawa Wetlands, and experience a slower pace of life.</p><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Pulau Ubin" loading="lazy"><p>It's a 10-minute bumboat ride from Changi Point Ferry Terminal.</p><p><strong>📍 Location:</strong> Pulau Ubin, Singapore</p>`,
-                    category: 'hidden', tags: ['nature', 'adventure'], date: '2025-04-20',
-                    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80', rating: 4.4,
-                    featured: false },
+                    category: 'hidden', tags: ['nature', 'adventure'], date: '', rating: 4.4, featured: false,
+                    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80' },
                 { id: 15, title: 'Clarke Quay: Riverside Nightlife',
                     excerpt: 'Bars, clubs, and restaurants along the Singapore River — the city\'s nightlife hub.',
                     content: `<p>Clarke Quay is the heart of Singapore's nightlife. The riverside is lined with themed bars, nightclubs, and restaurants serving everything from local cuisine to international fare.</p><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Clarke Quay" loading="lazy"><p>Take a river cruise or dance the night away at Zouk.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
-                    category: 'nightlife', tags: ['entertainment'], date: '2025-04-15',
-                    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80', rating: 4.5,
-                    featured: false },
+                    category: 'nightlife', tags: ['entertainment'], date: '', rating: 4.5, featured: false,
+                    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80' },
                 { id: 16, title: 'Zouk: World-Class Nightclub',
                     excerpt: 'Singapore\'s most famous nightclub — a multi-level electronic music paradise.',
                     content: `<p>Zouk is legendary in the global nightlife scene. With multiple rooms playing different genres, it attracts top international DJs and a stylish crowd.</p><img src="https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=800&q=80" alt="Zouk" loading="lazy"><p>Phuture, the hip-hop room, is always packed.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
-                    category: 'nightlife', tags: ['music'], date: '2025-04-10',
-                    image: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=600&q=80', rating: 4.7,
-                    featured: false },
+                    category: 'nightlife', tags: ['music'], date: '', rating: 4.7, featured: false,
+                    image: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=600&q=80' },
                 { id: 17, title: 'Singapore River Cruise',
                     excerpt: 'Glide along the historic river and see the city from a different perspective.',
                     content: `<p>A river cruise on the Singapore River offers stunning views of the skyline, historical landmarks, and the bustling quays. It's a relaxing way to see the city.</p><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Singapore River" loading="lazy"><p>Choose a bumboat for a traditional experience.</p><p><strong>📍 Location:</strong> Various jetties along the river</p>`,
-                    category: 'attractions', tags: ['family', 'relaxation'], date: '2025-04-05',
-                    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80', rating: 4.4,
-                    featured: false },
+                    category: 'attractions', tags: ['family', 'relaxation'], date: '', rating: 4.4, featured: false,
+                    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80' },
                 { id: 18, title: 'Little India: Cultural Kaleidoscope',
                     excerpt: 'Vibrant streets, aromatic spices, and colourful temples — a slice of India in Singapore.',
                     content: `<p>Little India is a sensory overload in the best way. Mustafa Centre is a 24-hour shopping wonderland, while the Sri Veeramakaliamman Temple is a stunning architectural gem.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Little India" loading="lazy"><p>Don't miss the street art and the incredible food.</p><p><strong>📍 Location:</strong> Little India, Singapore</p>`,
-                    category: 'attractions', tags: ['culture', 'food'], date: '2025-03-28',
-                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80', rating: 4.6,
-                    featured: false },
+                    category: 'attractions', tags: ['culture', 'food'], date: '', rating: 4.6, featured: false,
+                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80' },
                 { id: 19, title: 'Chinatown: Heritage & Hawker Delights',
                     excerpt: 'Colourful shophouses, temples, and the famous Chinatown Complex Food Centre.',
                     content: `<p>Chinatown is a vibrant neighbourhood with a rich history. Visit the Buddha Tooth Relic Temple, explore the heritage shophouses, and feast at the Chinatown Complex Food Centre.</p><img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&q=80" alt="Chinatown" loading="lazy"><p>The street market is perfect for souvenirs.</p><p><strong>📍 Location:</strong> Chinatown, Singapore</p>`,
-                    category: 'attractions', tags: ['culture', 'food', 'shopping'], date: '2025-03-20',
-                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80', rating: 4.5,
-                    featured: false },
+                    category: 'attractions', tags: ['culture', 'food', 'shopping'], date: '', rating: 4.5, featured: false,
+                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80' },
                 { id: 20, title: 'Fort Canning Park: Historic Hilltop',
                     excerpt: 'A green oasis in the city centre with rich history and panoramic views.',
                     content: `<p>Fort Canning Park is a historic hilltop park with remnants of Singapore's colonial past. It's a peaceful escape with lush greenery, ancient trees, and stunning city views.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Fort Canning" loading="lazy"><p>The iconic spiral staircase is an Instagram favourite.</p><p><strong>📍 Location:</strong> River Valley Rd, Singapore 179037</p>`,
-                    category: 'hidden', tags: ['nature', 'instagram', 'history'], date: '2025-03-15',
-                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80', rating: 4.3,
-                    featured: false }
+                    category: 'hidden', tags: ['nature', 'instagram', 'history'], date: '', rating: 4.3, featured: false,
+                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' }
             ];
 
             const events = [
-                { date: 'Aug 15', month: 'Aug', title: 'Singapore Night Festival', venue: 'Bras Basah · Bugis',
-                    tag: 'Festival' },
-                { date: 'Sep 2', month: 'Sep', title: 'F1 Grand Prix 2025', venue: 'Marina Bay Street Circuit',
-                    tag: 'Sports' },
-                { date: 'Sep 20', month: 'Sep', title: 'Mid-Autumn Festival', venue: 'Chinatown · Gardens by the Bay',
-                    tag: 'Cultural' },
-                { date: 'Oct 5', month: 'Oct', title: 'Deepavali Celebrations', venue: 'Little India', tag: 'Festival' },
-                { date: 'Oct 12', month: 'Oct', title: 'Singapore Writers Festival', venue: 'Victoria Theatre',
-                tag: 'Arts' },
-                { date: 'Nov 1', month: 'Nov', title: 'SGIFF — Film Festival', venue: 'Various venues', tag: 'Film' },
-                { date: 'Nov 15', month: 'Nov', title: 'Singapore Marathon', venue: 'Marina Bay', tag: 'Sports' },
-                { date: 'Dec 5', month: 'Dec', title: 'Christmas Light-Up', venue: 'Orchard Road', tag: 'Festival' }
+                { title: 'Singapore Night Festival', venue: 'Bras Basah · Bugis', tag: 'Festival', date: '', month: '' },
+                { title: 'F1 Grand Prix 2026', venue: 'Marina Bay Street Circuit', tag: 'Sports', date: '', month: '' },
+                { title: 'Mid-Autumn Festival', venue: 'Chinatown · Gardens by the Bay', tag: 'Cultural', date: '', month: '' },
+                { title: 'Deepavali Celebrations', venue: 'Little India', tag: 'Festival', date: '', month: '' },
+                { title: 'Singapore Writers Festival', venue: 'Victoria Theatre', tag: 'Arts', date: '', month: '' },
+                { title: 'SGIFF — Film Festival', venue: 'Various venues', tag: 'Film', date: '', month: '' },
+                { title: 'Singapore Marathon', venue: 'Marina Bay', tag: 'Sports', date: '', month: '' },
+                { title: 'Christmas Light-Up', venue: 'Orchard Road', tag: 'Festival', date: '', month: '' }
             ];
+
+            // Assign random dates to posts and events
+            posts.forEach(p => {
+                const rd = randomDate();
+                p.date = formatYYYYMMDD(rd);
+            });
+            events.forEach(e => {
+                const rd = randomDate();
+                e.date = formatMonthDay(rd);    // e.g. "Jun 7"
+                e.month = formatMonthAbbr(rd);  // e.g. "Jun"
+            });
 
             const top10 = [
                 'Ride the Singapore Flyer at sunset',
@@ -2317,7 +2328,7 @@
               <p><strong>☕ Coffee at cafe:</strong> $6 – $9 SGD</p>
               <p><strong>🍺 Beer at bar:</strong> $10 – $15 SGD</p>
               <p><strong>🎬 Cinema ticket:</strong> $13 – $18 SGD</p>
-              <p><em style="color:var(--text-muted);">Data updated July 2025</em></p>
+              <p><em style="color:var(--text-muted);">Data updated July 2026</em></p>
             </div>
             <div class="share-buttons">
               <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Info</button>
