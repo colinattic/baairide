@@ -561,50 +561,6 @@
             transform: scale(0.94);
         }
 
-        /* ─── STATS ─── */
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 0.9rem;
-            max-width: 880px;
-            margin: -2rem auto 2.5rem;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 3;
-        }
-        .stat-item {
-            background: var(--surface);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 1rem 0.5rem;
-            text-align: center;
-            transition: all 0.3s var(--transition);
-            cursor: default;
-        }
-        .stat-item:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 28px rgba(124, 58, 237, 0.06);
-        }
-        .stat-item .number {
-            font-family: var(--font-display);
-            font-size: 1.7rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-        .stat-item .label {
-            color: var(--text-muted);
-            font-size: 0.65rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
-
         /* ─── CONTAINER ─── */
         .container {
             max-width: 1240px;
@@ -1557,15 +1513,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ═══ STATS ═══ -->
-    <div class="stats-bar">
-        <div class="stat-item"><div class="number">5.6M</div><div class="label">Annual Visitors</div></div>
-        <div class="stat-item"><div class="number">120+</div><div class="label">Hawker Centres</div></div>
-        <div class="stat-item"><div class="number">4°</div><div class="label">Avg. Temperature</div></div>
-        <div class="stat-item"><div class="number">63</div><div class="label">Michelin Stars</div></div>
-        <div class="stat-item"><div class="number">6</div><div class="label">MRT Lines</div></div>
-    </div>
 
     <!-- ═══ MAIN ═══ -->
     <main class="container">
