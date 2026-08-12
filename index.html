@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baai Mart · Startup 2026</title>
+    <title>Baai Mart · Essential Travel Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
         :root {
-            --bg: #080815;
-            --surface: rgba(20, 20, 42, 0.82);
-            --surface-solid: #14142a;
+            --bg: #0b0b16;
+            --surface: rgba(22, 22, 38, 0.85);
+            --surface-solid: #16162a;
             --text: #f0edf8;
             --text-secondary: #b8b5d6;
             --text-muted: #7a78a4;
-            --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(255, 255, 255, 0.14);
+            --border: rgba(255, 255, 255, 0.07);
+            --border-hover: rgba(255, 255, 255, 0.16);
             --accent: #7c3aed;
             --accent-light: #a78bfa;
             --accent-dark: #5b21b6;
@@ -28,54 +28,31 @@
             --accent-teal: #14b8a6;
             --gradient: linear-gradient(135deg, #7c3aed, #6366f1, #8b5cf6);
             --gradient-warm: linear-gradient(135deg, #f59e0b, #f97316, #ef4444);
-            --gradient-teal: linear-gradient(135deg, #14b8a6, #06b6d4, #0ea5e9);
-            --radius: 24px;
+            --radius: 20px;
             --radius-sm: 14px;
-            --radius-xs: 10px;
-            --nav-bg: rgba(8, 8, 21, 0.9);
-            --shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+            --nav-bg: rgba(11, 11, 22, 0.88);
+            --shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
             --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.18);
-            --glow: rgba(124, 58, 237, 0.07);
             --heart: #f43f5e;
             --success: #34d399;
             --error: #f87171;
-            --transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-            --btt-bg: rgba(124, 58, 237, 0.2);
-            --btt-border: rgba(124, 58, 237, 0.35);
-            --ticker-bg: rgba(124, 58, 237, 0.06);
-            --ticker-text: #c4b5fd;
-            --badge-bg: rgba(124, 58, 237, 0.14);
-            --scrollbar: rgba(124, 58, 237, 0.25);
-            --input-bg: rgba(255, 255, 255, 0.05);
-            --ripple: rgba(255, 255, 255, 0.07);
-            --hero-overlay: rgba(8, 8, 21, 0.6);
-            --card-hover-glow: rgba(124, 58, 237, 0.08);
+            --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
             --font-display: 'Playfair Display', Georgia, serif;
             --font-body: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         [data-theme="light"] {
-            --bg: #f8f7ff;
+            --bg: #f7f6fc;
             --surface: rgba(255, 255, 255, 0.85);
             --surface-solid: #ffffff;
             --text: #1a1a2e;
             --text-secondary: #4a4a6a;
             --text-muted: #6b6b8a;
-            --border: rgba(0, 0, 0, 0.06);
-            --border-hover: rgba(0, 0, 0, 0.12);
-            --nav-bg: rgba(248, 247, 255, 0.92);
-            --shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.04);
-            --glow: rgba(124, 58, 237, 0.04);
-            --btt-bg: rgba(124, 58, 237, 0.1);
-            --btt-border: rgba(124, 58, 237, 0.2);
-            --ticker-bg: rgba(124, 58, 237, 0.04);
-            --ticker-text: #6d28d9;
-            --badge-bg: rgba(124, 58, 237, 0.08);
-            --input-bg: rgba(0, 0, 0, 0.03);
-            --ripple: rgba(0, 0, 0, 0.05);
-            --hero-overlay: rgba(248, 247, 255, 0.55);
-            --card-hover-glow: rgba(124, 58, 237, 0.04);
+            --border: rgba(0, 0, 0, 0.07);
+            --border-hover: rgba(0, 0, 0, 0.14);
+            --nav-bg: rgba(247, 246, 252, 0.92);
+            --shadow: 0 24px 64px rgba(0, 0, 0, 0.07);
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         *,
@@ -93,11 +70,12 @@
             font-family: var(--font-body);
             background: var(--bg);
             color: var(--text);
-            line-height: 1.65;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            transition: background 0.4s var(--transition), color 0.4s;
+            transition: background 0.4s, color 0.4s;
             min-height: 100vh;
             overflow-x: hidden;
+            position: relative;
         }
         ::selection {
             background: var(--accent);
@@ -105,13 +83,12 @@
         }
         ::-webkit-scrollbar {
             width: 6px;
-            height: 6px;
         }
         ::-webkit-scrollbar-track {
             background: var(--bg);
         }
         ::-webkit-scrollbar-thumb {
-            background: var(--scrollbar);
+            background: rgba(124, 58, 237, 0.3);
             border-radius: 10px;
         }
         img {
@@ -130,25 +107,13 @@
             cursor: pointer;
             border: none;
             outline: none;
+            background: none;
         }
         input,
         select {
             font-family: inherit;
             outline: none;
-        }
-
-        /* Mouse Glow */
-        #mouse-glow {
-            position: fixed;
-            pointer-events: none;
-            z-index: 0;
-            width: 520px;
-            height: 520px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            opacity: 5;
-            will-change: left, top;
+            border: none;
         }
 
         /* ─── NAVIGATION ─── */
@@ -157,20 +122,19 @@
             top: 0;
             z-index: 1000;
             background: var(--nav-bg);
-            backdrop-filter: blur(32px);
-            -webkit-backdrop-filter: blur(32px);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid var(--border);
-            height: 66px;
-            padding: 0 2rem;
+            height: 64px;
+            padding: 0 1.5rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            transition: all 0.3s;
             gap: 1rem;
         }
         .nav-logo {
             font-family: var(--font-display);
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             font-weight: 800;
             letter-spacing: -0.01em;
             background: var(--gradient);
@@ -188,7 +152,7 @@
             opacity: 0.8;
         }
         .nav-logo i {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
@@ -197,21 +161,20 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 0.15rem;
+            gap: 0.1rem;
             flex-wrap: wrap;
             justify-content: center;
         }
         .nav-links a {
             color: var(--text-secondary);
             font-weight: 500;
-            font-size: 0.82rem;
-            padding: 0.4rem 0.85rem;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.75rem;
             border-radius: 10px;
-            transition: all 0.3s var(--transition);
+            transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 0.35rem;
-            position: relative;
+            gap: 0.3rem;
             white-space: nowrap;
         }
         .nav-links a i {
@@ -219,7 +182,7 @@
         }
         .nav-links a:hover {
             color: var(--text);
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.05);
         }
         .nav-links a.active {
             color: #fff;
@@ -230,49 +193,82 @@
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             flex-shrink: 0;
+        }
+        .country-pills {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.15rem;
+        }
+        .country-pill {
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .country-pill.active {
+            background: var(--gradient);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+        }
+        .country-pill.pending {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+        .country-pill.pending:hover {
+            background: transparent;
+            color: var(--text-muted);
         }
         .search-wrap {
             position: relative;
         }
         .search-wrap i {
             position: absolute;
-            left: 0.85rem;
+            left: 0.8rem;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-muted);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             pointer-events: none;
         }
         .search-wrap input {
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             color: var(--text);
-            padding: 0.38rem 1rem 0.38rem 2.3rem;
+            padding: 0.35rem 0.9rem 0.35rem 2.2rem;
             border-radius: 50px;
-            font-size: 0.78rem;
-            width: 170px;
-            transition: all 0.35s var(--transition);
+            font-size: 0.75rem;
+            width: 140px;
+            transition: all 0.3s;
         }
         .search-wrap input:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
-            width: 210px;
+            width: 180px;
         }
         .theme-toggle {
             width: 44px;
             height: 26px;
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             border-radius: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
             padding: 3px;
-            transition: all 0.4s var(--transition);
+            transition: all 0.4s;
             flex-shrink: 0;
-            position: relative;
         }
         .theme-toggle .thumb {
             width: 18px;
@@ -282,10 +278,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.4s var(--transition);
+            transition: transform 0.4s;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
             color: #fff;
-            font-size: 0.6rem;
+            font-size: 0.58rem;
         }
         [data-theme="light"] .theme-toggle .thumb {
             transform: translateX(18px);
@@ -295,14 +291,15 @@
             flex-direction: column;
             gap: 4px;
             cursor: pointer;
-            background: none;
-            border: none;
             padding: 8px;
             border-radius: 10px;
-            transition: background 0.3s;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
         .hamburger:hover {
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.05);
         }
         .hamburger span {
             display: block;
@@ -310,66 +307,96 @@
             height: 2.5px;
             background: var(--text);
             border-radius: 4px;
-            transition: all 0.35s var(--transition);
+            transition: all 0.3s;
         }
         .hamburger.open span:nth-child(1) {
             transform: rotate(45deg) translate(4px, 4px);
         }
         .hamburger.open span:nth-child(2) {
             opacity: 0;
-            transform: scaleX(0);
         }
         .hamburger.open span:nth-child(3) {
             transform: rotate(-45deg) translate(4px, -4px);
         }
 
-        @media (max-width: 1000px) {
+        /* Mobile drawer */
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 1.2rem 1.2rem;
+            z-index: 998;
+            transform: translateY(-120%);
+            opacity: 0;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        .mobile-drawer.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .mobile-drawer .drawer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .mobile-drawer .drawer-links a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 0.55rem 0.8rem;
+            border-radius: 10px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .mobile-drawer .drawer-links a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text);
+        }
+        .mobile-drawer .drawer-links a.active {
+            background: var(--accent);
+            color: #fff;
+        }
+        .mobile-drawer .drawer-country {
+            margin-top: 0.6rem;
+            padding-top: 0.6rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 1024px) {
             .nav-links {
-                position: absolute;
-                top: 66px;
-                left: 0;
-                width: 100%;
-                background: var(--nav-bg);
-                backdrop-filter: blur(32px);
-                flex-direction: column;
-                padding: 1rem 1.5rem;
-                gap: 0.2rem;
-                border-bottom: 1px solid var(--border);
-                transform: translateY(-120%);
-                opacity: 0;
-                transition: transform 0.4s var(--transition), opacity 0.3s;
-                pointer-events: none;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                z-index: 999;
-            }
-            .nav-links.open {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: auto;
-            }
-            .nav-links a {
-                width: 100%;
-                justify-content: center;
-                padding: 0.5rem;
+                display: none;
             }
             .hamburger {
                 display: flex;
             }
+            .mobile-drawer {
+                display: block;
+            }
+            .country-pills {
+                display: none;
+            }
             .nav {
                 padding: 0 1rem;
             }
-            .search-wrap input {
-                width: 100px;
-            }
-            .search-wrap input:focus {
-                width: 130px;
-            }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 560px) {
             .search-wrap input {
                 width: 70px;
-                font-size: 0.7rem;
-                padding: 0.3rem 0.5rem 0.3rem 1.7rem;
+                font-size: 0.68rem;
+                padding: 0.3rem 0.5rem 0.3rem 1.6rem;
             }
             .search-wrap input:focus {
                 width: 100px;
@@ -382,101 +409,42 @@
                 font-size: 1.1rem;
             }
             .nav-logo i {
-                font-size: 1rem;
-            }
-        }
-
-        /* ─── TICKER ─── */
-        .ticker-wrap {
-            background: var(--ticker-bg);
-            border-bottom: 1px solid var(--border);
-            padding: 0.3rem 0;
-            overflow: hidden;
-            position: sticky;
-            top: 66px;
-            z-index: 998;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-        .ticker-inner {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            white-space: nowrap;
-            animation: tickerScroll 28s linear infinite;
-            width: max-content;
-            padding: 0 2rem;
-        }
-        .ticker-inner span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--ticker-text);
-            font-weight: 500;
-            font-size: 0.78rem;
-        }
-        .ticker-inner span i {
-            color: var(--accent);
-            font-size: 0.35rem;
-        }
-        .ticker-inner .badge {
-            background: var(--gradient);
-            color: #fff;
-            font-size: 0.48rem;
-            font-weight: 700;
-            padding: 0.1rem 0.55rem;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        @keyframes tickerScroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .ticker-inner {
-                animation: none;
-                flex-wrap: wrap;
-                white-space: normal;
-                justify-content: center;
-                gap: 1rem;
+                font-size: 0.95rem;
             }
         }
 
         /* ─── HERO ─── */
         .hero {
             position: relative;
-            padding: 4.5rem 1.5rem 5.5rem;
+            padding: 3.5rem 1.5rem 4rem;
             text-align: center;
             overflow: hidden;
             background: var(--bg);
+            z-index: 1;
         }
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&q=80') center/cover no-repeat;
-            opacity: 0.16;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
             z-index: 0;
-            filter: saturate(0.4);
-        }
-        [data-theme="light"] .hero-bg {
-            opacity: 0.09;
+            filter: saturate(0.5);
+            transition: background-image 0.5s;
         }
         .hero-overlay {
             position: absolute;
             inset: 0;
-            background: var(--hero-overlay);
+            background: rgba(11, 11, 22, 0.4);
             z-index: 1;
-            backdrop-filter: blur(1px);
+        }
+        [data-theme="light"] .hero-overlay {
+            background: rgba(247, 246, 252, 0.4);
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 700px;
+            max-width: 680px;
             margin: 0 auto;
         }
         .hero-badge {
@@ -484,12 +452,12 @@
             background: var(--surface);
             backdrop-filter: blur(14px);
             border: 1px solid var(--border);
-            padding: 0.25rem 1.3rem;
+            padding: 0.25rem 1.2rem;
             border-radius: 50px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: var(--accent-light);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             letter-spacing: 0.03em;
         }
         .hero-badge i {
@@ -497,26 +465,26 @@
         }
         .hero h1 {
             font-family: var(--font-display);
-            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
             font-weight: 800;
             letter-spacing: -0.03em;
-            line-height: 1.04;
+            line-height: 1.1;
             background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.8rem;
         }
         .hero p {
             color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 480px;
-            margin: 0 auto 2rem;
-            line-height: 1.5;
+            font-size: 1rem;
+            max-width: 450px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.55;
         }
         .hero-search {
             display: flex;
-            max-width: 480px;
+            max-width: 430px;
             margin: 0 auto;
             gap: 0.5rem;
             flex-wrap: wrap;
@@ -524,46 +492,45 @@
         }
         .hero-search input {
             flex: 1;
-            min-width: 170px;
-            padding: 0.75rem 1.2rem;
+            min-width: 150px;
+            padding: 0.7rem 1.1rem;
             border-radius: 60px;
             border: 1px solid var(--border);
             background: var(--surface);
             backdrop-filter: blur(14px);
             color: var(--text);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: all 0.3s;
         }
         .hero-search input:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
         }
         .hero-search button {
-            padding: 0.75rem 2rem;
+            padding: 0.7rem 1.7rem;
             border-radius: 60px;
             background: var(--gradient);
             color: #fff;
-            border: none;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.15s, box-shadow 0.3s;
-            font-size: 0.95rem;
+            transition: all 0.3s;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 0.4rem;
             white-space: nowrap;
         }
         .hero-search button:hover {
-            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
             transform: translateY(-2px);
         }
         .hero-search button:active {
-            transform: scale(0.94);
+            transform: scale(0.95);
         }
 
         /* ─── CONTAINER ─── */
         .container {
-            max-width: 1240px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem 1.5rem;
             position: relative;
@@ -577,11 +544,11 @@
             justify-content: space-between;
             flex-wrap: wrap;
             gap: 1rem;
-            margin: 3rem 0 1.4rem;
+            margin: 2.8rem 0 1.2rem;
         }
         .section-header h2 {
             font-family: var(--font-display);
-            font-size: 1.55rem;
+            font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             display: flex;
@@ -589,69 +556,45 @@
             gap: 0.5rem;
         }
         .section-header h2 i {
-            font-size: 1.1rem;
-        }
-        .section-header .see-all {
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.82rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            cursor: pointer;
-            padding: 0.3rem 0.9rem;
-            border-radius: 50px;
-            border: 1px solid transparent;
-            transition: all 0.3s;
-            background: none;
-        }
-        .section-header .see-all:hover {
-            color: var(--accent-light);
-            gap: 0.6rem;
-            border-color: var(--border);
-            background: var(--input-bg);
+            font-size: 1rem;
         }
 
         /* ─── CARDS GRID ─── */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.3rem;
         }
         .card {
             background: var(--surface);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(18px);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             overflow: hidden;
-            transition: all 0.45s var(--transition);
+            transition: all 0.35s var(--transition);
             box-shadow: var(--shadow-sm);
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            animation: cardEntry 0.5s var(--transition) both;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s, border-color 0.3s, box-shadow 0.3s;
+        }
+        .card.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
         .card:hover {
             border-color: var(--border-hover);
-            box-shadow: 0 18px 50px var(--card-hover-glow);
-            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(124, 58, 237, 0.1);
+            transform: translateY(-4px);
         }
         .card:active {
-            transform: scale(0.96);
-        }
-        @keyframes cardEntry {
-            from {
-                opacity: 0;
-                transform: translateY(28px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            transform: scale(0.97);
         }
         .card-img {
-            height: 185px;
+            height: 170px;
             flex-shrink: 0;
             position: relative;
             overflow: hidden;
@@ -661,20 +604,20 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s var(--transition);
+            transition: transform 0.5s;
         }
         .card:hover .card-img img {
             transform: scale(1.06);
         }
         .card-img .badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
+            top: 10px;
+            left: 10px;
             background: var(--surface);
-            backdrop-filter: blur(12px);
-            padding: 0.15rem 0.75rem;
+            backdrop-filter: blur(10px);
+            padding: 0.12rem 0.65rem;
             border-radius: 50px;
-            font-size: 0.62rem;
+            font-size: 0.58rem;
             font-weight: 600;
             border: 1px solid var(--border);
             color: var(--text);
@@ -685,22 +628,24 @@
         }
         .card-img .fav-btn {
             position: absolute;
-            top: 12px;
-            right: 12px;
+            top: 10px;
+            right: 10px;
             background: var(--surface);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border);
             border-radius: 50%;
-            width: 31px;
-            height: 31px;
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s;
             color: var(--text-muted);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             z-index: 2;
+            min-width: 30px;
+            min-height: 30px;
         }
         .card-img .fav-btn:hover {
             color: var(--heart);
@@ -710,20 +655,20 @@
         .card-img .fav-btn.active {
             color: var(--heart);
             border-color: var(--heart);
-            background: rgba(244, 63, 94, 0.12);
+            background: rgba(244, 63, 94, 0.15);
         }
         .card-body {
-            padding: 1.1rem 1.3rem 1.4rem;
+            padding: 0.9rem 1.1rem 1.1rem;
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.2rem;
         }
         .card-body .meta {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 0.68rem;
+            gap: 0.4rem;
+            font-size: 0.62rem;
             color: var(--text-muted);
             flex-wrap: wrap;
         }
@@ -731,21 +676,21 @@
             color: #fbbf24;
             display: flex;
             align-items: center;
-            gap: 0.12rem;
+            gap: 0.1rem;
         }
         .card-body .meta .rating span {
             color: var(--text-muted);
             font-weight: 400;
         }
         .card-body h3 {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             font-weight: 700;
             letter-spacing: -0.01em;
             line-height: 1.3;
         }
         .card-body p {
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             flex: 1;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -755,415 +700,106 @@
         .card-body .read-more {
             color: var(--accent-light);
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.73rem;
             display: flex;
             align-items: center;
             gap: 0.3rem;
-            margin-top: 0.3rem;
+            margin-top: 0.25rem;
             transition: gap 0.3s;
         }
         .card:hover .read-more {
-            gap: 0.6rem;
+            gap: 0.5rem;
         }
         .card.featured {
             grid-column: 1 / -1;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            min-height: 220px;
+            min-height: 200px;
         }
         .card.featured .card-img {
             height: 100%;
-            min-height: 200px;
+            min-height: 180px;
         }
         .card.featured .card-body {
-            padding: 1.6rem 2rem;
+            padding: 1.2rem 1.5rem;
             justify-content: center;
         }
         .card.featured .card-body h3 {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
         }
-        @media (max-width: 680px) {
+        @media (max-width: 650px) {
             .card.featured {
                 grid-template-columns: 1fr;
             }
             .card.featured .card-img {
-                height: 170px;
+                height: 150px;
             }
-        }
-
-        /* ─── EVENT LIST ─── */
-        .event-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        .event-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.7rem 1.2rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        .event-item:hover {
-            border-color: var(--border-hover);
-            transform: translateX(5px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-        .event-item .date-box {
-            min-width: 46px;
-            text-align: center;
-            background: var(--input-bg);
-            border-radius: 12px;
-            padding: 0.15rem 0.1rem;
-        }
-        .event-item .date-box .day {
-            font-size: 1.3rem;
-            font-weight: 800;
-            line-height: 1.2;
-            font-family: var(--font-display);
-        }
-        .event-item .date-box .month {
-            font-size: 0.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            letter-spacing: 0.04em;
-        }
-        .event-item .event-info h4 {
-            font-weight: 600;
-            font-size: 0.88rem;
-        }
-        .event-item .event-info p {
-            color: var(--text-muted);
-            font-size: 0.73rem;
-        }
-        .event-item .event-tag {
-            margin-left: auto;
-            font-size: 0.58rem;
-            font-weight: 600;
-            padding: 0.15rem 0.75rem;
-            border-radius: 50px;
-            background: var(--badge-bg);
-            color: var(--accent-light);
-            border: 1px solid var(--border);
-            flex-shrink: 0;
-        }
-        @media (max-width: 500px) {
-            .event-item {
-                flex-wrap: wrap;
-                gap: 0.5rem;
+            .card-img {
+                height: 145px;
             }
-            .event-item .event-tag {
-                margin-left: 0;
-            }
-        }
-
-        /* ─── TOP 10 ─── */
-        .top10-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.7rem;
-            margin: 1rem 0 2rem;
-        }
-        .top10-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 0.6rem 1rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            transition: all 0.3s;
-            cursor: default;
-        }
-        .top10-item:hover {
-            border-color: var(--border-hover);
-            transform: translateX(4px);
-        }
-        .top10-item .rank {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--accent-light);
-            min-width: 28px;
-            text-align: center;
-        }
-        .top10-item .info h4 {
-            font-weight: 600;
-            font-size: 0.88rem;
-        }
-        .top10-item .info p {
-            color: var(--text-muted);
-            font-size: 0.7rem;
-        }
-        @media (max-width: 600px) {
-            .top10-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ─── VIDEO GRID ─── */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.2rem;
-            margin: 1rem 0 2rem;
-        }
-        .video-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        .video-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-5px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1);
-        }
-        .video-card .thumb {
-            position: relative;
-            padding-top: 56.25%;
-            background: var(--surface-solid);
-        }
-        .video-card .thumb img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .video-card .thumb .play-btn {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.28);
-            transition: background 0.3s;
-        }
-        .video-card .thumb .play-btn i {
-            font-size: 3rem;
-            color: #fff;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-        .video-card:hover .thumb .play-btn i {
-            transform: scale(1.12);
-        }
-        .video-card .video-info {
-            padding: 0.75rem 1.1rem 1rem;
-        }
-        .video-card .video-info h4 {
-            font-weight: 600;
-            font-size: 0.88rem;
-        }
-        .video-card .video-info p {
-            color: var(--text-muted);
-            font-size: 0.73rem;
-            margin-top: 0.1rem;
-        }
-
-        /* ─── TOOLS GRID ─── */
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-            gap: 1.2rem;
-            margin: 1.5rem 0 2.5rem;
-        }
-        .tool-card {
-            background: var(--surface);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            padding: 1.3rem 1.1rem;
-            text-align: center;
-            transition: all 0.3s var(--transition);
-        }
-        .tool-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
-        }
-        .tool-card i {
-            font-size: 1.7rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.4rem;
-        }
-        .tool-card h4 {
-            font-weight: 600;
-            font-size: 0.92rem;
-        }
-        .tool-card p {
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            margin-top: 0.1rem;
-        }
-        .tool-card .action-btn {
-            margin-top: 0.6rem;
-            padding: 0.3rem 1.2rem;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: var(--input-bg);
-            color: var(--text);
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 0.75rem;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .tool-card .action-btn:hover {
-            background: var(--gradient);
-            color: #fff;
-            border-color: transparent;
-            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
-        }
-        .currency-converter {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            align-items: center;
-            justify-content: center;
-            margin-top: 0.5rem;
-        }
-        .currency-converter input,
-        .currency-converter select {
-            background: var(--input-bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 0.28rem 0.5rem;
-            border-radius: 10px;
-            font-size: 0.73rem;
-            min-width: 60px;
-        }
-        .currency-converter input:focus,
-        .currency-converter select:focus {
-            border-color: var(--accent);
-        }
-        .currency-converter .result {
-            font-weight: 700;
-            color: var(--accent-light);
-            font-size: 0.88rem;
-        }
-        .weather-widget {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 0.4rem;
-        }
-        .weather-widget .temp {
-            font-family: var(--font-display);
-            font-size: 1.7rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .weather-widget .desc {
-            color: var(--text-secondary);
-            font-size: 0.78rem;
-        }
-        .weather-widget i {
-            font-size: 1.5rem;
-            color: #fbbf24;
         }
 
         /* ─── NEWSLETTER ─── */
         .newsletter {
-            margin: 3.5rem auto 1.5rem;
-            max-width: 660px;
+            margin: 3rem auto 1.5rem;
+            max-width: 600px;
             border-radius: var(--radius);
-            padding: 2.5rem 2rem;
+            padding: 2.2rem 1.8rem;
             text-align: center;
             background: var(--surface);
-            backdrop-filter: blur(20px);
             border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            background: conic-gradient(from 0deg, transparent, var(--accent), transparent, var(--accent-light),
-                    transparent);
-            opacity: 0.03;
-            z-index: 0;
-            animation: spin 22s linear infinite;
-        }
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .newsletter>* {
-            position: relative;
-            z-index: 1;
         }
         .newsletter h3 {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
         }
         .newsletter p {
             color: var(--text-secondary);
-            font-size: 0.92rem;
+            font-size: 0.85rem;
         }
         .newsletter-form {
             display: flex;
             gap: 0.5rem;
-            max-width: 420px;
+            max-width: 380px;
             margin: 1rem auto 0;
             flex-wrap: wrap;
             justify-content: center;
         }
         .newsletter-form input {
             flex: 1;
-            min-width: 150px;
-            padding: 0.6rem 1rem;
+            min-width: 140px;
+            padding: 0.55rem 1rem;
             border-radius: 50px;
             border: 1px solid var(--border);
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.03);
             color: var(--text);
-            font-size: 0.88rem;
+            font-size: 0.85rem;
         }
         .newsletter-form input:focus {
             border-color: var(--accent);
         }
         .newsletter-form button {
-            padding: 0.6rem 1.6rem;
+            padding: 0.55rem 1.4rem;
             border-radius: 50px;
             background: var(--gradient);
             color: #fff;
             cursor: pointer;
             font-weight: 600;
-            transition: transform 0.15s, box-shadow 0.3s;
+            transition: all 0.3s;
             display: flex;
             align-items: center;
             gap: 0.3rem;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
         }
         .newsletter-form button:hover {
-            box-shadow: 0 6px 24px rgba(124, 58, 237, 0.35);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
             transform: translateY(-2px);
         }
         .newsletter-msg {
             margin-top: 0.6rem;
             font-weight: 600;
-            font-size: 0.83rem;
+            font-size: 0.78rem;
         }
 
         /* ─── MODAL ─── */
@@ -1177,7 +813,6 @@
             justify-content: center;
             padding: 1.5rem;
             backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
         }
         .modal-overlay.open {
             display: flex;
@@ -1191,25 +826,25 @@
             }
         }
         .modal {
-            background: var(--surface);
-            backdrop-filter: blur(32px);
+            background: var(--surface-solid);
             border: 1px solid var(--border);
             border-radius: var(--radius);
-            max-width: 740px;
+            max-width: 700px;
             width: 100%;
             max-height: 85vh;
             overflow-y: auto;
-            padding: 2rem 2.2rem;
+            padding: 1.8rem 2rem;
             box-shadow: var(--shadow);
-            animation: modalSlide 0.4s var(--transition);
+            animation: modalSlide 0.35s ease-out;
+            position: relative;
         }
         .modal-overlay.closing .modal {
-            animation: modalSlideOut 0.3s var(--transition) forwards;
+            animation: modalSlideOut 0.25s forwards;
         }
         @keyframes modalSlide {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -1219,18 +854,18 @@
         @keyframes modalSlideOut {
             to {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
         }
         .modal-close {
             position: sticky;
             top: 0;
             float: right;
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
             color: var(--text);
-            width: 34px;
-            height: 34px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -1238,7 +873,9 @@
             justify-content: center;
             transition: 0.3s;
             z-index: 5;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            min-width: 32px;
+            min-height: 32px;
         }
         .modal-close:hover {
             background: var(--accent);
@@ -1247,17 +884,17 @@
         }
         .modal h2 {
             font-family: var(--font-display);
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 700;
             margin-top: 0.2rem;
         }
         .modal .modal-meta {
             color: var(--text-muted);
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
         }
         .modal-body {
@@ -1265,42 +902,46 @@
             line-height: 1.8;
         }
         .modal-body p {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         .modal-body img {
             border-radius: var(--radius-sm);
-            margin: 0.8rem 0;
+            margin: 0.6rem 0;
             width: 100%;
+            max-height: 300px;
+            object-fit: cover;
         }
         .modal-body ul {
             list-style: disc;
             padding-left: 1.5rem;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         .modal-body ul li {
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
         }
         .share-buttons {
             display: flex;
             gap: 0.4rem;
             flex-wrap: wrap;
-            margin-top: 1.5rem;
-            padding-top: 1.2rem;
+            margin-top: 1.2rem;
+            padding-top: 1rem;
             border-top: 1px solid var(--border);
         }
         .share-btn {
-            padding: 0.35rem 1rem;
+            padding: 0.3rem 0.85rem;
             border-radius: 50px;
             border: 1px solid var(--border);
-            background: var(--input-bg);
+            background: rgba(255, 255, 255, 0.03);
             color: var(--text);
             cursor: pointer;
             font-weight: 500;
-            font-size: 0.74rem;
-            transition: 0.35s;
+            font-size: 0.68rem;
+            transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 0.3rem;
+            font-family: inherit;
+            min-height: 32px;
         }
         .share-btn:hover {
             background: var(--gradient);
@@ -1311,46 +952,37 @@
         /* ─── BACK TO TOP ─── */
         .back-to-top {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 46px;
-            height: 46px;
-            border-radius: 28px;
-            background: var(--btt-bg);
-            backdrop-filter: blur(14px);
-            border: 1px solid var(--btt-border);
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(124, 58, 237, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 58, 237, 0.35);
             color: var(--accent-light);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 900;
             opacity: 0;
-            transform: translateY(20px) scale(0.8);
+            transform: translateY(20px);
             pointer-events: none;
-            transition: all 0.35s var(--transition);
+            transition: all 0.3s;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.1);
         }
         .back-to-top.visible {
             opacity: 1;
-            transform: translateY(0) scale(1);
+            transform: translateY(0);
             pointer-events: auto;
         }
         .back-to-top:hover {
             background: var(--gradient);
             color: #fff;
             border-color: transparent;
-            box-shadow: 0 8px 28px rgba(124, 58, 237, 0.4);
-        }
-        .back-to-top:active {
-            transform: scale(0.88);
         }
         .back-to-top i {
-            font-size: 1.05rem;
-            transition: transform 0.3s;
-        }
-        .back-to-top:hover i {
-            transform: translateY(-3px);
+            font-size: 0.9rem;
         }
 
         /* ─── FOOTER ─── */
@@ -1359,27 +991,35 @@
             padding: 2rem 1.5rem;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
-            font-size: 0.83rem;
+            font-size: 0.78rem;
             margin-top: 1.5rem;
         }
         .footer .socials {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 0.8rem;
+            gap: 0.8rem;
+            margin-bottom: 0.6rem;
         }
         .footer .socials a {
             color: var(--text-muted);
-            font-size: 1.15rem;
+            font-size: 1rem;
             transition: color 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
         }
         .footer .socials a:hover {
             color: var(--accent-light);
             transform: translateY(-3px);
+            border-color: var(--accent);
         }
         .footer .creator {
             margin-top: 0.2rem;
-            font-size: 0.73rem;
+            font-size: 0.68rem;
         }
         .footer .creator a {
             color: var(--accent-light);
@@ -1389,68 +1029,64 @@
             text-decoration: underline;
         }
 
-        /* ─── MISC ─── */
-        .no-results {
-            text-align: center;
-            padding: 2.5rem;
-            color: var(--text-muted);
-            grid-column: 1 / -1;
-            font-size: 0.95rem;
-        }
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: var(--ripple);
-            transform: scale(0);
-            animation: rippleAnim 0.6s ease-out;
+        /* ─── TOAST ─── */
+        .toast-container {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
             pointer-events: none;
-            z-index: 10;
         }
-        @keyframes rippleAnim {
-            to {
-                transform: scale(4);
+        .toast {
+            background: var(--surface-solid);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.5rem 1.3rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text);
+            box-shadow: var(--shadow-sm);
+            animation: toastIn 0.3s ease-out, toastOut 0.3s ease-out 2.5s forwards;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        @keyframes toastIn {
+            from {
                 opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-            #mouse-glow {
-                display: none !important;
-            }
-            .ticker-inner {
-                animation: none !important;
-            }
-            .ripple {
-                display: none !important;
+        @keyframes toastOut {
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
             }
         }
-        @media (max-width: 400px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
+
+        @media (max-width: 600px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.9rem;
             }
-            .hero-search input {
-                min-width: 130px;
+            .hero p {
+                font-size: 0.88rem;
             }
             .modal {
-                padding: 1.2rem;
-            }
-            .stats-bar {
-                grid-template-columns: 1fr 1fr;
-                gap: 0.5rem;
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <!-- ═══ MOUSE GLOW ═══ -->
-    <div id="mouse-glow" aria-hidden="true"></div>
 
     <!-- ═══ NAVIGATION ═══ -->
     <nav class="nav" role="navigation">
@@ -1461,16 +1097,21 @@
             <li><a href="#" class="active" data-nav="home"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="#attractions" data-nav="attractions"><i class="fas fa-landmark"></i> Attractions</a></li>
             <li><a href="#food" data-nav="food"><i class="fas fa-utensils"></i> Food</a></li>
-            <li><a href="#events" data-nav="events"><i class="fas fa-calendar"></i> Events</a></li>
-            <li><a href="#tools" data-nav="tools"><i class="fas fa-tools"></i> Tools</a></li>
-            <li><a href="#videos" data-nav="videos"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="#hidden" data-nav="hidden"><i class="fas fa-mask"></i> Hidden Gems</a></li>
+            <li><a href="#nightlife" data-nav="nightlife"><i class="fas fa-moon"></i> Nightlife</a></li>
+            <li><a href="#shopping" data-nav="shopping"><i class="fas fa-shopping-bag"></i> Shopping</a></li>
         </ul>
         <div class="nav-actions">
+            <div class="country-pills" id="nav-country-pills">
+                <button class="country-pill active" data-country="singapore">🇸🇬 SG</button>
+                <button class="country-pill" data-country="thailand">🇹🇭 TH</button>
+                <button class="country-pill pending" data-country="pending" title="Coming soon">⏳ Next</button>
+            </div>
             <div class="search-wrap">
                 <i class="fas fa-search"></i>
                 <input type="text" id="search-input" placeholder="Search…" aria-label="Search">
             </div>
-            <div class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false" tabindex="0">
+            <div class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false" tabindex="0" title="Toggle theme">
                 <div class="thumb"><i class="fas fa-moon"></i></div>
             </div>
             <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -1479,174 +1120,40 @@
         </div>
     </nav>
 
-    <!-- ═══ TICKER ═══ -->
-    <div class="ticker-wrap" aria-label="Breaking news">
-        <div class="ticker-inner" id="ticker-inner">
-            <span><i class="fas fa-circle"></i> <span class="badge">Live</span> Marina Bay Sands light show extended</span>
-            <span><i class="fas fa-circle"></i> New hawker centre opens at Punggol — 40 stalls</span>
-            <span><i class="fas fa-circle"></i> Changi Airport T5 construction ahead of schedule</span>
-            <span><i class="fas fa-circle"></i> F1 Grand Prix 2026 tickets on sale now</span>
-            <span><i class="fas fa-circle"></i> Michelin-starred Peranakan restaurant opens</span>
-            <span><i class="fas fa-circle"></i> Gardens by the Bay wins sustainability award</span>
-            <span><i class="fas fa-circle"></i> Sentosa's new water park opens this weekend</span>
-            <span><i class="fas fa-circle"></i> <span class="badge">Live</span> Marina Bay Sands light show extended</span>
-            <span><i class="fas fa-circle"></i> New hawker centre opens at Punggol — 40 stalls</span>
-            <span><i class="fas fa-circle"></i> Changi Airport T5 construction ahead of schedule</span>
-            <span><i class="fas fa-circle"></i> F1 Grand Prix 2026 tickets on sale now</span>
-            <span><i class="fas fa-circle"></i> Michelin-starred Peranakan restaurant opens</span>
-            <span><i class="fas fa-circle"></i> Gardens by the Bay wins sustainability award</span>
-            <span><i class="fas fa-circle"></i> Sentosa's new water park opens this weekend</span>
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-links">
+            <a href="#" class="active" data-nav="home"><i class="fas fa-home"></i> Home</a>
+            <a href="#attractions" data-nav="attractions"><i class="fas fa-landmark"></i> Attractions</a>
+            <a href="#food" data-nav="food"><i class="fas fa-utensils"></i> Food</a>
+            <a href="#hidden" data-nav="hidden"><i class="fas fa-mask"></i> Hidden Gems</a>
+            <a href="#nightlife" data-nav="nightlife"><i class="fas fa-moon"></i> Nightlife</a>
+            <a href="#shopping" data-nav="shopping"><i class="fas fa-shopping-bag"></i> Shopping</a>
+        </div>
+        <div class="drawer-country">
+            <button class="country-pill active" data-country="singapore">🇸🇬 Singapore</button>
+            <button class="country-pill" data-country="thailand">🇹🇭 Thailand</button>
+            <button class="country-pill pending" data-country="pending">⏳ Next: pending…</button>
         </div>
     </div>
 
     <!-- ═══ HERO ═══ -->
     <section class="hero" id="home">
-        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
         <div class="hero-overlay" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-badge"><i class="fas fa-map-pin"></i> Singapore Travel Guide 2026</div>
-            <h1>Discover the Lion City</h1>
-            <p>From hawker centres to futuristic gardens — your ultimate guide to Singapore.</p>
+            <div class="hero-badge" id="hero-badge"><i class="fas fa-map-pin"></i> Singapore Travel Guide 2026</div>
+            <h1 id="hero-title">Discover the Lion City</h1>
+            <p id="hero-desc">From hawker centres to futuristic gardens — your ultimate guide to Singapore.</p>
             <div class="hero-search">
-                <input type="text" id="hero-search-input" placeholder="Search attractions, food, events…" />
+                <input type="text" id="hero-search-input" placeholder="Search attractions, food, nightlife…" />
                 <button id="hero-search-btn"><i class="fas fa-arrow-right"></i> Explore</button>
             </div>
         </div>
     </section>
 
-    <!-- ═══ MAIN ═══ -->
-    <main class="container">
-
-        <!-- Trending -->
-        <div class="section-header">
-            <h2><i class="fas fa-fire" style="background:var(--gradient-warm);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;"></i> Trending Now</h2>
-            <span class="see-all" data-section="trending">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="trending-grid"></div>
-
-        <!-- Attractions -->
-        <div class="section-header" id="attractions">
-            <h2><i class="fas fa-landmark"></i> Top Attractions</h2>
-            <span class="see-all" data-section="attractions">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="attractions-grid"></div>
-
-        <!-- Food -->
-        <div class="section-header" id="food">
-            <h2><i class="fas fa-utensils"></i> Best Food & amp; Hawker</h2>
-            <span class="see-all" data-section="food">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="food-grid"></div>
-
-        <!-- Hidden Gems -->
-        <div class="section-header" id="hidden">
-            <h2><i class="fas fa-mask"></i> Hidden Gems</h2>
-            <span class="see-all" data-section="hidden">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="hidden-grid"></div>
-
-        <!-- Nightlife -->
-        <div class="section-header" id="nightlife">
-            <h2><i class="fas fa-moon"></i> Nightlife</h2>
-            <span class="see-all" data-section="nightlife">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="nightlife-grid"></div>
-
-        <!-- Shopping -->
-        <div class="section-header" id="shopping">
-            <h2><i class="fas fa-shopping-bag"></i> Shopping</h2>
-            <span class="see-all" data-section="shopping">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="shopping-grid"></div>
-
-        <!-- Instagram-worthy -->
-        <div class="section-header" id="instagram">
-            <h2><i class="fas fa-camera"></i> Instagram-worthy</h2>
-            <span class="see-all" data-section="instagram">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="cards-grid" id="instagram-grid"></div>
-
-        <!-- Top 10 -->
-        <div class="section-header" id="top10">
-            <h2><i class="fas fa-trophy"></i> Top 10 Must-Dos</h2>
-        </div>
-        <div class="top10-list" id="top10-list"></div>
-
-        <!-- Events -->
-        <div class="section-header" id="events">
-            <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
-            <span class="see-all" data-section="events">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="event-list" id="event-list"></div>
-
-        <!-- Videos -->
-        <div class="section-header" id="videos">
-            <h2><i class="fab fa-youtube"></i> Travel Videos</h2>
-            <span class="see-all" data-section="videos">See all <i class="fas fa-arrow-right"></i></span>
-        </div>
-        <div class="video-grid" id="video-grid"></div>
-
-        <!-- Tools -->
-        <div class="section-header" id="tools">
-            <h2><i class="fas fa-tools"></i> Travel Tools</h2>
-        </div>
-        <div class="tools-grid">
-            <div class="tool-card">
-                <i class="fas fa-cloud-sun"></i>
-                <h4>Weather</h4>
-                <div class="weather-widget" id="weather-widget">
-                    <i class="fas fa-sun"></i>
-                    <span class="temp" id="weather-temp">32°C</span>
-                    <span class="desc" id="weather-desc">Sunny</span>
-                </div>
-                <p style="font-size:0.6rem;color:var(--text-muted);">Updated every 5 min</p>
-            </div>
-            <div class="tool-card">
-                <i class="fas fa-money-bill-wave"></i>
-                <h4>Currency</h4>
-                <div class="currency-converter">
-                    <input type="number" id="currency-amount" value="100" min="0" />
-                    <select id="currency-from"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="SGD" selected>SGD</option><option value="MYR">MYR</option><option value="JPY">JPY</option></select>
-                    <span style="color:var(--text-muted);font-size:0.7rem;">→</span>
-                    <select id="currency-to"><option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option><option value="SGD" selected>SGD</option><option value="MYR">MYR</option><option value="JPY">JPY</option></select>
-                    <span class="result" id="currency-result">100.00 SGD</span>
-                </div>
-            </div>
-            <div class="tool-card">
-                <i class="fas fa-subway"></i>
-                <h4>MRT Guide</h4>
-                <p>6 lines · 130+ stations</p>
-                <button class="action-btn" id="mrt-btn"><i class="fas fa-map"></i> View Map</button>
-            </div>
-            <div class="tool-card">
-                <i class="fas fa-map-marked-alt"></i>
-                <h4>Interactive Map</h4>
-                <button class="action-btn" id="map-btn"><i class="fas fa-external-link-alt"></i> Open Map</button>
-            </div>
-            <div class="tool-card">
-                <i class="fas fa-coins"></i>
-                <h4>Cost of Living</h4>
-                <button class="action-btn" id="cost-btn"><i class="fas fa-info-circle"></i> Details</button>
-            </div>
-            <div class="tool-card">
-                <i class="fas fa-bus"></i>
-                <h4>Transport</h4>
-                <button class="action-btn" id="transport-btn"><i class="fas fa-route"></i> Plan Trip</button>
-            </div>
-        </div>
-
-        <!-- Newsletter -->
-        <section class="newsletter">
-            <h3>✉️ Stay in the Loop</h3>
-            <p>Stay connected for more hidden gems, and event updates.</p>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" id="news-email" placeholder="your@email.com" required />
-                <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
-            </form>
-            <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
-        </section>
-
-    </main>
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <main class="container" id="main-content"></main>
 
     <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
@@ -1658,7 +1165,7 @@
             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
         <p>Made with <span style="color:var(--heart);">❤️</span> by Baai Mart</p>
-        <p>"Some of the existing informations might <b>inaccurate</b> will be fixed soon"</p>
+        <p style="font-size:0.68rem;">Some of the existing information might be <b>inaccurate</b> and will be fixed soon</p>
         <div class="creator">
             <span>Created by <a href="#" id="about-footer">Lukman Nawas</a></span>
         </div>
@@ -1669,6 +1176,9 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- ═══ TOAST CONTAINER ═══ -->
+    <div class="toast-container" id="toast-container"></div>
+
     <!-- ═══ MODALS ═══ -->
     <div class="modal-overlay" id="post-modal" aria-hidden="true">
         <div class="modal" role="dialog" aria-modal="true">
@@ -1676,255 +1186,210 @@
             <div id="modal-content"></div>
         </div>
     </div>
-
     <div class="modal-overlay" id="about-modal" aria-hidden="true">
         <div class="modal" role="dialog" aria-modal="true">
             <button class="modal-close" id="about-close"><i class="fas fa-times"></i></button>
             <h2>🙋‍♂️ About Baai Mart</h2>
             <p style="color:var(--text-secondary);line-height:1.8;">Baai Mart is a travel collective obsessed with
-                Southeast Asia. BaaiMart is for authentic hawker finds, hidden corners, and the latest
-                events — all served with a clean, modern interface.</p>
-            <p style="color:var(--text-muted);margin-top:1rem;">🌴 Based in Srilanka — The Baai Team</p>
+                Southeast Asia. We bring authentic hawker finds, hidden corners, and the latest events — all served
+                with a clean, modern interface.</p>
+            <p style="color:var(--text-muted);margin-top:1rem;">🌴 Based in Sri Lanka — The Baai Team</p>
         </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════
-    JAVASCRIPT — 100% WORKING
-    ═══════════════════════════════════════════════ -->
     <script>
         (function() {
             'use strict';
 
-            // ─── RANDOM DATE HELPERS (May 25 – Jul 13, 2026) ─────
-            const startDate = new Date(2026, 4, 25); // May 25, 2026
-            const endDate = new Date(2026, 6, 13);   // July 13, 2026
-            const dayRange = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)); // inclusive count
+            // ─── HELPERS ─────────────────────────────────
+            const $ = (sel) => document.querySelector(sel);
+            const $$ = (sel) => document.querySelectorAll(sel);
+            const toast = (msg, icon = '✅') => {
+                const container = $('#toast-container');
+                const el = document.createElement('div');
+                el.className = 'toast';
+                el.innerHTML = `<span>${icon}</span> ${msg}`;
+                container.appendChild(el);
+                setTimeout(() => el.remove(), 3000);
+            };
+
+            // ─── RANDOM DATE HELPERS ─────────────────────
+            const startDate = new Date(2026, 4, 25);
+            const endDate = new Date(2026, 6, 13);
+            const dayRange = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+
             function randomDate() {
                 const offset = Math.floor(Math.random() * (dayRange + 1));
                 const d = new Date(startDate);
                 d.setDate(startDate.getDate() + offset);
                 return d;
             }
+
             function formatYYYYMMDD(d) {
-                const y = d.getFullYear();
-                const m = String(d.getMonth() + 1).padStart(2, '0');
-                const day = String(d.getDate()).padStart(2, '0');
-                return `${y}-${m}-${day}`;
-            }
-            const monthsAbbr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            function formatMonthDay(d) {
-                return `${monthsAbbr[d.getMonth()]} ${d.getDate()}`;
-            }
-            function formatMonthAbbr(d) {
-                return monthsAbbr[d.getMonth()];
+                return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
             }
 
-            // ─── DATA ──────────────────────────────────────
-            const posts = [
-                {
-            id: 1,
-            title: 'Marina Bay Sands: Singapore’s Iconic Landmark',
-            excerpt: 'Luxury, breathtaking skyline views, and the world-famous rooftop Infinity Pool make Marina Bay Sands a must-visit.',
-            content: `<p>Marina Bay Sands is one of Singapore's most recognizable landmarks, combining luxury, entertainment, and stunning architecture. The SkyPark Observation Deck offers panoramic views of the Marina Bay skyline, while the iconic Infinity Pool is reserved exclusively for hotel guests.</p><img src="headline.jpeg" alt="Marina Bay Sands" loading="lazy"><p>Inside, you'll find world-class shopping, fine dining, a luxury hotel, the ArtScience Museum, and exciting nightlife. At night, don't miss the spectacular Spectra Light & Water Show along the waterfront.</p><p><strong>📍 Location:</strong> 10 Bayfront Ave, Singapore 018956</p>`,
-            category: 'attractions',
-            tags: ['luxury', 'skyline'],
-            date: '',
-            rating: 4.9,
-            featured: true,
-            image: 'headline.jpeg'},
-                { id: 3, title: 'Maxwell Food Centre: Hawker Heaven',
-                    excerpt: 'Home to Michelin-starred chicken rice and a thousand other mouth-watering stalls.',
-                    content: `<p>Maxwell Food Centre is a temple of Singaporean cuisine. Tian Tian Hainanese Chicken Rice earned a Michelin star, and the queue is always worth it. Try the oyster omelette, the fishball noodles, and the chendol for dessert.</p><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Maxwell Food Centre" loading="lazy"><p>It's crowded, noisy, and absolutely perfect.</p><p><strong>📍 Location:</strong> 1 Kadayanallur St, Singapore 069184</p>`,
-                    category: 'food', tags: ['hawker', 'local'], date: '', rating: 4.9, featured: false,
-                    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' },
-                { id: 4, title: 'Lau Pa Sat: Satay Street Under the Stars',
-                    excerpt: 'By day a historic market, by night a sizzling satay paradise in the CBD.',
-                    content: `<p>Lau Pa Sat is one of Singapore's oldest markets. The real magic happens after 7pm when Satay Street opens — a stretch of road lined with charcoal grills serving the best satay in town.</p><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Lau Pa Sat" loading="lazy"><p>Chicken, beef, and mutton satay with peanut sauce — paired with a cold Tiger beer.</p><p><strong>📍 Location:</strong> 18 Raffles Quay, Singapore 048582</p>`,
-                    category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.7, featured: false,
-                    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80' },
-                { id: 5, title: 'Sentosa Island: Sun, Sand & Thrills',
-                    excerpt: 'Universal Studios, beaches, and the world\'s largest ocean-themed aquarium.',
-                    content: `<p>Sentosa is Singapore's playground. Universal Studios Singapore brings Hollywood to Asia, while the S.E.A. Aquarium houses over 100,000 marine animals. Palawan Beach and Siloso Beach offer white sand and sunset views.</p><img src="https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=800&q=80" alt="Sentosa Island" loading="lazy"><p>Don't miss the Wings of Time light show at night.</p><p><strong>📍 Location:</strong> Sentosa Island, Singapore</p>`,
-                    category: 'attractions', tags: ['family', 'beach'], date: '', rating: 4.6, featured: false,
-                    image: 'https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=600&q=80' },
-                { id: 6, title: 'Changi Airport: A Destination Itself',
-                    excerpt: 'The world\'s best airport — with a waterfall, indoor forest, and movie theatres.',
-                    content: `<p>Changi Airport is more than an airport — it's an attraction. Jewel Changi's Rain Vortex is the world's tallest indoor waterfall, surrounded by a lush forest. The airport also has a butterfly garden, a cinema, and a rooftop pool.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Changi Airport" loading="lazy"><p>Arrive early and explore — you'll never want to leave.</p><p><strong>📍 Location:</strong> 80 Airport Blvd, Singapore 819642</p>`,
-                    category: 'attractions', tags: ['instagram', 'family'], date: '', rating: 4.9, featured: false,
-                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80' },
-                { id: 7, title: 'Newton Food Centre: Late-Night Feast',
-                    excerpt: 'Famous for BBQ seafood, satay, and the bustling night market vibe.',
-                    content: `<p>Newton Food Centre is a late-night favourite. The BBQ stingray, the chilli crab, and the satay are legendary. It's where locals go after hours for a feast under the stars.</p><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Newton Food Centre" loading="lazy"><p>Come hungry, bring friends, and share plates.</p><p><strong>📍 Location:</strong> 500 Clemenceau Ave N, Singapore 229495</p>`,
-                    category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.5, featured: false,
-                    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80' },
-                { id: 8, title: 'Singapore Botanic Gardens: UNESCO Heritage',
-                    excerpt: 'A tropical paradise in the city — the only UNESCO-listed botanic garden.',
-                    content: `<p>The Singapore Botanic Gardens is a serene escape. The National Orchid Garden features over 1,000 species of orchids. The rainforest trail feels like a jungle adventure, and the lakes are perfect for a picnic.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Botanic Gardens" loading="lazy"><p>It's free to enter and open daily.</p><p><strong>📍 Location:</strong> 1 Cluny Rd, Singapore 259569</p>`,
-                    category: 'attractions', tags: ['nature', 'instagram'], date: '', rating: 4.8, featured: false,
-                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' },
-                { id: 9, title: 'Orchard Road: Shopper\'s Paradise',
-                    excerpt: 'Miles of malls, luxury boutiques, and the beating heart of Singapore\'s retail scene.',
-                    content: `<p>Orchard Road is Singapore's most famous shopping street. From high-end luxury at ION Orchard to trendy finds at Plaza Singapura, it's a shopaholic's dream. The Christmas light-up is legendary.</p><img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80" alt="Orchard Road" loading="lazy"><p>Beyond shopping, the street is lined with excellent restaurants and cafes.</p><p><strong>📍 Location:</strong> Orchard Road, Singapore</p>`,
-                    category: 'shopping', tags: ['luxury', 'lifestyle'], date: '', rating: 4.7, featured: false,
-                    image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80' },
-                { id: 10, title: 'Bugis Street: Budget Shopping & Street Food',
-                    excerpt: 'Singapore\'s largest street market — cheap finds, souvenirs, and local snacks.',
-                    content: `<p>Bugis Street is a bustling market with over 800 stalls. From fashion to electronics to souvenirs, you'll find it all at bargain prices. The adjacent Bugis Junction adds a modern mall experience.</p><img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&q=80" alt="Bugis Street" loading="lazy"><p>Don't miss the street food — grilled skewers, bubble tea, and local desserts.</p><p><strong>📍 Location:</strong> 3 New Bugis St, Singapore 188867</p>`,
-                    category: 'shopping', tags: ['budget', 'local'], date: '', rating: 4.3, featured: false,
-                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80' },
-                { id: 11, title: 'VivoCity: Waterfront Retail & Dining',
-                    excerpt: 'Singapore\'s largest mall with stunning harbour views and a rooftop sky park.',
-                    content: `<p>VivoCity is a retail behemoth with over 300 stores. Its rooftop features a sky park with a wading pool, perfect for families. The harbour views are spectacular, especially at sunset.</p><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80" alt="VivoCity" loading="lazy"><p>Connected to Sentosa via the boardwalk.</p><p><strong>📍 Location:</strong> 1 HarbourFront Walk, Singapore 098585</p>`,
-                    category: 'shopping', tags: ['family', 'waterfront'], date: '', rating: 4.5, featured: false,
-                    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80' },
-                { id: 12, title: 'Jewel Changi: Nature & Retail Wonder',
-                    excerpt: 'The Rain Vortex, Shiseido Forest Valley, and endless shopping under one roof.',
-                    content: `<p>Jewel Changi is a nature-themed entertainment and retail complex connected to Changi Airport. The Rain Vortex waterfall is the centrepiece, surrounded by a lush indoor forest.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Jewel Changi" loading="lazy"><p>Shop, dine, and marvel at the architecture.</p><p><strong>📍 Location:</strong> 78 Airport Blvd, Singapore 819666</p>`,
-                    category: 'shopping', tags: ['nature', 'instagram'], date: '', rating: 4.9, featured: false,
-                    image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80' },
-                { id: 13, title: 'Haji Lane: Hipster Haven',
-                    excerpt: 'Colourful shophouses, indie boutiques, and the coolest cafes in Singapore.',
-                    content: `<p>Haji Lane is a narrow street in Kampong Glam filled with vibrant street art, indie fashion boutiques, and cosy cafes. It's the epicentre of Singapore's hipster culture.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Haji Lane" loading="lazy"><p>Perfect for Instagram, shopping for unique finds, and people-watching.</p><p><strong>📍 Location:</strong> Haji Lane, Singapore 189148</p>`,
-                    category: 'hidden', tags: ['instagram', 'shopping', 'cafe'], date: '', rating: 4.6, featured: false,
-                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80' },
-                { id: 14, title: 'Pulau Ubin: Rustic Island Escape',
-                    excerpt: 'Step back in time on this rustic island with cycling trails and kampong vibes.',
-                    content: `<p>Pulau Ubin is Singapore's last kampong (village) island. Rent a bike and explore the jungle trails, spot wildlife at Chek Jawa Wetlands, and experience a slower pace of life.</p><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Pulau Ubin" loading="lazy"><p>It's a 10-minute bumboat ride from Changi Point Ferry Terminal.</p><p><strong>📍 Location:</strong> Pulau Ubin, Singapore</p>`,
-                    category: 'hidden', tags: ['nature', 'adventure'], date: '', rating: 4.4, featured: false,
-                    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80' },
-                { id: 15, title: 'Clarke Quay: Riverside Nightlife',
-                    excerpt: 'Bars, clubs, and restaurants along the Singapore River — the city\'s nightlife hub.',
-                    content: `<p>Clarke Quay is the heart of Singapore's nightlife. The riverside is lined with themed bars, nightclubs, and restaurants serving everything from local cuisine to international fare.</p><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Clarke Quay" loading="lazy"><p>Take a river cruise or dance the night away at Zouk.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
-                    category: 'nightlife', tags: ['entertainment'], date: '', rating: 4.5, featured: false,
-                    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80' },
-                { id: 16, title: 'Zouk: World-Class Nightclub',
-                    excerpt: 'Singapore\'s most famous nightclub — a multi-level electronic music paradise.',
-                    content: `<p>Zouk is legendary in the global nightlife scene. With multiple rooms playing different genres, it attracts top international DJs and a stylish crowd.</p><img src="https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=800&q=80" alt="Zouk" loading="lazy"><p>Phuture, the hip-hop room, is always packed.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
-                    category: 'nightlife', tags: ['music'], date: '', rating: 4.7, featured: false,
-                    image: 'https://images.unsplash.com/photo-1571266028243-e4733b0f0b66?w=600&q=80' },
-                { id: 17, title: 'Singapore River Cruise',
-                    excerpt: 'Glide along the historic river and see the city from a different perspective.',
-                    content: `<p>A river cruise on the Singapore River offers stunning views of the skyline, historical landmarks, and the bustling quays. It's a relaxing way to see the city.</p><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Singapore River" loading="lazy"><p>Choose a bumboat for a traditional experience.</p><p><strong>📍 Location:</strong> Various jetties along the river</p>`,
-                    category: 'attractions', tags: ['family', 'relaxation'], date: '', rating: 4.4, featured: false,
-                    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80' },
-                { id: 18, title: 'Little India: Cultural Kaleidoscope',
-                    excerpt: 'Vibrant streets, aromatic spices, and colourful temples — a slice of India in Singapore.',
-                    content: `<p>Little India is a sensory overload in the best way. Mustafa Centre is a 24-hour shopping wonderland, while the Sri Veeramakaliamman Temple is a stunning architectural gem.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Little India" loading="lazy"><p>Don't miss the street art and the incredible food.</p><p><strong>📍 Location:</strong> Little India, Singapore</p>`,
-                    category: 'attractions', tags: ['culture', 'food'], date: '', rating: 4.6, featured: false,
-                    image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80' },
-                { id: 19, title: 'Chinatown: Heritage & Hawker Delights',
-                    excerpt: 'Colourful shophouses, temples, and the famous Chinatown Complex Food Centre.',
-                    content: `<p>Chinatown is a vibrant neighbourhood with a rich history. Visit the Buddha Tooth Relic Temple, explore the heritage shophouses, and feast at the Chinatown Complex Food Centre.</p><img src="https://images.unsplash.com/photo-1558981852-426c6c22a060?w=800&q=80" alt="Chinatown" loading="lazy"><p>The street market is perfect for souvenirs.</p><p><strong>📍 Location:</strong> Chinatown, Singapore</p>`,
-                    category: 'attractions', tags: ['culture', 'food', 'shopping'], date: '', rating: 4.5, featured: false,
-                    image: 'https://images.unsplash.com/photo-1558981852-426c6c22a060?w=600&q=80' },
-                { id: 20, title: 'Fort Canning Park: Historic Hilltop',
-                    excerpt: 'A green oasis in the city centre with rich history and panoramic views.',
-                    content: `<p>Fort Canning Park is a historic hilltop park with remnants of Singapore's colonial past. It's a peaceful escape with lush greenery, ancient trees, and stunning city views.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Fort Canning" loading="lazy"><p>The iconic spiral staircase is an Instagram favourite.</p><p><strong>📍 Location:</strong> River Valley Rd, Singapore 179037</p>`,
-                    category: 'hidden', tags: ['nature', 'instagram', 'history'], date: '', rating: 4.3, featured: false,
-                    image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' }
-            ];
+            // ─── COUNTRY DATA ──────────────────────────────
+            const countryData = {
+                singapore: {
+                    name: 'Singapore',
+                    flag: '🇸🇬',
+                    heroTitle: 'Discover the Lion City',
+                    heroDesc: 'From hawker centres to futuristic gardens — your ultimate guide to Singapore.',
+                    heroBadge: 'Singapore Travel Guide 2026',
+                    heroBg: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&q=80',
+                    posts: [
+                        { id: 1, title: 'Marina Bay Sands: Singapore’s Iconic Landmark',
+                            excerpt: 'Luxury, breathtaking skyline views, and the world-famous rooftop Infinity Pool.',
+                            content: `<p>Marina Bay Sands is one of Singapore's most recognizable landmarks, combining luxury, entertainment, and stunning architecture.</p><img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" alt="Marina Bay Sands" loading="lazy"><p>Don't miss the Spectra Light & Water Show along the waterfront at night.</p><p><strong>📍 Location:</strong> 10 Bayfront Ave, Singapore 018956</p>`,
+                            category: 'attractions', tags: ['luxury', 'skyline'], date: '', rating: 4.9,
+                            featured: true, image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80' },
+                        { id: 2, title: 'Maxwell Food Centre: Hawker Heaven',
+                            excerpt: 'Home to Michelin-starred chicken rice and a thousand other mouth-watering stalls.',
+                            content: `<p>Maxwell Food Centre is a temple of Singaporean cuisine. Tian Tian Hainanese Chicken Rice earned a Michelin star.</p><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Maxwell Food Centre" loading="lazy"><p>It's crowded, noisy, and absolutely perfect.</p><p><strong>📍 Location:</strong> 1 Kadayanallur St, Singapore 069184</p>`,
+                            category: 'food', tags: ['hawker', 'local'], date: '', rating: 4.9,
+                            featured: false, image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' },
+                        { id: 3, title: 'Lau Pa Sat: Satay Street Under the Stars',
+                            excerpt: 'By day a historic market, by night a sizzling satay paradise in the CBD.',
+                            content: `<p>Lau Pa Sat is one of Singapore's oldest markets. The real magic happens after 7pm when Satay Street opens.</p><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Lau Pa Sat" loading="lazy"><p>Chicken, beef, and mutton satay with peanut sauce — paired with a cold Tiger beer.</p><p><strong>📍 Location:</strong> 18 Raffles Quay, Singapore 048582</p>`,
+                            category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.7,
+                            featured: false, image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80' },
+                        { id: 4, title: 'Sentosa Island: Sun, Sand & Thrills',
+                            excerpt: 'Universal Studios, beaches, and the world\'s largest ocean-themed aquarium.',
+                            content: `<p>Sentosa is Singapore's playground. Universal Studios Singapore brings Hollywood to Asia, while the S.E.A. Aquarium houses over 100,000 marine animals.</p><img src="https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=800&q=80" alt="Sentosa Island" loading="lazy"><p>Don't miss the Wings of Time light show at night.</p><p><strong>📍 Location:</strong> Sentosa Island, Singapore</p>`,
+                            category: 'attractions', tags: ['family', 'beach'], date: '', rating: 4.6,
+                            featured: false, image: 'https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=600&q=80' },
+                        { id: 5, title: 'Changi Airport: A Destination Itself',
+                            excerpt: 'The world\'s best airport — with a waterfall, indoor forest, and movie theatres.',
+                            content: `<p>Changi Airport is more than an airport — it's an attraction. Jewel Changi's Rain Vortex is the world's tallest indoor waterfall.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Changi Airport" loading="lazy"><p>Arrive early and explore — you'll never want to leave.</p><p><strong>📍 Location:</strong> 80 Airport Blvd, Singapore 819642</p>`,
+                            category: 'attractions', tags: ['instagram', 'family'], date: '', rating: 4.9,
+                            featured: false, image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80' },
+                        { id: 6, title: 'Newton Food Centre: Late-Night Feast',
+                            excerpt: 'Famous for BBQ seafood, satay, and the bustling night market vibe.',
+                            content: `<p>Newton Food Centre is a late-night favourite. The BBQ stingray, chilli crab, and satay are legendary.</p><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Newton Food Centre" loading="lazy"><p>Come hungry, bring friends, and share plates.</p><p><strong>📍 Location:</strong> 500 Clemenceau Ave N, Singapore 229495</p>`,
+                            category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.5,
+                            featured: false, image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80' },
+                        { id: 7, title: 'Singapore Botanic Gardens: UNESCO Heritage',
+                            excerpt: 'A tropical paradise in the city — the only UNESCO-listed botanic garden.',
+                            content: `<p>The Singapore Botanic Gardens is a serene escape. The National Orchid Garden features over 1,000 species of orchids.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Botanic Gardens" loading="lazy"><p>It's free to enter and open daily.</p><p><strong>📍 Location:</strong> 1 Cluny Rd, Singapore 259569</p>`,
+                            category: 'attractions', tags: ['nature', 'instagram'], date: '', rating: 4.8,
+                            featured: false, image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' },
+                        { id: 8, title: 'Orchard Road: Shopper\'s Paradise',
+                            excerpt: 'Miles of malls, luxury boutiques, and the beating heart of Singapore\'s retail scene.',
+                            content: `<p>Orchard Road is Singapore's most famous shopping street. From high-end luxury at ION Orchard to trendy finds at Plaza Singapura.</p><img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80" alt="Orchard Road" loading="lazy"><p>Beyond shopping, the street is lined with excellent restaurants and cafes.</p><p><strong>📍 Location:</strong> Orchard Road, Singapore</p>`,
+                            category: 'shopping', tags: ['luxury', 'lifestyle'], date: '', rating: 4.7,
+                            featured: false, image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80' },
+                        { id: 9, title: 'Haji Lane: Hipster Haven',
+                            excerpt: 'Colourful shophouses, indie boutiques, and the coolest cafes in Singapore.',
+                            content: `<p>Haji Lane is a narrow street in Kampong Glam filled with vibrant street art, indie fashion boutiques, and cosy cafes.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Haji Lane" loading="lazy"><p>Perfect for Instagram, shopping for unique finds, and people-watching.</p><p><strong>📍 Location:</strong> Haji Lane, Singapore 189148</p>`,
+                            category: 'hidden', tags: ['instagram', 'shopping', 'cafe'], date: '', rating: 4.6,
+                            featured: false, image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80' },
+                        { id: 10, title: 'Clarke Quay: Riverside Nightlife',
+                            excerpt: 'Bars, clubs, and restaurants along the Singapore River — the city\'s nightlife hub.',
+                            content: `<p>Clarke Quay is the heart of Singapore's nightlife. The riverside is lined with themed bars, nightclubs, and restaurants.</p><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Clarke Quay" loading="lazy"><p>Take a river cruise or dance the night away at Zouk.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
+                            category: 'nightlife', tags: ['entertainment'], date: '', rating: 4.5,
+                            featured: false, image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80' },
+                        { id: 11, title: 'Fort Canning Park: Historic Hilltop',
+                            excerpt: 'A green oasis in the city centre with rich history and panoramic views.',
+                            content: `<p>Fort Canning Park is a historic hilltop park with remnants of Singapore's colonial past. It's a peaceful escape.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Fort Canning" loading="lazy"><p>The iconic spiral staircase is an Instagram favourite.</p><p><strong>📍 Location:</strong> River Valley Rd, Singapore 179037</p>`,
+                            category: 'hidden', tags: ['nature', 'instagram', 'history'], date: '', rating: 4.3,
+                            featured: false, image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' }
+                    ]
+                },
+                thailand: {
+                    name: 'Thailand',
+                    flag: '🇹🇭',
+                    heroTitle: 'Discover the Land of Smiles',
+                    heroDesc: 'From golden temples to tropical islands — your ultimate guide to Thailand.',
+                    heroBadge: 'Thailand Travel Guide 2026',
+                    heroBg: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&q=80',
+                    posts: [
+                        { id: 101, title: 'Grand Palace & Wat Phra Kaew: Bangkok\'s Royal Heart',
+                            excerpt: 'Thailand\'s most sacred temple complex — a dazzling display of golden architecture.',
+                            content: `<p>The Grand Palace has been the official residence of Thai kings since 1782. Wat Phra Kaew inside houses the Emerald Buddha, Thailand's most revered statue.</p><img src="Thai_1.jpeg" alt="Grand Palace Bangkok" loading="lazy"><p>Dress respectfully — shoulders and knees must be covered.</p><p><strong>📍 Location:</strong> Na Phra Lan Rd, Bangkok 10200</p>`,
+                            category: 'attractions', tags: ['temple', 'culture'], date: '', rating: 4.9,
+                            featured: true, image: 'Thai_1.jpeg' },
+                        { id: 102, title: 'Wat Arun: The Temple of Dawn',
+                            excerpt: 'Bangkok\'s stunning riverside temple with intricate porcelain mosaics.',
+                            content: `<p>Wat Arun is one of Bangkok's most iconic landmarks. Its Khmer-style tower is decorated with millions of pieces of Chinese porcelain.</p><img src="Thai_2.jpeg" alt="Wat Arun" loading="lazy"><p>Best visited at sunrise or sunset for stunning photo opportunities.</p><p><strong>📍 Location:</strong> 158 Wang Doem Rd, Bangkok 10600</p>`,
+                            category: 'attractions', tags: ['temple', 'instagram'], date: '', rating: 4.8,
+                            featured: false, image: 'Thai_2.jpeg' },
+                        { id: 103, title: 'Damnoen Saduak Floating Market',
+                            excerpt: 'Thailand\'s most famous floating market — shop from boats in a vibrant canal maze.',
+                            content: `<p>Damnoen Saduak is Thailand's most photographed floating market. Vendors sell fresh fruit, noodles, and souvenirs directly from their boats.</p><img src="Thai_3.jpeg" alt="Floating Market Thailand" loading="lazy"><p>Arrive early to beat the crowds and get the best photos.</p><p><strong>📍 Location:</strong> Damnoen Saduak, Ratchaburi 70130</p>`,
+                            category: 'food', tags: ['market', 'local'], date: '', rating: 4.6,
+                            featured: false, image: 'Thai_3.jpeg' },
+                        { id: 104, title: 'Phi Phi Islands: Tropical Paradise',
+                            excerpt: 'Crystal-clear waters, limestone cliffs, and the famous Maya Bay.',
+                            content: `<p>The Phi Phi Islands are Thailand's crown jewel. Maya Bay (from The Beach movie) features turquoise water surrounded by dramatic cliffs.</p><img src="https://images.unsplash.com/photo-1544418570-6d8f6e1a02f1?w=800&q=80" alt="Phi Phi Islands" loading="lazy"><p>Take a speedboat tour from Phuket or Krabi for a full day of island hopping.</p><p><strong>📍 Location:</strong> Krabi Province, Thailand</p>`,
+                            category: 'attractions', tags: ['beach', 'nature'], date: '', rating: 4.9,
+                            featured: false, image: 'https://images.unsplash.com/photo-1544418570-6d8f6e1a02f1?w=600&q=80' },
+                        { id: 105, title: 'Street Food Heaven: Pad Thai & Tom Yum',
+                            excerpt: 'Bangkok\'s street food scene is legendary — from sizzling woks to spicy soups.',
+                            content: `<p>Thailand's street food is world-famous. Try Pad Thai at Thip Samai, Tom Yum Goong at any street stall, and finish with Mango Sticky Rice.</p><img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=800&q=80" alt="Thai Street Food" loading="lazy"><p>Bangkok's Chinatown (Yaowarat) is the ultimate street food destination.</p><p><strong>📍 Location:</strong> Yaowarat Rd, Bangkok</p>`,
+                            category: 'food', tags: ['streetfood', 'local'], date: '', rating: 4.8,
+                            featured: false, image: 'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=600&q=80' },
+                        { id: 106, title: 'Chatuchak Weekend Market',
+                            excerpt: 'One of the world\'s largest markets — 15,000+ stalls of everything imaginable.',
+                            content: `<p>Chatuchak Weekend Market is a shopper's paradise. With over 15,000 stalls, you can find clothes, art, antiques, plants, and incredible street food.</p><img src="https://images.unsplash.com/photo-1554188248-986adbb73be4?w=800&q=80" alt="Chatuchak Market" loading="lazy"><p>Open Saturdays and Sundays — wear comfortable shoes and bring water.</p><p><strong>📍 Location:</strong> Kamphaeng Phet 2 Rd, Bangkok</p>`,
+                            category: 'shopping', tags: ['market', 'budget'], date: '', rating: 4.5,
+                            featured: false, image: 'https://images.unsplash.com/photo-1554188248-986adbb73be4?w=600&q=80' },
+                        { id: 107, title: 'Erawan Falls: Seven-Tiered Wonder',
+                            excerpt: 'A stunning seven-tiered waterfall in Erawan National Park — emerald green pools.',
+                            content: `<p>Erawan Falls is one of Thailand's most beautiful natural attractions. Hike through the jungle to reach each of the seven tiers, with crystal-clear pools perfect for swimming.</p><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Erawan Falls" loading="lazy"><p>The upper levels offer the most impressive views and fewer crowds.</p><p><strong>📍 Location:</strong> Erawan National Park, Kanchanaburi</p>`,
+                            category: 'hidden', tags: ['nature', 'adventure'], date: '', rating: 4.7,
+                            featured: false, image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80' },
+                        { id: 108, title: 'Chiang Mai Old City: Temple Trail',
+                            excerpt: 'Northern Thailand\'s cultural heart with 300+ temples inside ancient walls.',
+                            content: `<p>Chiang Mai's Old City is surrounded by ancient walls and a moat. Inside, you'll find over 300 temples, including Wat Phra Singh and Wat Chedi Luang.</p><img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80" alt="Chiang Mai" loading="lazy"><p>Visit during the Sunday Night Market for local crafts and street food.</p><p><strong>📍 Location:</strong> Chiang Mai Old City, Thailand</p>`,
+                            category: 'hidden', tags: ['temple', 'culture'], date: '', rating: 4.6,
+                            featured: false, image: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600&q=80' },
+                        { id: 109, title: 'Khao San Road: Backpacker Central',
+                            excerpt: 'The legendary backpacker street with bars, street food, and endless energy.',
+                            content: `<p>Khao San Road is the epicentre of Bangkok's backpacker scene. By day it's a market street; by night it transforms into a vibrant party district.</p><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80" alt="Khao San Road" loading="lazy"><p>Try the fried insects if you dare, and don't miss the mango shakes.</p><p><strong>📍 Location:</strong> Khao San Rd, Bangkok</p>`,
+                            category: 'nightlife', tags: ['party', 'budget'], date: '', rating: 4.3,
+                            featured: false, image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80' },
+                        { id: 110, title: 'Sukhumvit Rooftop Bars',
+                            excerpt: 'Sip cocktails above the Bangkok skyline at the city\'s best rooftop venues.',
+                            content: `<p>Bangkok's rooftop bars offer stunning skyline views. Octave, Sky Bar at Lebua, and Vertigo are among the most famous.</p><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Rooftop Bar Bangkok" loading="lazy"><p>Dress code applies at most venues — smart casual required.</p><p><strong>📍 Location:</strong> Sukhumvit, Bangkok</p>`,
+                            category: 'nightlife', tags: ['luxury', 'entertainment'], date: '', rating: 4.5,
+                            featured: false, image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=80' }
+                    ]
+                }
+            };
 
-            const events = [
-                { title: 'Singapore Night Festival', venue: 'Bras Basah · Bugis', tag: 'Festival', date: '', month: '' },
-                { title: 'F1 Grand Prix 2026', venue: 'Marina Bay Street Circuit', tag: 'Sports', date: '', month: '' },
-                { title: 'Mid-Autumn Festival', venue: 'Chinatown · Gardens by the Bay', tag: 'Cultural', date: '', month: '' },
-                { title: 'Deepavali Celebrations', venue: 'Little India', tag: 'Festival', date: '', month: '' },
-                { title: 'Singapore Writers Festival', venue: 'Victoria Theatre', tag: 'Arts', date: '', month: '' },
-                { title: 'SGIFF — Film Festival', venue: 'Various venues', tag: 'Film', date: '', month: '' },
-                { title: 'Singapore Marathon', venue: 'Marina Bay', tag: 'Sports', date: '', month: '' },
-                { title: 'Christmas Light-Up', venue: 'Orchard Road', tag: 'Festival', date: '', month: '' }
-            ];
-
-            // Assign random dates to posts and events
-            posts.forEach(p => {
-                const rd = randomDate();
-                p.date = formatYYYYMMDD(rd);
+            // Assign random dates
+            Object.values(countryData).forEach(cd => {
+                cd.posts.forEach(p => {
+                    p.date = formatYYYYMMDD(randomDate());
+                });
             });
-            events.forEach(e => {
-                const rd = randomDate();
-                e.date = formatMonthDay(rd);    // e.g. "Jun 7"
-                e.month = formatMonthAbbr(rd);  // e.g. "Jun"
-            });
-
-            const top10 = [
-                'Ride the Singapore Flyer at sunset',
-                'Eat chicken rice at Tian Tian (Maxwell)',
-                'Watch the Supertree Grove light show',
-                'Visit the Cloud Forest at Gardens by the Bay',
-                'Shop along Orchard Road',
-                'Take a bumboat to Pulau Ubin',
-                'Walk the Southern Ridges trail',
-                'Explore the ArtScience Museum',
-                'Eat satay at Lau Pa Sat',
-                'Catch the sunrise at Marina Bay'
-            ];
-
-            const videos = [
-                { title: 'Singapore Travel Guide 2025', channel: 'Baai Mart Travel',
-                    thumb: 'https://img.youtube.com/vi/3E4MxU3H5nU/hqdefault.jpg', id: '3E4MxU3H5nU' },
-                { title: '10 Best Hawker Centres in Singapore', channel: 'Foodie Singapore',
-                    thumb: 'https://img.youtube.com/vi/5ZRohLmXpNo/hqdefault.jpg', id: '5ZRohLmXpNo' },
-                { title: 'Gardens by the Bay 4K Tour', channel: 'Travel Asia',
-                    thumb: 'https://img.youtube.com/vi/2lZ8X_9O5Pk/hqdefault.jpg', id: '2lZ8X_9O5Pk' },
-                { title: 'Singapore Nightlife: Clarke Quay to Zouk', channel: 'Nightlife SG',
-                    thumb: 'https://img.youtube.com/vi/6N3L3Q7VX_w/hqdefault.jpg', id: '6N3L3Q7VX_w' }
-            ];
 
             const catIcons = { attractions: 'fa-landmark', food: 'fa-utensils', hidden: 'fa-mask',
                 nightlife: 'fa-moon', shopping: 'fa-shopping-bag' };
 
-            // ─── DOM REFS ──────────────────────────────────
-            const $ = (sel) => document.querySelector(sel);
-            const $$ = (sel) => document.querySelectorAll(sel);
-            const trendingGrid = $('#trending-grid');
-            const attractionsGrid = $('#attractions-grid');
-            const foodGrid = $('#food-grid');
-            const hiddenGrid = $('#hidden-grid');
-            const nightlifeGrid = $('#nightlife-grid');
-            const shoppingGrid = $('#shopping-grid');
-            const instagramGrid = $('#instagram-grid');
-            const eventList = $('#event-list');
-            const top10List = $('#top10-list');
-            const videoGrid = $('#video-grid');
-            const searchInput = $('#search-input');
-            const heroSearchInput = $('#hero-search-input');
-            const heroSearchBtn = $('#hero-search-btn');
-            const themeToggle = $('#theme-toggle');
+            // ─── STATE ────────────────────────────────────
+            let currentCountry = 'singapore';
+
+            // ─── DOM REFS ─────────────────────────────────
             const html = document.documentElement;
-            const mouseGlow = $('#mouse-glow');
+            const heroBg = $('#hero-bg');
+            const heroBadge = $('#hero-badge');
+            const heroTitle = $('#hero-title');
+            const heroDesc = $('#hero-desc');
+            const mainContent = $('#main-content');
+            const themeToggle = $('#theme-toggle');
             const backToTop = $('#back-to-top');
             const postModal = $('#post-modal');
             const modalContent = $('#modal-content');
             const aboutModal = $('#about-modal');
             const hamburger = $('.hamburger');
-            const navLinks = $('.nav-links');
-            const navAnchors = $$('.nav-links a');
-            const modalClose = $('#modal-close');
-            const aboutClose = $('#about-close');
+            const mobileDrawer = $('#mobile-drawer');
+            const searchInput = $('#search-input');
+            const heroSearchInput = $('#hero-search-input');
+            const heroSearchBtn = $('#hero-search-btn');
 
-            // ─── RIPPLE EFFECT ──────────────────────────────
-            function createRipple(e, el) {
-                const rect = el.getBoundingClientRect();
-                const size = Math.max(rect.width, rect.height);
-                const ripple = document.createElement('span');
-                ripple.className = 'ripple';
-                ripple.style.width = ripple.style.height = size + 'px';
-                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-                const cs = getComputedStyle(el);
-                if (!cs.position || cs.position === 'static') el.style.position = 'relative';
-                el.style.overflow = 'hidden';
-                el.appendChild(ripple);
-                ripple.addEventListener('animationend', () => ripple.remove());
-            }
-            document.addEventListener('click', function(e) {
-                const target = e.target.closest(
-                    'button, .card, .share-btn, .nav-links a, .theme-toggle, .back-to-top, .modal-close, .nav-logo, .newsletter-form button, .tool-card .action-btn, .event-item, .stat-item, .video-card, .top10-item, .see-all'
-                    );
-                if (target) createRipple(e, target);
-            });
-
-            // ─── THEME ──────────────────────────────────────
+            // ─── THEME ────────────────────────────────────
             function setTheme(theme) {
                 html.setAttribute('data-theme', theme);
                 const icon = themeToggle.querySelector('.thumb i');
@@ -1933,55 +1398,175 @@
             }
             themeToggle.addEventListener('click', () => {
                 setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+                toast('Theme updated', '🎨');
             });
             setTheme(localStorage.getItem('baai-theme') || 'dark');
 
-            // ─── MOUSE GLOW ────────────────────────────────
-            let mx = 0,
-                my = 0,
-                gx = 0,
-                gy = 0;
-            document.addEventListener('mousemove', e => { mx = e.clientX;
-                my = e.clientY; });
-
-            function animateGlow() {
-                gx += (mx - gx) * 0.07;
-                gy += (my - gy) * 0.07;
-                mouseGlow.style.left = gx + 'px';
-                mouseGlow.style.top = gy + 'px';
-                requestAnimationFrame(animateGlow);
+            // ─── COUNTRY SWITCHING ───────────────────────
+            function switchCountry(country, source = 'pill') {
+                if (country === 'pending') {
+                    toast('Next country coming soon!', '⏳');
+                    renderPending();
+                    updateCountryPills('pending');
+                    currentCountry = 'pending';
+                    return;
+                }
+                currentCountry = country;
+                updateCountryPills(country);
+                renderAll(country);
+                if (source === 'pill') toast(`Switched to ${countryData[country].name}`, countryData[country].flag);
             }
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                requestAnimationFrame(animateGlow);
-            } else { mouseGlow.style.display = 'none'; }
 
-            // ─── CARD FACTORY ──────────────────────────────
-            function createCard(post, delay = 0) {
+            function updateCountryPills(activeCountry) {
+                $$('.country-pill').forEach(pill => {
+                    const country = pill.dataset.country;
+                    pill.classList.toggle('active', country === activeCountry);
+                });
+            }
+
+            function renderPending() {
+                mainContent.innerHTML = `
+              <section class="pending-section" style="margin:3rem auto 2rem;max-width:600px;text-align:center;padding:3rem 2rem;background:var(--surface);border:1px dashed var(--border-hover);border-radius:var(--radius);">
+                <div style="font-size:2.5rem;margin-bottom:0.8rem;">🌏</div>
+                <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;">Next Country: <span style="color:var(--accent-light);">Pending…</span></h3>
+                <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.3rem;">We're exploring new destinations. Stay tuned for our next country guide!</p>
+              </section>
+              <section class="newsletter">
+                <h3>✉️ Stay in the Loop</h3>
+                <p>Stay connected for more hidden gems, and event updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                  <input type="email" id="news-email" placeholder="your@email.com" required />
+                  <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
+              </section>
+            `;
+                heroBadge.textContent = '🌏 Coming Soon';
+                heroTitle.textContent = 'Next Country: Pending…';
+                heroDesc.textContent = 'We\'re exploring new destinations. Stay tuned for our next country guide!';
+                heroBg.style.backgroundImage = 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80)';
+                searchInput.value = '';
+                bindNewsletter();
+            }
+
+            // ─── RENDER ALL SECTIONS ─────────────────────
+            function renderAll(country) {
+                const cd = countryData[country];
+                heroBadge.textContent = cd.heroBadge;
+                heroTitle.textContent = cd.heroTitle;
+                heroDesc.textContent = cd.heroDesc;
+                heroBg.style.backgroundImage = `url(${cd.heroBg})`;
+
+                const sectionsHTML = `
+              <div class="content-section" id="sec-trending">
+                <div class="section-header">
+                  <h2><i class="fas fa-fire" style="color:var(--accent-warm);"></i> Trending Now</h2>
+                </div>
+                <div class="cards-grid" id="trending-grid"></div>
+              </div>
+              <div class="content-section" id="sec-attractions">
+                <div class="section-header" id="attractions">
+                  <h2><i class="fas fa-landmark"></i> Top Attractions</h2>
+                </div>
+                <div class="cards-grid" id="attractions-grid"></div>
+              </div>
+              <div class="content-section" id="sec-food">
+                <div class="section-header" id="food">
+                  <h2><i class="fas fa-utensils"></i> Best Food</h2>
+                </div>
+                <div class="cards-grid" id="food-grid"></div>
+              </div>
+              <div class="content-section" id="sec-hidden">
+                <div class="section-header" id="hidden">
+                  <h2><i class="fas fa-mask"></i> Hidden Gems</h2>
+                </div>
+                <div class="cards-grid" id="hidden-grid"></div>
+              </div>
+              <div class="content-section" id="sec-nightlife">
+                <div class="section-header" id="nightlife">
+                  <h2><i class="fas fa-moon"></i> Nightlife</h2>
+                </div>
+                <div class="cards-grid" id="nightlife-grid"></div>
+              </div>
+              <div class="content-section" id="sec-shopping">
+                <div class="section-header" id="shopping">
+                  <h2><i class="fas fa-shopping-bag"></i> Shopping</h2>
+                </div>
+                <div class="cards-grid" id="shopping-grid"></div>
+              </div>
+              <section class="newsletter">
+                <h3>✉️ Stay in the Loop</h3>
+                <p>Stay connected for more hidden gems, and event updates.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                  <input type="email" id="news-email" placeholder="your@email.com" required />
+                  <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
+              </section>
+            `;
+
+                mainContent.innerHTML = sectionsHTML;
+
+                // Render cards
+                renderCards(country);
+
+                // Bind newsletter
+                bindNewsletter();
+
+                // Observe cards for reveal
+                observeCards();
+            }
+
+            function renderCards(country) {
+                const cd = countryData[country];
+                const featured = cd.posts.filter(p => p.featured);
+                const others = cd.posts.filter(p => !p.featured);
+                const shuffled = [...others].sort(() => Math.random() - 0.5);
+                const trending = [...featured, ...shuffled.slice(0, 3)];
+
+                const gridData = {
+                    'trending-grid': trending,
+                    'attractions-grid': cd.posts.filter(p => p.category === 'attractions'),
+                    'food-grid': cd.posts.filter(p => p.category === 'food'),
+                    'hidden-grid': cd.posts.filter(p => p.category === 'hidden'),
+                    'nightlife-grid': cd.posts.filter(p => p.category === 'nightlife'),
+                    'shopping-grid': cd.posts.filter(p => p.category === 'shopping')
+                };
+
+                Object.entries(gridData).forEach(([gridId, posts]) => {
+                    const grid = document.getElementById(gridId);
+                    if (!grid) return;
+                    grid.innerHTML = '';
+                    posts.forEach((p, i) => grid.appendChild(createCard(p, i)));
+                });
+            }
+
+            function createCard(post, delay) {
                 const card = document.createElement('article');
                 card.className = 'card' + (post.featured ? ' featured' : '');
-                card.style.animationDelay = (delay * 0.06) + 's';
+                card.style.transitionDelay = (delay * 0.06) + 's';
                 card.dataset.postId = post.id;
                 card.tabIndex = 0;
                 const fav = localStorage.getItem('fav-' + post.id) === 'true' ? 'active' : '';
                 const stars = '★'.repeat(Math.floor(post.rating)) + (post.rating % 1 >= 0.5 ? '½' : '');
                 const icon = catIcons[post.category] || 'fa-tag';
                 card.innerHTML = `
-            <div class="card-img">
-              <img src="${post.image}" alt="${post.title}" loading="lazy" />
-              <span class="badge"><i class="fas ${icon}"></i> ${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
-              <button class="fav-btn ${fav}" data-id="${post.id}" aria-label="Save favorite"><i class="fas fa-heart"></i></button>
-            </div>
-            <div class="card-body">
-              <div class="meta">
-                <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
-                <span>·</span>
-                <span class="rating">${stars} <span>${post.rating.toFixed(1)}</span></span>
+              <div class="card-img">
+                <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80';" />
+                <span class="badge"><i class="fas ${icon}"></i> ${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
+                <button class="fav-btn ${fav}" data-id="${post.id}" aria-label="Save favorite"><i class="fas fa-heart"></i></button>
               </div>
-              <h3>${post.title}</h3>
-              <p>${post.excerpt}</p>
-              <span class="read-more">Read full story <i class="fas fa-arrow-right"></i></span>
-            </div>
-          `;
+              <div class="card-body">
+                <div class="meta">
+                  <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
+                  <span>·</span>
+                  <span class="rating">${stars} <span>${post.rating.toFixed(1)}</span></span>
+                </div>
+                <h3>${post.title}</h3>
+                <p>${post.excerpt}</p>
+                <span class="read-more">Read full story <i class="fas fa-arrow-right"></i></span>
+              </div>
+            `;
                 card.addEventListener('click', (e) => {
                     if (e.target.closest('.fav-btn')) return;
                     openPostModal(post);
@@ -1996,100 +1581,53 @@
                     const id = favBtn.dataset.id;
                     const active = favBtn.classList.toggle('active');
                     localStorage.setItem('fav-' + id, String(active));
+                    toast(active ? 'Added to favorites' : 'Removed from favorites', active ? '❤️' : '💔');
                 });
                 return card;
             }
 
-            // ─── RENDER ALL ────────────────────────────────
-            function renderAll() {
-                const featured = posts.filter(p => p.featured);
-                const others = posts.filter(p => !p.featured);
-                const shuffled = [...others].sort(() => Math.random() - 0.5);
-                const trending = [...featured, ...shuffled.slice(0, 3)];
-                trendingGrid.innerHTML = '';
-                trending.forEach((p, i) => trendingGrid.appendChild(createCard(p, i)));
-                attractionsGrid.innerHTML = '';
-                posts.filter(p => p.category === 'attractions').forEach((p, i) => attractionsGrid.appendChild(createCard(
-                    p, i)));
-                foodGrid.innerHTML = '';
-                posts.filter(p => p.category === 'food').forEach((p, i) => foodGrid.appendChild(createCard(p, i)));
-                hiddenGrid.innerHTML = '';
-                posts.filter(p => p.category === 'hidden').forEach((p, i) => hiddenGrid.appendChild(createCard(p, i)));
-                nightlifeGrid.innerHTML = '';
-                posts.filter(p => p.category === 'nightlife').forEach((p, i) => nightlifeGrid.appendChild(createCard(p,
-                i)));
-                shoppingGrid.innerHTML = '';
-                posts.filter(p => p.category === 'shopping').forEach((p, i) => shoppingGrid.appendChild(createCard(p,
-                i)));
-                instagramGrid.innerHTML = '';
-                posts.filter(p => p.tags && p.tags.includes('instagram')).forEach((p, i) => instagramGrid.appendChild(
-                    createCard(p, i)));
-                eventList.innerHTML = '';
-                events.forEach(ev => {
-                    const item = document.createElement('div');
-                    item.className = 'event-item';
-                    item.innerHTML = `
-              <div class="date-box"><div class="day">${ev.date.split(' ')[1]}</div><div class="month">${ev.month}</div></div>
-              <div class="event-info"><h4>${ev.title}</h4><p><i class="fas fa-map-pin" style="font-size:0.6rem;"></i> ${ev.venue}</p></div>
-              <span class="event-tag">${ev.tag}</span>
-            `;
-                    item.addEventListener('click', () => showEventModal(ev));
-                    eventList.appendChild(item);
-                });
-                top10List.innerHTML = '';
-                top10.forEach((item, idx) => {
-                    const div = document.createElement('div');
-                    div.className = 'top10-item';
-                    div.innerHTML =
-                        `<div class="rank">#${idx+1}</div><div class="info"><h4>${item}</h4><p>Must-do in Singapore</p></div>`;
-                    top10List.appendChild(div);
-                });
-                videoGrid.innerHTML = '';
-                videos.forEach(v => {
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-                    card.innerHTML = `
-              <div class="thumb">
-                <img src="${v.thumb}" alt="${v.title}" loading="lazy" />
-                <div class="play-btn"><i class="fas fa-play-circle"></i></div>
-              </div>
-              <div class="video-info">
-                <h4>${v.title}</h4>
-                <p><i class="fab fa-youtube" style="color:#ff0000;"></i> ${v.channel}</p>
-              </div>
-            `;
-                    card.addEventListener('click', () => window.open(
-                        `https://www.youtube.com/watch?v=${v.id}`, '_blank'));
-                    videoGrid.appendChild(card);
-                });
+            // ─── SCROLL REVEAL ───────────────────────────
+            let observer = null;
+
+            function observeCards() {
+                if (observer) observer.disconnect();
+                observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                $$('.card').forEach(card => observer.observe(card));
             }
 
-            // ─── MODALS ──────────────────────────────────────
+            // ─── MODALS ──────────────────────────────────
             function openPostModal(post) {
                 const tagsHtml = post.tags ? post.tags.map(t =>
-                    `<span style="background:var(--badge-bg);padding:0.1rem 0.6rem;border-radius:50px;font-size:0.63rem;color:var(--accent-light);border:1px solid var(--border);">#${t}</span>`
+                    `<span style="background:rgba(124,58,237,0.12);padding:0.1rem 0.5rem;border-radius:50px;font-size:0.6rem;color:var(--accent-light);border:1px solid var(--border);">#${t}</span>`
                 ).join(' ') : '';
                 modalContent.innerHTML = `
-            <h2>${post.title}</h2>
-            <div class="modal-meta">
-              <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
-              <span>·</span>
-              <span><i class="fas fa-tag"></i> ${post.category}</span>
-              <span>·</span>
-              <span>⭐ ${post.rating.toFixed(1)}</span>
-              ${tagsHtml ? `<span>·</span><span>${tagsHtml}</span>` : ''}
-            </div>
-            <div class="modal-body">${post.content}</div>
-            <div class="share-buttons">
-              <button class="share-btn" data-share="facebook"><i class="fab fa-facebook"></i> Facebook</button>
-              <button class="share-btn" data-share="twitter"><i class="fab fa-twitter"></i> Twitter</button>
-              <button class="share-btn" data-share="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</button>
-              <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-            </div>
-          `;
+              <h2>${post.title}</h2>
+              <div class="modal-meta">
+                <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
+                <span>·</span>
+                <span><i class="fas fa-tag"></i> ${post.category}</span>
+                <span>·</span>
+                <span>⭐ ${post.rating.toFixed(1)}</span>
+                ${tagsHtml ? `<span>·</span><span>${tagsHtml}</span>` : ''}
+              </div>
+              <div class="modal-body">${post.content}</div>
+              <div class="share-buttons">
+                <button class="share-btn" data-share="facebook"><i class="fab fa-facebook"></i> Facebook</button>
+                <button class="share-btn" data-share="twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                <button class="share-btn" data-share="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</button>
+                <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
+              </div>
+            `;
                 openModal(postModal);
                 const shareUrl = window.location.href.split('?')[0] + '?post=' + post.id;
-                document.querySelectorAll('#modal-content .share-btn').forEach(btn => {
+                modalContent.querySelectorAll('.share-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         const type = btn.dataset.share;
@@ -2105,40 +1643,11 @@
                         else if (type === 'copy') {
                             navigator.clipboard.writeText(shareUrl).then(() => {
                                 btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                                toast('Link copied to clipboard', '🔗');
                                 setTimeout(() => { btn.innerHTML =
                                     '<i class="fas fa-link"></i> Copy Link'; }, 2000);
                             });
                         }
-                    });
-                });
-            }
-
-            function showEventModal(ev) {
-                modalContent.innerHTML = `
-            <h2>${ev.title}</h2>
-            <div class="modal-meta"><span>${ev.date} · ${ev.month}</span> <span>·</span> <span>${ev.venue}</span></div>
-            <div class="modal-body">
-              <p><strong>📅 Date:</strong> ${ev.date}</p>
-              <p><strong>📍 Venue:</strong> ${ev.venue}</p>
-              <p><strong>🏷️ Category:</strong> ${ev.tag}</p>
-              <p>Join us for this exciting event in Singapore! Check the official website for ticket details and schedules.</p>
-            </div>
-            <div class="share-buttons">
-              <button class="share-btn" data-share="facebook"><i class="fab fa-facebook"></i> Share</button>
-              <button class="share-btn" data-share="twitter"><i class="fab fa-twitter"></i> Tweet</button>
-            </div>
-          `;
-                openModal(postModal);
-                document.querySelectorAll('#modal-content .share-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const url = window.location.href;
-                        if (btn.dataset.share === 'facebook') window.open(
-                            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-                            '_blank');
-                        else if (btn.dataset.share === 'twitter') window.open(
-                            `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent('Check out ' + ev.title)}`,
-                            '_blank');
                     });
                 });
             }
@@ -2155,44 +1664,87 @@
                     el.classList.remove('open', 'closing');
                     el.setAttribute('aria-hidden', 'true');
                     document.body.style.overflow = '';
-                }, 280);
+                }, 250);
             }
-            modalClose.addEventListener('click', () => closeModal(postModal));
+            $('#modal-close').addEventListener('click', () => closeModal(postModal));
             postModal.addEventListener('click', e => { if (e.target === postModal) closeModal(postModal); });
-            aboutClose.addEventListener('click', () => closeModal(aboutModal));
+            $('#about-close').addEventListener('click', () => closeModal(aboutModal));
             aboutModal.addEventListener('click', e => { if (e.target === aboutModal) closeModal(aboutModal); });
-            document.querySelector('#about-footer').addEventListener('click', (e) => {
+            $('#about-footer').addEventListener('click', (e) => {
                 e.preventDefault();
                 openModal(aboutModal);
             });
 
-            // ─── NAVIGATION ────────────────────────────────
-            navAnchors.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const nav = this.dataset.nav;
-                    navAnchors.forEach(a => a.classList.remove('active'));
-                    this.classList.add('active');
-                    navLinks.classList.remove('open');
-                    hamburger.classList.remove('open');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    if (nav !== 'home') {
-                        const target = document.getElementById(nav);
-                        if (target) {
-                            e.preventDefault();
-                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+            // ─── NAVIGATION ──────────────────────────────
+            function handleNavClick(e, link) {
+                const nav = link.dataset.nav;
+                $$('.nav-links a').forEach(a => a.classList.remove('active'));
+                $$('.drawer-links a').forEach(a => a.classList.remove('active'));
+                link.classList.add('active');
+                mobileDrawer.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                if (nav !== 'home') {
+                    const target = document.getElementById(nav);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
-                });
+                } else {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+            $$('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) { handleNavClick(e, this); });
+            });
+            $$('.drawer-links a').forEach(link => {
+                link.addEventListener('click', function(e) { handleNavClick(e, this); });
             });
             hamburger.addEventListener('click', () => {
-                const open = navLinks.classList.toggle('open');
+                const open = mobileDrawer.classList.toggle('open');
                 hamburger.classList.toggle('open', open);
                 hamburger.setAttribute('aria-expanded', open);
             });
 
-            // ─── SEARCH ──────────────────────────────────────
+            // ─── COUNTRY PILLS ──────────────────────────
+            $$('.country-pill').forEach(pill => {
+                pill.addEventListener('click', () => {
+                    if (pill.dataset.country === 'pending') {
+                        switchCountry('pending');
+                    } else {
+                        switchCountry(pill.dataset.country);
+                    }
+                    mobileDrawer.classList.remove('open');
+                    hamburger.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // ─── NEWSLETTER ──────────────────────────────
+            function bindNewsletter() {
+                const form = $('#newsletter-form');
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const emailInput = $('#news-email');
+                        const msg = $('#newsletter-msg');
+                        if (!emailInput || !msg) return;
+                        const email = emailInput.value.trim();
+                        if (!email.includes('@') || !email.includes('.')) {
+                            msg.textContent = '⚠️ Please enter a valid email.';
+                            msg.style.color = 'var(--error)';
+                        } else {
+                            msg.textContent = '✅ Welcome to the Baai Mart community!';
+                            msg.style.color = 'var(--success)';
+                            emailInput.value = '';
+                            toast('Subscribed successfully!', '📬');
+                        }
+                    });
+                }
+            }
+
+            // ─── SEARCH ──────────────────────────────────
             function performSearch(query) {
                 const q = query.toLowerCase().trim();
                 const allCards = document.querySelectorAll('.card');
@@ -2207,8 +1759,12 @@
                 if (visible === 0 && q) {
                     const msg = document.createElement('p');
                     msg.className = 'no-results';
+                    msg.style.textAlign = 'center';
+                    msg.style.padding = '2rem';
+                    msg.style.color = 'var(--text-muted)';
                     msg.innerHTML = '😔 No results found. Try "food", "attractions", or "shopping".';
-                    document.querySelector('.container')?.appendChild(msg);
+                    const firstSection = document.querySelector('.content-section');
+                    if (firstSection) firstSection.appendChild(msg);
                 }
             }
             let searchTimer;
@@ -2218,101 +1774,18 @@
             });
             heroSearchBtn.addEventListener('click', () => {
                 const val = heroSearchInput.value.trim();
-                if (val) { searchInput.value = val;
+                if (val) {
+                    searchInput.value = val;
                     performSearch(val);
-                    searchInput.focus();
-                    window.scrollTo({ top: 0, behavior: 'smooth' }); }
+                    toast(`Searching for "${val}"`, '🔍');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    toast('Please enter a search term', '⚠️');
+                }
             });
             heroSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') heroSearchBtn.click(); });
 
-            // ─── CURRENCY CONVERTER ──────────────────────────
-            const rates = { USD: 1.35, EUR: 1.48, GBP: 1.72, SGD: 1.0, MYR: 0.31, JPY: 0.0094 };
-
-            function convertCurrency() {
-                const amount = parseFloat(document.getElementById('currency-amount').value) || 0;
-                const from = document.getElementById('currency-from').value;
-                const to = document.getElementById('currency-to').value;
-                const inSGD = amount / rates[from];
-                const result = inSGD * rates[to];
-                document.getElementById('currency-result').textContent = result.toFixed(2) + ' ' + to;
-            }
-            document.getElementById('currency-amount').addEventListener('input', convertCurrency);
-            document.getElementById('currency-from').addEventListener('change', convertCurrency);
-            document.getElementById('currency-to').addEventListener('change', convertCurrency);
-            convertCurrency();
-
-            // ─── WEATHER ────────────────────────────────────
-            function updateWeather() {
-                const temps = [29, 30, 31, 32, 33];
-                const descs = ['Sunny', 'Partly Cloudy', 'Scattered Rain', 'Cloudy', 'Hot & Humid'];
-                const icons = ['fa-sun', 'fa-cloud-sun', 'fa-cloud-rain', 'fa-cloud', 'fa-temperature-high'];
-                const idx = Math.floor(Math.random() * temps.length);
-                document.getElementById('weather-temp').textContent = temps[idx] + '°C';
-                document.getElementById('weather-desc').textContent = descs[idx];
-                const iconEl = document.querySelector('.weather-widget i');
-                if (iconEl) iconEl.className = 'fas ' + icons[idx];
-            }
-            updateWeather();
-            setInterval(updateWeather, 300000);
-
-            // ─── TOOL BUTTONS ──────────────────────────────
-            document.getElementById('map-btn').addEventListener('click', () => {
-                window.open('https://www.google.com/maps/place/Singapore', '_blank');
-            });
-            document.getElementById('mrt-btn').addEventListener('click', () => {
-                window.open('https://www.smrt.com.sg/Journey-with-Us/Train/Network-Map', '_blank');
-            });
-            document.getElementById('transport-btn').addEventListener('click', () => {
-                window.open('https://www.lta.gov.sg/content/ltagov/en.html', '_blank');
-            });
-            document.getElementById('cost-btn').addEventListener('click', () => {
-                modalContent.innerHTML = `
-            <h2>💰 Cost of Living in Singapore</h2>
-            <div class="modal-body">
-              <p><strong>🏠 Rent (1-bedroom, city centre):</strong> $2,500 – $4,000 SGD/mo</p>
-              <p><strong>🍽️ Meal at hawker centre:</strong> $5 – $8 SGD</p>
-              <p><strong>🍽️ Meal at mid-range restaurant:</strong> $20 – $40 SGD</p>
-              <p><strong>🚇 MRT monthly pass:</strong> $120 SGD</p>
-              <p><strong>☕ Coffee at cafe:</strong> $6 – $9 SGD</p>
-              <p><strong>🍺 Beer at bar:</strong> $10 – $15 SGD</p>
-              <p><strong>🎬 Cinema ticket:</strong> $13 – $18 SGD</p>
-              <p><em style="color:var(--text-muted);">Data updated July 2026</em></p>
-            </div>
-            <div class="share-buttons">
-              <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Info</button>
-            </div>
-          `;
-                openModal(postModal);
-                const copyBtn = document.querySelector('#modal-content .share-btn[data-share="copy"]');
-                if (copyBtn) {
-                    copyBtn.addEventListener('click', () => {
-                        const text =
-                            'Cost of Living in Singapore: Rent $2500-4000, Meal $5-8, MRT $120, Coffee $6-9';
-                        navigator.clipboard.writeText(text).then(() => {
-                            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                            setTimeout(() => { copyBtn.innerHTML =
-                                '<i class="fas fa-link"></i> Copy Info'; }, 2000);
-                        });
-                    });
-                }
-            });
-
-            // ─── NEWSLETTER ────────────────────────────────
-            document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = document.getElementById('news-email').value.trim();
-                const msg = document.getElementById('newsletter-msg');
-                if (!email.includes('@') || !email.includes('.')) {
-                    msg.textContent = '⚠️ Please enter a valid email.';
-                    msg.style.color = 'var(--error)';
-                } else {
-                    msg.textContent = '✅ Welcome to the Baai Mart community!';
-                    msg.style.color = 'var(--success)';
-                    document.getElementById('news-email').value = '';
-                }
-            });
-
-            // ─── BACK TO TOP ────────────────────────────────
+            // ─── BACK TO TOP ──────────────────────────────
             const sentinel = document.createElement('div');
             sentinel.style.cssText = 'position:absolute;top:300px;height:1px;width:1px;pointer-events:none;';
             document.body.prepend(sentinel);
@@ -2323,40 +1796,7 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
-            // ─── SEE ALL ────────────────────────────────────
-            document.querySelectorAll('.see-all').forEach(el => {
-                el.addEventListener('click', function() {
-                    const section = this.dataset.section;
-                    const map = {
-                        'trending': 'home',
-                        'attractions': 'attractions',
-                        'food': 'food',
-                        'hidden': 'hidden',
-                        'nightlife': 'nightlife',
-                        'shopping': 'shopping',
-                        'instagram': 'instagram',
-                        'events': 'events',
-                        'videos': 'videos'
-                    };
-                    const targetId = map[section];
-                    if (targetId === 'home') {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                        return;
-                    }
-                    const targetEl = document.getElementById(targetId);
-                    if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-
-            // ─── URL PARAM ──────────────────────────────────
-            const params = new URLSearchParams(window.location.search);
-            const postId = params.get('post');
-            if (postId) {
-                const post = posts.find(p => p.id === parseInt(postId));
-                if (post) setTimeout(() => openPostModal(post), 500);
-            }
-
-            // ─── KEYBOARD SHORTCUTS ────────────────────────
+            // ─── KEYBOARD SHORTCUTS ──────────────────────
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') {
                     if (postModal.classList.contains('open')) closeModal(postModal);
@@ -2368,10 +1808,18 @@
                 }
             });
 
-            // ─── INIT ──────────────────────────────────────
-            renderAll();
-            console.log('🐾 Baai Mart ·  all systems go!');
+            // ─── URL PARAM ────────────────────────────────
+            const params = new URLSearchParams(window.location.search);
+            const postId = params.get('post');
+            if (postId) {
+                const allPosts = Object.values(countryData).flatMap(cd => cd.posts);
+                const post = allPosts.find(p => p.id === parseInt(postId));
+                if (post) setTimeout(() => openPostModal(post), 500);
+            }
 
+            // ─── INIT ────────────────────────────────────
+            renderAll('singapore');
+            console.log('🐾 Baai Mart · essential guide');
         })();
     </script>
 </body>
