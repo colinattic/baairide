@@ -1,1954 +1,2676 @@
+```html
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Baai Mart · Essential Travel Guide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <style>
-        :root {
-            --bg: #0b0b16;
-            --surface: rgba(22, 22, 38, 0.85);
-            --surface-solid: #16162a;
-            --text: #f0edf8;
-            --text-secondary: #b8b5d6;
-            --text-muted: #7a78a4;
-            --border: rgba(255, 255, 255, 0.07);
-            --border-hover: rgba(255, 255, 255, 0.16);
-            --accent: #7c3aed;
-            --accent-light: #a78bfa;
-            --accent-dark: #5b21b6;
-            --accent-warm: #f59e0b;
-            --accent-rose: #f43f5e;
-            --accent-teal: #14b8a6;
-            --gradient: linear-gradient(135deg, #7c3aed, #6366f1, #8b5cf6);
-            --gradient-warm: linear-gradient(135deg, #f59e0b, #f97316, #ef4444);
-            --radius: 20px;
-            --radius-sm: 14px;
-            --nav-bg: rgba(11, 11, 22, 0.88);
-            --shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.18);
-            --heart: #f43f5e;
-            --success: #34d399;
-            --error: #f87171;
-            --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        [data-theme="light"] {
-            --bg: #f7f6fc;
-            --surface: rgba(255, 255, 255, 0.85);
-            --surface-solid: #ffffff;
-            --text: #1a1a2e;
-            --text-secondary: #4a4a6a;
-            --text-muted: #6b6b8a;
-            --border: rgba(0, 0, 0, 0.07);
-            --border-hover: rgba(0, 0, 0, 0.14);
-            --nav-bg: rgba(247, 246, 252, 0.92);
-            --shadow: 0 24px 64px rgba(0, 0, 0, 0.07);
-            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
+<meta name="description" content="Baaimart.com - Latest movie news, release dates, trailers, reviews and entertainment updates.">
+<meta name="keywords" content="movie news, cinema news, movie releases, trailers, reviews, Tamil movies, Hindi movies, Malayalam movies, Sinhala movies">
 
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-        body {
-            font-family: var(--font-body);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            transition: background 0.4s, color 0.4s;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-        ::selection {
-            background: var(--accent);
-            color: #fff;
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(124, 58, 237, 0.3);
-            border-radius: 10px;
-        }
-        img {
-            display: block;
-            max-width: 100%;
-        }
-        a {
-            color: var(--accent-light);
-            text-decoration: none;
-        }
-        ul {
-            list-style: none;
-        }
-        button {
-            font-family: inherit;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background: none;
-        }
-        input,
-        select {
-            font-family: inherit;
-            outline: none;
-            border: none;
-        }
+<title>Baaimart.com | Movie News & Entertainment</title>
 
-        /* ─── NAVIGATION ─── */
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--border);
-            height: 64px;
-            padding: 0 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: -0.01em;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: opacity 0.3s;
-        }
-        .nav-logo:hover {
-            opacity: 0.8;
-        }
-        .nav-logo i {
-            font-size: 1.1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 0.1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .nav-links a {
-            color: var(--text-secondary);
-            font-weight: 500;
-            font-size: 0.8rem;
-            padding: 0.4rem 0.75rem;
-            border-radius: 10px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            white-space: nowrap;
-        }
-        .nav-links a i {
-            font-size: 0.7rem;
-        }
-        .nav-links a:hover {
-            color: var(--text);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .nav-links a.active {
-            color: #fff;
-            background: var(--accent);
-            font-weight: 600;
-            box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
-        }
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-shrink: 0;
-        }
-        .country-pills {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            padding: 0.15rem;
-        }
-        .country-pill {
-            padding: 0.3rem 0.85rem;
-            border-radius: 50px;
-            font-size: 0.72rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        .country-pill.active {
-            background: var(--gradient);
-            color: #fff;
-            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
-        }
-        .country-pill.pending {
-            opacity: 0.65;
-            cursor: not-allowed;
-        }
-        .country-pill.pending:hover {
-            background: transparent;
-            color: var(--text-muted);
-        }
-        .search-wrap {
-            position: relative;
-        }
-        .search-wrap i {
-            position: absolute;
-            left: 0.8rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            pointer-events: none;
-        }
-        .search-wrap input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 0.35rem 0.9rem 0.35rem 2.2rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            width: 140px;
-            transition: all 0.3s;
-        }
-        .search-wrap input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
-            width: 180px;
-        }
-        .theme-toggle {
-            width: 44px;
-            height: 26px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            padding: 3px;
-            transition: all 0.4s;
-            flex-shrink: 0;
-        }
-        .theme-toggle .thumb {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.4s;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            color: #fff;
-            font-size: 0.58rem;
-        }
-        [data-theme="light"] .theme-toggle .thumb {
-            transform: translateX(18px);
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 10px;
-            min-width: 44px;
-            min-height: 44px;
-            align-items: center;
-            justify-content: center;
-        }
-        .hamburger:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-        .hamburger span {
-            display: block;
-            width: 21px;
-            height: 2.5px;
-            background: var(--text);
-            border-radius: 4px;
-            transition: all 0.3s;
-        }
-        .hamburger.open span:nth-child(1) {
-            transform: rotate(45deg) translate(4px, 4px);
-        }
-        .hamburger.open span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.open span:nth-child(3) {
-            transform: rotate(-45deg) translate(4px, -4px);
-        }
+<style>
 
-        /* Mobile drawer */
-        .mobile-drawer {
-            display: none;
-            position: fixed;
-            top: 64px;
-            left: 0;
-            width: 100%;
-            background: var(--nav-bg);
-            backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--border);
-            padding: 0.8rem 1.2rem 1.2rem;
-            z-index: 998;
-            transform: translateY(-120%);
-            opacity: 0;
-            pointer-events: none;
-            transition: transform 0.3s, opacity 0.3s;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        }
-        .mobile-drawer.open {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .mobile-drawer .drawer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-        .mobile-drawer .drawer-links a {
-            color: var(--text-secondary);
-            font-weight: 500;
-            padding: 0.55rem 0.8rem;
-            border-radius: 10px;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        .mobile-drawer .drawer-links a:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text);
-        }
-        .mobile-drawer .drawer-links a.active {
-            background: var(--accent);
-            color: #fff;
-        }
-        .mobile-drawer .drawer-country {
-            margin-top: 0.6rem;
-            padding-top: 0.6rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
+/* =========================================================
+   BAAIMART.COM
+   PROFESSIONAL MOVIE NEWS WEBSITE
+   HTML + CSS + JAVASCRIPT - SINGLE FILE
+========================================================= */
 
-        @media (max-width: 1024px) {
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .mobile-drawer {
-                display: block;
-            }
-            .country-pills {
-                display: none;
-            }
-            .nav {
-                padding: 0 1rem;
-            }
-        }
-        @media (max-width: 560px) {
-            .search-wrap input {
-                width: 70px;
-                font-size: 0.68rem;
-                padding: 0.3rem 0.5rem 0.3rem 1.6rem;
-            }
-            .search-wrap input:focus {
-                width: 100px;
-            }
-            .search-wrap i {
-                left: 0.5rem;
-                font-size: 0.6rem;
-            }
-            .nav-logo {
-                font-size: 1.1rem;
-            }
-            .nav-logo i {
-                font-size: 0.95rem;
-            }
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* ─── HERO ─── */
-        .hero {
-            position: relative;
-            padding: 3.5rem 1.5rem 4rem;
-            text-align: center;
-            overflow: hidden;
-            background: var(--bg);
-            z-index: 1;
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
-            z-index: 0;
-            filter: saturate(0.5);
-            transition: background-image 0.5s;
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(11, 11, 22, 0.4);
-            z-index: 1;
-        }
-        [data-theme="light"] .hero-overlay {
-            background: rgba(247, 246, 252, 0.4);
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 680px;
-            margin: 0 auto;
-        }
-        .hero-badge {
-            display: inline-block;
-            background: var(--surface);
-            backdrop-filter: blur(14px);
-            border: 1px solid var(--border);
-            padding: 0.25rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: var(--accent-light);
-            margin-bottom: 1rem;
-            letter-spacing: 0.03em;
-        }
-        .hero-badge i {
-            margin-right: 0.35rem;
-        }
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.4rem, 6vw, 4.2rem);
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.8rem;
-        }
-        .hero p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            max-width: 450px;
-            margin: 0 auto 1.8rem;
-            line-height: 1.55;
-        }
-        .hero-search {
-            display: flex;
-            max-width: 430px;
-            margin: 0 auto;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .hero-search input {
-            flex: 1;
-            min-width: 150px;
-            padding: 0.7rem 1.1rem;
-            border-radius: 60px;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            backdrop-filter: blur(14px);
-            color: var(--text);
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
-        .hero-search input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
-        }
-        .hero-search button {
-            padding: 0.7rem 1.7rem;
-            border-radius: 60px;
-            background: var(--gradient);
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            white-space: nowrap;
-        }
-        .hero-search button:hover {
-            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
-            transform: translateY(-2px);
-        }
-        .hero-search button:active {
-            transform: scale(0.95);
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* ─── CONTAINER ─── */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08090d;
+    color: #ffffff;
+    line-height: 1.5;
+}
 
-        /* ─── SECTION HEADER ─── */
-        .section-header {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2.8rem 0 1.2rem;
-        }
-        .section-header h2 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .section-header h2 i {
-            font-size: 1rem;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        /* ─── CARDS GRID ─── */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.3rem;
-        }
-        .card {
-            background: var(--surface);
-            backdrop-filter: blur(18px);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            transition: all 0.35s var(--transition);
-            box-shadow: var(--shadow-sm);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s, border-color 0.3s, box-shadow 0.3s;
-        }
-        .card.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .card:hover {
-            border-color: var(--border-hover);
-            box-shadow: 0 16px 40px rgba(124, 58, 237, 0.1);
-            transform: translateY(-4px);
-        }
-        .card:active {
-            transform: scale(0.97);
-        }
-        .card-img {
-            height: 170px;
-            flex-shrink: 0;
-            position: relative;
-            overflow: hidden;
-            background: var(--surface-solid);
-        }
-        .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .card:hover .card-img img {
-            transform: scale(1.06);
-        }
-        .card-img .badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--surface);
-            backdrop-filter: blur(10px);
-            padding: 0.12rem 0.65rem;
-            border-radius: 50px;
-            font-size: 0.58rem;
-            font-weight: 600;
-            border: 1px solid var(--border);
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            z-index: 2;
-        }
-        .card-img .fav-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: var(--surface);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: var(--text-muted);
-            font-size: 0.7rem;
-            z-index: 2;
-            min-width: 30px;
-            min-height: 30px;
-        }
-        .card-img .fav-btn:hover {
-            color: var(--heart);
-            border-color: var(--heart);
-            background: rgba(244, 63, 94, 0.1);
-        }
-        .card-img .fav-btn.active {
-            color: var(--heart);
-            border-color: var(--heart);
-            background: rgba(244, 63, 94, 0.15);
-        }
-        .card-body {
-            padding: 0.9rem 1.1rem 1.1rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-        .card-body .meta {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.62rem;
-            color: var(--text-muted);
-            flex-wrap: wrap;
-        }
-        .card-body .meta .rating {
-            color: #fbbf24;
-            display: flex;
-            align-items: center;
-            gap: 0.1rem;
-        }
-        .card-body .meta .rating span {
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-        .card-body h3 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            line-height: 1.3;
-        }
-        .card-body p {
-            color: var(--text-secondary);
-            font-size: 0.78rem;
-            flex: 1;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .card-body .read-more {
-            color: var(--accent-light);
-            font-weight: 600;
-            font-size: 0.73rem;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            margin-top: 0.25rem;
-            transition: gap 0.3s;
-        }
-        .card:hover .read-more {
-            gap: 0.5rem;
-        }
-        .card.featured {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 200px;
-        }
-        .card.featured .card-img {
-            height: 100%;
-            min-height: 180px;
-        }
-        .card.featured .card-body {
-            padding: 1.2rem 1.5rem;
-            justify-content: center;
-        }
-        .card.featured .card-body h3 {
-            font-size: 1.25rem;
-        }
-        @media (max-width: 650px) {
-            .card.featured {
-                grid-template-columns: 1fr;
-            }
-            .card.featured .card-img {
-                height: 150px;
-            }
-            .card-img {
-                height: 145px;
-            }
-        }
+img {
+    display: block;
+    width: 100%;
+}
 
-        /* ─── NEWSLETTER ─── */
-        .newsletter {
-            margin: 3rem auto 1.5rem;
-            max-width: 600px;
-            border-radius: var(--radius);
-            padding: 2.2rem 1.8rem;
-            text-align: center;
-            background: var(--surface);
-            border: 1px solid var(--border);
-        }
-        .newsletter h3 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        .newsletter p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-        .newsletter-form {
-            display: flex;
-            gap: 0.5rem;
-            max-width: 380px;
-            margin: 1rem auto 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .newsletter-form input {
-            flex: 1;
-            min-width: 140px;
-            padding: 0.55rem 1rem;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text);
-            font-size: 0.85rem;
-        }
-        .newsletter-form input:focus {
-            border-color: var(--accent);
-        }
-        .newsletter-form button {
-            padding: 0.55rem 1.4rem;
-            border-radius: 50px;
-            background: var(--gradient);
-            color: #fff;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.85rem;
-        }
-        .newsletter-form button:hover {
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
-            transform: translateY(-2px);
-        }
-        .newsletter-msg {
-            margin-top: 0.6rem;
-            font-weight: 600;
-            font-size: 0.78rem;
-        }
+button,
+input {
+    font-family: inherit;
+}
 
-        /* ─── MODAL ─── */
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            z-index: 2000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            backdrop-filter: blur(8px);
-        }
-        .modal-overlay.open {
-            display: flex;
-        }
-        .modal-overlay.closing {
-            animation: fadeOut 0.25s forwards;
-        }
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-            }
-        }
-        .modal {
-            background: var(--surface-solid);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            max-width: 700px;
-            width: 100%;
-            max-height: 85vh;
-            overflow-y: auto;
-            padding: 1.8rem 2rem;
-            box-shadow: var(--shadow);
-            animation: modalSlide 0.35s ease-out;
-            position: relative;
-        }
-        .modal-overlay.closing .modal {
-            animation: modalSlideOut 0.25s forwards;
-        }
-        @keyframes modalSlide {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes modalSlideOut {
-            to {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-        }
-        .modal-close {
-            position: sticky;
-            top: 0;
-            float: right;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            color: var(--text);
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-            z-index: 5;
-            font-size: 0.85rem;
-            min-width: 32px;
-            min-height: 32px;
-        }
-        .modal-close:hover {
-            background: var(--accent);
-            color: #fff;
-            border-color: transparent;
-        }
-        .modal h2 {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-top: 0.2rem;
-        }
-        .modal .modal-meta {
-            color: var(--text-muted);
-            font-size: 0.72rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-        }
-        .modal-body {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-        .modal-body p {
-            margin-bottom: 0.6rem;
-        }
-        .modal-body img {
-            border-radius: var(--radius-sm);
-            margin: 0.6rem 0;
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-        }
-        .modal-body ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 0.6rem;
-        }
-        .modal-body ul li {
-            margin-bottom: 0.1rem;
-        }
-        .share-buttons {
-            display: flex;
-            gap: 0.4rem;
-            flex-wrap: wrap;
-            margin-top: 1.2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-        .share-btn {
-            padding: 0.3rem 0.85rem;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text);
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.68rem;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-family: inherit;
-            min-height: 32px;
-        }
-        .share-btn:hover {
-            background: var(--gradient);
-            color: #fff;
-            border-color: transparent;
-        }
+/* =========================================================
+   TOP BAR
+========================================================= */
 
-        /* ─── BACK TO TOP ─── */
-        .back-to-top {
-            position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(124, 58, 237, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(124, 58, 237, 0.35);
-            color: var(--accent-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 900;
-            opacity: 0;
-            transform: translateY(20px);
-            pointer-events: none;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-        .back-to-top:hover {
-            background: var(--gradient);
-            color: #fff;
-            border-color: transparent;
-        }
-        .back-to-top i {
-            font-size: 0.9rem;
-        }
+.top-bar {
+    background: #050507;
+    border-bottom: 1px solid #202128;
+    color: #8e9098;
+    font-size: 12px;
+}
 
-        /* ─── FOOTER ─── */
-        .footer {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 0.78rem;
-            margin-top: 1.5rem;
-        }
-        .footer .socials {
-            display: flex;
-            justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 0.6rem;
-        }
-        .footer .socials a {
-            color: var(--text-muted);
-            font-size: 1rem;
-            transition: color 0.3s, transform 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-        }
-        .footer .socials a:hover {
-            color: var(--accent-light);
-            transform: translateY(-3px);
-            border-color: var(--accent);
-        }
-        .footer .creator {
-            margin-top: 0.2rem;
-            font-size: 0.68rem;
-        }
-        .footer .creator a {
-            color: var(--accent-light);
-            font-weight: 500;
-        }
-        .footer .creator a:hover {
-            text-decoration: underline;
-        }
+.top-inner {
+    max-width: 1250px;
+    margin: auto;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        /* ─── TOAST ─── */
-        .toast-container {
-            position: fixed;
-            bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3000;
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            pointer-events: none;
-        }
-        .toast {
-            background: var(--surface-solid);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            padding: 0.5rem 1.3rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text);
-            box-shadow: var(--shadow-sm);
-            animation: toastIn 0.3s ease-out, toastOut 0.3s ease-out 2.5s forwards;
-            pointer-events: auto;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        @keyframes toastIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes toastOut {
-            to {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-        }
+.top-links {
+    display: flex;
+    gap: 18px;
+}
 
-        /* Gallery specific styles */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-        .gallery-item {
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            transition: transform 0.3s, box-shadow 0.3s;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            cursor: pointer;
-        }
-        .gallery-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 12px 30px rgba(124, 58, 237, 0.15);
-            border-color: var(--border-hover);
-        }
-        .gallery-item img,
-        .gallery-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .gallery-item .gallery-label {
-            position: absolute;
-            bottom: 8px;
-            left: 8px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(4px);
-            padding: 0.15rem 0.6rem;
-            border-radius: 50px;
-            font-size: 0.6rem;
-            font-weight: 500;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            pointer-events: none;
-        }
-        .gallery-item .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #fff;
-            font-size: 2rem;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-            pointer-events: none;
-            opacity: 0.8;
-        }
+.top-links a:hover {
+    color: #ffffff;
+}
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-            .hero p {
-                font-size: 0.88rem;
-            }
-            .modal {
-                padding: 1rem;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            }
-        }
-    </style>
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: #0b0c11;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid #22242c;
+}
+
+.header-inner {
+    max-width: 1250px;
+    height: 76px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 29px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+}
+
+.logo .red {
+    color: #e50914;
+}
+
+.logo-sub {
+    display: block;
+    color: #777a84;
+    font-size: 8px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-top: -3px;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.main-nav a {
+    color: #c5c6cb;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #e50914;
+}
+
+.nav-search {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #33353d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-search:hover {
+    background: #e50914;
+    border-color: #e50914;
+}
+
+/* MOBILE MENU */
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   BREAKING NEWS
+========================================================= */
+
+.breaking {
+    background: #e50914;
+    height: 38px;
+    overflow: hidden;
+}
+
+.breaking-inner {
+    max-width: 1250px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.breaking-label {
+    background: #a6070f;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.breaking-content {
+    padding-left: 20px;
+    white-space: nowrap;
+    animation: ticker 22s linear infinite;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 570px;
+    background:
+        linear-gradient(
+            90deg,
+            #08090d 5%,
+            rgba(8,9,13,.88) 32%,
+            rgba(8,9,13,.35) 70%,
+            rgba(8,9,13,.1)
+        ),
+        linear-gradient(
+            0deg,
+            #08090d 0%,
+            transparent 35%
+        ),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-inner {
+    width: 1250px;
+    max-width: 100%;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.category-label {
+    display: inline-block;
+    background: #e50914;
+    color: #ffffff;
+    padding: 7px 12px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 68px);
+    line-height: 1.02;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    color: #d0d1d5;
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.article-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: #a7a9b0;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e50914;
+    padding: 12px 19px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 800;
+    transition: .25s;
+}
+
+.hero-btn:hover {
+    background: #ff202a;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+/* SECTION HEADER */
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #272931;
+    padding-bottom: 14px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.section-title::before {
+    content: "";
+    width: 4px;
+    height: 25px;
+    background: #e50914;
+    display: block;
+}
+
+.section-title h2 {
+    font-size: 25px;
+    letter-spacing: -.5px;
+}
+
+.view-all {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.view-all:hover {
+    color: #ffffff;
+}
+
+/* =========================================================
+   FEATURED NEWS
+========================================================= */
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 22px;
+}
+
+.featured-main {
+    position: relative;
+    min-height: 400px;
+    border-radius: 7px;
+    overflow: hidden;
+    background: #14151b;
+}
+
+.featured-main img {
+    height: 400px;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.featured-main:hover img {
+    transform: scale(1.04);
+}
+
+.featured-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            transparent 35%,
+            rgba(0,0,0,.9) 100%
+        );
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.featured-overlay h3 {
+    font-size: 29px;
+    max-width: 650px;
+    line-height: 1.15;
+    margin: 8px 0;
+}
+
+.featured-overlay p {
+    color: #c2c3c7;
+    font-size: 13px;
+    max-width: 600px;
+}
+
+.side-news {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-card {
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    background: #121319;
+    border: 1px solid #24262d;
+    border-radius: 6px;
+    overflow: hidden;
+    min-height: 190px;
+}
+
+.side-card img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.side-content {
+    padding: 17px;
+}
+
+.side-content small {
+    color: #e50914;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.side-content h3 {
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 8px 0;
+}
+
+.side-content p {
+    color: #858891;
+    font-size: 11px;
+}
+
+/* =========================================================
+   LATEST NEWS GRID
+========================================================= */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.news-card {
+    background: #111218;
+    border: 1px solid #25272f;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: #3b3d45;
+}
+
+.news-card-image {
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+}
+
+.news-card-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.news-card:hover img {
+    transform: scale(1.05);
+}
+
+.news-category {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e50914;
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.news-content {
+    padding: 18px;
+}
+
+.news-content h3 {
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 9px;
+}
+
+.news-content p {
+    color: #8b8d95;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    color: #666972;
+    font-size: 10px;
+    margin-top: 16px;
+    border-top: 1px solid #22242b;
+    padding-top: 12px;
+}
+
+/* =========================================================
+   MOVIE RELEASES
+========================================================= */
+
+.movie-section {
+    background: #0d0e13;
+    border-top: 1px solid #181a20;
+    border-bottom: 1px solid #181a20;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 17px;
+}
+
+.movie-card {
+    background: #15161c;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #24262d;
+    transition: .3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    border-color: #e50914;
+}
+
+.movie-poster {
+    height: 295px;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.movie-card:hover .movie-poster img {
+    transform: scale(1.06);
+}
+
+.movie-status {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e50914;
+    padding: 5px 7px;
+    border-radius: 3px;
+    font-size: 8px;
+    font-weight: 900;
+}
+
+.movie-info {
+    padding: 14px;
+}
+
+.movie-info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.movie-language {
+    color: #e50914;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.release-date {
+    color: #858790;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+/* =========================================================
+   CATEGORY BAR
+========================================================= */
+
+.categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.category-btn {
+    border: 1px solid #30323a;
+    background: #111218;
+    color: #aeb0b7;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: #e50914;
+    color: white;
+    border-color: #e50914;
+}
+
+/* =========================================================
+   TRAILERS
+========================================================= */
+
+.trailer-section {
+    background: #101116;
+}
+
+.trailer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 20px;
+}
+
+.trailer-card {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #16171d;
+}
+
+.trailer-card img {
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.trailer-card:hover img {
+    transform: scale(1.06);
+}
+
+.trailer-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 30%, rgba(0,0,0,.9));
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.play-button {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background: #e50914;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: auto;
+    margin-top: 15px;
+    font-size: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.5);
+}
+
+.trailer-overlay h3 {
+    font-size: 17px;
+}
+
+.trailer-overlay p {
+    color: #aaa;
+    font-size: 10px;
+}
+
+/* =========================================================
+   TRENDING
+========================================================= */
+
+.trending-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.trending-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.trending-item {
+    display: grid;
+    grid-template-columns: 45px 105px 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #22242b;
+}
+
+.trending-number {
+    color: #e50914;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.trending-image {
+    height: 70px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.trending-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.trending-item h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.trending-item p {
+    color: #777a83;
+    font-size: 10px;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    background: #111218;
+    border: 1px solid #25272e;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.sidebar h3 {
+    font-size: 17px;
+    border-bottom: 1px solid #292b32;
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.sidebar-story {
+    padding: 12px 0;
+    border-bottom: 1px solid #24262c;
+}
+
+.sidebar-story:last-child {
+    border-bottom: 0;
+}
+
+.sidebar-story span {
+    color: #e50914;
+    font-size: 9px;
+    font-weight: 800;
+}
+
+.sidebar-story h4 {
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-area {
+    display: none;
+    background: #0d0e13;
+    padding: 15px 20px;
+    border-bottom: 1px solid #272931;
+}
+
+.search-area.active {
+    display: block;
+}
+
+.search-container {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.search-container input {
+    flex: 1;
+    background: #17181e;
+    border: 1px solid #30323a;
+    color: white;
+    padding: 13px 15px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.search-container button {
+    background: #e50914;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter {
+    background:
+        linear-gradient(
+            110deg,
+            #17181f,
+            #0e0f14
+        );
+    border: 1px solid #292b33;
+    border-radius: 8px;
+    padding: 45px 30px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.newsletter p {
+    color: #858791;
+    font-size: 13px;
+    margin-bottom: 23px;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: #08090d;
+    border: 1px solid #30323a;
+    color: white;
+    padding: 13px;
+    outline: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    background: #e50914;
+    color: white;
+    border: 0;
+    padding: 0 20px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #050507;
+    border-top: 1px solid #22242b;
+    margin-top: 20px;
+}
+
+.footer-main {
+    max-width: 1250px;
+    margin: auto;
+    padding: 45px 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 35px;
+}
+
+.footer-brand p {
+    color: #777a83;
+    font-size: 12px;
+    max-width: 350px;
+    margin-top: 12px;
+}
+
+.footer-column h4 {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.footer-column a {
+    display: block;
+    color: #777a83;
+    font-size: 11px;
+    margin-bottom: 9px;
+}
+
+.footer-column a:hover {
+    color: #e50914;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1c1e24;
+    padding: 18px 20px;
+    text-align: center;
+    color: #555861;
+    font-size: 10px;
+}
+
+/* =========================================================
+   ARTICLE MODAL
+========================================================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0,0,0,.85);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    max-width: 750px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #111218;
+    border: 1px solid #30323a;
+    border-radius: 8px;
+    position: relative;
+}
+
+.modal-image {
+    height: 300px;
+}
+
+.modal-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-content {
+    padding: 25px;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 8px 0 15px;
+}
+
+.modal-content p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0,0,0,.7);
+    border: 1px solid #555;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .featured-grid,
+    .trending-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .trailer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-main {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .top-bar {
+        display: none;
+    }
+
+    .header-inner {
+        height: 65px;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        right: 0;
+        background: #0c0d12;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        border-bottom: 1px solid #292b32;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-search {
+        display: none;
+    }
+
+    .breaking {
+        height: 34px;
+    }
+
+    .breaking-label {
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .breaking-content {
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 510px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .featured-main {
+        min-height: 350px;
+    }
+
+    .featured-main img {
+        height: 350px;
+    }
+
+    .featured-overlay h3 {
+        font-size: 23px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie-poster {
+        height: 245px;
+    }
+
+    .trailer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .side-card {
+        grid-template-columns: 120px 1fr;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .newsletter-form input {
+        border-radius: 4px;
+    }
+
+    .newsletter-form button {
+        padding: 13px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .container {
+        padding: 40px 15px;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .movie-poster {
+        height: 220px;
+    }
+
+    .movie-info {
+        padding: 10px;
+    }
+
+    .movie-info h3 {
+        font-size: 13px;
+    }
+
+    .side-card {
+        grid-template-columns: 100px 1fr;
+    }
+
+    .side-content h3 {
+        font-size: 13px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+
+    .trending-item {
+        grid-template-columns: 30px 80px 1fr;
+        gap: 10px;
+    }
+
+    .trending-image {
+        height: 60px;
+    }
+}
+
+</style>
 </head>
+
 <body>
 
-    <!-- ═══ NAVIGATION ═══ -->
-    <nav class="nav" role="navigation">
-        <a class="nav-logo" href="#" aria-label="Baai Mart Home">
-            <i class="fas fa-compass"></i> Baai Mart
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="top-bar">
+
+    <div class="top-inner">
+
+        <div>
+            BAAIMART.COM • ENTERTAINMENT & CINEMA
+        </div>
+
+        <div class="top-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Advertise</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <div class="header-inner">
+
+        <a href="#" class="logo">
+            BAAI<span class="red">MART</span>
+            <span class="logo-sub">MOVIE • NEWS • ENTERTAINMENT</span>
         </a>
-        <ul class="nav-links" role="menubar">
-            <li><a href="#" class="active" data-nav="home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#attractions" data-nav="attractions"><i class="fas fa-landmark"></i> Attractions</a></li>
-            <li><a href="#food" data-nav="food"><i class="fas fa-utensils"></i> Food</a></li>
-            <li><a href="#hidden" data-nav="hidden"><i class="fas fa-mask"></i> Hidden Gems</a></li>
-            <li><a href="#nightlife" data-nav="nightlife"><i class="fas fa-moon"></i> Nightlife</a></li>
-            <li><a href="#shopping" data-nav="shopping"><i class="fas fa-shopping-bag"></i> Shopping</a></li>
-            <li><a href="#gallery" data-nav="gallery"><i class="fas fa-images"></i> Gallery</a></li>
-        </ul>
-        <div class="nav-actions">
-            <div class="country-pills" id="nav-country-pills">
-                <button class="country-pill active" data-country="singapore">🇸🇬 SG</button>
-                <button class="country-pill" data-country="thailand">🇹🇭 TH</button>
-                <button class="country-pill pending" data-country="pending" title="Coming soon">⏳ Next</button>
-            </div>
-            <div class="search-wrap">
-                <i class="fas fa-search"></i>
-                <input type="text" id="search-input" placeholder="Search…" aria-label="Search">
-            </div>
-            <div class="theme-toggle" id="theme-toggle" role="switch" aria-checked="false" tabindex="0" title="Toggle theme">
-                <div class="thumb"><i class="fas fa-moon"></i></div>
-            </div>
-            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Mobile Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer">
-        <div class="drawer-links">
-            <a href="#" class="active" data-nav="home"><i class="fas fa-home"></i> Home</a>
-            <a href="#attractions" data-nav="attractions"><i class="fas fa-landmark"></i> Attractions</a>
-            <a href="#food" data-nav="food"><i class="fas fa-utensils"></i> Food</a>
-            <a href="#hidden" data-nav="hidden"><i class="fas fa-mask"></i> Hidden Gems</a>
-            <a href="#nightlife" data-nav="nightlife"><i class="fas fa-moon"></i> Nightlife</a>
-            <a href="#shopping" data-nav="shopping"><i class="fas fa-shopping-bag"></i> Shopping</a>
-            <a href="#gallery" data-nav="gallery"><i class="fas fa-images"></i> Gallery</a>
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="#" class="active">Home</a>
+            <a href="#latest">Latest News</a>
+            <a href="#movies">Movies</a>
+            <a href="#trailers">Trailers</a>
+            <a href="#trending">Trending</a>
+            <a href="#">Reviews</a>
+
+            <div class="nav-search" onclick="toggleSearch()">
+                🔍
+            </div>
+
+        </nav>
+
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
         </div>
-        <div class="drawer-country">
-            <button class="country-pill active" data-country="singapore">🇸🇬 Singapore</button>
-            <button class="country-pill" data-country="thailand">🇹🇭 Thailand</button>
-            <button class="country-pill pending" data-country="pending">⏳ Next: pending…</button>
-        </div>
+
     </div>
 
-    <!-- ═══ HERO ═══ -->
-    <section class="hero" id="home">
-        <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
-        <div class="hero-overlay" aria-hidden="true"></div>
+</header>
+
+
+<!-- SEARCH -->
+
+<div class="search-area" id="searchArea">
+
+    <div class="search-container">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search movie news..."
+            onkeyup="searchNews()"
+        >
+
+        <button onclick="searchNews()">
+            Search
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     BREAKING NEWS
+===================================================== -->
+
+<div class="breaking">
+
+    <div class="breaking-inner">
+
+        <div class="breaking-label">
+            🔴 BREAKING
+        </div>
+
+        <div class="breaking-content">
+
+            Sample headline: New movie announcements and
+            entertainment updates are arriving this week •
+            Check Baaimart.com for verified updates.
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
         <div class="hero-content">
-            <div class="hero-badge" id="hero-badge"><i class="fas fa-map-pin"></i> Singapore Travel Guide 2026</div>
-            <h1 id="hero-title">Discover the Lion City</h1>
-            <p id="hero-desc">From hawker centres to futuristic gardens — your ultimate guide to Singapore.</p>
-            <div class="hero-search">
-                <input type="text" id="hero-search-input" placeholder="Search attractions, food, nightlife…" />
-                <button id="hero-search-btn"><i class="fas fa-arrow-right"></i> Explore</button>
+
+            <span class="category-label">
+                FEATURED STORY
+            </span>
+
+            <h1>
+                The Next Big Movie Season Is Taking Shape
+            </h1>
+
+            <p class="hero-description">
+                Studios are preparing a new wave of movies,
+                trailers and entertainment releases. Here is
+                what audiences can expect in the coming months.
+            </p>
+
+            <div class="article-meta">
+
+                <span>By Baaimart Editorial</span>
+                <span>•</span>
+                <span>September 8, 2026</span>
+                <span>•</span>
+                <span>6 min read</span>
+
             </div>
-        </div>
-    </section>
 
-    <!-- ═══ MAIN CONTENT ═══ -->
-    <main class="container" id="main-content"></main>
+            <a
+                href="#"
+                class="hero-btn"
+                onclick="openArticle(
+                    'The Next Big Movie Season Is Taking Shape',
+                    'FEATURED STORY'
+                ); return false;"
+            >
+                Read Full Story →
+            </a>
 
-    <!-- ═══ FOOTER ═══ -->
-    <footer class="footer">
-        <div class="socials">
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
         </div>
-        <p>Made with <span style="color:var(--heart);">❤️</span> by Baai Mart</p>
-        <p style="font-size:0.68rem;">Some of the existing information might be <b>inaccurate</b> and will be fixed soon</p>
-        <div class="creator">
-            <span>Created by <a href="#" id="about-footer">Lukman Nawas</a></span>
-        </div>
-    </footer>
 
-    <!-- ═══ BACK TO TOP ═══ -->
-    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- ═══ TOAST CONTAINER ═══ -->
-    <div class="toast-container" id="toast-container"></div>
-
-    <!-- ═══ MODALS ═══ -->
-    <div class="modal-overlay" id="post-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
-            <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
-            <div id="modal-content"></div>
-        </div>
-    </div>
-    <div class="modal-overlay" id="about-modal" aria-hidden="true">
-        <div class="modal" role="dialog" aria-modal="true">
-            <button class="modal-close" id="about-close"><i class="fas fa-times"></i></button>
-            <h2>🙋‍♂️ About Baai Mart</h2>
-            <p style="color:var(--text-secondary);line-height:1.8;">Baai Mart is a travel collective obsessed with
-                Southeast Asia. We bring authentic hawker finds, hidden corners, and the latest events — all served
-                with a clean, modern interface.</p>
-            <p style="color:var(--text-muted);margin-top:1rem;">🌴 Based in Sri Lanka — The Baai Team</p>
-        </div>
     </div>
 
-    <script>
-        (function() {
-            'use strict';
+</section>
 
-            // ─── HELPERS ─────────────────────────────────
-            const $ = (sel) => document.querySelector(sel);
-            const $$ = (sel) => document.querySelectorAll(sel);
-            const toast = (msg, icon = '✅') => {
-                const container = $('#toast-container');
-                const el = document.createElement('div');
-                el.className = 'toast';
-                el.innerHTML = `<span>${icon}</span> ${msg}`;
-                container.appendChild(el);
-                setTimeout(() => el.remove(), 3000);
-            };
 
-            // ─── RANDOM DATE HELPERS ─────────────────────
-            const startDate = new Date(2026, 4, 25);
-            const endDate = new Date(2026, 6, 13);
-            const dayRange = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+<!-- =====================================================
+     FEATURED NEWS
+===================================================== -->
 
-            function randomDate() {
-                const offset = Math.floor(Math.random() * (dayRange + 1));
-                const d = new Date(startDate);
-                d.setDate(startDate.getDate() + offset);
-                return d;
-            }
+<section class="container">
 
-            function formatYYYYMMDD(d) {
-                return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-            }
+    <div class="section-header">
 
-            // ─── COUNTRY DATA ──────────────────────────────
-            const countryData = {
-                singapore: {
-                    name: 'Singapore',
-                    flag: '🇸🇬',
-                    heroTitle: 'Discover the Lion City',
-                    heroDesc: 'From hawker centres to futuristic gardens — your ultimate guide to Singapore.',
-                    heroBadge: 'Singapore Travel Guide 2026',
-                    heroBg: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1600&q=80',
-                    posts: [
-                        { id: 1, title: 'Marina Bay Sands: Singapore’s Iconic Landmark',
-                            excerpt: 'Luxury, breathtaking skyline views, and the world-famous rooftop Infinity Pool.',
-                            content: `<p>Marina Bay Sands is one of Singapore's most recognizable landmarks, combining luxury, entertainment, and stunning architecture.</p><img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=800&q=80" alt="Marina Bay Sands" loading="lazy"><p>Don't miss the Spectra Light & Water Show along the waterfront at night.</p><p><strong>📍 Location:</strong> 10 Bayfront Ave, Singapore 018956</p>`,
-                            category: 'attractions', tags: ['luxury', 'skyline'], date: '', rating: 4.9,
-                            featured: true, image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=600&q=80' },
-                        { id: 2, title: 'Maxwell Food Centre: Hawker Heaven',
-                            excerpt: 'Home to Michelin-starred chicken rice and a thousand other mouth-watering stalls.',
-                            content: `<p>Maxwell Food Centre is a temple of Singaporean cuisine. Tian Tian Hainanese Chicken Rice earned a Michelin star.</p><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Maxwell Food Centre" loading="lazy"><p>It's crowded, noisy, and absolutely perfect.</p><p><strong>📍 Location:</strong> 1 Kadayanallur St, Singapore 069184</p>`,
-                            category: 'food', tags: ['hawker', 'local'], date: '', rating: 4.9,
-                            featured: false, image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' },
-                        { id: 3, title: 'Lau Pa Sat: Satay Street Under the Stars',
-                            excerpt: 'By day a historic market, by night a sizzling satay paradise in the CBD.',
-                            content: `<p>Lau Pa Sat is one of Singapore's oldest markets. The real magic happens after 7pm when Satay Street opens.</p><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="Lau Pa Sat" loading="lazy"><p>Chicken, beef, and mutton satay with peanut sauce — paired with a cold Tiger beer.</p><p><strong>📍 Location:</strong> 18 Raffles Quay, Singapore 048582</p>`,
-                            category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.7,
-                            featured: false, image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80' },
-                        { id: 4, title: 'Sentosa Island: Sun, Sand & Thrills',
-                            excerpt: 'Universal Studios, beaches, and the world\'s largest ocean-themed aquarium.',
-                            content: `<p>Sentosa is Singapore's playground. Universal Studios Singapore brings Hollywood to Asia, while the S.E.A. Aquarium houses over 100,000 marine animals.</p><img src="https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=800&q=80" alt="Sentosa Island" loading="lazy"><p>Don't miss the Wings of Time light show at night.</p><p><strong>📍 Location:</strong> Sentosa Island, Singapore</p>`,
-                            category: 'attractions', tags: ['family', 'beach'], date: '', rating: 4.6,
-                            featured: false, image: 'https://images.unsplash.com/photo-1575075640750-2e6d7bd3cb00?w=600&q=80' },
-                        { id: 5, title: 'Changi Airport: A Destination Itself',
-                            excerpt: 'The world\'s best airport — with a waterfall, indoor forest, and movie theatres.',
-                            content: `<p>Changi Airport is more than an airport — it's an attraction. Jewel Changi's Rain Vortex is the world's tallest indoor waterfall.</p><img src="https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=800&q=80" alt="Changi Airport" loading="lazy"><p>Arrive early and explore — you'll never want to leave.</p><p><strong>📍 Location:</strong> 80 Airport Blvd, Singapore 819642</p>`,
-                            category: 'attractions', tags: ['instagram', 'family'], date: '', rating: 4.9,
-                            featured: false, image: 'https://images.unsplash.com/photo-1558776413-5f0eab0d8a4e?w=600&q=80' },
-                        { id: 6, title: 'Newton Food Centre: Late-Night Feast',
-                            excerpt: 'Famous for BBQ seafood, satay, and the bustling night market vibe.',
-                            content: `<p>Newton Food Centre is a late-night favourite. The BBQ stingray, chilli crab, and satay are legendary.</p><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80" alt="Newton Food Centre" loading="lazy"><p>Come hungry, bring friends, and share plates.</p><p><strong>📍 Location:</strong> 500 Clemenceau Ave N, Singapore 229495</p>`,
-                            category: 'food', tags: ['hawker', 'nightlife'], date: '', rating: 4.5,
-                            featured: false, image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80' },
-                        { id: 7, title: 'Singapore Botanic Gardens: UNESCO Heritage',
-                            excerpt: 'A tropical paradise in the city — the only UNESCO-listed botanic garden.',
-                            content: `<p>The Singapore Botanic Gardens is a serene escape. The National Orchid Garden features over 1,000 species of orchids.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Botanic Gardens" loading="lazy"><p>It's free to enter and open daily.</p><p><strong>📍 Location:</strong> 1 Cluny Rd, Singapore 259569</p>`,
-                            category: 'attractions', tags: ['nature', 'instagram'], date: '', rating: 4.8,
-                            featured: false, image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' },
-                        { id: 8, title: 'Orchard Road: Shopper\'s Paradise',
-                            excerpt: 'Miles of malls, luxury boutiques, and the beating heart of Singapore\'s retail scene.',
-                            content: `<p>Orchard Road is Singapore's most famous shopping street. From high-end luxury at ION Orchard to trendy finds at Plaza Singapura.</p><img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80" alt="Orchard Road" loading="lazy"><p>Beyond shopping, the street is lined with excellent restaurants and cafes.</p><p><strong>📍 Location:</strong> Orchard Road, Singapore</p>`,
-                            category: 'shopping', tags: ['luxury', 'lifestyle'], date: '', rating: 4.7,
-                            featured: false, image: 'https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600&q=80' },
-                        { id: 9, title: 'Haji Lane: Hipster Haven',
-                            excerpt: 'Colourful shophouses, indie boutiques, and the coolest cafes in Singapore.',
-                            content: `<p>Haji Lane is a narrow street in Kampong Glam filled with vibrant street art, indie fashion boutiques, and cosy cafes.</p><img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=800&q=80" alt="Haji Lane" loading="lazy"><p>Perfect for Instagram, shopping for unique finds, and people-watching.</p><p><strong>📍 Location:</strong> Haji Lane, Singapore 189148</p>`,
-                            category: 'hidden', tags: ['instagram', 'shopping', 'cafe'], date: '', rating: 4.6,
-                            featured: false, image: 'https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&q=80' },
-                        { id: 10, title: 'Clarke Quay: Riverside Nightlife',
-                            excerpt: 'Bars, clubs, and restaurants along the Singapore River — the city\'s nightlife hub.',
-                            content: `<p>Clarke Quay is the heart of Singapore's nightlife. The riverside is lined with themed bars, nightclubs, and restaurants.</p><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Clarke Quay" loading="lazy"><p>Take a river cruise or dance the night away at Zouk.</p><p><strong>📍 Location:</strong> 3 River Valley Rd, Singapore 179024</p>`,
-                            category: 'nightlife', tags: ['entertainment'], date: '', rating: 4.5,
-                            featured: false, image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80' },
-                        { id: 11, title: 'Fort Canning Park: Historic Hilltop',
-                            excerpt: 'A green oasis in the city centre with rich history and panoramic views.',
-                            content: `<p>Fort Canning Park is a historic hilltop park with remnants of Singapore's colonial past. It's a peaceful escape.</p><img src="https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=800&q=80" alt="Fort Canning" loading="lazy"><p>The iconic spiral staircase is an Instagram favourite.</p><p><strong>📍 Location:</strong> River Valley Rd, Singapore 179037</p>`,
-                            category: 'hidden', tags: ['nature', 'instagram', 'history'], date: '', rating: 4.3,
-                            featured: false, image: 'https://images.unsplash.com/photo-1589392454932-0f5ca80c5565?w=600&q=80' }
-                    ]
-                },
-                thailand: {
-                    name: 'Thailand',
-                    flag: '🇹🇭',
-                    heroTitle: 'Discover the Land of Smiles',
-                    heroDesc: 'From golden temples to tropical islands — your ultimate guide to Thailand.',
-                    heroBadge: 'Thailand Travel Guide 2026',
-                    heroBg: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1600&q=80',
-                    posts: [
-                        { id: 101, title: 'Grand Palace & Wat Phra Kaew: Bangkok\'s Royal Heart',
-                            excerpt: 'Thailand\'s most sacred temple complex — a dazzling display of golden architecture.',
-                            content: `<p>The Grand Palace has been the official residence of Thai kings since 1782. Wat Phra Kaew inside houses the Emerald Buddha, Thailand's most revered statue.</p><img src="Thai_1.jpeg" alt="Grand Palace Bangkok" loading="lazy"><p>Dress respectfully — shoulders and knees must be covered.</p><p><strong>📍 Location:</strong> Na Phra Lan Rd, Bangkok 10200</p>`,
-                            category: 'attractions', tags: ['temple', 'culture'], date: '', rating: 4.9,
-                            featured: true, image: 'Thai_1.jpeg' },
-                        { id: 102, title: 'Wat Arun: The Temple of Dawn',
-                            excerpt: 'Bangkok\'s stunning riverside temple with intricate porcelain mosaics.',
-                            content: `<p>Wat Arun is one of Bangkok's most iconic landmarks. Its Khmer-style tower is decorated with millions of pieces of Chinese porcelain.</p><img src="Thai_2.jpeg" alt="Wat Arun" loading="lazy"><p>Best visited at sunrise or sunset for stunning photo opportunities.</p><p><strong>📍 Location:</strong> 158 Wang Doem Rd, Bangkok 10600</p>`,
-                            category: 'attractions', tags: ['temple', 'instagram'], date: '', rating: 4.8,
-                            featured: false, image: 'Thai_2.jpeg' },
-                        { id: 103, title: 'Damnoen Saduak Floating Market',
-                            excerpt: 'Thailand\'s most famous floating market — shop from boats in a vibrant canal maze.',
-                            content: `<p>Damnoen Saduak is Thailand's most photographed floating market. Vendors sell fresh fruit, noodles, and souvenirs directly from their boats.</p><img src="Thai_3.jpeg" alt="Floating Market Thailand" loading="lazy"><p>Arrive early to beat the crowds and get the best photos.</p><p><strong>📍 Location:</strong> Damnoen Saduak, Ratchaburi 70130</p>`,
-                            category: 'food', tags: ['market', 'local'], date: '', rating: 4.6,
-                            featured: false, image: 'Thai_3.jpeg' },
-                        { id: 104, title: 'Phi Phi Islands: Tropical Paradise',
-                            excerpt: 'Crystal-clear waters, limestone cliffs, and the famous Maya Bay.',
-                            content: `<p>The Phi Phi Islands are Thailand's crown jewel. Maya Bay (from The Beach movie) features turquoise water surrounded by dramatic cliffs.</p><img src="https://images.unsplash.com/photo-1544418570-6d8f6e1a02f1?w=800&q=80" alt="Phi Phi Islands" loading="lazy"><p>Take a speedboat tour from Phuket or Krabi for a full day of island hopping.</p><p><strong>📍 Location:</strong> Krabi Province, Thailand</p>`,
-                            category: 'attractions', tags: ['beach', 'nature'], date: '', rating: 4.9,
-                            featured: false, image: 'https://images.unsplash.com/photo-1544418570-6d8f6e1a02f1?w=600&q=80' },
-                        { id: 105, title: 'Street Food Heaven: Pad Thai & Tom Yum',
-                            excerpt: 'Bangkok\'s street food scene is legendary — from sizzling woks to spicy soups.',
-                            content: `<p>Thailand's street food is world-famous. Try Pad Thai at Thip Samai, Tom Yum Goong at any street stall, and finish with Mango Sticky Rice.</p><img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=800&q=80" alt="Thai Street Food" loading="lazy"><p>Bangkok's Chinatown (Yaowarat) is the ultimate street food destination.</p><p><strong>📍 Location:</strong> Yaowarat Rd, Bangkok</p>`,
-                            category: 'food', tags: ['streetfood', 'local'], date: '', rating: 4.8,
-                            featured: false, image: 'https://images.unsplash.com/photo-1559314809-0d155014e29e?w=600&q=80' },
-                        { id: 106, title: 'Chatuchak Weekend Market',
-                            excerpt: 'One of the world\'s largest markets — 15,000+ stalls of everything imaginable.',
-                            content: `<p>Chatuchak Weekend Market is a shopper's paradise. With over 15,000 stalls, you can find clothes, art, antiques, plants, and incredible street food.</p><img src="https://images.unsplash.com/photo-1554188248-986adbb73be4?w=800&q=80" alt="Chatuchak Market" loading="lazy"><p>Open Saturdays and Sundays — wear comfortable shoes and bring water.</p><p><strong>📍 Location:</strong> Kamphaeng Phet 2 Rd, Bangkok</p>`,
-                            category: 'shopping', tags: ['market', 'budget'], date: '', rating: 4.5,
-                            featured: false, image: 'https://images.unsplash.com/photo-1554188248-986adbb73be4?w=600&q=80' },
-                        { id: 107, title: 'Erawan Falls: Seven-Tiered Wonder',
-                            excerpt: 'A stunning seven-tiered waterfall in Erawan National Park — emerald green pools.',
-                            content: `<p>Erawan Falls is one of Thailand's most beautiful natural attractions. Hike through the jungle to reach each of the seven tiers, with crystal-clear pools perfect for swimming.</p><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Erawan Falls" loading="lazy"><p>The upper levels offer the most impressive views and fewer crowds.</p><p><strong>📍 Location:</strong> Erawan National Park, Kanchanaburi</p>`,
-                            category: 'hidden', tags: ['nature', 'adventure'], date: '', rating: 4.7,
-                            featured: false, image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80' },
-                        { id: 108, title: 'Chiang Mai Old City: Temple Trail',
-                            excerpt: 'Northern Thailand\'s cultural heart with 300+ temples inside ancient walls.',
-                            content: `<p>Chiang Mai's Old City is surrounded by ancient walls and a moat. Inside, you'll find over 300 temples, including Wat Phra Singh and Wat Chedi Luang.</p><img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&q=80" alt="Chiang Mai" loading="lazy"><p>Visit during the Sunday Night Market for local crafts and street food.</p><p><strong>📍 Location:</strong> Chiang Mai Old City, Thailand</p>`,
-                            category: 'hidden', tags: ['temple', 'culture'], date: '', rating: 4.6,
-                            featured: false, image: 'https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=600&q=80' },
-                        { id: 109, title: 'Khao San Road: Backpacker Central',
-                            excerpt: 'The legendary backpacker street with bars, street food, and endless energy.',
-                            content: `<p>Khao San Road is the epicentre of Bangkok's backpacker scene. By day it's a market street; by night it transforms into a vibrant party district.</p><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80" alt="Khao San Road" loading="lazy"><p>Try the fried insects if you dare, and don't miss the mango shakes.</p><p><strong>📍 Location:</strong> Khao San Rd, Bangkok</p>`,
-                            category: 'nightlife', tags: ['party', 'budget'], date: '', rating: 4.3,
-                            featured: false, image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80' },
-                        { id: 110, title: 'Sukhumvit Rooftop Bars',
-                            excerpt: 'Sip cocktails above the Bangkok skyline at the city\'s best rooftop venues.',
-                            content: `<p>Bangkok's rooftop bars offer stunning skyline views. Octave, Sky Bar at Lebua, and Vertigo are among the most famous.</p><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Rooftop Bar Bangkok" loading="lazy"><p>Dress code applies at most venues — smart casual required.</p><p><strong>📍 Location:</strong> Sukhumvit, Bangkok</p>`,
-                            category: 'nightlife', tags: ['luxury', 'entertainment'], date: '', rating: 4.5,
-                            featured: false, image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&q=80' }
-                    ]
-                }
-            };
+        <div class="section-title">
+            <h2>Top Stories</h2>
+        </div>
 
-            // Assign random dates
-            Object.values(countryData).forEach(cd => {
-                cd.posts.forEach(p => {
-                    p.date = formatYYYYMMDD(randomDate());
-                });
-            });
+        <a href="#latest" class="view-all">
+            VIEW ALL →
+        </a>
 
-            const catIcons = { attractions: 'fa-landmark', food: 'fa-utensils', hidden: 'fa-mask',
-                nightlife: 'fa-moon', shopping: 'fa-shopping-bag' };
+    </div>
 
-            // ─── STATE ────────────────────────────────────
-            let currentCountry = 'singapore';
 
-            // ─── DOM REFS ─────────────────────────────────
-            const html = document.documentElement;
-            const heroBg = $('#hero-bg');
-            const heroBadge = $('#hero-badge');
-            const heroTitle = $('#hero-title');
-            const heroDesc = $('#hero-desc');
-            const mainContent = $('#main-content');
-            const themeToggle = $('#theme-toggle');
-            const backToTop = $('#back-to-top');
-            const postModal = $('#post-modal');
-            const modalContent = $('#modal-content');
-            const aboutModal = $('#about-modal');
-            const hamburger = $('.hamburger');
-            const mobileDrawer = $('#mobile-drawer');
-            const searchInput = $('#search-input');
-            const heroSearchInput = $('#hero-search-input');
-            const heroSearchBtn = $('#hero-search-btn');
+    <div class="featured-grid">
 
-            // ─── THEME ────────────────────────────────────
-            function setTheme(theme) {
-                html.setAttribute('data-theme', theme);
-                const icon = themeToggle.querySelector('.thumb i');
-                icon.className = theme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
-                try { localStorage.setItem('baai-theme', theme); } catch (_) {}
-            }
-            themeToggle.addEventListener('click', () => {
-                setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-                toast('Theme updated', '🎨');
-            });
-            setTheme(localStorage.getItem('baai-theme') || 'dark');
 
-            // ─── COUNTRY SWITCHING ───────────────────────
-            function switchCountry(country, source = 'pill') {
-                if (country === 'pending') {
-                    toast('Next country coming soon!', '⏳');
-                    renderPending();
-                    updateCountryPills('pending');
-                    currentCountry = 'pending';
-                    return;
-                }
-                currentCountry = country;
-                updateCountryPills(country);
-                renderAll(country);
-                if (source === 'pill') toast(`Switched to ${countryData[country].name}`, countryData[country].flag);
-            }
+        <article class="featured-main">
 
-            function updateCountryPills(activeCountry) {
-                $$('.country-pill').forEach(pill => {
-                    const country = pill.dataset.country;
-                    pill.classList.toggle('active', country === activeCountry);
-                });
-            }
+            <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85">
 
-            function renderPending() {
-                mainContent.innerHTML = `
-              <section class="pending-section" style="margin:3rem auto 2rem;max-width:600px;text-align:center;padding:3rem 2rem;background:var(--surface);border:1px dashed var(--border-hover);border-radius:var(--radius);">
-                <div style="font-size:2.5rem;margin-bottom:0.8rem;">🌏</div>
-                <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;">Next Country: <span style="color:var(--accent-light);">Pending…</span></h3>
-                <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.3rem;">We're exploring new destinations. Stay tuned for our next country guide!</p>
-              </section>
-              <section class="newsletter">
-                <h3>✉️ Stay in the Loop</h3>
-                <p>Stay connected for more hidden gems, and event updates.</p>
-                <form class="newsletter-form" id="newsletter-form">
-                  <input type="email" id="news-email" placeholder="your@email.com" required />
-                  <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
-                </form>
-                <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
-              </section>
-            `;
-                heroBadge.textContent = '🌏 Coming Soon';
-                heroTitle.textContent = 'Next Country: Pending…';
-                heroDesc.textContent = 'We\'re exploring new destinations. Stay tuned for our next country guide!';
-                heroBg.style.backgroundImage = 'url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80)';
-                searchInput.value = '';
-                bindNewsletter();
-            }
+            <div class="featured-overlay">
 
-            // ─── RENDER ALL SECTIONS ─────────────────────
-            function renderAll(country) {
-                const cd = countryData[country];
-                heroBadge.textContent = cd.heroBadge;
-                heroTitle.textContent = cd.heroTitle;
-                heroDesc.textContent = cd.heroDesc;
-                heroBg.style.backgroundImage = `url(${cd.heroBg})`;
+                <span class="category-label">
+                    CINEMA
+                </span>
 
-                const sectionsHTML = `
-              <div class="content-section" id="sec-trending">
-                <div class="section-header">
-                  <h2><i class="fas fa-fire" style="color:var(--accent-warm);"></i> Trending Now</h2>
+                <h3>
+                    Major Upcoming Releases Attract Attention From Movie Fans
+                </h3>
+
+                <p>
+                    A new group of films is generating interest online
+                    as studios prepare their upcoming release calendars.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <div class="side-news">
+
+
+            <article class="side-card">
+
+                <img src="https://images.unsplash.com/photo-1533920379810-6bedac961555?auto=format&fit=crop&w=600&q=80">
+
+                <div class="side-content">
+
+                    <small>TRAILER</small>
+
+                    <h3>
+                        New trailer gives audiences a first look
+                    </h3>
+
+                    <p>
+                        Entertainment fans react to the latest footage.
+                    </p>
+
                 </div>
-                <div class="cards-grid" id="trending-grid"></div>
-              </div>
-              <div class="content-section" id="sec-attractions">
-                <div class="section-header" id="attractions">
-                  <h2><i class="fas fa-landmark"></i> Top Attractions</h2>
+
+            </article>
+
+
+            <article class="side-card">
+
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=600&q=80">
+
+                <div class="side-content">
+
+                    <small>CAST</small>
+
+                    <h3>
+                        Filmmakers reveal new details about upcoming project
+                    </h3>
+
+                    <p>
+                        More information has been shared with audiences.
+                    </p>
+
                 </div>
-                <div class="cards-grid" id="attractions-grid"></div>
-              </div>
-              <div class="content-section" id="sec-food">
-                <div class="section-header" id="food">
-                  <h2><i class="fas fa-utensils"></i> Best Food</h2>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LATEST NEWS
+===================================================== -->
+
+<section class="container" id="latest">
+
+    <div class="section-header">
+
+        <div class="section-title">
+            <h2>Latest Movie News</h2>
+        </div>
+
+        <a href="#" class="view-all">
+            MORE NEWS →
+        </a>
+
+    </div>
+
+
+    <!-- CATEGORY FILTER -->
+
+    <div class="categories">
+
+        <button
+            class="category-btn active"
+            onclick="filterNews('all', this)"
+        >
+            All
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterNews('tamil', this)"
+        >
+            Tamil
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterNews('hindi', this)"
+        >
+            Hindi
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterNews('malayalam', this)"
+        >
+            Malayalam
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterNews('sinhala', this)"
+        >
+            Sinhala
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterNews('english', this)"
+        >
+            English
+        </button>
+
+    </div>
+
+
+    <div class="news-grid" id="newsGrid">
+
+
+        <!-- NEWS 1 -->
+
+        <article class="news-card" data-category="tamil">
+
+            <div class="news-card-image">
+
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80">
+
+                <span class="news-category">
+                    TAMIL
+                </span>
+
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    Upcoming Tamil Film Creates Excitement Among Fans
+                </h3>
+
+                <p>
+                    The latest announcements surrounding an upcoming
+                    Tamil production are generating strong interest.
+                </p>
+
+                <div class="news-footer">
+                    <span>Today</span>
+                    <span>👁 12.4K</span>
                 </div>
-                <div class="cards-grid" id="food-grid"></div>
-              </div>
-              <div class="content-section" id="sec-hidden">
-                <div class="section-header" id="hidden">
-                  <h2><i class="fas fa-mask"></i> Hidden Gems</h2>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 2 -->
+
+        <article class="news-card" data-category="hindi">
+
+            <div class="news-card-image">
+
+                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=900&q=80">
+
+                <span class="news-category">
+                    HINDI
+                </span>
+
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    Bollywood Production Announces New Release Plans
+                </h3>
+
+                <p>
+                    A new project has attracted attention following
+                    an announcement from its production team.
+                </p>
+
+                <div class="news-footer">
+                    <span>Today</span>
+                    <span>👁 9.8K</span>
                 </div>
-                <div class="cards-grid" id="hidden-grid"></div>
-              </div>
-              <div class="content-section" id="sec-nightlife">
-                <div class="section-header" id="nightlife">
-                  <h2><i class="fas fa-moon"></i> Nightlife</h2>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 3 -->
+
+        <article class="news-card" data-category="malayalam">
+
+            <div class="news-card-image">
+
+                <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=900&q=80">
+
+                <span class="news-category">
+                    MALAYALAM
+                </span>
+
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    Malayalam Cinema Prepares Several New Releases
+                </h3>
+
+                <p>
+                    Several new projects are expected to reach audiences
+                    during the upcoming movie season.
+                </p>
+
+                <div class="news-footer">
+                    <span>Yesterday</span>
+                    <span>👁 7.3K</span>
                 </div>
-                <div class="cards-grid" id="nightlife-grid"></div>
-              </div>
-              <div class="content-section" id="sec-shopping">
-                <div class="section-header" id="shopping">
-                  <h2><i class="fas fa-shopping-bag"></i> Shopping</h2>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 4 -->
+
+        <article class="news-card" data-category="sinhala">
+
+            <div class="news-card-image">
+
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80">
+
+                <span class="news-category">
+                    SINHALA
+                </span>
+
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    Sri Lankan Cinema: New Projects On The Horizon
+                </h3>
+
+                <p>
+                    New local productions are bringing fresh stories
+                    and ideas to Sri Lankan audiences.
+                </p>
+
+                <div class="news-footer">
+                    <span>Yesterday</span>
+                    <span>👁 5.9K</span>
                 </div>
-                <div class="cards-grid" id="shopping-grid"></div>
-              </div>
-              <!-- GALLERY SECTION -->
-              <div class="content-section" id="sec-gallery">
-                <div class="section-header" id="gallery">
-                  <h2><i class="fas fa-images"></i> Personal Gallery</h2>
+
+            </div>
+
+        </article>
+
+
+        <!-- NEWS 5 -->
+
+        <article class="news-card" data-category="english">
+
+            <div class="news-card-image">
+
+                <img src="https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?auto=format&fit=crop&w=900&q=80">
+
+                <span class="news-category">
+                    ENGLISH
+                </span>
+
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    International Movie Releases To Watch This Season
+                </h3>
+
+                <p>
+                    A number of international productions are expected
+                    to make headlines over the coming months.
+                </p>
+
+                <div class="news-footer">
+                    <span>Sep 7, 2026</span>
+                    <span>👁 15.2K</span>
                 </div>
-                <div class="gallery-grid" id="gallery-grid"></div>
-              </div>
-              <section class="newsletter">
-                <h3>✉️ Stay in the Loop</h3>
-                <p>Stay connected for more hidden gems, and event updates.</p>
-                <form class="newsletter-form" id="newsletter-form">
-                  <input type="email" id="news-email" placeholder="your@email.com" required />
-                  <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
-                </form>
-                <p class="newsletter-msg" id="newsletter-msg" aria-live="polite"></p>
-              </section>
-            `;
 
-                mainContent.innerHTML = sectionsHTML;
+            </div>
 
-                // Render cards
-                renderCards(country);
-                renderGallery();
+        </article>
 
-                // Bind newsletter
-                bindNewsletter();
 
-                // Observe cards for reveal
-                observeCards();
-            }
+        <!-- NEWS 6 -->
 
-            function renderCards(country) {
-                const cd = countryData[country];
-                const featured = cd.posts.filter(p => p.featured);
-                const others = cd.posts.filter(p => !p.featured);
-                const shuffled = [...others].sort(() => Math.random() - 0.5);
-                const trending = [...featured, ...shuffled.slice(0, 3)];
+        <article class="news-card" data-category="tamil">
 
-                const gridData = {
-                    'trending-grid': trending,
-                    'attractions-grid': cd.posts.filter(p => p.category === 'attractions'),
-                    'food-grid': cd.posts.filter(p => p.category === 'food'),
-                    'hidden-grid': cd.posts.filter(p => p.category === 'hidden'),
-                    'nightlife-grid': cd.posts.filter(p => p.category === 'nightlife'),
-                    'shopping-grid': cd.posts.filter(p => p.category === 'shopping')
-                };
+            <div class="news-card-image">
 
-                Object.entries(gridData).forEach(([gridId, posts]) => {
-                    const grid = document.getElementById(gridId);
-                    if (!grid) return;
-                    grid.innerHTML = '';
-                    posts.forEach((p, i) => grid.appendChild(createCard(p, i)));
-                });
-            }
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
 
-            function createCard(post, delay) {
-                const card = document.createElement('article');
-                card.className = 'card' + (post.featured ? ' featured' : '');
-                card.style.transitionDelay = (delay * 0.06) + 's';
-                card.dataset.postId = post.id;
-                card.tabIndex = 0;
-                const fav = localStorage.getItem('fav-' + post.id) === 'true' ? 'active' : '';
-                const stars = '★'.repeat(Math.floor(post.rating)) + (post.rating % 1 >= 0.5 ? '½' : '');
-                const icon = catIcons[post.category] || 'fa-tag';
-                card.innerHTML = `
-              <div class="card-img">
-                <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80';" />
-                <span class="badge"><i class="fas ${icon}"></i> ${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
-                <button class="fav-btn ${fav}" data-id="${post.id}" aria-label="Save favorite"><i class="fas fa-heart"></i></button>
-              </div>
-              <div class="card-body">
-                <div class="meta">
-                  <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
-                  <span>·</span>
-                  <span class="rating">${stars} <span>${post.rating.toFixed(1)}</span></span>
+                <span class="news-category">
+                    TAMIL
+                </span>
+
+            </div>
+
+            <div class="news-content">
+
+                <h3>
+                    New Tamil Movie Release Date Expected Soon
+                </h3>
+
+                <p>
+                    Fans are waiting for more information about the
+                    upcoming release and its theatrical plans.
+                </p>
+
+                <div class="news-footer">
+                    <span>Sep 7, 2026</span>
+                    <span>👁 8.1K</span>
                 </div>
-                <h3>${post.title}</h3>
-                <p>${post.excerpt}</p>
-                <span class="read-more">Read full story <i class="fas fa-arrow-right"></i></span>
-              </div>
-            `;
-                card.addEventListener('click', (e) => {
-                    if (e.target.closest('.fav-btn')) return;
-                    openPostModal(post);
-                });
-                card.addEventListener('keydown', e => {
-                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault();
-                        openPostModal(post); }
-                });
-                const favBtn = card.querySelector('.fav-btn');
-                favBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = favBtn.dataset.id;
-                    const active = favBtn.classList.toggle('active');
-                    localStorage.setItem('fav-' + id, String(active));
-                    toast(active ? 'Added to favorites' : 'Removed from favorites', active ? '❤️' : '💔');
-                });
-                return card;
-            }
 
-            // ─── GALLERY RENDER ───────────────────────────
-            function renderGallery() {
-                const grid = document.getElementById('gallery-grid');
-                if (!grid) return;
-                const items = [
-                    { src: '1luk.jpg', type: 'image', label: '📸 1' },
-                    { src: '2luk.jpg', type: 'image', label: '📸 2' },
-                    { src: '3luk.jpg', type: 'image', label: '📸 3' },
-                    { src: '1luk.mp4', type: 'video', label: '🎬 1' },
-                    { src: '2luk.mp4', type: 'video', label: '🎬 2' },
-                    { src: '3luk.mp4', type: 'video', label: '🎬 3' }
-                ];
-                grid.innerHTML = '';
-                items.forEach(item => {
-                    const div = document.createElement('div');
-                    div.className = 'gallery-item';
-                    if (item.type === 'image') {
-                        const img = document.createElement('img');
-                        img.src = item.src;
-                        img.alt = item.label;
-                        img.loading = 'lazy';
-                        img.onerror = () => {
-                            img.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=80';
-                        };
-                        div.appendChild(img);
-                    } else {
-                        const video = document.createElement('video');
-                        video.src = item.src;
-                        video.muted = true;
-                        video.playsInline = true;
-                        video.preload = 'metadata';
-                        video.addEventListener('click', () => {
-                            if (video.paused) {
-                                video.play();
-                                video.controls = true;
-                            } else {
-                                video.pause();
-                                video.controls = false;
-                            }
-                        });
-                        div.appendChild(video);
-                        const playIcon = document.createElement('div');
-                        playIcon.className = 'play-icon';
-                        playIcon.innerHTML = '<i class="fas fa-play-circle"></i>';
-                        div.appendChild(playIcon);
-                        video.addEventListener('playing', () => { playIcon.style.display = 'none'; });
-                        video.addEventListener('pause', () => { playIcon.style.display = 'block'; });
-                        video.addEventListener('ended', () => { playIcon.style.display = 'block'; });
-                    }
-                    const label = document.createElement('span');
-                    label.className = 'gallery-label';
-                    label.textContent = item.label;
-                    div.appendChild(label);
-                    grid.appendChild(div);
-                });
-            }
+            </div>
 
-            // ─── SCROLL REVEAL ───────────────────────────
-            let observer = null;
+        </article>
 
-            function observeCards() {
-                if (observer) observer.disconnect();
-                observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('revealed');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                $$('.card').forEach(card => observer.observe(card));
-            }
 
-            // ─── MODALS ──────────────────────────────────
-            function openPostModal(post) {
-                const tagsHtml = post.tags ? post.tags.map(t =>
-                    `<span style="background:rgba(124,58,237,0.12);padding:0.1rem 0.5rem;border-radius:50px;font-size:0.6rem;color:var(--accent-light);border:1px solid var(--border);">#${t}</span>`
-                ).join(' ') : '';
-                modalContent.innerHTML = `
-              <h2>${post.title}</h2>
-              <div class="modal-meta">
-                <span><i class="far fa-calendar-alt"></i> ${post.date}</span>
-                <span>·</span>
-                <span><i class="fas fa-tag"></i> ${post.category}</span>
-                <span>·</span>
-                <span>⭐ ${post.rating.toFixed(1)}</span>
-                ${tagsHtml ? `<span>·</span><span>${tagsHtml}</span>` : ''}
-              </div>
-              <div class="modal-body">${post.content}</div>
-              <div class="share-buttons">
-                <button class="share-btn" data-share="facebook"><i class="fab fa-facebook"></i> Facebook</button>
-                <button class="share-btn" data-share="twitter"><i class="fab fa-twitter"></i> Twitter</button>
-                <button class="share-btn" data-share="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</button>
-                <button class="share-btn" data-share="copy"><i class="fas fa-link"></i> Copy Link</button>
-              </div>
-            `;
-                openModal(postModal);
-                const shareUrl = window.location.href.split('?')[0] + '?post=' + post.id;
-                modalContent.querySelectorAll('.share-btn').forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        const type = btn.dataset.share;
-                        if (type === 'facebook') window.open(
-                            `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
-                            '_blank');
-                        else if (type === 'twitter') window.open(
-                            `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent('Check out ' + post.title)}`,
-                            '_blank');
-                        else if (type === 'linkedin') window.open(
-                            `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-                            '_blank');
-                        else if (type === 'copy') {
-                            navigator.clipboard.writeText(shareUrl).then(() => {
-                                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                                toast('Link copied to clipboard', '🔗');
-                                setTimeout(() => { btn.innerHTML =
-                                    '<i class="fas fa-link"></i> Copy Link'; }, 2000);
-                            });
-                        }
-                    });
-                });
-            }
+    </div>
 
-            function openModal(el) {
-                el.classList.add('open');
-                el.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-            }
+</section>
 
-            function closeModal(el) {
-                el.classList.add('closing');
-                setTimeout(() => {
-                    el.classList.remove('open', 'closing');
-                    el.setAttribute('aria-hidden', 'true');
-                    document.body.style.overflow = '';
-                }, 250);
-            }
-            $('#modal-close').addEventListener('click', () => closeModal(postModal));
-            postModal.addEventListener('click', e => { if (e.target === postModal) closeModal(postModal); });
-            $('#about-close').addEventListener('click', () => closeModal(aboutModal));
-            aboutModal.addEventListener('click', e => { if (e.target === aboutModal) closeModal(aboutModal); });
-            $('#about-footer').addEventListener('click', (e) => {
-                e.preventDefault();
-                openModal(aboutModal);
-            });
 
-            // ─── NAVIGATION ──────────────────────────────
-            function handleNavClick(e, link) {
-                const nav = link.dataset.nav;
-                $$('.nav-links a').forEach(a => a.classList.remove('active'));
-                $$('.drawer-links a').forEach(a => a.classList.remove('active'));
-                link.classList.add('active');
-                mobileDrawer.classList.remove('open');
-                hamburger.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-                if (nav !== 'home') {
-                    const target = document.getElementById(nav);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                } else {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            }
-            $$('.nav-links a').forEach(link => {
-                link.addEventListener('click', function(e) { handleNavClick(e, this); });
-            });
-            $$('.drawer-links a').forEach(link => {
-                link.addEventListener('click', function(e) { handleNavClick(e, this); });
-            });
-            hamburger.addEventListener('click', () => {
-                const open = mobileDrawer.classList.toggle('open');
-                hamburger.classList.toggle('open', open);
-                hamburger.setAttribute('aria-expanded', open);
-            });
+<!-- =====================================================
+     MOVIE RELEASES
+===================================================== -->
 
-            // ─── COUNTRY PILLS ──────────────────────────
-            $$('.country-pill').forEach(pill => {
-                pill.addEventListener('click', () => {
-                    if (pill.dataset.country === 'pending') {
-                        switchCountry('pending');
-                    } else {
-                        switchCountry(pill.dataset.country);
-                    }
-                    mobileDrawer.classList.remove('open');
-                    hamburger.classList.remove('open');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                });
-            });
+<section class="movie-section" id="movies">
 
-            // ─── NEWSLETTER ──────────────────────────────
-            function bindNewsletter() {
-                const form = $('#newsletter-form');
-                if (form) {
-                    form.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        const emailInput = $('#news-email');
-                        const msg = $('#newsletter-msg');
-                        if (!emailInput || !msg) return;
-                        const email = emailInput.value.trim();
-                        if (!email.includes('@') || !email.includes('.')) {
-                            msg.textContent = '⚠️ Please enter a valid email.';
-                            msg.style.color = 'var(--error)';
-                        } else {
-                            msg.textContent = '✅ Welcome to the Baai Mart community!';
-                            msg.style.color = 'var(--success)';
-                            emailInput.value = '';
-                            toast('Subscribed successfully!', '📬');
-                        }
-                    });
-                }
-            }
+    <div class="container">
 
-            // ─── SEARCH ──────────────────────────────────
-            function performSearch(query) {
-                const q = query.toLowerCase().trim();
-                const allCards = document.querySelectorAll('.card');
-                let visible = 0;
-                allCards.forEach(card => {
-                    const text = card.textContent.toLowerCase();
-                    const match = !q || text.includes(q);
-                    card.style.display = match ? '' : 'none';
-                    if (match) visible++;
-                });
-                document.querySelectorAll('.no-results').forEach(el => el.remove());
-                if (visible === 0 && q) {
-                    const msg = document.createElement('p');
-                    msg.className = 'no-results';
-                    msg.style.textAlign = 'center';
-                    msg.style.padding = '2rem';
-                    msg.style.color = 'var(--text-muted)';
-                    msg.innerHTML = '😔 No results found. Try "food", "attractions", or "shopping".';
-                    const firstSection = document.querySelector('.content-section');
-                    if (firstSection) firstSection.appendChild(msg);
-                }
-            }
-            let searchTimer;
-            searchInput.addEventListener('input', () => {
-                clearTimeout(searchTimer);
-                searchTimer = setTimeout(() => performSearch(searchInput.value), 200);
-            });
-            heroSearchBtn.addEventListener('click', () => {
-                const val = heroSearchInput.value.trim();
-                if (val) {
-                    searchInput.value = val;
-                    performSearch(val);
-                    toast(`Searching for "${val}"`, '🔍');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else {
-                    toast('Please enter a search term', '⚠️');
-                }
-            });
-            heroSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') heroSearchBtn.click(); });
+        <div class="section-header">
 
-            // ─── BACK TO TOP ──────────────────────────────
-            const sentinel = document.createElement('div');
-            sentinel.style.cssText = 'position:absolute;top:300px;height:1px;width:1px;pointer-events:none;';
-            document.body.prepend(sentinel);
-            new IntersectionObserver(([entry]) => {
-                backToTop.classList.toggle('visible', !entry.isIntersecting);
-            }).observe(sentinel);
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+            <div class="section-title">
+                <h2>Upcoming Movie Releases</h2>
+            </div>
 
-            // ─── KEYBOARD SHORTCUTS ──────────────────────
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    if (postModal.classList.contains('open')) closeModal(postModal);
-                    if (aboutModal.classList.contains('open')) closeModal(aboutModal);
-                }
-                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                    e.preventDefault();
-                    searchInput.focus();
-                }
-            });
+            <a href="#" class="view-all">
+                RELEASE CALENDAR →
+            </a>
 
-            // ─── URL PARAM ────────────────────────────────
-            const params = new URLSearchParams(window.location.search);
-            const postId = params.get('post');
-            if (postId) {
-                const allPosts = Object.values(countryData).flatMap(cd => cd.posts);
-                const post = allPosts.find(p => p.id === parseInt(postId));
-                if (post) setTimeout(() => openPostModal(post), 500);
-            }
+        </div>
 
-            // ─── INIT ────────────────────────────────────
-            renderAll('singapore');
-            console.log('🐾 Baai Mart · essential guide with gallery');
-        })();
-    </script>
+
+        <div class="movie-grid">
+
+
+            <article class="movie-card">
+
+                <div class="movie-poster">
+
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80">
+
+                    <span class="movie-status">
+                        UPCOMING
+                    </span>
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h3>Midnight Mission</h3>
+
+                    <div class="movie-language">
+                        ENGLISH
+                    </div>
+
+                    <div class="release-date">
+                        Release: Sep 18, 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="movie-card">
+
+                <div class="movie-poster">
+
+                    <img src="https://images.unsplash.com/photo-1533920379810-6bedac961555?auto=format&fit=crop&w=700&q=80">
+
+                    <span class="movie-status">
+                        COMING SOON
+                    </span>
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h3>Beyond The Stars</h3>
+
+                    <div class="movie-language">
+                        ENGLISH
+                    </div>
+
+                    <div class="release-date">
+                        Release: Oct 02, 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="movie-card">
+
+                <div class="movie-poster">
+
+                    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=700&q=80">
+
+                    <span class="movie-status">
+                        UPCOMING
+                    </span>
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h3>Last Horizon</h3>
+
+                    <div class="movie-language">
+                        TAMIL
+                    </div>
+
+                    <div class="release-date">
+                        Release: Sep 25, 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="movie-card">
+
+                <div class="movie-poster">
+
+                    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=700&q=80">
+
+                    <span class="movie-status">
+                        UPCOMING
+                    </span>
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h3>City Lights</h3>
+
+                    <div class="movie-language">
+                        HINDI
+                    </div>
+
+                    <div class="release-date">
+                        Release: Oct 16, 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="movie-card">
+
+                <div class="movie-poster">
+
+                    <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=700&q=80">
+
+                    <span class="movie-status">
+                        NEW
+                    </span>
+
+                </div>
+
+                <div class="movie-info">
+
+                    <h3>Ocean Road</h3>
+
+                    <div class="movie-language">
+                        MALAYALAM
+                    </div>
+
+                    <div class="release-date">
+                        Release: Oct 23, 2026
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRAILERS
+===================================================== -->
+
+<section class="trailer-section" id="trailers">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-title">
+                <h2>Latest Trailers</h2>
+            </div>
+
+            <a href="#" class="view-all">
+                VIEW ALL →
+            </a>
+
+        </div>
+
+
+        <div class="trailer-grid">
+
+
+            <article class="trailer-card">
+
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=80">
+
+                <div class="trailer-overlay">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                    <h3>
+                        Official Trailer — Upcoming Feature
+                    </h3>
+
+                    <p>
+                        Watch trailer • 2:31
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="trailer-card">
+
+                <img src="https://images.unsplash.com/photo-1533488765986-dfa2a9939acd?auto=format&fit=crop&w=800&q=80">
+
+                <div class="trailer-overlay">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                    <h3>
+                        New Cinema Trailer
+                    </h3>
+
+                    <p>
+                        Watch trailer • 1:58
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="trailer-card">
+
+                <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=80">
+
+                <div class="trailer-overlay">
+
+                    <div class="play-button">
+                        ▶
+                    </div>
+
+                    <h3>
+                        First Look Trailer
+                    </h3>
+
+                    <p>
+                        Watch trailer • 2:04
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRENDING
+===================================================== -->
+
+<section class="container" id="trending">
+
+    <div class="section-header">
+
+        <div class="section-title">
+            <h2>Trending Now</h2>
+        </div>
+
+    </div>
+
+
+    <div class="trending-layout">
+
+
+        <div class="trending-list">
+
+
+            <article class="trending-item">
+
+                <div class="trending-number">
+                    01
+                </div>
+
+                <div class="trending-image">
+
+                    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=400&q=80">
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Upcoming movies dominate entertainment discussions
+                    </h3>
+
+                    <p>
+                        Trending • 18.2K views
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="trending-item">
+
+                <div class="trending-number">
+                    02
+                </div>
+
+                <div class="trending-image">
+
+                    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=400&q=80">
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        New trailer receives strong reactions online
+                    </h3>
+
+                    <p>
+                        Trending • 14.7K views
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="trending-item">
+
+                <div class="trending-number">
+                    03
+                </div>
+
+                <div class="trending-image">
+
+                    <img src="https://images.unsplash.com/photo-1518929458119-e5bf444c30f4?auto=format&fit=crop&w=400&q=80">
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Fans discuss upcoming release dates
+                    </h3>
+
+                    <p>
+                        Trending • 11.5K views
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="trending-item">
+
+                <div class="trending-number">
+                    04
+                </div>
+
+                <div class="trending-image">
+
+                    <img src="https://images.unsplash.com/photo-1533920379810-6bedac961555?auto=format&fit=crop&w=400&q=80">
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Cinema calendars fill up with new projects
+                    </h3>
+
+                    <p>
+                        Trending • 9.8K views
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <aside class="sidebar">
+
+            <h3>
+                Most Read
+            </h3>
+
+
+            <div class="sidebar-story">
+
+                <span>01 • MOVIE NEWS</span>
+
+                <h4>
+                    The biggest upcoming releases to watch
+                </h4>
+
+            </div>
+
+
+            <div class="sidebar-story">
+
+                <span>02 • TRAILER</span>
+
+                <h4>
+                    New trailer gets fans talking
+                </h4>
+
+            </div>
+
+
+            <div class="sidebar-story">
+
+                <span>03 • CAST</span>
+
+                <h4>
+                    New casting announcement revealed
+                </h4>
+
+            </div>
+
+
+            <div class="sidebar-story">
+
+                <span>04 • RELEASE</span>
+
+                <h4>
+                    Release calendar receives new updates
+                </h4>
+
+            </div>
+
+
+            <div class="sidebar-story">
+
+                <span>05 • REVIEW</span>
+
+                <h4>
+                    Early reactions to upcoming movie
+                </h4>
+
+            </div>
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="container">
+
+    <div class="newsletter">
+
+        <h2>
+            Get Movie News in Your Inbox
+        </h2>
+
+        <p>
+            Subscribe for movie releases, trailers and entertainment updates.
+        </p>
+
+
+        <form
+            class="newsletter-form"
+            onsubmit="subscribeUser(event)"
+        >
+
+            <input
+                type="email"
+                id="emailInput"
+                placeholder="Your email address"
+                required
+            >
+
+            <button type="submit">
+                SUBSCRIBE
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <a href="#" class="logo">
+                BAAI<span class="red">MART</span>
+                <span class="logo-sub">MOVIE • NEWS • ENTERTAINMENT</span>
+            </a>
+
+            <p>
+                Baaimart.com is an entertainment news platform
+                covering movie releases, cinema news, trailers,
+                reviews and entertainment stories.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>EXPLORE</h4>
+
+            <a href="#latest">Latest News</a>
+            <a href="#movies">Movie Releases</a>
+            <a href="#trailers">Trailers</a>
+            <a href="#trending">Trending</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>LANGUAGES</h4>
+
+            <a href="#">Tamil</a>
+            <a href="#">Hindi</a>
+            <a href="#">Malayalam</a>
+            <a href="#">Sinhala</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>COMPANY</h4>
+
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Advertise</a>
+            <a href="#">Privacy Policy</a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Baaimart.com • All Rights Reserved •
+        Entertainment News & Cinema
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     ARTICLE MODAL
+===================================================== -->
+
+<div class="modal" id="articleModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close-modal"
+            onclick="closeArticle()"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-image">
+
+            <img
+                id="modalImage"
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
+            >
+
+        </div>
+
+
+        <div class="modal-content">
+
+            <span
+                class="category-label"
+                id="modalCategory"
+            >
+                NEWS
+            </span>
+
+
+            <h2 id="modalTitle">
+                Movie News
+            </h2>
+
+
+            <p>
+                <strong>
+                    Baaimart Editorial
+                </strong>
+                • September 8, 2026
+            </p>
+
+
+            <p>
+                This is a demonstration article for the
+                Baaimart.com website. When publishing real
+                content, replace this text with your original
+                reporting and verified information.
+            </p>
+
+
+            <p>
+                A professional movie-news website should
+                include accurate information about the film,
+                production company, cast, director, release
+                plans and other relevant details.
+            </p>
+
+
+            <p>
+                Always verify movie information with reliable
+                sources before publishing it as news.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+    const nav = document.getElementById("mainNav");
+
+    nav.classList.toggle("active");
+
+}
+
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+function toggleSearch() {
+
+    const search =
+        document.getElementById("searchArea");
+
+    search.classList.toggle("active");
+
+    if (search.classList.contains("active")) {
+
+        document.getElementById("searchInput").focus();
+
+    }
+
+}
+
+
+/* =========================================================
+   SEARCH NEWS
+========================================================= */
+
+function searchNews() {
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const cards =
+        document.querySelectorAll(".news-card");
+
+    cards.forEach(function(card) {
+
+        const title =
+            card
+            .querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+        const description =
+            card
+            .querySelector("p")
+            .textContent
+            .toLowerCase();
+
+        if (
+            title.includes(input) ||
+            description.includes(input)
+        ) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+========================================================= */
+
+function filterNews(category, button) {
+
+    const buttons =
+        document.querySelectorAll(".category-btn");
+
+    buttons.forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+
+    const cards =
+        document.querySelectorAll(".news-card");
+
+
+    cards.forEach(function(card) {
+
+        const cardCategory =
+            card.getAttribute("data-category");
+
+
+        if (
+            category === "all" ||
+            cardCategory === category
+        ) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+   ARTICLE MODAL
+========================================================= */
+
+function openArticle(title, category) {
+
+    const modal =
+        document.getElementById("articleModal");
+
+    document.getElementById("modalTitle")
+        .textContent = title;
+
+    document.getElementById("modalCategory")
+        .textContent = category;
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeArticle() {
+
+    const modal =
+        document.getElementById("articleModal");
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================================= */
+
+document
+.getElementById("articleModal")
+.addEventListener("click", function(event) {
+
+    if (event.target === this) {
+
+        closeArticle();
+
+    }
+
+});
+
+
+/* =========================================================
+   ESC KEY CLOSES MODAL
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeArticle();
+
+    }
+
+});
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+function subscribeUser(event) {
+
+    event.preventDefault();
+
+    const email =
+        document
+        .getElementById("emailInput")
+        .value;
+
+    if (!email) {
+
+        alert("Please enter your email.");
+
+        return;
+
+    }
+
+    alert(
+        "Thank you for subscribing to Baaimart.com!"
+    );
+
+    document
+    .getElementById("emailInput")
+    .value = "";
+
+}
+
+
+/* =========================================================
+   NAVIGATION ACTIVE STATE
+========================================================= */
+
+const navLinks =
+    document.querySelectorAll(".main-nav a");
+
+
+navLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navLinks.forEach(function(item) {
+
+            item.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   CONSOLE
+========================================================= */
+
+console.log(
+    "Baaimart.com Movie News Website Loaded Successfully."
+);
+
+</script>
+
 </body>
 </html>
+```
