@@ -1,960 +1,743 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Baaimart - Professional websites designed for modern businesses.">
-  <title>Baaimart | Web Design Agency</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0d12;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* NAVBAR */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(11, 13, 18, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      height: 75px;
-      padding: 0 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: #7c5cff;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #c7c9d1;
-      transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #ffffff;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 25px 70px;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(124,92,255,0.25), transparent 35%),
-        radial-gradient(circle at 20% 80%, rgba(0,210,255,0.12), transparent 30%);
-    }
-
-    .hero-container {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 8px 15px;
-      border: 1px solid rgba(124,92,255,0.5);
-      border-radius: 30px;
-      color: #b7aaff;
-      background: rgba(124,92,255,0.08);
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-
-    .hero h1 {
-      font-size: clamp(45px, 7vw, 78px);
-      line-height: 1.02;
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: #8b72ff;
-    }
-
-    .hero p {
-      color: #aeb2bd;
-      font-size: 18px;
-      max-width: 650px;
-      margin-bottom: 35px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-      border: none;
-      font-size: 15px;
-    }
-
-    .btn-primary {
-      background: #7c5cff;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #6948ef;
-    }
-
-    .btn-secondary {
-      border: 1px solid #303440;
-      color: white;
-      background: #151821;
-    }
-
-    .btn-secondary:hover {
-      background: #20232d;
-    }
-
-    /* HERO CARD */
-    .hero-card {
-      background: linear-gradient(145deg, #171a25, #0f1118);
-      border: 1px solid #282c38;
-      border-radius: 25px;
-      padding: 25px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-      transform: rotate(2deg);
-    }
-
-    .browser {
-      overflow: hidden;
-      border-radius: 15px;
-      background: #090a0e;
-      border: 1px solid #303440;
-    }
-
-    .browser-top {
-      padding: 12px;
-      border-bottom: 1px solid #252833;
-      display: flex;
-      gap: 6px;
-    }
-
-    .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #555;
-    }
-
-    .website-preview {
-      padding: 30px;
-      min-height: 350px;
-    }
-
-    .preview-logo {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 45px;
-    }
-
-    .preview-title {
-      font-size: 34px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .preview-line {
-      height: 10px;
-      width: 75%;
-      background: #282c38;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .preview-button {
-      width: 120px;
-      height: 38px;
-      background: #7c5cff;
-      border-radius: 8px;
-      margin-top: 25px;
-    }
-
-    /* GENERAL */
-    section {
-      padding: 100px 25px;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
-
-    .section-title small {
-      color: #8b72ff;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .section-title h2 {
-      font-size: 42px;
-      margin-top: 10px;
-    }
-
-    .section-title p {
-      color: #969aa6;
-      max-width: 650px;
-      margin: 15px auto 0;
-    }
-
-    /* SERVICES */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      padding: 30px;
-      border: 1px solid #272b36;
-      border-radius: 18px;
-      background: #11141c;
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-7px);
-      border-color: #7c5cff;
-    }
-
-    .icon {
-      width: 52px;
-      height: 52px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: rgba(124,92,255,0.12);
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .service-card p {
-      color: #969aa6;
-    }
-
-    /* PORTFOLIO */
-    .portfolio {
-      background: #0e1016;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .project {
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid #282c38;
-      background: #151821;
-    }
-
-    .project-image {
-      height: 230px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      font-weight: bold;
-      background: linear-gradient(135deg, #20243a, #151721);
-    }
-
-    .project-info {
-      padding: 22px;
-    }
-
-    .project-info h3 {
-      margin-bottom: 6px;
-    }
-
-    .project-info p {
-      color: #969aa6;
-      font-size: 14px;
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-text h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .about-text p {
-      color: #a1a5b0;
-      margin-bottom: 20px;
-    }
-
-    .check-list {
-      list-style: none;
-    }
-
-    .check-list li {
-      margin: 12px 0;
-      color: #d9dae0;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: #8b72ff;
-      margin-right: 10px;
-      font-weight: bold;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .stat {
-      padding: 30px;
-      background: #11141c;
-      border: 1px solid #282c38;
-      border-radius: 18px;
-      text-align: center;
-    }
-
-    .stat h3 {
-      font-size: 38px;
-      color: #8b72ff;
-    }
-
-    .stat p {
-      color: #999daa;
-    }
-
-    /* PRICING */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .price-card {
-      background: #11141c;
-      border: 1px solid #282c38;
-      border-radius: 18px;
-      padding: 35px;
-    }
-
-    .price-card.featured {
-      border-color: #7c5cff;
-      transform: scale(1.03);
-    }
-
-    .price-card h3 {
-      font-size: 23px;
-    }
-
-    .price {
-      font-size: 40px;
-      font-weight: 800;
-      margin: 20px 0;
-    }
-
-    .price span {
-      font-size: 14px;
-      color: #888c98;
-    }
-
-    .price-card ul {
-      list-style: none;
-      margin: 25px 0;
-    }
-
-    .price-card li {
-      padding: 8px 0;
-      color: #a7aab5;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #0e1016;
-    }
-
-    .contact-box {
-      max-width: 800px;
-      margin: auto;
-      background: #11141c;
-      border: 1px solid #282c38;
-      padding: 40px;
-      border-radius: 20px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 7px;
-      color: #c9cbd2;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #303440;
-      background: #0b0d12;
-      color: white;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .form-group textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #7c5cff;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 35px 25px;
-      text-align: center;
-      border-top: 1px solid #252833;
-      color: #777b87;
-    }
-
-    footer strong {
-      color: white;
-    }
-
-    /* MOBILE */
-    @media (max-width: 850px) {
-      .menu-btn {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 75px;
-        left: 0;
-        width: 100%;
-        background: #0b0d12;
-        flex-direction: column;
-        padding: 25px;
-        gap: 20px;
-        border-bottom: 1px solid #252833;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hero-container,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        transform: none;
-      }
-
-      .services-grid,
-      .portfolio-grid,
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .price-card.featured {
-        transform: none;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .hero h1 {
-        font-size: 46px;
-      }
-
-      .section-title h2,
-      .about-text h2 {
-        font-size: 32px;
-      }
-
-      .contact-box {
-        padding: 25px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePulse – Movie & Film News</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #141414;
+            color: #fff;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, transparent 100%);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        .navbar.scrolled {
+            background: #141414;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #e50914;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #fff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid #333;
+            color: #fff;
+            padding: 8px 35px 8px 12px;
+            border-radius: 4px;
+            width: 200px;
+            outline: none;
+            transition: width 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 260px;
+            border-color: #e50914;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            pointer-events: none;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero {
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(to top, #141414 0%, transparent 50%),
+                        linear-gradient(to right, rgba(0,0,0,0.75) 0%, transparent 60%),
+                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding: 0 4% 80px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 560px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            background: #e50914;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.1rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+            line-height: 1.15;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-play {
+            background: #fff;
+            color: #000;
+        }
+
+        .btn-play:hover {
+            background: rgba(255,255,255,0.85);
+        }
+
+        .btn-info {
+            background: rgba(109,109,110,0.7);
+            color: #fff;
+        }
+
+        .btn-info:hover {
+            background: rgba(109,109,110,0.45);
+        }
+
+        /* ===== FEATURED VIDEO WITH CUSTOM THUMBNAIL ===== */
+        .featured-video {
+            padding: 40px 4% 20px;
+            background: #141414;
+        }
+
+        .featured-video h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #e5e5e5;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            background: #000;
+            aspect-ratio: 16/9;
+            cursor: pointer;
+        }
+
+        /* Custom Thumbnail */
+        .video-thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .video-container:hover .video-thumbnail {
+            transform: scale(1.03);
+        }
+
+        /* Play button overlay */
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+            z-index: 2;
+        }
+
+        .video-container:hover .play-overlay {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(229, 9, 20, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            transition: transform 0.25s, background 0.25s;
+        }
+
+        .play-button::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 16px solid transparent;
+            border-bottom: 16px solid transparent;
+            border-left: 26px solid white;
+            margin-left: 6px;
+        }
+
+        .video-container:hover .play-button {
+            transform: scale(1.12);
+            background: #e50914;
+        }
+
+        /* The actual iframe (hidden until clicked) */
+        .video-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+            z-index: 3;
+        }
+
+        .video-iframe.active {
+            display: block;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            padding: 0 4% 40px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #e5e5e5;
+        }
+
+        .row {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .row::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* ===== CARDS ===== */
+        .card {
+            min-width: 220px;
+            width: 220px;
+            border-radius: 6px;
+            overflow: hidden;
+            background: #1a1a1a;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+            z-index: 20;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+
+        .card img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.75rem;
+            color: #999;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #e50914;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 2px;
+            text-transform: uppercase;
+        }
+
+        .news-card {
+            min-width: 280px;
+            width: 280px;
+        }
+
+        .news-card img {
+            height: 160px;
+        }
+
+        .news-card .card-title {
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.3;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #000;
+            padding: 50px 4% 30px;
+            margin-top: 40px;
+            color: #808080;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            color: #808080;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #181818;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #181818;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .modal-body h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-meta {
+            color: #46d369;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-body p {
+            color: #d2d2d2;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.3rem; }
+            .play-button { width: 70px; height: 70px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { height: 70vh; min-height: 420px; }
+            .hero h1 { font-size: 1.9rem; }
+            .hero p { font-size: 1rem; }
+            .search-box input { width: 140px; }
+            .card { min-width: 160px; width: 160px; }
+            .news-card { min-width: 220px; width: 220px; }
+            .play-button { width: 60px; height: 60px; }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="#home" class="logo">Baai<span>mart</span></a>
-
-      <div class="menu-btn" id="menuBtn">☰</div>
-
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Our Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-
-      <div>
-        <div class="badge">🚀 Web Design Agency</div>
-
-        <h1>
-          We build websites
-          <span>that grow businesses.</span>
-        </h1>
-
-        <p>
-          Baaimart creates modern, fast and professional websites
-          designed to help businesses build trust, attract customers
-          and grow online.
-        </p>
-
-        <div class="buttons">
-          <a href="#contact" class="btn btn-primary">Start a Project →</a>
-          <a href="#work" class="btn btn-secondary">View Our Work</a>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="logo" onclick="window.scrollTo(0,0)">Baai Mart</div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#trailers">Trailers</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search movies & news...">
+                <span class="search-icon">🔍</span>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <div class="hero-card">
-        <div class="browser">
+    <!-- HERO BANNER -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Breaking News</span>
+            <h1>Dune: Part Three Officially Confirmed</h1>
+            <p>Denis Villeneuve returns to complete the epic saga. Production begins 2026 with Timothée Chalamet and Zendaya set to reprise their roles.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-play" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">▶ Watch Trailer</button>
+                <button class="btn btn-info" onclick="document.getElementById('news').scrollIntoView({behavior:'smooth'})">ℹ More News</button>
+            </div>
+        </div>
+    </section>
 
-          <div class="browser-top">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
+    <!-- FEATURED VIDEO WITH CUSTOM THUMBNAIL FROM X -->
+    <section class="featured-video" id="featured">
+        <h2>Featured Trailer</h2>
+        <div class="video-container" id="videoBox" onclick="playVideo()">
+            <!-- Thumbnail from the X post you provided -->
+            <img 
+                src="https://pbs.twimg.com/media/HUW6rbwbIAAy045.jpg" 
+                alt="Video Thumbnail" 
+                class="video-thumbnail"
+                id="videoThumb"
+            >
 
-          <div class="website-preview">
-            <div class="preview-logo">Baai<span>mart</span></div>
-
-            <div class="preview-title">
-              Your Business.<br>
-              Online.
+            <!-- Play button overlay -->
+            <div class="play-overlay" id="playOverlay">
+                <div class="play-button"></div>
             </div>
 
-            <div class="preview-line"></div>
-            <div class="preview-line"></div>
-
-            <div class="preview-button"></div>
-          </div>
-
+            <!-- YouTube iframe (hidden until clicked) -->
+            <iframe 
+                class="video-iframe" 
+                id="videoIframe"
+                src="" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
         </div>
-      </div>
+    </section>
 
+    <!-- LATEST NEWS -->
+    <section class="section" id="news">
+        <h2 class="section-title">Latest Film News</h2>
+        <div class="row" id="newsRow"></div>
+    </section>
+
+    <!-- TOP MOVIES -->
+    <section class="section" id="movies">
+        <h2 class="section-title">Trending Movies</h2>
+        <div class="row" id="moviesRow"></div>
+    </section>
+
+    <!-- TRAILERS -->
+    <section class="section" id="trailers">
+        <h2 class="section-title">New Trailers</h2>
+        <div class="row" id="trailersRow"></div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+        <h2 class="section-title">Critic Reviews</h2>
+        <div class="row" id="reviewsRow"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">About CinePulse</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Help Center</a>
+        </div>
+        <p class="copyright">© 2026 CinePulse. All rights reserved.</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <img class="modal-img" id="modalImg" src="" alt="">
+            <div class="modal-body">
+                <h2 id="modalTitle"></h2>
+                <div class="modal-meta" id="modalMeta"></div>
+                <p id="modalDesc"></p>
+                <button class="btn btn-play" style="background:#e50914;color:#fff;" onclick="closeModal()">Close</button>
+            </div>
+        </div>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="container">
-
-      <div class="section-title">
-        <small>What We Do</small>
-        <h2>Everything your business needs online.</h2>
-        <p>
-          From simple business websites to complete online experiences,
-          Baaimart helps businesses establish a professional digital presence.
-        </p>
-      </div>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-          <div class="icon">🌐</div>
-          <h3>Website Design</h3>
-          <p>
-            Modern and professional websites designed around your brand
-            and business goals.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">📱</div>
-          <h3>Responsive Design</h3>
-          <p>
-            Websites that look great on phones, tablets and computers.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">⚡</div>
-          <h3>Fast Performance</h3>
-          <p>
-            Lightweight websites built for speed and a smooth customer experience.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🛒</div>
-          <h3>E-Commerce</h3>
-          <p>
-            Online stores designed to showcase products and make selling easier.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🎨</div>
-          <h3>Brand Design</h3>
-          <p>
-            Clean visual identities that help businesses look professional online.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="icon">🔧</div>
-          <h3>Website Support</h3>
-          <p>
-            Updates, improvements and maintenance to keep your website running.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section class="portfolio" id="work">
-    <div class="container">
-
-      <div class="section-title">
-        <small>Our Work</small>
-        <h2>Websites built for businesses.</h2>
-        <p>
-          A few examples of the type of digital experiences Baaimart can create.
-        </p>
-      </div>
-
-      <div class="portfolio-grid">
-
-        <div class="project">
-          <div class="project-image">RESTAURANT</div>
-          <div class="project-info">
-            <h3>Restaurant Website</h3>
-            <p>Modern website for a food business.</p>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-image">FASHION</div>
-          <div class="project-info">
-            <h3>Fashion Store</h3>
-            <p>Clean online experience for a clothing brand.</p>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-image">BUSINESS</div>
-          <div class="project-info">
-            <h3>Business Website</h3>
-            <p>Professional website for a growing company.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-
-      <div class="about-grid">
-
-        <div class="about-text">
-          <small style="color:#8b72ff;font-weight:bold;">ABOUT BAAIMART</small>
-
-          <h2>Simple websites. Serious business.</h2>
-
-          <p>
-            Baaimart is a web design agency focused on helping businesses
-            build a strong online presence.
-          </p>
-
-          <p>
-            We combine modern design, responsive development and business-focused
-            thinking to create websites that are easy to use and easy to trust.
-          </p>
-
-          <ul class="check-list">
-            <li>Modern professional design</li>
-            <li>Mobile-friendly websites</li>
-            <li>Fast loading performance</li>
-            <li>Business-focused layouts</li>
-          </ul>
-        </div>
-
-        <div class="stats">
-
-          <div class="stat">
-            <h3>50+</h3>
-            <p>Design Concepts</p>
-          </div>
-
-          <div class="stat">
-            <h3>24/7</h3>
-            <p>Online Presence</p>
-          </div>
-
-          <div class="stat">
-            <h3>100%</h3>
-            <p>Responsive Design</p>
-          </div>
-
-          <div class="stat">
-            <h3>∞</h3>
-            <p>Ideas</p>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing">
-    <div class="container">
-
-      <div class="section-title">
-        <small>Pricing</small>
-        <h2>Choose a website package.</h2>
-        <p>
-          Flexible packages for businesses at different stages.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-
-        <div class="price-card">
-          <h3>Starter</h3>
-          <div class="price">$99 <span>/ project</span></div>
-
-          <ul>
-            <li>✓ One-page website</li>
-            <li>✓ Responsive design</li>
-            <li>✓ Contact section</li>
-            <li>✓ Basic animations</li>
-          </ul>
-
-          <a href="#contact" class="btn btn-secondary">Get Started</a>
-        </div>
-
-        <div class="price-card featured">
-          <h3>Business</h3>
-          <div class="price">$249 <span>/ project</span></div>
-
-          <ul>
-            <li>✓ Up to 5 pages</li>
-            <li>✓ Custom design</li>
-            <li>✓ Responsive development</li>
-            <li>✓ Contact form</li>
-            <li>✓ Basic SEO setup</li>
-          </ul>
-
-          <a href="#contact" class="btn btn-primary">Choose Business</a>
-        </div>
-
-        <div class="price-card">
-          <h3>Premium</h3>
-          <div class="price">$499 <span>/ project</span></div>
-
-          <ul>
-            <li>✓ Custom website</li>
-            <li>✓ E-commerce features</li>
-            <li>✓ Advanced animations</li>
-            <li>✓ SEO optimization</li>
-            <li>✓ Ongoing support</li>
-          </ul>
-
-          <a href="#contact" class="btn btn-secondary">Talk to Us</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <small>Let's Work Together</small>
-        <h2>Have a project in mind?</h2>
-        <p>
-          Tell us about your business and we'll get back to you.
-        </p>
-      </div>
-
-      <div class="contact-box">
-
-        <form id="contactForm">
-
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Your name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="you@example.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="business">Business Name</label>
-            <input type="text" id="business" placeholder="Your business">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Tell us about your project</label>
-            <textarea id="message" placeholder="I need a website for..." required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">
-            Send Project Request →
-          </button>
-
-        </form>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>
-      © <span id="year"></span> <strong>Baaimart</strong>.
-      All rights reserved.
-    </p>
-  </footer>
-
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    // Close mobile menu after clicking a link
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Contact form
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-
-      alert(
-        "Thank you, " + name +
-        "! Your project request has been received."
-      );
-
-      this.reset();
-    });
-  </script>
 
+    <script>
+        // ========== PLAY VIDEO FUNCTION ==========
+        function playVideo() {
+            const iframe = document.getElementById('videoIframe');
+            const thumb = document.getElementById('videoThumb');
+            const overlay = document.getElementById('playOverlay');
+
+            // Load the new YouTube video
+            iframe.src = "https://www.youtube.com/embed/zIc7MeH7x7Y?autoplay=1&rel=0";
+            iframe.classList.add('active');
+
+            // Hide thumbnail and play button
+            thumb.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        // ========== DATA ==========
+        const newsData = [
+            { id: 'dune', title: "Dune: Part Three Officially Greenlit", meta: "2 hours ago • Sci-Fi", desc: "Legendary Pictures and Warner Bros. have officially confirmed Dune: Part Three.", img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=600", tag: "Breaking" },
+            { id: 'marvel', title: "Marvel Announces 2027 Phase 7 Lineup", meta: "5 hours ago • Superhero", desc: "Marvel Studios revealed the complete Phase 7 slate.", img: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=600", tag: "Exclusive" },
+            { id: 'oscar', title: "Oscar Predictions Heat Up After TIFF", meta: "8 hours ago • Awards", desc: "Toronto International Film Festival closed with strong contenders.", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600", tag: "Awards" },
+            { id: 'netflix', title: "Netflix Greenlights 12 New Original Films", meta: "Yesterday • Streaming", desc: "The streaming giant announced a massive slate of original movies.", img: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600", tag: "Streaming" },
+            { id: 'ai', title: "Hollywood Debates AI in Filmmaking", meta: "Yesterday • Industry", desc: "Major studios continue talks over generative AI in production.", img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600", tag: "Tech" }
+        ];
+
+        const moviesData = [
+            { id: 'm1', title: "The Last Horizon", meta: "2026 • Action", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=400", tag: "New" },
+            { id: 'm2', title: "Midnight Protocol", meta: "2025 • Thriller", img: "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400", tag: "Hot" },
+            { id: 'm3', title: "Echoes of Tomorrow", meta: "2026 • Sci-Fi", img: "https://images.unsplash.com/photo-1594908900066-3f921813e6b3?w=400", tag: "Soon" },
+            { id: 'm4', title: "Crimson Legacy", meta: "2025 • Drama", img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400", tag: "" },
+            { id: 'm5', title: "Neon City", meta: "2026 • Cyberpunk", img: "https://images.unsplash.com/photo-1518676590629-3dcbd9c9a8f9?w=400", tag: "New" },
+            { id: 'm6', title: "Silent Waters", meta: "2025 • Mystery", img: "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=400", tag: "" }
+        ];
+
+        const trailersData = [
+            { id: 't1', title: "Avatar 4 Teaser", meta: "Just Dropped", img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400", tag: "New" },
+            { id: 't2', title: "Spider-Verse 3", meta: "Official Trailer", img: "https://images.unsplash.com/photo-1635805737707-575885ab0820?w=400", tag: "Hot" },
+            { id: 't3', title: "The Batman 2", meta: "First Look", img: "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?w=400", tag: "" },
+            { id: 't4', title: "Gladiator III", meta: "Teaser", img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400", tag: "New" },
+            { id: 't5', title: "Star Wars: New Hope", meta: "Trailer", img: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400", tag: "" }
+        ];
+
+        const reviewsData = [
+            { id: 'r1', title: "Oppenheimer – 5/5", meta: "Critic Score", img: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400", tag: "Must Watch" },
+            { id: 'r2', title: "Poor Things – 4.5/5", meta: "Critic Score", img: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=400", tag: "" },
+            { id: 'r3', title: "Dune Part Two – 5/5", meta: "Critic Score", img: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400", tag: "Epic" },
+            { id: 'r4', title: "Killers of the Flower Moon", meta: "4/5", img: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=400", tag: "" },
+            { id: 'r5', title: "The Zone of Interest", meta: "4.5/5", img: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=400", tag: "" }
+        ];
+
+        function createCard(item, isNews = false) {
+            const tagHtml = item.tag ? `<span class="card-tag">${item.tag}</span>` : '';
+            return `
+                <div class="card ${isNews ? 'news-card' : ''}" onclick="openModal('${item.id}')">
+                    ${tagHtml}
+                    <img src="${item.img}" alt="${item.title}" loading="lazy">
+                    <div class="card-info">
+                        <div class="card-title">${item.title}</div>
+                        <div class="card-meta">${item.meta}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderAll() {
+            document.getElementById('newsRow').innerHTML = newsData.map(i => createCard(i, true)).join('');
+            document.getElementById('moviesRow').innerHTML = moviesData.map(i => createCard(i)).join('');
+            document.getElementById('trailersRow').innerHTML = trailersData.map(i => createCard(i)).join('');
+            document.getElementById('reviewsRow').innerHTML = reviewsData.map(i => createCard(i)).join('');
+        }
+
+        const allItems = [...newsData, ...moviesData, ...trailersData, ...reviewsData];
+
+        function openModal(id) {
+            const item = allItems.find(i => i.id === id) || newsData[0];
+            document.getElementById('modalImg').src = item.img;
+            document.getElementById('modalTitle').textContent = item.title;
+            document.getElementById('modalMeta').textContent = item.meta + (item.tag ? ' • ' + item.tag : '');
+            document.getElementById('modalDesc').textContent = item.desc || `Latest updates on "${item.title}".`;
+            document.getElementById('modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('modal').addEventListener('click', e => {
+            if (e.target.id === 'modal') closeModal();
+        });
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        document.getElementById('searchInput').addEventListener('input', e => {
+            const q = e.target.value.toLowerCase().trim();
+            if (!q) { renderAll(); return; }
+            const filter = arr => arr.filter(i => i.title.toLowerCase().includes(q) || (i.meta && i.meta.toLowerCase().includes(q)));
+            document.getElementById('newsRow').innerHTML = filter(newsData).map(i => createCard(i, true)).join('') || '<p style="color:#888">No results</p>';
+            document.getElementById('moviesRow').innerHTML = filter(moviesData).map(i => createCard(i)).join('') || '<p style="color:#888">No results</p>';
+            document.getElementById('trailersRow').innerHTML = filter(trailersData).map(i => createCard(i)).join('') || '<p style="color:#888">No results</p>';
+            document.getElementById('reviewsRow').innerHTML = filter(reviewsData).map(i => createCard(i)).join('') || '<p style="color:#888">No results</p>';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.addEventListener('click', e => {
+                e.preventDefault();
+                const href = a.getAttribute('href');
+                if (href.startsWith('#')) document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        renderAll();
+    </script>
 </body>
 </html>
